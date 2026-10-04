@@ -34,13 +34,20 @@ for (const route of routes) {
       return r.abort();
     });
     const page = await ctx.newPage();
-    page.on("console", (m) => m.type() === "error" && consoleErrors.push(m.text().slice(0, 300)));
+    page.on("console", (m) => {
+      const text = m.text();
+      // The expected 404 document itself is reported by Chrome as a failed resource.
+      if (m.type() === "error" && !(route.expect === 404 && text.includes("status of 404"))) consoleErrors.push(text.slice(0, 300));
+    });
     page.on("pageerror", (e) => consoleErrors.push("pageerror: " + String(e).slice(0, 300)));
     page.on("requestfailed", (r) => {
-      if (new URL(r.url()).origin === origin) failed.push(`${r.url()} ${r.failure()?.errorText}`);
+      const err = r.failure()?.errorText ?? "";
+      // Media range requests are routinely cancelled by the browser (ERR_ABORTED); not a failure.
+      if (new URL(r.url()).origin === origin && !(r.resourceType() === "media" && err.includes("ERR_ABORTED"))) failed.push(`${r.url()} ${err}`);
     });
     page.on("response", (r) => {
-      if (new URL(r.url()).origin === origin && r.status() >= 400 && r.url() !== page.url()) failed.push(`${r.status()} ${r.url()}`);
+      const isDocument = r.request().resourceType() === "document";
+      if (new URL(r.url()).origin === origin && r.status() >= 400 && !(isDocument && route.expect === 404)) failed.push(`${r.status()} ${r.url()}`);
     });
     let status = 0;
     try {
@@ -58,7 +65,9 @@ for (const route of routes) {
       await page.waitForLoadState("networkidle");
       const info = await page.evaluate(() => {
         const imgs = [...document.querySelectorAll("img")];
-        const broken = imgs.filter((i) => !i.complete || i.naturalWidth === 0).map((i) => i.currentSrc || i.src);
+        // Lazy images that were never requested (hidden breakpoint variants, off-screen slides) are not broken.
+        const broken = imgs.filter((i) => i.complete && i.naturalWidth === 0 && (i.currentSrc || i.src)).map((i) => i.currentSrc || i.src);
+        const pending = imgs.filter((i) => !i.complete).length;
         const videos = [...document.querySelectorAll("video")].map((v) => ({ src: v.currentSrc, ready: v.readyState, err: v.error?.code ?? null }));
         const fonts = [...document.fonts].filter((f) => f.status === "loaded").map((f) => `${f.family} ${f.weight} ${f.style}`);
         return {
@@ -67,6 +76,7 @@ for (const route of routes) {
           overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
           images: imgs.length,
           broken,
+          pending,
           videos,
           fonts: [...new Set(fonts)],
           h1: [...document.querySelectorAll("h1")].map((h) => h.textContent.trim()).slice(0, 2),

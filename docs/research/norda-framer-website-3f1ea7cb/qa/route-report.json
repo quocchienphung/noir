@@ -1,0 +1,1714 @@
+{
+  "base": "http://localhost:3200",
+  "date": "2026-10-04T15:48:03.071Z",
+  "results": [
+    {
+      "path": "/",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 14804,
+      "title": "Nordå Architects",
+      "height": 14807,
+      "overflowX": 0,
+      "images": 36,
+      "broken": [
+        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2F5wwhsRM2FMYljXoLda5xGvVyk.jpg&w=3840&q=75",
+        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FTVwqQqsrEv3JD9tCWSZxi5bw0.jpg&w=3840&q=75",
+        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FFjHAEx0OKICPXVQdU2AohS9CZXA.jpg&w=390&q=75",
+        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FO8OUO2E58WZgY1Jn9HEjri4V2G4.jpg&w=390&q=75"
+      ],
+      "videos": [
+        {
+          "src": "http://localhost:3200/sites/norda-framer-website-3f1ea7cb/root-8a5edab2/videos/RPCvbH4eTYU7lPNivoY0mYV63qw.mp4",
+          "ready": 4,
+          "err": null
+        }
+      ],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Nordå"
+      ],
+      "blocked": [],
+      "failed": [
+        "http://localhost:3200/sites/norda-framer-website-3f1ea7cb/root-8a5edab2/videos/RPCvbH4eTYU7lPNivoY0mYV63qw.mp4 net::ERR_ABORTED",
+        "http://localhost:3200/sites/norda-framer-website-3f1ea7cb/root-8a5edab2/videos/RPCvbH4eTYU7lPNivoY0mYV63qw.mp4 net::ERR_ABORTED"
+      ],
+      "consoleErrors": []
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 12777,
+      "title": "Nordå Architects",
+      "height": 12615,
+      "overflowX": 0,
+      "images": 36,
+      "broken": [
+        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FnwlVbPDjPm71hPIQuKuGlvFT9s.png&w=128&q=75",
+        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FCHv3JR1Cg48f4jEscJb6w3YkE.png&w=128&q=75",
+        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FFjHAEx0OKICPXVQdU2AohS9CZXA.jpg&w=390&q=75",
+        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FO8OUO2E58WZgY1Jn9HEjri4V2G4.jpg&w=390&q=75",
+        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FIh46Mq8uiQ56rQhTIyUJTvfIXE.png&w=128&q=75",
+        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FH3BmhpWcSqVQg81DVbYo0lExgDU.png&w=128&q=75"
+      ],
+      "videos": [
+        {
+          "src": "http://localhost:3200/sites/norda-framer-website-3f1ea7cb/root-8a5edab2/videos/RPCvbH4eTYU7lPNivoY0mYV63qw.mp4",
+          "ready": 4,
+          "err": null
+        }
+      ],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Nordå"
+      ],
+      "blocked": [],
+      "failed": [
+        "http://localhost:3200/sites/norda-framer-website-3f1ea7cb/root-8a5edab2/videos/RPCvbH4eTYU7lPNivoY0mYV63qw.mp4 net::ERR_ABORTED"
+      ],
+      "consoleErrors": []
+    },
+    {
+      "path": "/about",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 11163,
+      "title": "Nordå Architects",
+      "height": 11165,
+      "overflowX": 0,
+      "images": 21,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "AboutAboutAbout"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/about",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 12535,
+      "title": "Nordå Architects",
+      "height": 12948,
+      "overflowX": 0,
+      "images": 21,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "AboutAboutAbout"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 6540,
+      "title": "Nordå Architects",
+      "height": 6541,
+      "overflowX": 0,
+      "images": 9,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Privacy Policy"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 6560,
+      "title": "Nordå Architects",
+      "height": 6560,
+      "overflowX": 0,
+      "images": 9,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Privacy Policy"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 8918,
+      "title": "Nordå Architects",
+      "height": 8920,
+      "overflowX": 0,
+      "images": 15,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "ProjectsProjectsProjects"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 9307,
+      "title": "Nordå Architects",
+      "height": 9377,
+      "overflowX": 0,
+      "images": 15,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "ProjectsProjectsProjects"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 9637,
+      "title": "Nordå Architects",
+      "height": 9644,
+      "overflowX": 0,
+      "images": 16,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "NewsNewsNews"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 9106,
+      "title": "Nordå Architects",
+      "height": 9111,
+      "overflowX": 0,
+      "images": 16,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "NewsNewsNews"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/contact",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 5321,
+      "title": "Nordå Architects",
+      "height": 5322,
+      "overflowX": 0,
+      "images": 11,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "ContactContactContact"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/contact",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 5223,
+      "title": "Nordå Architects",
+      "height": 5499,
+      "overflowX": 0,
+      "images": 11,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "ContactContactContact"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects/verve-tower",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 7277,
+      "title": "Verve Tower - My Framer Site",
+      "height": 7278,
+      "overflowX": 0,
+      "images": 14,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Verve Tower"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects/verve-tower",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 6707,
+      "title": "Verve Tower - My Framer Site",
+      "height": 6706,
+      "overflowX": 0,
+      "images": 14,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Verve Tower"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects/harbor-12",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 7330,
+      "title": "Harbor 12 - My Framer Site",
+      "height": 7331,
+      "overflowX": 0,
+      "images": 14,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Harbor 12"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects/harbor-12",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 6788,
+      "title": "Harbor 12 - My Framer Site",
+      "height": 6787,
+      "overflowX": 0,
+      "images": 14,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Harbor 12"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects/nordic-one",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 6482,
+      "title": "Nordic One - My Framer Site",
+      "height": 6483,
+      "overflowX": 0,
+      "images": 13,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Nordic One"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects/nordic-one",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 6013,
+      "title": "Nordic One - My Framer Site",
+      "height": 6012,
+      "overflowX": 0,
+      "images": 13,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Nordic One"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects/summit-24",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 7277,
+      "title": "Summit 24 - My Framer Site",
+      "height": 7278,
+      "overflowX": 0,
+      "images": 14,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Summit 24"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects/summit-24",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 6764,
+      "title": "Summit 24 - My Framer Site",
+      "height": 6763,
+      "overflowX": 0,
+      "images": 14,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Summit 24"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects/str%C3%B6m-haus",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 6429,
+      "title": "Ström Haus - My Framer Site",
+      "height": 6430,
+      "overflowX": 0,
+      "images": 13,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Ström Haus"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects/str%C3%B6m-haus",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 5996,
+      "title": "Ström Haus - My Framer Site",
+      "height": 5995,
+      "overflowX": 0,
+      "images": 13,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Ström Haus"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/jobs/interior-designer",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 6805,
+      "title": "Nordå Architects",
+      "height": 6808,
+      "overflowX": 0,
+      "images": 11,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Interior Designer"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/jobs/interior-designer",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 6387,
+      "title": "Nordå Architects",
+      "height": 6436,
+      "overflowX": 0,
+      "images": 11,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Interior Designer"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/jobs/landscape-architect",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 6741,
+      "title": "Nordå Architects",
+      "height": 6743,
+      "overflowX": 0,
+      "images": 11,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Landscape Architect"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/jobs/landscape-architect",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 6241,
+      "title": "Nordå Architects",
+      "height": 6290,
+      "overflowX": 0,
+      "images": 11,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Landscape Architect"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/jobs/3d-artist",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 6759,
+      "title": "Nordå Architects",
+      "height": 6761,
+      "overflowX": 0,
+      "images": 11,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "3D Artist"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/jobs/3d-artist",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 6228,
+      "title": "Nordå Architects",
+      "height": 6276,
+      "overflowX": 0,
+      "images": 11,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "3D Artist"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/jobs/project-architect",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 6665,
+      "title": "Nordå Architects",
+      "height": 6667,
+      "overflowX": 0,
+      "images": 11,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Project Architect"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/jobs/project-architect",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 6234,
+      "title": "Nordå Architects",
+      "height": 6282,
+      "overflowX": 0,
+      "images": 11,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Project Architect"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/erik-lindholm",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4088,
+      "title": "Nordå Architects",
+      "height": 4091,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Erik Lindholm"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/erik-lindholm",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 3814,
+      "title": "Nordå Architects",
+      "height": 3741,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Erik Lindholm"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/linnea-s%C3%B6rensen",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4024,
+      "title": "Nordå Architects",
+      "height": 4026,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Linnea Sörensen"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/linnea-s%C3%B6rensen",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 3741,
+      "title": "Nordå Architects",
+      "height": 3668,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Linnea Sörensen"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/mikael-andersson",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4042,
+      "title": "Nordå Architects",
+      "height": 4044,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Mikael Andersson"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/mikael-andersson",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 3777,
+      "title": "Nordå Architects",
+      "height": 3704,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Mikael Andersson"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/freja-karlsson",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4042,
+      "title": "Nordå Architects",
+      "height": 4044,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Freja Karlsson"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/freja-karlsson",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 3748,
+      "title": "Nordå Architects",
+      "height": 3675,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Freja Karlsson"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/oskar-bj%C3%B8rnsen",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4042,
+      "title": "Nordå Architects",
+      "height": 4044,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Oskar Bjørnsen"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/oskar-bj%C3%B8rnsen",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 3712,
+      "title": "Nordå Architects",
+      "height": 3639,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Oskar Bjørnsen"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/elin-j%C3%B8rgensen",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 3995,
+      "title": "Nordå Architects",
+      "height": 3997,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Elin Jørgensen"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/elin-j%C3%B8rgensen",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 3676,
+      "title": "Nordå Architects",
+      "height": 3603,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Elin Jørgensen"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/astrid-nilsen",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4024,
+      "title": "Nordå Architects",
+      "height": 4026,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Astrid Nilsen"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/astrid-nilsen",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 3676,
+      "title": "Nordå Architects",
+      "height": 3574,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Astrid Nilsen"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/jonas-eklund",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4042,
+      "title": "Nordå Architects",
+      "height": 4044,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Jonas Eklund"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/jonas-eklund",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 3712,
+      "title": "Nordå Architects",
+      "height": 3639,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Jonas Eklund"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/sofia-bergstr%C3%B6m",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4042,
+      "title": "Nordå Architects",
+      "height": 4044,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Sofia Bergström"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/sofia-bergstr%C3%B6m",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 3777,
+      "title": "Nordå Architects",
+      "height": 3704,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Sofia Bergström"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/how-architecture-shapes-productivity",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4451,
+      "title": "Exploring the Future of Urban Living - Nordå Architects",
+      "height": 4453,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Exploring the Future of Urban Living"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/how-architecture-shapes-productivity",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4607,
+      "title": "Exploring the Future of Urban Living - Nordå Architects",
+      "height": 4703,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Exploring the Future of Urban Living"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/net-zero-buildings-the-next-step-in-architecture",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4498,
+      "title": "The Balance of Form and Function - Nordå Architects",
+      "height": 4500,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "The Balance of Form and Function"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/net-zero-buildings-the-next-step-in-architecture",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4599,
+      "title": "The Balance of Form and Function - Nordå Architects",
+      "height": 4696,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "The Balance of Form and Function"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/the-role-of-public-spaces-in-cities",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4451,
+      "title": "Reinventing Office Spaces for Tomorrow - Nordå Architects",
+      "height": 4453,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Reinventing Office Spaces for Tomorrow"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/the-role-of-public-spaces-in-cities",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4643,
+      "title": "Reinventing Office Spaces for Tomorrow - Nordå Architects",
+      "height": 4740,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Reinventing Office Spaces for Tomorrow"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/building-with-purpose",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4451,
+      "title": "The Role of Light in Architectural Design - Nordå Architects",
+      "height": 4453,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "The Role of Light in Architectural Design"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/building-with-purpose",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4643,
+      "title": "The Role of Light in Architectural Design - Nordå Architects",
+      "height": 4740,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "The Role of Light in Architectural Design"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/the-future-of-office-spaces",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4451,
+      "title": "Building with a Sustainable Mindset - Nordå Architects",
+      "height": 4453,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Building with a Sustainable Mindset"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/the-future-of-office-spaces",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4672,
+      "title": "Building with a Sustainable Mindset - Nordå Architects",
+      "height": 4769,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Building with a Sustainable Mindset"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/designing-cities-for-tomorrow",
+      "width": 1440,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4498,
+      "title": "Designing for Density: Smart Urban Solutions - Nordå Architects",
+      "height": 4500,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Designing for Density: Smart Urban Solutions"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/designing-cities-for-tomorrow",
+      "width": 390,
+      "status": 200,
+      "expect": 200,
+      "refHeight": 4672,
+      "title": "Designing for Density: Smart Urban Solutions - Nordå Architects",
+      "height": 4769,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "Designing for Density: Smart Urban Solutions"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/404",
+      "width": 1440,
+      "status": 404,
+      "expect": 404,
+      "refHeight": 2656,
+      "title": "Nordå Architects",
+      "height": 2657,
+      "overflowX": 0,
+      "images": 9,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "404 — Page not found"
+      ],
+      "blocked": [],
+      "failed": [
+        "404 http://localhost:3200/404"
+      ],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ]
+    },
+    {
+      "path": "/404",
+      "width": 390,
+      "status": 404,
+      "expect": 404,
+      "refHeight": 2735,
+      "title": "Nordå Architects",
+      "height": 2734,
+      "overflowX": 0,
+      "images": 9,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal"
+      ],
+      "h1": [
+        "404 — Page not found"
+      ],
+      "blocked": [],
+      "failed": [
+        "404 http://localhost:3200/404"
+      ],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ]
+    },
+    {
+      "path": "/this-route-does-not-exist",
+      "width": 1440,
+      "status": 404,
+      "expect": 404,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 2657,
+      "overflowX": 0,
+      "images": 9,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "404 — Page not found"
+      ],
+      "blocked": [],
+      "failed": [
+        "404 http://localhost:3200/this-route-does-not-exist"
+      ],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ]
+    },
+    {
+      "path": "/this-route-does-not-exist",
+      "width": 390,
+      "status": 404,
+      "expect": 404,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 2734,
+      "overflowX": 0,
+      "images": 9,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "404 — Page not found"
+      ],
+      "blocked": [],
+      "failed": [
+        "404 http://localhost:3200/this-route-does-not-exist"
+      ],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ]
+    },
+    {
+      "path": "/projects/unknown-slug",
+      "width": 1440,
+      "status": 404,
+      "expect": 404,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 2657,
+      "overflowX": 0,
+      "images": 9,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "404 — Page not found"
+      ],
+      "blocked": [],
+      "failed": [
+        "404 http://localhost:3200/projects/unknown-slug"
+      ],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ]
+    },
+    {
+      "path": "/projects/unknown-slug",
+      "width": 390,
+      "status": 404,
+      "expect": 404,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 2734,
+      "overflowX": 0,
+      "images": 9,
+      "broken": [],
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "404 — Page not found"
+      ],
+      "blocked": [],
+      "failed": [
+        "404 http://localhost:3200/projects/unknown-slug"
+      ],
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ]
+    }
+  ]
+}
