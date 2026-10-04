@@ -50,7 +50,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1 0 0;
+  flex: none;
   height: 147px;
   overflow: visible;
 }
@@ -123,6 +123,11 @@
     flex-direction: row;
     gap: 48px;
     width: 100%;
+  }
+
+  .tile {
+    flex: 1 0 0;
+    width: 1px;
   }
 
   .outroRow {
