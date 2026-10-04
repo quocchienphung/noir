@@ -1,0 +1,16 @@
+/* Home main container — MEASURED: white, z 1 above the hero, vertical padding 96 / 144 / 192. */
+
+.main {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: var(--nd-section-y) 0;
+  background: var(--nd-white);
+}
+
+.featured {
+  padding-bottom: var(--nd-section-y);
+}

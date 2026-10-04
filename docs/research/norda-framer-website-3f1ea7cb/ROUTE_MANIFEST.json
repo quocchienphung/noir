@@ -1,0 +1,622 @@
+[
+  {
+    "sourceUrl": "https://norda.framer.website/",
+    "localPath": "/",
+    "pageKey": "root-8a5edab2",
+    "pageType": "home",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "home",
+    "contentIds": [],
+    "implementationStatus": "done",
+    "qaStatus": "visual-compare 1440 done",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/about",
+    "localPath": "/about",
+    "pageKey": "about-979bddc4",
+    "pageType": "about",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "about",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/privacy-policy",
+    "localPath": "/privacy-policy",
+    "pageKey": "privacy-policy-81e51d8c",
+    "pageType": "policy",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "policy",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/projects",
+    "localPath": "/projects",
+    "pageKey": "projects-902ceeb2",
+    "pageType": "projects-listing",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "projects-listing",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/news",
+    "localPath": "/news",
+    "pageKey": "news-f46b16ed",
+    "pageType": "news-listing",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "news-listing",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/contact",
+    "localPath": "/contact",
+    "pageKey": "contact-4eb95063",
+    "pageType": "contact",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "contact",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/projects/verve-tower",
+    "localPath": "/projects/verve-tower",
+    "pageKey": "projects--verve-tower-f6679463",
+    "pageType": "project-detail",
+    "title": "Verve Tower - My Framer Site",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "project-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/projects/harbor-12",
+    "localPath": "/projects/harbor-12",
+    "pageKey": "projects--harbor-12-f38abefa",
+    "pageType": "project-detail",
+    "title": "Harbor 12 - My Framer Site",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "project-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/projects/nordic-one",
+    "localPath": "/projects/nordic-one",
+    "pageKey": "projects--nordic-one-0bf27836",
+    "pageType": "project-detail",
+    "title": "Nordic One - My Framer Site",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "project-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/projects/summit-24",
+    "localPath": "/projects/summit-24",
+    "pageKey": "projects--summit-24-07bd12d9",
+    "pageType": "project-detail",
+    "title": "Summit 24 - My Framer Site",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "project-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/projects/str%C3%B6m-haus",
+    "localPath": "/projects/str%C3%B6m-haus",
+    "pageKey": "projects--strom-haus-5778b8be",
+    "pageType": "project-detail",
+    "title": "Ström Haus - My Framer Site",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "project-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/jobs/interior-designer",
+    "localPath": "/jobs/interior-designer",
+    "pageKey": "jobs--interior-designer-5f4757ee",
+    "pageType": "job-detail",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "job-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/jobs/landscape-architect",
+    "localPath": "/jobs/landscape-architect",
+    "pageKey": "jobs--landscape-architect-42362954",
+    "pageType": "job-detail",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "job-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/jobs/3d-artist",
+    "localPath": "/jobs/3d-artist",
+    "pageKey": "jobs--3d-artist-725b7f6e",
+    "pageType": "job-detail",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "job-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/jobs/project-architect",
+    "localPath": "/jobs/project-architect",
+    "pageKey": "jobs--project-architect-3871577f",
+    "pageType": "job-detail",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "job-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/team/erik-lindholm",
+    "localPath": "/team/erik-lindholm",
+    "pageKey": "team--erik-lindholm-73da45d4",
+    "pageType": "team-detail",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "team-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/team/linnea-s%C3%B6rensen",
+    "localPath": "/team/linnea-s%C3%B6rensen",
+    "pageKey": "team--linnea-sorensen-9edac140",
+    "pageType": "team-detail",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "team-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/team/mikael-andersson",
+    "localPath": "/team/mikael-andersson",
+    "pageKey": "team--mikael-andersson-ef3a5f42",
+    "pageType": "team-detail",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "team-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/team/freja-karlsson",
+    "localPath": "/team/freja-karlsson",
+    "pageKey": "team--freja-karlsson-ded121f8",
+    "pageType": "team-detail",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "team-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/team/oskar-bj%C3%B8rnsen",
+    "localPath": "/team/oskar-bj%C3%B8rnsen",
+    "pageKey": "team--oskar-bjornsen-6701ec72",
+    "pageType": "team-detail",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "team-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/team/elin-j%C3%B8rgensen",
+    "localPath": "/team/elin-j%C3%B8rgensen",
+    "pageKey": "team--elin-jorgensen-6226b4d8",
+    "pageType": "team-detail",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "team-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/team/astrid-nilsen",
+    "localPath": "/team/astrid-nilsen",
+    "pageKey": "team--astrid-nilsen-6de92536",
+    "pageType": "team-detail",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "team-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/team/jonas-eklund",
+    "localPath": "/team/jonas-eklund",
+    "pageKey": "team--jonas-eklund-2e9711c7",
+    "pageType": "team-detail",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "team-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/team/sofia-bergstr%C3%B6m",
+    "localPath": "/team/sofia-bergstr%C3%B6m",
+    "pageKey": "team--sofia-bergstrom-5078fb3c",
+    "pageType": "team-detail",
+    "title": "Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "team-detail",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/news/how-architecture-shapes-productivity",
+    "localPath": "/news/how-architecture-shapes-productivity",
+    "pageKey": "news--how-architecture-shapes-productivity-213a278c",
+    "pageType": "article",
+    "title": "Exploring the Future of Urban Living - Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "article",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/news/net-zero-buildings-the-next-step-in-architecture",
+    "localPath": "/news/net-zero-buildings-the-next-step-in-architecture",
+    "pageKey": "news--net-zero-buildings-the-next-step-in-architecture-0b39f912",
+    "pageType": "article",
+    "title": "The Balance of Form and Function - Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "article",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/news/the-role-of-public-spaces-in-cities",
+    "localPath": "/news/the-role-of-public-spaces-in-cities",
+    "pageKey": "news--the-role-of-public-spaces-in-cities-83fd034c",
+    "pageType": "article",
+    "title": "Reinventing Office Spaces for Tomorrow - Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "article",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/news/building-with-purpose",
+    "localPath": "/news/building-with-purpose",
+    "pageKey": "news--building-with-purpose-1e9f4258",
+    "pageType": "article",
+    "title": "The Role of Light in Architectural Design - Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "article",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/news/the-future-of-office-spaces",
+    "localPath": "/news/the-future-of-office-spaces",
+    "pageKey": "news--the-future-of-office-spaces-490ef5c7",
+    "pageType": "article",
+    "title": "Building with a Sustainable Mindset - Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "article",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/news/designing-cities-for-tomorrow",
+    "localPath": "/news/designing-cities-for-tomorrow",
+    "pageKey": "news--designing-cities-for-tomorrow-9920339a",
+    "pageType": "article",
+    "title": "Designing for Density: Smart Urban Solutions - Nordå Architects",
+    "httpStatus": 200,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "article",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  },
+  {
+    "sourceUrl": "https://norda.framer.website/404",
+    "localPath": "/404",
+    "pageKey": "404-316556f0",
+    "pageType": "not-found",
+    "title": "Nordå Architects",
+    "httpStatus": 404,
+    "discoveryEvidence": "sitemap.xml + same-origin link crawl (docs/research/norda-framer-website-3f1ea7cb/raw/crawl.json)",
+    "inspectedStates": [
+      "1440x900 scroll frames",
+      "1024x900 scroll frames",
+      "390x844 scroll frames",
+      "compact DOM/style capture per width"
+    ],
+    "componentTemplate": "not-found",
+    "contentIds": [],
+    "implementationStatus": "pending",
+    "qaStatus": "pending",
+    "gaps": []
+  }
+]

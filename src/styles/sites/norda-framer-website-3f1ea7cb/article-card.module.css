@@ -1,0 +1,58 @@
+/* Article card — MEASURED: image frame 50vh, gutter-inset; info 32/48/64 below; date→title 40,
+ * title→excerpt 24, excerpt→link 40. */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.date {
+  margin: 0;
+  color: var(--nd-gray);
+}
+
+.imageLink {
+  display: block;
+  width: 100%;
+  padding: 0 var(--nd-gutter);
+}
+
+.imageFrame {
+  height: 50vh;
+}
+
+.info {
+  padding-top: 32px;
+}
+
+.infoMain {
+  gap: 40px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title,
+.excerpt {
+  margin: 0;
+}
+
+.excerpt {
+  max-width: 640px;
+}
+
+@media (min-width: 810px) {
+  .info {
+    padding-top: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .info {
+    padding-top: 64px;
+  }
+}

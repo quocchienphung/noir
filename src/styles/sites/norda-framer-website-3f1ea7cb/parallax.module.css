@@ -1,0 +1,100 @@
+.frame {
+  --nd-parallax: 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.media {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: calc(100% + 300px);
+  transform: translateY(calc((var(--nd-parallax) - 1) * 300px));
+  will-change: transform;
+}
+
+.img {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+/* White "+" markers inset 64px on desktop (MEASURED 128-64 from frame edge), 24/48 on smaller. */
+.corners {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  color: var(--nd-white);
+}
+
+.plus {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+}
+
+.tl {
+  top: 24px;
+  left: 24px;
+}
+
+.tr {
+  top: 24px;
+  right: 24px;
+}
+
+.br {
+  bottom: 24px;
+  right: 24px;
+}
+
+.bl {
+  bottom: 24px;
+  left: 24px;
+}
+
+@media (min-width: 810px) {
+  .tl,
+  .tr {
+    top: 48px;
+  }
+
+  .bl,
+  .br {
+    bottom: 48px;
+  }
+
+  .tl,
+  .bl {
+    left: 48px;
+  }
+
+  .tr,
+  .br {
+    right: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .tl,
+  .tr {
+    top: 64px;
+  }
+
+  .bl,
+  .br {
+    bottom: 64px;
+  }
+
+  .tl,
+  .bl {
+    left: 64px;
+  }
+
+  .tr,
+  .br {
+    right: 64px;
+  }
+}

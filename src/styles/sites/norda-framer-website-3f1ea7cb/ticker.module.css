@@ -1,0 +1,46 @@
+/* Loop distance = two copies (track holds four, animates −50%): 18.4s desktop (933px copies),
+ * 15.1s tablet (765px), phone hidden where the source hides it (set by the caller). */
+
+.ticker {
+  position: absolute;
+  top: 144px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: 200px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: nd-ticker 15.1s linear infinite;
+}
+
+.item {
+  flex: none;
+  white-space: pre;
+}
+
+@keyframes nd-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 1200px) {
+  .track {
+    animation-duration: 18.4s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

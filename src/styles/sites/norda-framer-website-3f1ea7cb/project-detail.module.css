@@ -1,0 +1,188 @@
+/* Project detail — MEASURED at 1440 / 1024 / 390. */
+
+.main {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: var(--nd-section-y);
+  background: var(--nd-white);
+  color: var(--nd-black);
+}
+
+.spacer {
+  width: 100%;
+  height: 200px;
+}
+
+.titleRow {
+  width: 100%;
+  padding: var(--nd-gutter);
+}
+
+.title {
+  margin: 0;
+}
+
+.heroRow {
+  width: 100%;
+  padding: 0 var(--nd-gutter);
+}
+
+.heroFrame {
+  height: 675px;
+}
+
+.description {
+  padding: 64px 0;
+}
+
+.descriptionMain {
+  gap: 32px;
+}
+
+.params {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0;
+}
+
+.param {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.param dt {
+  color: var(--nd-gray);
+}
+
+.param dd {
+  margin: 0;
+}
+
+.lead,
+.body {
+  max-width: 640px;
+  margin: 0;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  width: 100%;
+}
+
+.galleryMain {
+  gap: 0;
+}
+
+.galleryFrame {
+  height: 675px;
+}
+
+.closing {
+  padding: 96px 0;
+}
+
+.closingMain {
+  gap: 24px;
+}
+
+.next {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0 var(--nd-gutter);
+  color: var(--nd-white);
+  text-decoration: none;
+}
+
+.nextFrame {
+  height: 50vh;
+}
+
+.nextText {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 var(--nd-gutter);
+  text-align: center;
+  pointer-events: none;
+}
+
+.nextName {
+  display: block;
+}
+
+.next:focus-visible {
+  outline: 2px solid var(--nd-black);
+  outline-offset: 4px;
+}
+
+@media (min-width: 810px) {
+  .heroFrame,
+  .galleryFrame {
+    height: 720px;
+  }
+
+  .description {
+    padding: 96px 0;
+  }
+
+  .descriptionMain {
+    gap: 48px;
+  }
+
+  .params {
+    flex-direction: row;
+    gap: 64px;
+  }
+
+  .param {
+    width: 160px;
+  }
+
+  .gallery {
+    gap: 92px;
+  }
+
+  .closing {
+    padding: 144px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .description {
+    padding: 128px 0;
+  }
+
+  .descriptionMain {
+    gap: 64px;
+  }
+
+  .params {
+    gap: 48px;
+  }
+
+  .param {
+    width: 200px;
+  }
+
+  .gallery {
+    gap: 128px;
+  }
+
+  .closing {
+    padding: 192px 0;
+  }
+}

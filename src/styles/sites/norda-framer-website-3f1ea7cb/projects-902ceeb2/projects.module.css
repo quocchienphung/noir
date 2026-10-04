@@ -1,0 +1,33 @@
+/* Projects listing — MEASURED: intro padding-bottom 96/144/196; archive block padding 96/144/196 vertical, white, above the stack. */
+
+.intro {
+  padding-bottom: 96px;
+}
+
+.archive {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 96px 0;
+  background: var(--nd-white);
+}
+
+@media (min-width: 810px) {
+  .intro {
+    padding-bottom: 144px;
+  }
+
+  .archive {
+    padding: 144px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .intro {
+    padding-bottom: 196px;
+  }
+
+  .archive {
+    padding: 196px 0;
+  }
+}

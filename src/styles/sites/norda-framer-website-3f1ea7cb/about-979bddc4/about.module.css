@@ -1,0 +1,116 @@
+/* About — MEASURED at 1440 (dark #111 page; section rhythm 96 / 144 / 192). */
+
+.intro {
+  padding-bottom: var(--nd-section-y);
+}
+
+.introMain {
+  gap: 32px;
+}
+
+.lead {
+  max-width: 640px;
+  margin: 0;
+}
+
+.imageRow {
+  width: 100%;
+  padding: 0 var(--nd-gutter);
+}
+
+.imageFrame {
+  height: 675px;
+}
+
+.badge {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+  width: 120px;
+  height: 120px;
+  animation: nd-badge-spin 8s linear infinite;
+}
+
+.badgeSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.badgeText {
+  fill: var(--nd-white);
+  font-family: var(--nd-font-display);
+  font-weight: 600;
+  font-size: 12.9px;
+  letter-spacing: 0.2em;
+}
+
+@keyframes nd-badge-spin {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.publications {
+  width: 100%;
+  padding: var(--nd-section-y) var(--nd-gutter);
+}
+
+.closing {
+  padding-bottom: var(--nd-section-y);
+}
+
+.jobs {
+  padding-top: var(--nd-section-y);
+}
+
+.jobsMain {
+  gap: 32px;
+}
+
+.jobsTitle {
+  margin: 0;
+  color: var(--nd-white);
+}
+
+@media (min-width: 810px) {
+  .introMain,
+  .jobsMain {
+    gap: 48px;
+  }
+
+  .imageFrame {
+    height: 720px;
+  }
+
+  .badge {
+    right: 32px;
+    bottom: 32px;
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .introMain,
+  .jobsMain {
+    gap: 64px;
+  }
+
+  .badge {
+    width: 223px;
+    height: 223px;
+  }
+
+  .publications {
+    padding: 0 64px 192px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge {
+    animation: none;
+  }
+}

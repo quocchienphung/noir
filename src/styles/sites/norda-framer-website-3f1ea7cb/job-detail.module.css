@@ -1,0 +1,339 @@
+/* Job detail — MEASURED at 1440 / 1024 / 390. */
+
+.main {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--nd-white);
+  color: var(--nd-black);
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+}
+
+.imageRow {
+  padding-top: 88px;
+}
+
+.heroFrame {
+  height: 400px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 48px;
+  padding: 48px 24px 0;
+}
+
+.params {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0;
+}
+
+.param {
+  display: flex;
+  flex-direction: column;
+}
+
+.param dt {
+  color: var(--nd-gray);
+}
+
+.param dd {
+  margin: 0;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.title {
+  flex: 1 0 0;
+  margin: 0;
+}
+
+.heroApply {
+  display: none;
+}
+
+.apply {
+  cursor: default;
+}
+
+.text {
+  padding: 96px 0;
+}
+
+.textMain {
+  gap: 64px;
+}
+
+.lead {
+  max-width: 640px;
+  margin: 0;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.groupTitle {
+  margin: 0;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: disc outside;
+}
+
+.list li {
+  padding-left: 22.752px;
+}
+
+.list li + li {
+  margin-top: 28.8px;
+}
+
+.list li::marker {
+  font-size: 18px;
+}
+
+.applyGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 64px;
+}
+
+/* ----- Quote band ----- */
+
+.quote {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 0 24px;
+}
+
+.ticker {
+  display: none;
+}
+
+.figure {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  order: 2;
+  margin: 0;
+}
+
+.blockquote {
+  margin: 0;
+}
+
+.quoteText {
+  margin: 0;
+}
+
+.portraitCol {
+  position: relative;
+  z-index: 1;
+  order: 1;
+  display: flex;
+}
+
+.portrait {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.portraitImg {
+  object-fit: cover;
+}
+
+.jobs {
+  padding: 96px 0;
+}
+
+.jobsMain {
+  gap: 32px;
+}
+
+.jobsTitle {
+  margin: 0;
+}
+
+@media (min-width: 810px) {
+  .imageRow {
+    padding-top: 96px;
+  }
+
+  .heroFrame {
+    height: 640px;
+  }
+
+  .info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 640px;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0;
+    padding: 0;
+    pointer-events: none;
+  }
+
+  .params {
+    padding-left: 48px;
+  }
+
+  .titleRow {
+    padding: 48px;
+  }
+
+  .title {
+    flex: none;
+    width: 75%;
+  }
+
+  .heroApply {
+    display: inline-flex;
+    pointer-events: auto;
+  }
+
+  .text {
+    padding: 144px 0;
+  }
+
+  .textMain {
+    gap: 96px;
+  }
+
+  .quote {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 0;
+    height: 640px;
+    padding: 0;
+  }
+
+  .ticker {
+    display: flex;
+  }
+
+  .figure {
+    flex: 2 0 0;
+    width: 1px;
+    order: 0;
+    gap: 32px;
+    padding: 0 24px 0 48px;
+  }
+
+  .portraitCol {
+    flex: 1 0 0;
+    align-self: stretch;
+    order: 0;
+    width: 1px;
+    padding: 0 24px;
+  }
+
+  .portrait {
+    height: 100%;
+  }
+
+  .jobs {
+    padding: 144px 0;
+  }
+
+  .jobsMain {
+    gap: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .imageRow {
+    padding-top: 64px;
+  }
+
+  .heroFrame {
+    height: 900px;
+  }
+
+  .info {
+    height: 900px;
+  }
+
+  .params {
+    gap: 32px;
+    padding-left: 64px;
+  }
+
+  .titleRow {
+    padding: 64px;
+  }
+
+  .title {
+    width: 50%;
+  }
+
+  .text {
+    padding: 192px 0;
+  }
+
+  .textMain {
+    gap: 128px;
+  }
+
+  .quote {
+    height: 720px;
+    padding: 0 64px;
+  }
+
+  .figure {
+    flex: 1 0 0;
+    padding: 0 32px 0 0;
+  }
+
+  .portraitCol {
+    flex: 1 0 0;
+    gap: 64px;
+    padding: 0 0 0 32px;
+  }
+
+  .portrait {
+    flex: 1 0 0;
+    width: 1px;
+  }
+
+  .portraitCol::after {
+    content: "";
+    flex: 1 0 0;
+  }
+
+  .jobs {
+    padding: 192px 0;
+  }
+
+  .jobsMain {
+    gap: 64px;
+  }
+}

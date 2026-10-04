@@ -1,0 +1,165 @@
+div "Logo" [48,48 84x36] fixed flex-row gap0px j:center a:center blend difference z4 framer-1cnbdqj 
+  a "Static" [48,48 84x36] flex-row gap0px j:center a:flex-start framer-awNXy.framer-1buuesb href=./
+    SVG [48,48 84x36]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+header "Menu" [923,48 53x22] fixed flex-row gapnormal j:space-between a:flex-end blend difference z4 framer-18yjcnn 
+  div "Default" [923,48 53x22] flex-row gap0px j:center a:center framer-ErA2A.framer-110ygri 
+    a "Touch" [923,48 53x22] flex-row gap50px j:center a:center framer-7eC7r.framer-1hx8ep0 href=null
+      T [923,48 53x22] Albert Sans 700 18px/21.6px lsnormal rgb(255, 255, 255) uppercase framer-vup7kw :: MENU
+main "Container" [0,0 1024x4254] flex-col gap0px j:flex-start a:flex-start bg rgb(0, 0, 0) z1 framer-1maznvq 
+  div "Main Container" [0,0 1024x4254] flex-col gap0px j:flex-start a:center bg rgb(255, 255, 255) z1 framer-1j3l3co 
+    div "Header" [0,0 1024x450] flex-col gap0px j:flex-end a:center pad(0px 48px) bg rgb(255, 255, 255) framer-1pm38lx 
+      T [48,364 928x86] Albert Sans 500 96px/86.4px ls-4.8px rgb(0, 0, 0) ta-left framer-1sha32w :: Privacy Policy
+    div "Intro" [0,450 1024x490] flex-row gap0px j:center a:flex-start pad(144px 0px 96px) framer-t1heya 
+      section "00" [0,594 349x250] flex-col gap0px j:flex-start a:center pad(0px 24px) framer-r6al3v 
+        T [64,594 40x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase ta-right framer-pyryg4 :: /  00
+      div "Text" [349,594 675x250] flex-col gap96px j:flex-start a:flex-start pad(0px 48px 0px 24px) framer-t6l080 
+        T [373,594 603x250] Albert Sans Variable 400 32px/41.6px ls-0.96px rgb(0, 0, 0) framer-ey3297 :: At Nordå, we are committed to safeguarding your privacy and ensuring a safe online experience. This privacy policy outlines how we collect, use, and protect your personal information when you use our services.
+    div "1" [0,940 1024x409] flex-row gap0px j:center a:flex-start pad(0px 0px 96px) framer-11oa1k3 
+      section "01" [0,940 349x313] flex-col gap0px j:flex-start a:center pad(0px 24px) framer-oiej1 
+        T [64,940 34x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase ta-right framer-38nxcu :: /  01
+      div "Text" [349,940 675x313] flex-col gap96px j:flex-start a:flex-start pad(0px 48px 0px 24px) framer-1qfg1dc 
+        T [373,940 603x55] Albert Sans 500 50px/55px ls-2px rgb(0, 0, 0) framer-1q80kws :: Data We Collect
+        T [373,1027 603x226] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-5gug9q :: When you interact with us through our contact form, we collect the following personal information: ⏎ Name ⏎ Email address ⏎ Phone number ⏎ Any other information you choose to provide through the contact form
+    div "2" [0,1348 1024x241] flex-row gap0px j:center a:flex-start pad(0px 0px 96px) framer-h3sjn6 
+      section "02" [0,1348 349x145] flex-col gap0px j:flex-start a:center pad(0px 24px) framer-1ydjgcr 
+        T [64,1348 39x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase ta-right framer-1w6048u :: /  02
+      div "Text" [349,1348 675x145] flex-col gap96px j:flex-start a:flex-start pad(0px 48px 0px 24px) framer-dmtb4l 
+        T [373,1348 603x55] Albert Sans 500 50px/55px ls-2px rgb(0, 0, 0) framer-4smhjn :: How We Use Your Data
+        T [373,1435 603x58] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-b5y0d4 :: We use the information you provide to respond to inquiries, process requests, and offer the services you require.
+    div "3" [0,1589 1024x495] flex-row gap0px j:center a:flex-start pad(0px 0px 96px) framer-sfsqkl 
+      section "03" [0,1589 349x399] flex-col gap0px j:flex-start a:center pad(0px 24px) framer-15okhnt 
+        T [64,1589 39x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase ta-right framer-10kmhma :: /  03
+      div "Text" [349,1589 675x399] flex-col gap96px j:flex-start a:flex-start pad(0px 48px 0px 24px) framer-bydxh3 
+        T [373,1589 603x55] Albert Sans 500 50px/55px ls-2px rgb(0, 0, 0) framer-mlgy9a :: Sharing of Data
+        T [373,1676 603x312] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-jeu66r :: We value your privacy and will never sell or share your personal data with third parties without your explicit consent, except in the following circumstances: ⏎ Service Providers: We may share your information with trusted third-party service providers (such as our CRM platform) who assist us in managing and operating our services. ⏎ Legal Compliance: If required by law, we may disclose your information to comply with legal obligations, respond to court orders, or protect our rights.
+    div "4" [0,2084 1024x437] flex-row gap0px j:center a:flex-start pad(0px 0px 96px) framer-634g0i 
+      section "04" [0,2084 349x341] flex-col gap0px j:flex-start a:center pad(0px 24px) framer-1qcynw3 
+        T [64,2084 40x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase ta-right framer-1qfrpbo :: /  04
+      div "Text" [349,2084 675x341] flex-col gap96px j:flex-start a:flex-start pad(0px 48px 0px 24px) framer-19ddsf0 
+        T [373,2084 603x55] Albert Sans 500 50px/55px ls-2px rgb(0, 0, 0) framer-5an1xq :: Security Measures
+        T [373,2171 603x254] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-1n7yr3l :: We take the security of your personal data seriously. To protect your information from unauthorized access, alteration, or destruction, we implement industry-standard security measures including encryption and secure storage. ⏎ Our third-party CRM provider follows security protocols to ensure your data is handled safely and securely. However, no data transmission over the internet is 100% secure, and while we strive to protect your personal information, we cannot guarantee complete security.
+    div "5" [0,2521 1024x435] flex-row gap0px j:center a:flex-start pad(0px 0px 96px) framer-16p7tjt 
+      section "05" [0,2521 349x339] flex-col gap0px j:flex-start a:center pad(0px 24px) framer-1r9kqbh 
+        T [64,2521 40x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase ta-right framer-19gvi9b :: /  05
+      div "Text" [349,2521 675x339] flex-col gap96px j:flex-start a:flex-start pad(0px 48px 0px 24px) framer-nnk603 
+        T [373,2521 603x110] Albert Sans 500 50px/55px ls-2px rgb(0, 0, 0) framer-15ht0jq :: Access and Correction of Data
+        T [373,2663 603x197] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-e8ipsh :: You have the right to access, update, or delete the personal data we have collected. If you believe the information we have is incorrect or incomplete, please contact us, and we will make the necessary corrections. ⏎ To request access to your data or exercise any of your rights, please email us at hello@norda.com.
+    div "6" [0,2956 1024x241] flex-row gap0px j:center a:flex-start pad(0px 0px 96px) framer-1j140fa 
+      section "06" [0,2956 349x145] flex-col gap0px j:flex-start a:center pad(0px 24px) framer-1k3io4x 
+        T [64,2956 39x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase ta-right framer-w0f6oh :: /  06
+      div "Text" [349,2956 675x145] flex-col gap96px j:flex-start a:flex-start pad(0px 48px 0px 24px) framer-1k6hl9g 
+        T [373,2956 603x55] Albert Sans 500 50px/55px ls-2px rgb(0, 0, 0) framer-13wa5vl :: Retention of Data
+        T [373,3043 603x58] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-173ctw7 :: We will retain your personal information only for as long as necessary to fulfill the purposes outlined in this privacy policy, or as required by law.
+    div "7" [0,3196 1024x382] flex-row gap0px j:center a:flex-start pad(0px 0px 96px) framer-1e7z9ve 
+      section "07" [0,3196 349x286] flex-col gap0px j:flex-start a:center pad(0px 24px) framer-1bq8h1f 
+        T [64,3196 38x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase ta-right framer-o6ve2w :: /  07
+      div "Text" [349,3196 675x286] flex-col gap96px j:flex-start a:flex-start pad(0px 48px 0px 24px) framer-ohgw6b 
+        T [373,3196 603x110] Albert Sans 500 50px/55px ls-2px rgb(0, 0, 0) framer-11mrqzo :: Cookies and Tracking Technologies
+        T [373,3338 603x144] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-ea9eoc :: Our website uses cookies and similar tracking technologies to improve the user experience. Cookies help us personalize your visit, track website usage, and analyze trends. You can control the use of cookies through your browser settings. If you choose to disable cookies, some features of our website may not function properly.
+    div "8" [0,3578 1024x406] flex-row gap0px j:center a:flex-start pad(0px 0px 96px) framer-1botvxk 
+      section "08" [0,3578 349x310] flex-col gap0px j:flex-start a:center pad(0px 24px) framer-1bki49w 
+        T [64,3578 40x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase ta-right framer-1ctubmc :: /  08
+      div "Text" [349,3578 675x310] flex-col gap96px j:flex-start a:flex-start pad(0px 48px 0px 24px) framer-52udkc 
+        T [373,3578 603x110] Albert Sans 500 50px/55px ls-2px rgb(0, 0, 0) framer-z9pevz :: Changes to This Privacy Policy
+        T [373,3720 603x168] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-1ox97pz :: We may update this privacy policy periodically to reflect changes in our practices, legal requirements, or services. Any updates will be posted on this page, and the updated date will be reflected at the top of the policy. ⏎ By continuing to use our website or services after any changes to the privacy policy, you accept and agree to the updated terms.
+    div "9" [0,3984 1024x269] flex-row gap0px j:center a:flex-start pad(0px 0px 96px) framer-1yq52yv 
+      section "09" [0,3984 349x173] flex-col gap0px j:flex-start a:center pad(0px 24px) framer-p4eigo 
+        T [64,3984 39x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase ta-right framer-p7qo1i :: /  09
+      div "Text" [349,3984 675x173] flex-col gap96px j:flex-start a:flex-start pad(0px 48px 0px 24px) framer-pspzby 
+        T [373,3984 603x55] Albert Sans 500 50px/55px ls-2px rgb(0, 0, 0) framer-7cpcek :: Contact Us
+        T [373,4071 603x86] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-eacy1m :: If you have any questions or concerns regarding this privacy policy or how we handle your personal information, please do not hesitate to reach out to us at hello@norda.com.
+div "Footer" [0,4254 1024x1681] flex-col gap0px j:center a:center framer-18s0u54 
+  footer "Tablet" [0,4254 1024x1681] flex-col gap144px j:flex-start a:center pad(96px 48px 48px) bg rgb(0, 0, 0) framer-nxF8P.framer-x5Lgg 
+    div "Logo" [48,4350 928x276] flex-row gap0px j:center a:flex-start z0 framer-5frpzb 
+      div "Container" [48,4350 928x276] flex-col gap0px j:center a:center framer-vokia0 
+        figure "Big Logo" [48,4350 928x276]  framer-pdbq4w 
+          IMG [48,4350 928x276] FHIcLfBCbUtxnbce6yhoriDk.svg?width=662&height=197 nat928x276 fit:cover pos:50% 50% alt="Nordå"
+    div "Subscribe" [48,4770 928x268] flex-row gap0px j:center a:flex-start framer-songxk 
+      div "Container" [48,4770 928x268] flex-col gap64px j:flex-start a:flex-start framer-nj7ryh 
+        div "Form" [48,4770 928x268] flex-col gap24px j:flex-start a:flex-start framer-5tfzwe 
+          T [48,4770 640x83] Albert Sans Variable 400 32px/41.6px ls-0.96px rgb(255, 255, 255) ta-left framer-1ejwyw2 :: Sign up for our newsletter to receive updates and content
+          form [48,4877 720x92] flex-row gap0px j:flex-start a:center framer-1bw4lo6 
+            INPUT [48,4893 672x60] type=email name=Email ph="Your email here" Albert Sans 500 50px/60px ls-1px rgb(255, 255, 255) ta-left  :: 
+            BUTTON [718,4898 50x50] type=submit name= ph="" sans-serif 400 12px/normal lsnormal rgb(0, 0, 0) ta-center flex-row gap0px j:center a:center :: 
+            button "Default" [718,4898 50x50] flex-row gap0px j:center a:center framer-ab8zE.framer-1scqx6g 
+              section "Background" [718,4898 50x50] absolute bg rgb(255, 255, 255) op0 r999px z1 framer-rk4oti 
+              SVG [726,4906 35x35]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+              SVG [726,4906 35x35]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+          T [48,4993 500x45] Albert Sans 400 14px/22.4px lsnormal rgb(119, 119, 119) framer-5rbcto :: By signing up to receive emails from Nordå, you agree to our Privacy Policy. We treat your info responsibly. Unsubscribe anytime.
+    div "Menu" [48,5182 928x411] flex-row gap0px j:center a:flex-start framer-1cu669 
+      div "Container" [48,5182 928x411] flex-col gap64px j:flex-start a:flex-start framer-w4iaji 
+        div "Menu" [48,5182 928x411] flex-col gap32px j:flex-start a:flex-start framer-3rlzkd 
+          T [48,5182 96x29] Albert Sans 700 18px/28.8px lsnormal rgb(119, 119, 119) uppercase ta-left framer-lvv2xq :: /  SITEMAP
+          a "Link" [48,5243 164x38] flex-row gap0px j:center a:center framer-n3jcjy.framer-1wbuzja href=./
+            div "Tablet" [48,5243 164x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,5243 164x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Home Page
+          a "Link" [48,5305 115x38] flex-row gap0px j:center a:center framer-4fo6kd.framer-1wbuzja href=./projects
+            div "Tablet" [48,5305 115x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,5305 115x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Projects
+          a "Link" [48,5368 178x38] flex-row gap0px j:center a:center framer-ed24st.framer-1wbuzja href=./projects/verve-tower
+            div "Tablet" [48,5368 178x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,5368 178x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Project Page
+          a "Link" [48,5430 86x38] flex-row gap0px j:center a:center framer-180boqm.framer-1wbuzja href=./about
+            div "Tablet" [48,5430 86x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,5430 86x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: About
+          a "Link" [48,5492 205x38] flex-row gap0px j:center a:center framer-dk1sce.framer-1wbuzja href=./team/erik-lindholm
+            div "Tablet" [48,5492 205x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,5492 205x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Team Member
+          a "Link" [48,5555 119x38] flex-row gap0px j:center a:center framer-1fysoco.framer-1wbuzja href=./jobs/interior-designer
+            div "Tablet" [48,5555 119x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,5555 119x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Vacancy
+          a "Link" [536,5243 77x38] flex-row gap0px j:center a:center framer-t1ehma.framer-1wbuzja href=./news
+            div "Tablet" [536,5243 77x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [536,5243 77x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: News
+          a "Link" [536,5305 93x38] flex-row gap0px j:center a:center framer-11m1v81.framer-1wbuzja href=./news/how-architecture-shapes-productivity
+            div "Tablet" [536,5305 93x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [536,5305 93x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Article
+          a "Link" [536,5368 114x38] flex-row gap0px j:center a:center framer-1deusdw.framer-1wbuzja href=null
+            div "Tablet" [536,5368 114x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [536,5368 114x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Contact
+          a "Link" [536,5430 196x38] flex-row gap0px j:center a:center framer-7ciy4n.framer-1wbuzja href=./privacy-policy
+            div "Tablet" [536,5430 196x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [536,5430 196x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Privacy Policy
+          a "Link" [536,5492 60x38] flex-row gap0px j:center a:center framer-3sc92g.framer-1wbuzja href=./404
+            div "Tablet" [536,5492 60x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [536,5492 60x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: 404
+    div "Social Media" [48,5737 150x28] flex-row gap33px j:center a:flex-start framer-1g3wtke 
+      a "Facebook" [48,5737 28x28]  framer-mo4ifn.framer-1wbuzja href=https://facebook.com
+        SVG [48,5737 28x28]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+      a "X-Twitter" [109,5737 28x28]  framer-2ur9x6.framer-1wbuzja href=https://x.com
+        SVG [109,5737 28x28]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+      a "Instagram" [170,5737 28x28]  framer-1wbuzja href=https://instagram.com
+        SVG [170,5737 28x28]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+    div "Back To Top" [821,5740 155x23] flex-row gap12px j:center a:flex-start z1 framer-ofc4fq 
+      SVG [821,5740 20x20]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+      a "Touch" [853,5740 123x22] flex-row gap50px j:center a:center framer-7eC7r.framer-1hx8ep0 href=null
+        T [853,5740 123x22] Albert Sans 700 18px/21.6px lsnormal rgb(255, 255, 255) uppercase framer-vup7kw :: BACK TO TOP
+    T [48,5829 464x29] Albert Sans 700 18px/28.8px lsnormal rgb(119, 119, 119) uppercase ta-left framer-q2d5g4 :: COPYRIGHT 2026 NORDÅ. ALL RIGHTS RESERVED.
+    T [512,5829 464x58] Albert Sans 700 18px/28.8px lsnormal rgb(119, 119, 119) uppercase ta-right framer-1ap7txz :: FRAMER TEMPLATE HANDCRAFTED BY ANTON DRUKAROV
+a "Touch" [864,842 140x38] bg rgba(0, 0, 0, 0.04) r10px framer-F6oEL.framer-10c0k9q href=https://buy.polar.sh/polar_cl_l08ft5XMVXNF4DeqO5mPI8Chc8hHGTn7AWIXl4M77VM?utm_source=norda&utm_medium=get_button
+  T [881,850 106x22] Inter 600 13px/22.1px ls-0.065px rgb(255, 255, 255) framer-chq722 :: Get this template
+  T [903,890 63x22] Inter 600 13px/22.1px ls-0.065px rgb(255, 255, 255) framer-1njzeg6 :: from $129
+div "Black" [0,0 20x20] fixed op0 tf matrix(1, 0, 0, 1, 0, 0) z13 framer-PpAIo.framer-8vabD 
+  div "bg" [-10,-10 20x20] absolute bg rgb(0, 0, 0) r999px framer-1hvdtew 
+  div "Read Article" [0,-40 154x39] absolute flex-row gap0px j:center a:center pad(6px 12px 4px) op0 framer-npjp0v 
+    T [12,-34 130x29] Albert Sans 700 18px/28.8px lsnormal rgb(255, 255, 255) uppercase framer-1m3ag7o :: READ ARTICLE
+    div "Corners" [0,-40 154x39] absolute z1 framer-7op5jx 
+  div "View project" [0,-40 159x39] absolute flex-row gap0px j:center a:center pad(6px 12px 4px) op0 framer-1ewfr8d 
+    T [12,-34 135x29] Albert Sans 700 18px/28.8px lsnormal rgb(255, 255, 255) uppercase framer-1ungidy :: VIEW PROJECT
+    div "Corners" [0,-40 159x39] absolute z1 framer-178i21o 
+  section "1" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-189gkhk 
+    IMG [0,-148 224x297] meNrcFhnSDlQiFc8Ft9PUdlwmRM.jpg?scale-down-to=1024 nat249x317 fit:cover pos:50% 50% alt=""
+  section "2" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-z1w8bv 
+    IMG [0,-148 224x297] 8ZVwMrMAvQKrz1sGjChciwyO8g.jpg?scale-down-to=512 nat248x165 fit:cover pos:50% 50% alt=""
+  section "3" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-11on1i3 
+    IMG [0,-148 224x297] i9IkeVe3nTtWGduRlvEm0pCeHk.jpg?scale-down-to=1024 nat249x373 fit:cover pos:50% 50% alt=""
+  section "4" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-17u8eae 
+    IMG [0,-148 224x297] QINY3akxDmnbMqmeOJusZy24ksw.jpg?scale-down-to=1024 nat248x327 fit:cover pos:50% 50% alt=""
+  section "5" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-xyfiuz 
+    IMG [0,-148 224x297] hHSXUDSgKFb8JHVZK46IxY4qOQ.jpg?scale-down-to=1024 nat248x331 fit:cover pos:50% 50% alt=""
+  section "6" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-1msjvh3 
+    IMG [0,-148 224x297] RU7tapUCQWOZhaPZpSK5fHV7QU.jpg?scale-down-to=1024 nat249x373 fit:cover pos:50% 50% alt=""
+  section "7" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-eust9d 
+    IMG [0,-148 224x297] csnszvg1pOTB5qMDCqIGxJ363g.jpg?scale-down-to=512 nat248x165 fit:cover pos:50% 50% alt=""
+  section "8" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-nap2ud 
+    IMG [0,-148 224x297] U556Zr9ySyBIwrKhO304cic8OI.jpg?scale-down-to=1024 nat249x305 fit:cover pos:50% 50% alt=""

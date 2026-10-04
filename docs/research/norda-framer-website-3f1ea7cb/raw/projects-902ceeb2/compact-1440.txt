@@ -1,0 +1,636 @@
+div "Logo" [64,64 100x43] fixed flex-row gap0px j:center a:center blend difference z4 framer-1uthwxd 
+  a "Static" [64,64 100x43] flex-row gap0px j:center a:flex-start framer-awNXy.framer-1buuesb href=./
+    SVG [64,64 100x43]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+header "Menu" [1323,64 53x22] fixed flex-row gapnormal j:space-between a:flex-end blend difference z4 framer-nk92fx 
+  div "Default" [1323,64 53x22] flex-row gap0px j:center a:center framer-ErA2A.framer-110ygri 
+    a "A" [1323,64 53x22] flex-row gap50px j:center a:center framer-7eC7r.framer-1hx8ep0 href=null
+      div [1323,64 16x22]   own="M" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+      div [1323,86 16x22] absolute  own="M" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+      div [1339,64 11x22]   own="E" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+      div [1339,86 11x22] absolute  own="E" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+      div [1350,64 13x22]   own="N" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+      div [1350,86 13x22] absolute  own="N" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+      div [1363,64 13x22]   own="U" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+      div [1363,86 13x22] absolute  own="U" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+main "Container" [0,0 1440x7163] flex-col gap0px j:flex-start a:flex-start bg rgb(0, 0, 0) z1 framer-1ihd4hd 
+  div "Header" [0,0 1440x900] flex-col gap0px j:flex-end a:center bg rgb(255, 255, 255) framer-1x67tez 
+    section [0,0 1440x900] absolute z0 framer-yzco1z 
+      IMG [0,0 1440x900] yycoWiywVqwYVG8qkhivAidtyGQ.jpg?scale-down-to=2048 nat1440x960 fit:cover pos:50% 50% alt="Nordå"
+    div "Intro Text" [0,501 1440x86] flex-row gap0px j:center a:flex-start framer-1dfr4vi 
+      section "Placeholder" [0,501 376x86] flex-col gap0px j:flex-start a:center pad(0px 32px) framer-g641kl 
+        div "+" [64,501 12x12] absolute z1 framer-1ub11iq 
+          div "+" [64,501 12x12] absolute framer-6z0als 
+            SVG [64,501 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+      div "Text" [376,501 688x86] flex-col gap64px j:flex-start a:flex-start pad(0px 32px) framer-kt3v9g 
+        T [408,501 624x86] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-o95sao :: Our work redefines modern cities, creating spaces that enhance daily life. From residential buildings to office towers, each project reflects our commitment to thoughtful, functional, and lasting design.
+      section "Placeholder" [1064,501 376x86] flex-col gap0px j:flex-start a:flex-end pad(0px 32px) framer-18ruqm0 
+    div "Page Title" [0,587 1440x313] flex-row gapnormal j:space-between a:flex-start pad(64px) framer-1rfz3n0 
+      a "Scroll Link" [1279,807 97x29] absolute flex-row gap8px j:flex-end a:center z1 framer-1t9m1is.framer-158sej4 href=./projects#main-container
+        SVG [1279,810 20x20]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+        T [1307,807 69x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-ky27c6 :: SCROLL
+      div "Projects" [64,651 866x185]  framer-1a7vtvy 
+  div "Main Container" [0,900 1440x6263] flex-col gap0px j:flex-start a:center pad(192px 0px) bg rgb(255, 255, 255) z1 framer-1wyajg3 
+    div "Introduction" [0,1092 1440x562] flex-row gap0px j:center a:flex-start pad(0px 0px 196px) framer-rdkli4 
+      section "Placeholder" [0,1092 376x366] flex-col gap0px j:flex-start a:center pad(0px 32px) framer-1nec7on 
+        div "+" [64,1092 12x12] absolute z1 framer-1y1j2yp 
+          div "+" [64,1092 12x12] absolute framer-b6ob89 
+            SVG [64,1092 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+      div "Text" [376,1092 688x366] flex-col gap64px j:flex-start a:flex-start pad(0px 32px) framer-vxsati 
+        T [408,1092 624x187] Albert Sans Variable 400 36px/46.8px ls-1.44px rgb(0, 0, 0) framer-1grgurm :: Each project is designed to enhance urban life, blending functionality with a timeless aesthetic to create spaces that inspire, connect, and endure.
+        T [408,1343 624x115] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-1bghgju :: At Nordå, we believe architecture should seamlessly integrate with its surroundings while elevating the way people live and work. Our projects balance aesthetics and practicality, ensuring each structure serves its purpose while standing as a timeless piece of the urban landscape.
+      section "Placeholder" [1064,1092 376x366] flex-col gap0px j:flex-start a:center pad(0px 32px) framer-jx5rm5 
+    div "Projects" [0,1654 1440x4997] flex-col gap0px j:flex-start a:center pad(0px 64px) z1 framer-3kl4t6 
+      div "Project 1" [64,1654 1312x720] sticky flex-col gap0px j:flex-end a:center z1 framer-tw9k0k 
+        a [64,1654 1312x720] flex-col gap0px j:center a:center z1 framer-17qpebu.framer-158sej4 href=./projects/verve-tower
+          div "Image" [64,1654 1312x720] absolute z0 framer-1iljdkd 
+            IMG [64,1654 1312x720] zSsaQ6aEIDDticuNpIL0PHy0OKE.jpg?scale-down-to=2048 nat1312x878 fit:cover pos:50% 50% alt="Nordå"
+            div "+" [128,1718 12x12] absolute z1 framer-1r10ez0 
+              div "+" [128,1718 12x12] absolute framer-c6pw58 
+                SVG [128,1718 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,1718 12x12] absolute z1 framer-1qcot03 
+              div "+" [1300,1718 12x12] absolute framer-1ky0kw7 
+                SVG [1300,1718 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,2298 12x12] absolute z1 framer-740n4w 
+              div "+" [1300,2298 12x12] absolute framer-b73poj 
+                SVG [1300,2298 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [128,2298 12x12] absolute z1 framer-tp1kqu 
+              div "+" [128,2298 12x12] absolute framer-oopdxz 
+                SVG [128,2298 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+          T [128,1941 1184x147] Albert Sans 500 184px/147.2px ls-12.88px rgb(255, 255, 255) ta-center framer-2m7p5u :: Verve Tower
+      div "Project 2" [64,2374 1312x720] sticky flex-col gap0px j:flex-end a:center z1 framer-10jpxsq 
+        a [64,1654 1312x720] flex-col gap0px j:center a:center z1 framer-7fyso.framer-158sej4 href=./projects/verve-tower
+          div "Image" [64,1654 1312x720] absolute z0 framer-52ou2b 
+            IMG [64,1654 1312x720] zSsaQ6aEIDDticuNpIL0PHy0OKE.jpg?scale-down-to=2048 nat1312x878 fit:cover pos:50% 50% alt="Nordå"
+            div "+" [128,1718 12x12] absolute z1 framer-92k1n6 
+              div "+" [128,1718 12x12] absolute framer-1ly776m 
+                SVG [128,1718 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,1718 12x12] absolute z1 framer-58jvwb 
+              div "+" [1300,1718 12x12] absolute framer-1ogzz0x 
+                SVG [1300,1718 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,2298 12x12] absolute z1 framer-hjtmhz 
+              div "+" [1300,2298 12x12] absolute framer-1r3g3u9 
+                SVG [1300,2298 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [128,2298 12x12] absolute z1 framer-1m50w5y 
+              div "+" [128,2298 12x12] absolute framer-1mdt5pd 
+                SVG [128,2298 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+          T [128,1941 1184x147] Albert Sans 500 184px/147.2px ls-12.88px rgb(255, 255, 255) ta-center framer-u3h07z :: Verve Tower
+        a [64,2374 1312x720] flex-col gap0px j:center a:center z1 framer-7fyso.framer-158sej4 href=./projects/harbor-12
+          div "Image" [64,2374 1312x720] absolute z0 framer-52ou2b 
+            IMG [64,2374 1312x720] EotxlpqJ6kEJA2rkEI4NgwSi4tE.jpg?scale-down-to=2048 nat1312x878 fit:cover pos:50% 50% alt="Nordå"
+            div "+" [128,2438 12x12] absolute z1 framer-92k1n6 
+              div "+" [128,2438 12x12] absolute framer-1ly776m 
+                SVG [128,2438 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,2438 12x12] absolute z1 framer-58jvwb 
+              div "+" [1300,2438 12x12] absolute framer-1ogzz0x 
+                SVG [1300,2438 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,3018 12x12] absolute z1 framer-hjtmhz 
+              div "+" [1300,3018 12x12] absolute framer-1r3g3u9 
+                SVG [1300,3018 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [128,3018 12x12] absolute z1 framer-1m50w5y 
+              div "+" [128,3018 12x12] absolute framer-1mdt5pd 
+                SVG [128,3018 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+          T [128,2661 1184x147] Albert Sans 500 184px/147.2px ls-12.88px rgb(255, 255, 255) ta-center framer-u3h07z :: Harbor 12
+      div "Project 3" [64,3094 1312x720] sticky flex-col gap0px j:flex-end a:center z1 framer-1xvnqvi 
+        a [64,1654 1312x720] flex-col gap0px j:center a:center z1 framer-ia36fu.framer-158sej4 href=./projects/verve-tower
+          div "Image" [64,1654 1312x720] absolute z0 framer-1rd20ts 
+            IMG [64,1654 1312x720] zSsaQ6aEIDDticuNpIL0PHy0OKE.jpg?scale-down-to=2048 nat1312x878 fit:cover pos:50% 50% alt="Nordå"
+            div "+" [128,1718 12x12] absolute z1 framer-108aw4b 
+              div "+" [128,1718 12x12] absolute framer-pf705n 
+                SVG [128,1718 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,1718 12x12] absolute z1 framer-v4igpm 
+              div "+" [1300,1718 12x12] absolute framer-isgv53 
+                SVG [1300,1718 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,2298 12x12] absolute z1 framer-gonn2h 
+              div "+" [1300,2298 12x12] absolute framer-135we0v 
+                SVG [1300,2298 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [128,2298 12x12] absolute z1 framer-rnlil2 
+              div "+" [128,2298 12x12] absolute framer-eyike2 
+                SVG [128,2298 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+          T [128,1941 1184x147] Albert Sans 500 184px/147.2px ls-12.88px rgb(255, 255, 255) ta-center framer-168rrdx :: Verve Tower
+        a [64,2374 1312x720] flex-col gap0px j:center a:center z1 framer-ia36fu.framer-158sej4 href=./projects/harbor-12
+          div "Image" [64,2374 1312x720] absolute z0 framer-1rd20ts 
+            IMG [64,2374 1312x720] EotxlpqJ6kEJA2rkEI4NgwSi4tE.jpg?scale-down-to=2048 nat1312x878 fit:cover pos:50% 50% alt="Nordå"
+            div "+" [128,2438 12x12] absolute z1 framer-108aw4b 
+              div "+" [128,2438 12x12] absolute framer-pf705n 
+                SVG [128,2438 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,2438 12x12] absolute z1 framer-v4igpm 
+              div "+" [1300,2438 12x12] absolute framer-isgv53 
+                SVG [1300,2438 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,3018 12x12] absolute z1 framer-gonn2h 
+              div "+" [1300,3018 12x12] absolute framer-135we0v 
+                SVG [1300,3018 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [128,3018 12x12] absolute z1 framer-rnlil2 
+              div "+" [128,3018 12x12] absolute framer-eyike2 
+                SVG [128,3018 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+          T [128,2661 1184x147] Albert Sans 500 184px/147.2px ls-12.88px rgb(255, 255, 255) ta-center framer-168rrdx :: Harbor 12
+        a [64,3094 1312x720] flex-col gap0px j:center a:center z1 framer-ia36fu.framer-158sej4 href=./projects/nordic-one
+          div "Image" [64,3094 1312x720] absolute z0 framer-1rd20ts 
+            IMG [64,3094 1312x720] quoHgFIveHXEyv49z3HoccYb9E.jpg?scale-down-to=2048 nat1312x878 fit:cover pos:50% 50% alt="Nordå"
+            div "+" [128,3158 12x12] absolute z1 framer-108aw4b 
+              div "+" [128,3158 12x12] absolute framer-pf705n 
+                SVG [128,3158 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,3158 12x12] absolute z1 framer-v4igpm 
+              div "+" [1300,3158 12x12] absolute framer-isgv53 
+                SVG [1300,3158 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,3738 12x12] absolute z1 framer-gonn2h 
+              div "+" [1300,3738 12x12] absolute framer-135we0v 
+                SVG [1300,3738 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [128,3738 12x12] absolute z1 framer-rnlil2 
+              div "+" [128,3738 12x12] absolute framer-eyike2 
+                SVG [128,3738 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+          T [128,3381 1184x147] Albert Sans 500 184px/147.2px ls-12.88px rgb(255, 255, 255) ta-center framer-168rrdx :: Nordic One
+      div "Project 4" [64,3814 1312x720] sticky flex-col gap0px j:flex-end a:center z1 framer-1m7fq0m 
+        a [64,1654 1312x720] flex-col gap0px j:center a:center z1 framer-1ata0rg.framer-158sej4 href=./projects/verve-tower
+          div "Image" [64,1654 1312x720] absolute z0 framer-vqfvdq 
+            IMG [64,1654 1312x720] zSsaQ6aEIDDticuNpIL0PHy0OKE.jpg?scale-down-to=2048 nat1312x878 fit:cover pos:50% 50% alt="Nordå"
+            div "+" [128,1718 12x12] absolute z1 framer-11n0n1o 
+              div "+" [128,1718 12x12] absolute framer-1aw7vlr 
+                SVG [128,1718 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,1718 12x12] absolute z1 framer-1iiumaf 
+              div "+" [1300,1718 12x12] absolute framer-neejdb 
+                SVG [1300,1718 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,2298 12x12] absolute z1 framer-1mt5i05 
+              div "+" [1300,2298 12x12] absolute framer-7lnbmq 
+                SVG [1300,2298 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [128,2298 12x12] absolute z1 framer-1x3aqtm 
+              div "+" [128,2298 12x12] absolute framer-zb5rp6 
+                SVG [128,2298 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+          T [128,1941 1184x147] Albert Sans 500 184px/147.2px ls-12.88px rgb(255, 255, 255) ta-center framer-12skg3h :: Verve Tower
+        a [64,2374 1312x720] flex-col gap0px j:center a:center z1 framer-1ata0rg.framer-158sej4 href=./projects/harbor-12
+          div "Image" [64,2374 1312x720] absolute z0 framer-vqfvdq 
+            IMG [64,2374 1312x720] EotxlpqJ6kEJA2rkEI4NgwSi4tE.jpg?scale-down-to=2048 nat1312x878 fit:cover pos:50% 50% alt="Nordå"
+            div "+" [128,2438 12x12] absolute z1 framer-11n0n1o 
+              div "+" [128,2438 12x12] absolute framer-1aw7vlr 
+                SVG [128,2438 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,2438 12x12] absolute z1 framer-1iiumaf 
+              div "+" [1300,2438 12x12] absolute framer-neejdb 
+                SVG [1300,2438 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,3018 12x12] absolute z1 framer-1mt5i05 
+              div "+" [1300,3018 12x12] absolute framer-7lnbmq 
+                SVG [1300,3018 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [128,3018 12x12] absolute z1 framer-1x3aqtm 
+              div "+" [128,3018 12x12] absolute framer-zb5rp6 
+                SVG [128,3018 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+          T [128,2661 1184x147] Albert Sans 500 184px/147.2px ls-12.88px rgb(255, 255, 255) ta-center framer-12skg3h :: Harbor 12
+        a [64,3094 1312x720] flex-col gap0px j:center a:center z1 framer-1ata0rg.framer-158sej4 href=./projects/nordic-one
+          div "Image" [64,3094 1312x720] absolute z0 framer-vqfvdq 
+            IMG [64,3094 1312x720] quoHgFIveHXEyv49z3HoccYb9E.jpg?scale-down-to=2048 nat1312x878 fit:cover pos:50% 50% alt="Nordå"
+            div "+" [128,3158 12x12] absolute z1 framer-11n0n1o 
+              div "+" [128,3158 12x12] absolute framer-1aw7vlr 
+                SVG [128,3158 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,3158 12x12] absolute z1 framer-1iiumaf 
+              div "+" [1300,3158 12x12] absolute framer-neejdb 
+                SVG [1300,3158 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,3738 12x12] absolute z1 framer-1mt5i05 
+              div "+" [1300,3738 12x12] absolute framer-7lnbmq 
+                SVG [1300,3738 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [128,3738 12x12] absolute z1 framer-1x3aqtm 
+              div "+" [128,3738 12x12] absolute framer-zb5rp6 
+                SVG [128,3738 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+          T [128,3381 1184x147] Albert Sans 500 184px/147.2px ls-12.88px rgb(255, 255, 255) ta-center framer-12skg3h :: Nordic One
+        a [64,3814 1312x720] flex-col gap0px j:center a:center z1 framer-1ata0rg.framer-158sej4 href=./projects/summit-24
+          div "Image" [64,3814 1312x720] absolute z0 framer-vqfvdq 
+            IMG [64,3814 1312x720] QMwodkd9iVZ2uGTwoPHfuLGYBns.jpg?scale-down-to=2048 nat1312x878 fit:cover pos:50% 50% alt="Nordå"
+            div "+" [128,3878 12x12] absolute z1 framer-11n0n1o 
+              div "+" [128,3878 12x12] absolute framer-1aw7vlr 
+                SVG [128,3878 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,3878 12x12] absolute z1 framer-1iiumaf 
+              div "+" [1300,3878 12x12] absolute framer-neejdb 
+                SVG [1300,3878 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,4458 12x12] absolute z1 framer-1mt5i05 
+              div "+" [1300,4458 12x12] absolute framer-7lnbmq 
+                SVG [1300,4458 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [128,4458 12x12] absolute z1 framer-1x3aqtm 
+              div "+" [128,4458 12x12] absolute framer-zb5rp6 
+                SVG [128,4458 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+          T [128,4101 1184x147] Albert Sans 500 184px/147.2px ls-12.88px rgb(255, 255, 255) ta-center framer-12skg3h :: Summit 24
+      div "Project 5" [64,4534 1312x720] sticky flex-col gap0px j:flex-end a:center z1 framer-1e7kovj 
+        a [64,1654 1312x720] flex-col gap0px j:center a:center z1 framer-gyv4hr.framer-158sej4 href=./projects/verve-tower
+          div "Image" [64,1654 1312x720] absolute z0 framer-bwip63 
+            IMG [64,1654 1312x720] zSsaQ6aEIDDticuNpIL0PHy0OKE.jpg?scale-down-to=2048 nat1312x878 fit:cover pos:50% 50% alt="Nordå"
+            div "+" [128,1718 12x12] absolute z1 framer-wm6kq4 
+              div "+" [128,1718 12x12] absolute framer-hc3qfu 
+                SVG [128,1718 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,1718 12x12] absolute z1 framer-7r5fip 
+              div "+" [1300,1718 12x12] absolute framer-1mhgs98 
+                SVG [1300,1718 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,2298 12x12] absolute z1 framer-1xwilvm 
+              div "+" [1300,2298 12x12] absolute framer-1mzt98x 
+                SVG [1300,2298 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [128,2298 12x12] absolute z1 framer-1k079m5 
+              div "+" [128,2298 12x12] absolute framer-19xuune 
+                SVG [128,2298 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+          T [128,1941 1184x147] Albert Sans 500 184px/147.2px ls-12.88px rgb(255, 255, 255) ta-center framer-hwff73 :: Verve Tower
+        a [64,2374 1312x720] flex-col gap0px j:center a:center z1 framer-gyv4hr.framer-158sej4 href=./projects/harbor-12
+          div "Image" [64,2374 1312x720] absolute z0 framer-bwip63 
+            IMG [64,2374 1312x720] EotxlpqJ6kEJA2rkEI4NgwSi4tE.jpg?scale-down-to=2048 nat1312x878 fit:cover pos:50% 50% alt="Nordå"
+            div "+" [128,2438 12x12] absolute z1 framer-wm6kq4 
+              div "+" [128,2438 12x12] absolute framer-hc3qfu 
+                SVG [128,2438 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,2438 12x12] absolute z1 framer-7r5fip 
+              div "+" [1300,2438 12x12] absolute framer-1mhgs98 
+                SVG [1300,2438 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,3018 12x12] absolute z1 framer-1xwilvm 
+              div "+" [1300,3018 12x12] absolute framer-1mzt98x 
+                SVG [1300,3018 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [128,3018 12x12] absolute z1 framer-1k079m5 
+              div "+" [128,3018 12x12] absolute framer-19xuune 
+                SVG [128,3018 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+          T [128,2661 1184x147] Albert Sans 500 184px/147.2px ls-12.88px rgb(255, 255, 255) ta-center framer-hwff73 :: Harbor 12
+        a [64,3094 1312x720] flex-col gap0px j:center a:center z1 framer-gyv4hr.framer-158sej4 href=./projects/nordic-one
+          div "Image" [64,3094 1312x720] absolute z0 framer-bwip63 
+            IMG [64,3094 1312x720] quoHgFIveHXEyv49z3HoccYb9E.jpg?scale-down-to=2048 nat1312x878 fit:cover pos:50% 50% alt="Nordå"
+            div "+" [128,3158 12x12] absolute z1 framer-wm6kq4 
+              div "+" [128,3158 12x12] absolute framer-hc3qfu 
+                SVG [128,3158 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,3158 12x12] absolute z1 framer-7r5fip 
+              div "+" [1300,3158 12x12] absolute framer-1mhgs98 
+                SVG [1300,3158 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,3738 12x12] absolute z1 framer-1xwilvm 
+              div "+" [1300,3738 12x12] absolute framer-1mzt98x 
+                SVG [1300,3738 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [128,3738 12x12] absolute z1 framer-1k079m5 
+              div "+" [128,3738 12x12] absolute framer-19xuune 
+                SVG [128,3738 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+          T [128,3381 1184x147] Albert Sans 500 184px/147.2px ls-12.88px rgb(255, 255, 255) ta-center framer-hwff73 :: Nordic One
+        a [64,3814 1312x720] flex-col gap0px j:center a:center z1 framer-gyv4hr.framer-158sej4 href=./projects/summit-24
+          div "Image" [64,3814 1312x720] absolute z0 framer-bwip63 
+            IMG [64,3814 1312x720] QMwodkd9iVZ2uGTwoPHfuLGYBns.jpg?scale-down-to=2048 nat1312x878 fit:cover pos:50% 50% alt="Nordå"
+            div "+" [128,3878 12x12] absolute z1 framer-wm6kq4 
+              div "+" [128,3878 12x12] absolute framer-hc3qfu 
+                SVG [128,3878 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,3878 12x12] absolute z1 framer-7r5fip 
+              div "+" [1300,3878 12x12] absolute framer-1mhgs98 
+                SVG [1300,3878 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,4458 12x12] absolute z1 framer-1xwilvm 
+              div "+" [1300,4458 12x12] absolute framer-1mzt98x 
+                SVG [1300,4458 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [128,4458 12x12] absolute z1 framer-1k079m5 
+              div "+" [128,4458 12x12] absolute framer-19xuune 
+                SVG [128,4458 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+          T [128,4101 1184x147] Albert Sans 500 184px/147.2px ls-12.88px rgb(255, 255, 255) ta-center framer-hwff73 :: Summit 24
+        a [64,4534 1312x720] flex-col gap0px j:center a:center z1 framer-gyv4hr.framer-158sej4 href=./projects/ström-haus
+          div "Image" [64,4534 1312x720] absolute z0 framer-bwip63 
+            IMG [64,4534 1312x720] pPpkWDlQJHNavXlg5W7E6yoeCU.jpg?scale-down-to=2048 nat1312x878 fit:cover pos:50% 50% alt="Nordå"
+            div "+" [128,4598 12x12] absolute z1 framer-wm6kq4 
+              div "+" [128,4598 12x12] absolute framer-hc3qfu 
+                SVG [128,4598 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,4598 12x12] absolute z1 framer-7r5fip 
+              div "+" [1300,4598 12x12] absolute framer-1mhgs98 
+                SVG [1300,4598 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [1300,5178 12x12] absolute z1 framer-1xwilvm 
+              div "+" [1300,5178 12x12] absolute framer-1mzt98x 
+                SVG [1300,5178 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+            div "+" [128,5178 12x12] absolute z1 framer-1k079m5 
+              div "+" [128,5178 12x12] absolute framer-19xuune 
+                SVG [128,5178 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+          T [128,4821 1184x147] Albert Sans 500 184px/147.2px ls-12.88px rgb(255, 255, 255) ta-center framer-hwff73 :: Ström Haus
+      div "Archive Projects" [64,5254 1312x1397] flex-col gap64px j:flex-start a:center pad(196px 0px) bg rgb(255, 255, 255) z1 framer-1vkmxkx 
+        section "Slider End" [715,5254 10x720] absolute z1 framer-1emusse 
+        div "Title" [64,5480 1312x70] flex-row gap32px j:flex-start a:flex-start tf matrix(1, 0, 0, 1, 0, 29.9374) z1 framer-1h54cvd 
+          T [64,5480 432x70] Albert Sans 500 64px/70.4px ls-3.2px rgb(0, 0, 0) framer-8uvjxs :: Archive Projects
+          T [528,5480 28x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-122pyqn :: /  8
+        div "List" [64,5585 1312x870] flex-col gap0px j:center a:center blend multiply framer-djlxul 
+          a "Desktop" [64,5685 1312x109] flex-row gap64px j:center a:center pad(40px 0px) framer-r0Gd8.framer-8vabD href=https://www.framer.com/?via=drukarov
+            div "A" [64,5725 624x29] flex-row gap0px j:flex-start a:flex-start framer-1rt5ofm 
+              T [64,5725 624x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-bby6zb :: HARBOR POINT
+            div "B" [752,5725 624x29] flex-row gapnormal j:space-between a:flex-start framer-1l6azc5 
+              T [752,5725 568x29] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-1wbs6o4 :: Mixed-use waterfront development
+              T [1320,5725 56x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-15fwcbv :: /  2018
+            section "Line" [64,5792 1312x1] absolute bg rgb(0, 0, 0) op0.1 framer-j42zfh 
+          a "Desktop" [64,5793 1312x109] flex-row gap64px j:center a:center pad(40px 0px) framer-r0Gd8.framer-8vabD href=https://www.framer.com/?via=drukarov
+            div "A" [64,5833 624x29] flex-row gap0px j:flex-start a:flex-start framer-1rt5ofm 
+              T [64,5833 624x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-bby6zb :: SOLHEIM TOWER
+            div "B" [752,5833 624x29] flex-row gapnormal j:space-between a:flex-start framer-1l6azc5 
+              T [752,5833 569x29] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-1wbs6o4 :: Sleek and efficient high-rise
+              T [1321,5833 55x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-15fwcbv :: /  2017
+            section "Line" [64,5901 1312x1] absolute bg rgb(0, 0, 0) op0.1 framer-j42zfh 
+          a "Desktop" [64,5902 1312x109] flex-row gap64px j:center a:center pad(40px 0px) framer-r0Gd8.framer-8vabD href=https://www.framer.com/?via=drukarov
+            div "A" [64,5942 624x29] flex-row gap0px j:flex-start a:flex-start framer-1rt5ofm 
+              T [64,5942 624x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-bby6zb :: NORTHWAY RESIDENCES
+            div "B" [752,5942 624x29] flex-row gapnormal j:space-between a:flex-start framer-1l6azc5 
+              T [752,5942 569x29] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-1wbs6o4 :: Modern living in the city
+              T [1321,5942 55x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-15fwcbv :: /  2017
+            section "Line" [64,6010 1312x1] absolute bg rgb(0, 0, 0) op0.1 framer-j42zfh 
+          a "Desktop" [64,6011 1312x109] flex-row gap64px j:center a:center pad(40px 0px) framer-r0Gd8.framer-8vabD href=https://www.framer.com/?via=drukarov
+            div "A" [64,6051 624x29] flex-row gap0px j:flex-start a:flex-start framer-1rt5ofm 
+              T [64,6051 624x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-bby6zb :: FJORDHAUS
+            div "B" [752,6051 624x29] flex-row gapnormal j:space-between a:flex-start framer-1l6azc5 
+              T [752,6051 568x29] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-1wbs6o4 :: Scandinavian-inspired apartment complex
+              T [1320,6051 56x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-15fwcbv :: /  2016
+            section "Line" [64,6119 1312x1] absolute bg rgb(0, 0, 0) op0.1 framer-j42zfh 
+          a "Desktop" [64,6120 1312x109] flex-row gap64px j:center a:center pad(40px 0px) framer-r0Gd8.framer-8vabD href=https://www.framer.com/?via=drukarov
+            div "A" [64,6160 624x29] flex-row gap0px j:flex-start a:flex-start framer-1rt5ofm 
+              T [64,6160 624x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-bby6zb :: CENTRAL SQUARE
+            div "B" [752,6160 624x29] flex-row gapnormal j:space-between a:flex-start framer-1l6azc5 
+              T [752,6160 568x29] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-1wbs6o4 :: Vibrant commercial and office hub
+              T [1320,6160 56x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-15fwcbv :: /  2015
+            section "Line" [64,6228 1312x1] absolute bg rgb(0, 0, 0) op0.1 framer-j42zfh 
+          a "Desktop" [64,6229 1312x109] flex-row gap64px j:center a:center pad(40px 0px) framer-r0Gd8.framer-8vabD href=https://www.framer.com/?via=drukarov
+            div "A" [64,6269 624x29] flex-row gap0px j:flex-start a:flex-start framer-1rt5ofm 
+              T [64,6269 624x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-bby6zb :: HORIZON LOFT
+            div "B" [752,6269 624x29] flex-row gapnormal j:space-between a:flex-start framer-1l6azc5 
+              T [752,6269 568x29] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-1wbs6o4 :: Minimalist urban housing concept
+              T [1320,6269 56x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-15fwcbv :: /  2013
+            section "Line" [64,6336 1312x1] absolute bg rgb(0, 0, 0) op0.1 framer-j42zfh 
+          a "Desktop" [64,6337 1312x109] flex-row gap64px j:center a:center pad(40px 0px) framer-r0Gd8.framer-8vabD href=https://www.framer.com/?via=drukarov
+            div "A" [64,6377 624x29] flex-row gap0px j:flex-start a:flex-start framer-1rt5ofm 
+              T [64,6377 624x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-bby6zb :: METRO QUARTER
+            div "B" [752,6377 624x29] flex-row gapnormal j:space-between a:flex-start framer-1l6azc5 
+              T [752,6377 568x29] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-1wbs6o4 :: Revitalized district for work & life
+              T [1320,6377 56x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-15fwcbv :: /  2012
+            section "Line" [64,6445 1312x1] absolute bg rgb(0, 0, 0) op0.1 framer-j42zfh 
+          a "Desktop" [64,6446 1312x109] flex-row gap64px j:center a:center pad(40px 0px) framer-r0Gd8.framer-8vabD href=https://www.framer.com/?via=drukarov
+            div "A" [64,6486 624x29] flex-row gap0px j:flex-start a:flex-start framer-1rt5ofm 
+              T [64,6486 624x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-bby6zb :: VINTER PARK
+            div "B" [752,6486 624x29] flex-row gapnormal j:space-between a:flex-start framer-1l6azc5 
+              T [752,6486 568x29] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-1wbs6o4 :: Public space with sustainable design
+              T [1320,6486 56x29] Albert Sans 700 18px/28.8px lsnormal rgb(0, 0, 0) uppercase framer-15fwcbv :: /  2012
+            section "Line" [64,6554 1312x1] absolute bg rgb(0, 0, 0) op0.1 framer-j42zfh 
+    div "Text" [0,6651 1440x320] flex-row gap0px j:center a:flex-start framer-6a6zcp 
+      section "Placeholder" [0,6651 376x320] flex-col gap0px j:flex-start a:center pad(0px 32px) framer-1bop9pb 
+        div "+" [64,6651 12x12] absolute z1 framer-1ad89o7 
+          div "+" [64,6651 12x12] absolute framer-ln4psz 
+            SVG [64,6651 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+      div "Text" [376,6651 688x320] flex-col gap64px j:flex-start a:flex-start pad(0px 32px) framer-1qkr2mm 
+        T [408,6651 624x140] Albert Sans Variable 400 36px/46.8px ls-1.44px rgb(0, 0, 0) framer-12bdsfj :: At Nordå, we believe architecture shapes the way people experience their cities.
+        T [408,6856 624x115] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-1404fkp :: From concept to completion, we focus on thoughtful design that responds to its surroundings. By prioritizing sustainability, quality, and innovation, we craft buildings that don’t just stand in the city — they become a meaningful part of it.
+      section "Placeholder" [1064,6651 376x320] flex-col gap0px j:flex-start a:center pad(0px 32px) framer-16sw16j 
+div "Footer" [0,7163 1440x1756] flex-col gap0px j:center a:center framer-18s0u54 
+  footer "Desktop" [0,6683 1440x1756] flex-col gap192px j:flex-start a:center pad(64px) bg rgb(0, 0, 0) framer-nxF8P.framer-x5Lgg 
+    div "Logo" [0,6683 1440x1756] absolute flex-row gap0px j:center a:flex-start op0 z0 framer-5frpzb 
+      div "Container" [64,6938 1312x390] flex-col gap0px j:center a:center framer-vokia0 
+        figure "Big Logo" [64,6938 1312x390]  framer-pdbq4w 
+          IMG [64,6938 1312x390] FHIcLfBCbUtxnbce6yhoriDk.svg?width=662&height=197 nat1312x390 fit:cover pos:50% 50% alt="Nordå"
+    section "Placeholder" [64,6747 1312x196]  framer-erwkei 
+    div "Subscribe" [64,7135 1312x295] flex-row gap0px j:center a:flex-start framer-songxk 
+      section "Placeholder" [64,7135 344x295] flex-col gap0px j:flex-start a:center pad(0px 0px 0px 32px) framer-e8tu51 
+      div "Container" [408,7135 624x295] flex-col gap64px j:flex-start a:flex-start framer-nj7ryh 
+        div "Form" [408,7135 720x295] flex-col gap24px j:flex-start a:flex-start framer-5tfzwe 
+          T [408,7135 640x94] Albert Sans Variable 400 36px/46.8px ls-1.44px rgb(255, 255, 255) ta-left framer-1ejwyw2 :: Sign up for our newsletter to receive updates and content
+          form [408,7252 720x109] flex-row gap0px j:flex-start a:center framer-1bw4lo6 
+            INPUT [408,7268 672x77] type=email name=Email ph="Your email here" Albert Sans 500 64px/76.8px ls-1.28px rgb(255, 255, 255) ta-left  :: 
+            BUTTON [1064,7275 64x64] type=submit name= ph="" sans-serif 400 12px/normal lsnormal rgb(0, 0, 0) ta-center flex-row gap0px j:center a:center :: 
+            button "Default" [1064,7275 64x64] flex-row gap0px j:center a:center framer-ab8zE.framer-1scqx6g 
+              section "Background" [1064,7275 64x64] absolute bg rgb(255, 255, 255) op0 r999px z1 framer-rk4oti 
+              SVG [1074,7285 45x45]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+              SVG [1074,7285 45x45]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+          T [408,7385 500x45] Albert Sans 400 14px/22.4px lsnormal rgb(119, 119, 119) framer-5rbcto :: By signing up to receive emails from Nordå, you agree to our Privacy Policy. We treat your info responsibly. Unsubscribe anytime.
+      section "Placeholder" [1032,7135 344x295] flex-col gap0px j:flex-start a:center pad(0px 0px 0px 32px) framer-1235tqi 
+    div "Menu" [64,7622 1312x440] flex-row gap0px j:center a:flex-start framer-1cu669 
+      section "Placeholder" [64,7622 344x440] flex-col gap0px j:flex-start a:center pad(0px 0px 0px 32px) framer-s1h66p 
+      div "Container" [408,7622 624x440] flex-col gap64px j:flex-start a:flex-start framer-w4iaji 
+        div "Menu" [408,7622 720x440] flex-col gap32px j:flex-start a:flex-start framer-3rlzkd 
+          T [408,7622 96x29] Albert Sans 700 18px/28.8px lsnormal rgb(119, 119, 119) uppercase ta-left framer-lvv2xq :: /  SITEMAP
+          a "Link" [408,7683 183x43] flex-row gap0px j:center a:center framer-n3jcjy.framer-1wbuzja href=./
+            div "A" [408,7683 183x43] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              div [408,7683 24x43]   own="H" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [408,7726 24x43] absolute  own="H" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [432,7683 20x43]   own="o" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [432,7726 20x43] absolute  own="o" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [453,7683 31x43]   own="m" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [453,7726 31x43] absolute  own="m" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [484,7683 19x43]   own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [484,7726 19x43] absolute  own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [512,7683 21x43]   own="P" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [512,7726 21x43] absolute  own="P" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [533,7683 18x43]   own="a" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [533,7726 18x43] absolute  own="a" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [551,7683 21x43]   own="g" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [551,7726 21x43] absolute  own="g" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [572,7683 19x43]   own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [572,7726 19x43] absolute  own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+          a "Link" [408,7750 128x43] flex-row gap0px j:center a:center framer-4fo6kd.framer-1wbuzja href=./projects
+            div "A" [408,7750 128x43] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              div [408,7750 21x43]   own="P" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [408,7793 21x43] absolute  own="P" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [429,7750 12x43]   own="r" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [429,7793 12x43] absolute  own="r" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [441,7750 20x43]   own="o" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [441,7793 20x43] absolute  own="o" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [461,7750 8x43]   own="j" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [461,7793 8x43] absolute  own="j" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [470,7750 19x43]   own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [470,7793 19x43] absolute  own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [489,7750 19x43]   own="c" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [489,7793 19x43] absolute  own="c" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [508,7750 12x43]   own="t" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [508,7793 12x43] absolute  own="t" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [520,7750 16x43]   own="s" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [520,7793 16x43] absolute  own="s" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+          a "Link" [408,7817 200x43] flex-row gap0px j:center a:center framer-ed24st.framer-1wbuzja href=./projects/verve-tower
+            div "A" [408,7817 200x43] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              div [408,7817 21x43]   own="P" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [408,7860 21x43] absolute  own="P" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [429,7817 12x43]   own="r" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [429,7860 12x43] absolute  own="r" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [441,7817 20x43]   own="o" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [441,7860 20x43] absolute  own="o" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [461,7817 8x43]   own="j" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [461,7860 8x43] absolute  own="j" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [470,7817 19x43]   own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [470,7860 19x43] absolute  own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [489,7817 19x43]   own="c" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [489,7860 19x43] absolute  own="c" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [508,7817 12x43]   own="t" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [508,7860 12x43] absolute  own="t" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [529,7817 21x43]   own="P" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [529,7860 21x43] absolute  own="P" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [550,7817 18x43]   own="a" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [550,7860 18x43] absolute  own="a" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [568,7817 21x43]   own="g" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [568,7860 21x43] absolute  own="g" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [589,7817 19x43]   own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [589,7860 19x43] absolute  own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+          a "Link" [408,7884 95x43] flex-row gap0px j:center a:center framer-180boqm.framer-1wbuzja href=./about
+            div "A" [408,7884 95x43] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              div [408,7884 24x43]   own="A" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [408,7927 24x43] absolute  own="A" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [432,7884 21x43]   own="b" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [432,7927 21x43] absolute  own="b" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [452,7884 20x43]   own="o" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [452,7927 20x43] absolute  own="o" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [473,7884 19x43]   own="u" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [473,7927 19x43] absolute  own="u" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [492,7884 12x43]   own="t" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [492,7927 12x43] absolute  own="t" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+          a "Link" [408,7951 230x43] flex-row gap0px j:center a:center framer-dk1sce.framer-1wbuzja href=./team/erik-lindholm
+            div "A" [408,7951 230x43] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              div [408,7951 21x43]   own="T" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [408,7994 21x43] absolute  own="T" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [429,7951 19x43]   own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [429,7994 19x43] absolute  own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [448,7951 18x43]   own="a" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [448,7994 18x43] absolute  own="a" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [466,7951 31x43]   own="m" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [466,7994 31x43] absolute  own="m" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [506,7951 30x43]   own="M" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [506,7994 30x43] absolute  own="M" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [537,7951 19x43]   own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [537,7994 19x43] absolute  own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [556,7951 31x43]   own="m" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [556,7994 31x43] absolute  own="m" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [587,7951 21x43]   own="b" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [587,7994 21x43] absolute  own="b" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [607,7951 19x43]   own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [607,7994 19x43] absolute  own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [626,7951 12x43]   own="r" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [626,7994 12x43] absolute  own="r" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+          a "Link" [408,8018 134x43] flex-row gap0px j:center a:center framer-1fysoco.framer-1wbuzja href=./jobs/interior-designer
+            div "A" [408,8018 134x43] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              div [408,8018 24x43]   own="V" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [408,8062 24x43] absolute  own="V" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [432,8018 18x43]   own="a" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [432,8062 18x43] absolute  own="a" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [450,8018 19x43]   own="c" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [450,8062 19x43] absolute  own="c" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [469,8018 18x43]   own="a" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [469,8062 18x43] absolute  own="a" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [487,8018 19x43]   own="n" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [487,8062 19x43] absolute  own="n" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [506,8018 19x43]   own="c" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [506,8062 19x43] absolute  own="c" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [524,8018 18x43]   own="y" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [524,8062 18x43] absolute  own="y" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+          a "Link" [800,7683 86x43] flex-row gap0px j:center a:center framer-t1ehma.framer-1wbuzja href=./news
+            div "A" [800,7683 86x43] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              div [800,7683 24x43]   own="N" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [800,7726 24x43] absolute  own="N" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [824,7683 19x43]   own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [824,7726 19x43] absolute  own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [844,7683 26x43]   own="w" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [844,7726 26x43] absolute  own="w" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [870,7683 16x43]   own="s" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [870,7726 16x43] absolute  own="s" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+          a "Link" [800,7750 102x43] flex-row gap0px j:center a:center framer-11m1v81.framer-1wbuzja href=./news/how-architecture-shapes-productivity
+            div "A" [800,7750 102x43] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              div [800,7750 24x43]   own="A" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [800,7793 24x43] absolute  own="A" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [824,7750 12x43]   own="r" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [824,7793 12x43] absolute  own="r" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [836,7750 12x43]   own="t" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [836,7793 12x43] absolute  own="t" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [848,7750 9x43]   own="i" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [848,7793 9x43] absolute  own="i" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [856,7750 19x43]   own="c" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [856,7793 19x43] absolute  own="c" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [875,7750 7x43]   own="l" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [875,7793 7x43] absolute  own="l" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [882,7750 19x43]   own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [882,7793 19x43] absolute  own="e" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+          a "Link" [800,7817 126x43] flex-row gap0px j:center a:center framer-1deusdw.framer-1wbuzja href=./contact
+            div "A" [800,7817 126x43] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              div [800,7817 26x43]   own="C" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [800,7860 26x43] absolute  own="C" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [826,7817 20x43]   own="o" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [826,7860 20x43] absolute  own="o" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [847,7817 19x43]   own="n" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [847,7860 19x43] absolute  own="n" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [866,7817 12x43]   own="t" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [866,7860 12x43] absolute  own="t" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [877,7817 18x43]   own="a" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [877,7860 18x43] absolute  own="a" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [895,7817 19x43]   own="c" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [895,7860 19x43] absolute  own="c" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [914,7817 12x43]   own="t" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [914,7860 12x43] absolute  own="t" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+          a "Link" [800,7884 218x43] flex-row gap0px j:center a:center framer-7ciy4n.framer-1wbuzja href=./privacy-policy
+            div "A" [800,7884 218x43] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              div [800,7884 21x43]   own="P" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [800,7927 21x43] absolute  own="P" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [821,7884 12x43]   own="r" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [821,7927 12x43] absolute  own="r" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [833,7884 9x43]   own="i" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [833,7927 9x43] absolute  own="i" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [842,7884 18x43]   own="v" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [842,7927 18x43] absolute  own="v" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [860,7884 18x43]   own="a" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [860,7927 18x43] absolute  own="a" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [878,7884 19x43]   own="c" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [878,7927 19x43] absolute  own="c" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [897,7884 18x43]   own="y" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [897,7927 18x43] absolute  own="y" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [924,7884 21x43]   own="P" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [924,7927 21x43] absolute  own="P" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [945,7884 20x43]   own="o" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [945,7927 20x43] absolute  own="o" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [965,7884 7x43]   own="l" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [965,7927 7x43] absolute  own="l" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [973,7884 9x43]   own="i" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [973,7927 9x43] absolute  own="i" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [981,7884 19x43]   own="c" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [981,7927 19x43] absolute  own="c" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [1000,7884 18x43]   own="y" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [1000,7927 18x43] absolute  own="y" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+          a "Link" [800,7951 67x43] flex-row gap0px j:center a:center framer-3sc92g.framer-1wbuzja href=./404
+            div "A" [800,7951 67x43] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              div [800,7951 22x43]   own="4" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [800,7994 22x43] absolute  own="4" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [822,7951 22x43]   own="0" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [822,7994 22x43] absolute  own="0" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [844,7951 22x43]   own="4" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+              div [844,7994 22x43] absolute  own="4" Albert Sans 500 36px/43.2px ls-1.08px rgb(255, 255, 255)
+      section "Placeholder" [1032,7622 344x440] flex-col gap0px j:flex-start a:center pad(0px 0px 0px 32px) framer-u03yu3 
+    div "Social Media" [64,8254 150x28] flex-row gap33px j:center a:flex-start framer-1g3wtke 
+      a "Facebook" [64,8254 28x28]  framer-mo4ifn.framer-1wbuzja href=https://facebook.com
+        SVG [64,8254 28x28]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+      a "X-Twitter" [125,8254 28x28]  framer-2ur9x6.framer-1wbuzja href=https://x.com
+        SVG [125,8254 28x28]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+      a "Instagram" [186,8254 28x28]  framer-1wbuzja href=https://instagram.com
+        SVG [186,8254 28x28]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+    div "Back To Top" [1220,8256 156x23] flex-row gap12px j:center a:flex-start z1 framer-ofc4fq 
+      SVG [1220,8256 20x20]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+      a "A" [1252,8256 124x22] flex-row gap50px j:center a:center framer-7eC7r.framer-1hx8ep0 href=null
+        div [1252,8256 12x22]   own="B" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1252,8278 12x22] absolute  own="B" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1264,8256 13x22]   own="A" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1264,8278 13x22] absolute  own="A" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1278,8256 14x22]   own="C" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1278,8278 14x22] absolute  own="C" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1291,8256 12x22]   own="K" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1291,8278 12x22] absolute  own="K" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1308,8256 11x22]   own="T" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1308,8278 11x22] absolute  own="T" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1320,8256 14x22]   own="O" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1320,8278 14x22] absolute  own="O" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1339,8256 11x22]   own="T" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1339,8278 11x22] absolute  own="T" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1350,8256 14x22]   own="O" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1350,8278 14x22] absolute  own="O" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1364,8256 12x22]   own="P" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+        div [1364,8278 12x22] absolute  own="P" Albert Sans 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+    T [64,8346 656x29] Albert Sans 700 18px/28.8px lsnormal rgb(119, 119, 119) uppercase ta-left framer-q2d5g4 :: COPYRIGHT 2026 NORDÅ. ALL RIGHTS RESERVED.
+    T [720,8346 656x29] Albert Sans 700 18px/28.8px lsnormal rgb(119, 119, 119) uppercase ta-right framer-1ap7txz :: FRAMER TEMPLATE HANDCRAFTED BY ANTON DRUKAROV
+div "On" [1280,737 140x103] bg rgba(0, 0, 0, 0.04) r10px framer-dCEup.framer-1bygqlm 
+  a [1281,738 138x101] absolute r9px framer-190dhm9.framer-1s8duhu href=https://quadro-template.framer.website/?utm_source=norda&utm_medium=promo_button
+    IMG [1281,738 138x101] zKYk3xaySEc43cUDiQTIdQsugwU.jpg?scale-down-to=512&width=800&height=600 nat138x103 fit:cover pos:50% 50% alt=""
+    div "Backdrop" [1281,738 138x101] absolute bg rgb(0, 0, 0) op0 framer-djo1oa 
+  SVG [1392,747 18x18]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+  T [1307,801 85x22] Aspekta Variable Variable 1000 14px/22.4px lsnormal rgb(255, 255, 255) ta-center framer-mxx5bg :: New Release
+a "Desktop" [1280,842 140x38] bg rgba(0, 0, 0, 0.04) r10px framer-F6oEL.framer-10c0k9q href=null
+  T [1297,850 106x22] Inter 600 13px/22.1px ls-0.065px rgb(255, 255, 255) framer-chq722 :: Get this template
+  T [1319,890 63x22] Inter 600 13px/22.1px ls-0.065px rgb(255, 255, 255) framer-1njzeg6 :: from $129
+div "Black" [0,0 20x20] fixed op0 tf matrix(1, 0, 0, 1, 0, 0) z13 framer-PpAIo.framer-8vabD 
+  div "bg" [-10,-10 20x20] absolute bg rgb(0, 0, 0) r999px framer-1hvdtew 
+  div "Read Article" [0,-40 154x39] absolute flex-row gap0px j:center a:center pad(6px 12px 4px) op0 framer-npjp0v 
+    T [12,-34 130x29] Albert Sans 700 18px/28.8px lsnormal rgb(255, 255, 255) uppercase framer-1m3ag7o :: READ ARTICLE
+    div "Corners" [0,-40 154x39] absolute z1 framer-7op5jx 
+  div "View project" [0,-40 159x39] absolute flex-row gap0px j:center a:center pad(6px 12px 4px) op0 framer-1ewfr8d 
+    T [12,-34 135x29] Albert Sans 700 18px/28.8px lsnormal rgb(255, 255, 255) uppercase framer-1ungidy :: VIEW PROJECT
+    div "Corners" [0,-40 159x39] absolute z1 framer-178i21o 
+  section "1" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-189gkhk 
+    IMG [0,-148 224x297] meNrcFhnSDlQiFc8Ft9PUdlwmRM.jpg?scale-down-to=1024 nat249x317 fit:cover pos:50% 50% alt=""
+  section "2" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-z1w8bv 
+    IMG [0,-148 224x297] 8ZVwMrMAvQKrz1sGjChciwyO8g.jpg?scale-down-to=512 nat248x165 fit:cover pos:50% 50% alt=""
+  section "3" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-11on1i3 
+    IMG [0,-148 224x297] i9IkeVe3nTtWGduRlvEm0pCeHk.jpg?scale-down-to=1024 nat249x373 fit:cover pos:50% 50% alt=""
+  section "4" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-17u8eae 
+    IMG [0,-148 224x297] QINY3akxDmnbMqmeOJusZy24ksw.jpg?scale-down-to=1024 nat248x327 fit:cover pos:50% 50% alt=""
+  section "5" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-xyfiuz 
+    IMG [0,-148 224x297] hHSXUDSgKFb8JHVZK46IxY4qOQ.jpg?scale-down-to=1024 nat248x331 fit:cover pos:50% 50% alt=""
+  section "6" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-1msjvh3 
+    IMG [0,-148 224x297] RU7tapUCQWOZhaPZpSK5fHV7QU.jpg?scale-down-to=1024 nat249x373 fit:cover pos:50% 50% alt=""
+  section "7" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-eust9d 
+    IMG [0,-148 224x297] csnszvg1pOTB5qMDCqIGxJ363g.jpg?scale-down-to=512 nat248x165 fit:cover pos:50% 50% alt=""
+  section "8" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-nap2ud 
+    IMG [0,-148 224x297] U556Zr9ySyBIwrKhO304cic8OI.jpg?scale-down-to=1024 nat249x305 fit:cover pos:50% 50% alt=""

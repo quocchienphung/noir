@@ -1,0 +1,458 @@
+/* Footer — MEASURED per breakpoint.
+ * desktop: padding 64, gap 192, aspect-6.7 spacer, absolute wordmark fading to 0.12, 480px reveal.
+ * tablet:  padding 96 48 48, gap 144, wordmark in flow (opaque), sitemap 2 cols.
+ * phone:   padding 64 24 24, gap 96, wordmark in flow, sitemap 1 col, utility rows stacked. */
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.footer {
+  --nd-footer-p: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 96px;
+  padding: 64px 24px 24px;
+  background: var(--nd-black);
+  color: var(--nd-white);
+  /* clip (not hidden) so the sticky wordmark tracks the viewport */
+  overflow: clip;
+}
+
+.wordmark {
+  position: relative;
+  width: 100%;
+  pointer-events: none;
+}
+
+.wordmarkImg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.spacer {
+  display: none;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.side {
+  display: none;
+  flex: 1 0 0;
+  width: 1px;
+  padding-left: 32px;
+}
+
+.main {
+  display: flex;
+  flex: 2 0 0;
+  flex-direction: column;
+  width: 1px;
+}
+
+/* ---------- Newsletter ---------- */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.formTitle {
+  max-width: 640px;
+  margin: 0;
+  color: var(--nd-white);
+}
+
+.formRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 720px;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: 16px 48px 16px 0;
+  border: 0;
+  border-bottom: 1px solid var(--nd-gray);
+  border-radius: 0;
+  background: transparent;
+  color: var(--nd-white);
+  font-family: var(--nd-font-display);
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.2em;
+  letter-spacing: -0.02em;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--nd-gray);
+  opacity: 1;
+}
+
+.input:focus {
+  border-bottom-color: var(--nd-white);
+}
+
+.input[aria-invalid="true"] {
+  border-bottom-color: var(--nd-white);
+}
+
+.submit {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--nd-white);
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.submitBg {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--nd-white);
+  opacity: 0;
+  transition: opacity 0.3s var(--nd-ease-inout);
+}
+
+.submitIcon {
+  position: relative;
+  z-index: 1;
+  width: 70%;
+  height: 70%;
+  transition: color 0.3s var(--nd-ease-inout);
+}
+
+@media (hover: hover) {
+  .submit:hover .submitBg {
+    opacity: 1;
+  }
+
+  .submit:hover .submitIcon {
+    color: var(--nd-black);
+  }
+}
+
+.submit:focus-visible {
+  outline: 1px solid var(--nd-white);
+  outline-offset: 4px;
+  border-radius: 999px;
+}
+
+.status {
+  min-height: 0;
+  margin: 0;
+  font-family: var(--nd-font-display);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22.4px;
+  color: var(--nd-white);
+}
+
+.status:empty {
+  display: none;
+}
+
+.statusError {
+  color: var(--nd-white);
+}
+
+.disclaimer {
+  max-width: 500px;
+  margin: 0;
+  color: var(--nd-gray);
+}
+
+.disclaimerLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.disclaimerLink:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Sitemap ---------- */
+
+.sitemap {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+.sitemapTitle {
+  margin: 0;
+  color: var(--nd-gray);
+}
+
+.sitemapCols {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+.sitemapCol {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sitemapLink {
+  display: inline-flex;
+  color: var(--nd-white);
+  text-decoration: none;
+  font-family: var(--nd-font-display);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 33.6px;
+  letter-spacing: -0.84px;
+}
+
+.sitemapLink:focus-visible,
+.backToTop:focus-visible {
+  outline: 1px solid var(--nd-white);
+  outline-offset: 4px;
+}
+
+/* ---------- Bottom rows ---------- */
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  width: 100%;
+}
+
+.utility {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.social {
+  display: flex;
+  gap: 33px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socialIcon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  color: var(--nd-white);
+}
+
+.backToTop {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: max-content;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--nd-white);
+  cursor: pointer;
+}
+
+.backToTopIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.backToTopLabel {
+  font-family: var(--nd-font-display);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21.6px;
+  text-transform: uppercase;
+}
+
+.legal {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 64px;
+}
+
+.copyright,
+.attribution {
+  margin: 0;
+  color: var(--nd-gray);
+}
+
+@media (min-width: 810px) {
+  .footer {
+    gap: 144px;
+    padding: 96px 48px 48px;
+  }
+
+  .formRow {
+    width: 720px;
+  }
+
+  .input {
+    font-size: 50px;
+  }
+
+  .submit {
+    width: 50px;
+    height: 50px;
+  }
+
+  .sitemapCols {
+    flex-direction: row;
+    gap: 48px;
+  }
+
+  .sitemapCol {
+    flex: 1 0 0;
+    gap: 24px;
+  }
+
+  .sitemapLink {
+    font-size: 32px;
+    line-height: 38.4px;
+    letter-spacing: -0.96px;
+  }
+
+  .utility {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .legal {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .copyright,
+  .attribution {
+    flex: 1 0 0;
+  }
+
+  .attribution {
+    text-align: right;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer {
+    gap: 192px;
+    padding: 64px;
+    transform: translateY(calc((1 - var(--nd-footer-p)) * -480px));
+  }
+
+  /* MEASURED: the wordmark container is sticky at (100vh − its height) / 2 inside the moving footer. */
+  .wordmark {
+    --nd-wordmark-top: calc(50vh - (100vw - 128px) / 6.7208);
+    position: absolute;
+    inset: 0;
+    display: block;
+    padding: var(--nd-wordmark-top) 64px 0;
+    opacity: calc(var(--nd-footer-p) * 0.12);
+  }
+
+  .wordmarkImg {
+    position: sticky;
+    top: var(--nd-wordmark-top);
+  }
+
+  /* On-load fade (appear JSON: opacity 0 → 1, delay 0.8s, spring 0.4s — desktop only). */
+  .wrap {
+    animation: nd-footer-in 0.4s ease-out 0.8s both;
+  }
+
+  .spacer {
+    display: block;
+    width: 100%;
+    aspect-ratio: 6.7;
+  }
+
+  .side {
+    display: block;
+  }
+
+  .main {
+    min-width: 0;
+  }
+
+  .form,
+  .sitemap {
+    min-width: 720px;
+  }
+
+  .input {
+    font-size: 64px;
+  }
+
+  .submit {
+    width: 64px;
+    height: 64px;
+  }
+
+  .sitemapCol {
+    gap: 24px;
+  }
+
+  .sitemapLink {
+    font-size: 36px;
+    line-height: 43.2px;
+    letter-spacing: -1.08px;
+  }
+
+  .sitemapCols {
+    width: 720px;
+    gap: 64px;
+  }
+
+  .legal {
+    order: 0;
+  }
+}
+
+@keyframes nd-footer-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrap {
+    animation: none;
+  }
+}

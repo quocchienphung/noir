@@ -1,0 +1,254 @@
+/*
+ * Nordå measured tokens and shared typography / column primitives.
+ * Breakpoints mirror the reference's Framer breakpoints (MEASURED from __framer__breakpoints):
+ *   phone  0–809.98px  |  tablet 810–1199.98px  |  desktop ≥1200px.
+ * Written mobile-first: base = phone, then tablet, then desktop.
+ */
+
+.site {
+  --nd-white: #fff;
+  --nd-black: #000;
+  --nd-gray: #777;
+  --nd-ink: #111;
+  --nd-backdrop: rgb(34, 34, 34);
+  --nd-line: rgba(0, 0, 0, 0.1);
+
+  --nd-gutter: 24px;
+  --nd-col-pad: 24px;
+  --nd-section-y: 96px;
+
+  --nd-font-body: var(--font-albert-variable), sans-serif;
+  --nd-font-display: var(--font-albert), sans-serif;
+  /* MEASURED Framer text presets: variable-axis weights and stylistic sets. */
+  --nd-body-wght: "wght" 450;
+  --nd-title-wght: "wght" 550;
+  --nd-strong-wght: "wght" 700;
+  --nd-heading-features: "blwf", "cv03", "cv04", "cv09", "cv11";
+
+  /* Fitted to the measured slideshow trajectory (INFERRED tween standing in for Framer's spring). */
+  --nd-ease-slide: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Framer "ease-in-out" tween used by appear effects (MEASURED in appear JSON: [0.44, 0, 0.56, 1]). */
+  --nd-ease-inout: cubic-bezier(0.44, 0, 0.56, 1);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--nd-black);
+  color: var(--nd-black);
+  font-family: var(--nd-font-body);
+}
+
+@media (min-width: 810px) {
+  .site {
+    --nd-gutter: 48px;
+    --nd-section-y: 144px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .site {
+    --nd-gutter: 64px;
+    --nd-col-pad: 32px;
+    --nd-section-y: 192px;
+  }
+}
+
+/* Content layer that the footer is revealed from underneath (MEASURED z-index 3, black). */
+.content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--nd-black);
+}
+
+/* ---------- Typography (values MEASURED per breakpoint) ---------- */
+
+.body {
+  font-family: var(--nd-font-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28.8px;
+  letter-spacing: normal;
+  font-variation-settings: var(--nd-body-wght);
+}
+
+.body strong {
+  font-family: var(--nd-font-body);
+  font-weight: 400;
+  font-variation-settings: var(--nd-strong-wght);
+}
+
+.body p {
+  margin: 0;
+}
+
+/* MEASURED: Framer paragraph spacing in body copy is 24px (block heights 172.8 + 24 = 197 at 1440). */
+.body p + p {
+  margin-top: 24px;
+}
+
+.label {
+  font-family: var(--nd-font-display);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28.8px;
+  text-transform: uppercase;
+}
+
+.small {
+  font-family: var(--nd-font-display);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22.4px;
+}
+
+.heading {
+  font-family: var(--nd-font-display);
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: -1.2px;
+  font-feature-settings: var(--nd-heading-features);
+}
+
+.display {
+  font-family: var(--nd-font-display);
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 57.6px;
+  letter-spacing: -2.56px;
+}
+
+.title {
+  font-family: var(--nd-font-body);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 36.4px;
+  letter-spacing: -0.56px;
+  font-variation-settings: var(--nd-title-wght);
+  font-feature-settings: var(--nd-heading-features);
+}
+
+@media (min-width: 810px) {
+  .heading {
+    font-size: 50px;
+    line-height: 55px;
+    letter-spacing: -2px;
+  }
+
+  .display {
+    font-size: 96px;
+    line-height: 86.4px;
+    letter-spacing: -4.8px;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 41.6px;
+    letter-spacing: -0.96px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .heading {
+    font-size: 64px;
+    line-height: 70.4px;
+    letter-spacing: -3.2px;
+  }
+
+  .display {
+    font-size: 120px;
+    line-height: 108px;
+    letter-spacing: -7.2px;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 46.8px;
+    letter-spacing: -1.44px;
+  }
+}
+
+/* ---------- Three-column rhythm ----------
+ * Framer authored rule: side columns flex 1 0 0, main column flex 2 0 0, each padded.
+ * Desktop: 32px padding on all three. Tablet: right column removed, left 24px, main 0 48px 0 24px.
+ * Phone: main only, 0 24px.
+ */
+
+.columns {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.side {
+  position: relative;
+  display: none;
+  flex: 1 0 0;
+  width: 1px;
+  align-self: stretch;
+  padding: 0 var(--nd-col-pad);
+}
+
+/* Used together with .side: <div className={cn(s.side, s.sideRight)} /> */
+.sideRight {
+  display: none;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  flex: 2 0 0;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 1px;
+  padding: 0 24px;
+}
+
+@media (min-width: 810px) {
+  .side {
+    display: flex;
+  }
+
+  .sideRight {
+    display: none;
+  }
+
+  .main {
+    padding: 0 48px 0 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sideRight {
+    display: flex;
+  }
+
+  .main {
+    padding: 0 32px;
+  }
+}
+
+/* Small "+" marker pinned to the top-left of side columns (MEASURED 12×12 at the column's gutter). */
+.plus {
+  position: absolute;
+  top: 0;
+  left: var(--nd-gutter);
+  width: 12px;
+  height: 12px;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

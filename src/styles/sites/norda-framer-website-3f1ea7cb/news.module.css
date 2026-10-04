@@ -1,0 +1,8 @@
+/* News listing — MEASURED: cards stacked with the section gap (192 at 1440) between an excerpt link and the next image. */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nd-section-y);
+  width: 100%;
+}

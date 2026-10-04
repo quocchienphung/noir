@@ -1,0 +1,12 @@
+.fit {
+  display: block;
+  overflow: visible;
+}
+
+.text {
+  margin: 0;
+  color: inherit;
+  font-family: var(--nd-font-display);
+  font-weight: 500;
+  white-space: nowrap;
+}

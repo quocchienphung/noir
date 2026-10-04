@@ -1,0 +1,130 @@
+div "Logo" [48,48 84x36] fixed flex-row gap0px j:center a:center z4 framer-zstefj 
+  a "Static" [48,48 84x36] flex-row gap0px j:center a:flex-start framer-awNXy.framer-1buuesb href=../
+    SVG [48,48 84x36]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+nav "Menu" [923,48 53x22] fixed flex-row gap0px j:center a:flex-end z4 framer-1wrkik1 
+  div "Default" [923,48 53x22] flex-row gap0px j:center a:center framer-ErA2A.framer-110ygri 
+    a "Touch" [923,48 53x22] flex-row gap50px j:center a:center framer-7eC7r.framer-1hx8ep0 href=null
+      T [923,48 53x22] Albert Sans 700 18px/21.6px lsnormal rgb(255, 255, 255) uppercase framer-vup7kw :: MENU
+main "Container" [0,0 1024x1822] flex-col gap0px j:flex-start a:flex-start bg rgb(0, 0, 0) z1 framer-gxdpqm 
+  div "Main Container" [0,0 1024x1822] flex-col gap0px j:flex-start a:center bg rgb(17, 17, 17) z1 framer-sddfx8 
+    div "Image" [0,0 1024x736] flex-row gap0px j:center a:flex-start pad(96px 0px 0px) framer-1918bs8 
+      section "Placeholder" [0,96 349x640] flex-col gap0px j:flex-start a:center pad(0px 24px) framer-2mmzk2 
+      div "Image Container" [349,96 675x640] flex-col gap0px j:flex-start a:flex-start pad(0px 48px 0px 24px) framer-cbhtv9 
+        div "Primary" [373,96 603x640]  framer-n5Iqg.framer-6tylni 
+          IMG [373,96 603x640] B5VJVNYm3wXcZS0POV27MMMtZQ.jpg nat1856x2463 fit:cover pos:50% 50% alt="Parallax Image"
+    div "Name and Role" [0,0 1024x640] absolute flex-row gap0px j:center a:flex-end framer-10grjci 
+      div "Text" [0,368 1024x208] flex-col gap32px j:flex-end a:flex-start pad(0px 0px 48px 48px) framer-eih0uo 
+        T [48,368 976x86] Albert Sans 500 96px/86.4px ls-4.8px rgb(255, 255, 255) ta-left framer-1roc3k3 :: Astrid Nilsen
+        T [48,486 976x42] Albert Sans Variable 400 32px/41.6px ls-0.96px rgb(255, 255, 255) framer-6f9jyi :: Junior Architect
+    div "Infornation" [0,736 1024x1086] flex-row gap0px j:center a:flex-start pad(144px 0px) framer-2trtyt 
+      section "Placeholder" [0,880 349x798] flex-col gap0px j:flex-start a:center pad(0px 24px) framer-125m526 
+        div "+" [48,880 12x12] absolute z1 framer-md0czm 
+          div "+" [48,880 12x12] absolute framer-1cewn99 
+            SVG [48,880 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+      div "Main Info" [349,880 675x798] flex-col gap96px j:flex-start a:flex-start pad(0px 48px 0px 24px) framer-6y1i74 
+        T [373,880 603x166] Albert Sans Variable 400 32px/41.6px ls-0.96px rgb(255, 255, 255) framer-bldy70 :: Astrid brings fresh ideas to the team, combining technical knowledge with creative flair. Her designs prioritize innovation and practicality.
+        div "Education" [373,1142 603x167] flex-col gap32px j:center a:flex-start framer-1elgqev 
+          T [373,1142 603x29] Albert Sans 700 18px/28.8px lsnormal rgb(255, 255, 255) uppercase framer-smm3ej :: /  EDUCATION
+          T [373,1203 603x106] Albert Sans Variable 400 18px/28.8px lsnormal rgb(255, 255, 255) framer-19xgv1s :: 2021: Chalmers University of Technology, Master of Architecture ⏎ 2019: Chalmers University of Technology, Bachelor of Design and Architecture
+        div "Recognition" [373,1406 603x138] flex-col gap32px j:center a:flex-start framer-1ep1o6i 
+          T [373,1406 603x29] Albert Sans 700 18px/28.8px lsnormal rgb(255, 255, 255) uppercase framer-7yq9j4 :: /  RECOGNITION
+          T [373,1466 603x78] Albert Sans Variable 400 18px/28.8px lsnormal rgb(255, 255, 255) framer-2bh5jo :: 2023: Young Talent Award, Scandinavian Design Forum ⏎ 2020: Best Graduate Thesis, Chalmers University
+        a "Link" [373,1640 254x38] flex-row gap12px j:center a:center pad(0px 0px 0px 2px) z1 framer-4aufs.framer-ioy0vw href=../about#meet-the-team
+          div "Tablet" [375,1640 212x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+            T [375,1640 212x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Meet the Team
+          SVG [599,1644 28x28]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+div "Footer" [0,1822 1024x1681] flex-col gap0px j:center a:center framer-18s0u54 
+  footer "Tablet" [0,1822 1024x1681] flex-col gap144px j:flex-start a:center pad(96px 48px 48px) bg rgb(0, 0, 0) framer-nxF8P.framer-x5Lgg 
+    div "Logo" [48,1918 928x276] flex-row gap0px j:center a:flex-start z0 framer-5frpzb 
+      div "Container" [48,1918 928x276] flex-col gap0px j:center a:center framer-vokia0 
+        figure "Big Logo" [48,1918 928x276]  framer-pdbq4w 
+          IMG [48,1918 928x276] FHIcLfBCbUtxnbce6yhoriDk.svg?width=662&height=197 nat928x276 fit:cover pos:50% 50% alt="Nordå"
+    div "Subscribe" [48,2339 928x268] flex-row gap0px j:center a:flex-start framer-songxk 
+      div "Container" [48,2339 928x268] flex-col gap64px j:flex-start a:flex-start framer-nj7ryh 
+        div "Form" [48,2339 928x268] flex-col gap24px j:flex-start a:flex-start framer-5tfzwe 
+          T [48,2339 640x83] Albert Sans Variable 400 32px/41.6px ls-0.96px rgb(255, 255, 255) ta-left framer-1ejwyw2 :: Sign up for our newsletter to receive updates and content
+          form [48,2446 720x92] flex-row gap0px j:flex-start a:center framer-1bw4lo6 
+            INPUT [48,2462 672x60] type=email name=Email ph="Your email here" Albert Sans 500 50px/60px ls-1px rgb(255, 255, 255) ta-left  :: 
+            BUTTON [718,2467 50x50] type=submit name= ph="" sans-serif 400 12px/normal lsnormal rgb(0, 0, 0) ta-center flex-row gap0px j:center a:center :: 
+            button "Default" [718,2467 50x50] flex-row gap0px j:center a:center framer-ab8zE.framer-1scqx6g 
+              section "Background" [718,2467 50x50] absolute bg rgb(255, 255, 255) op0 r999px z1 framer-rk4oti 
+              SVG [726,2474 35x35]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+              SVG [726,2474 35x35]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+          T [48,2562 500x45] Albert Sans 400 14px/22.4px lsnormal rgb(119, 119, 119) framer-5rbcto :: By signing up to receive emails from Nordå, you agree to our Privacy Policy. We treat your info responsibly. Unsubscribe anytime.
+    div "Menu" [48,2751 928x411] flex-row gap0px j:center a:flex-start framer-1cu669 
+      div "Container" [48,2751 928x411] flex-col gap64px j:flex-start a:flex-start framer-w4iaji 
+        div "Menu" [48,2751 928x411] flex-col gap32px j:flex-start a:flex-start framer-3rlzkd 
+          T [48,2751 96x29] Albert Sans 700 18px/28.8px lsnormal rgb(119, 119, 119) uppercase ta-left framer-lvv2xq :: /  SITEMAP
+          a "Link" [48,2811 164x38] flex-row gap0px j:center a:center framer-n3jcjy.framer-1wbuzja href=../
+            div "Tablet" [48,2811 164x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,2811 164x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Home Page
+          a "Link" [48,2874 115x38] flex-row gap0px j:center a:center framer-4fo6kd.framer-1wbuzja href=../projects
+            div "Tablet" [48,2874 115x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,2874 115x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Projects
+          a "Link" [48,2936 178x38] flex-row gap0px j:center a:center framer-ed24st.framer-1wbuzja href=../projects/verve-tower
+            div "Tablet" [48,2936 178x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,2936 178x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Project Page
+          a "Link" [48,2999 86x38] flex-row gap0px j:center a:center framer-180boqm.framer-1wbuzja href=../about
+            div "Tablet" [48,2999 86x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,2999 86x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: About
+          a "Link" [48,3061 205x38] flex-row gap0px j:center a:center framer-dk1sce.framer-1wbuzja href=./erik-lindholm
+            div "Tablet" [48,3061 205x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,3061 205x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Team Member
+          a "Link" [48,3123 119x38] flex-row gap0px j:center a:center framer-1fysoco.framer-1wbuzja href=../jobs/interior-designer
+            div "Tablet" [48,3123 119x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,3123 119x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Vacancy
+          a "Link" [536,2811 77x38] flex-row gap0px j:center a:center framer-t1ehma.framer-1wbuzja href=../news
+            div "Tablet" [536,2811 77x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [536,2811 77x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: News
+          a "Link" [536,2874 93x38] flex-row gap0px j:center a:center framer-11m1v81.framer-1wbuzja href=../news/how-architecture-shapes-productivity
+            div "Tablet" [536,2874 93x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [536,2874 93x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Article
+          a "Link" [536,2936 114x38] flex-row gap0px j:center a:center framer-1deusdw.framer-1wbuzja href=null
+            div "Tablet" [536,2936 114x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [536,2936 114x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Contact
+          a "Link" [536,2999 196x38] flex-row gap0px j:center a:center framer-7ciy4n.framer-1wbuzja href=../privacy-policy
+            div "Tablet" [536,2999 196x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [536,2999 196x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Privacy Policy
+          a "Link" [536,3061 60x38] flex-row gap0px j:center a:center framer-3sc92g.framer-1wbuzja href=../404
+            div "Tablet" [536,3061 60x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [536,3061 60x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: 404
+    div "Social Media" [48,3306 150x28] flex-row gap33px j:center a:flex-start framer-1g3wtke 
+      a "Facebook" [48,3306 28x28]  framer-mo4ifn.framer-1wbuzja href=https://facebook.com
+        SVG [48,3306 28x28]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+      a "X-Twitter" [109,3306 28x28]  framer-2ur9x6.framer-1wbuzja href=https://x.com
+        SVG [109,3306 28x28]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+      a "Instagram" [170,3306 28x28]  framer-1wbuzja href=https://instagram.com
+        SVG [170,3306 28x28]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+    div "Back To Top" [821,3308 155x23] flex-row gap12px j:center a:flex-start z1 framer-ofc4fq 
+      SVG [821,3308 20x20]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+      a "Touch" [853,3308 123x22] flex-row gap50px j:center a:center framer-7eC7r.framer-1hx8ep0 href=null
+        T [853,3308 123x22] Albert Sans 700 18px/21.6px lsnormal rgb(255, 255, 255) uppercase framer-vup7kw :: BACK TO TOP
+    T [48,3398 464x29] Albert Sans 700 18px/28.8px lsnormal rgb(119, 119, 119) uppercase ta-left framer-q2d5g4 :: COPYRIGHT 2026 NORDÅ. ALL RIGHTS RESERVED.
+    T [512,3398 464x58] Albert Sans 700 18px/28.8px lsnormal rgb(119, 119, 119) uppercase ta-right framer-1ap7txz :: FRAMER TEMPLATE HANDCRAFTED BY ANTON DRUKAROV
+a "Touch" [864,842 140x38] bg rgba(0, 0, 0, 0.04) r10px framer-F6oEL.framer-10c0k9q href=https://buy.polar.sh/polar_cl_l08ft5XMVXNF4DeqO5mPI8Chc8hHGTn7AWIXl4M77VM?utm_source=norda&utm_medium=get_button
+  T [881,850 106x22] Inter 600 13px/22.1px ls-0.065px rgb(255, 255, 255) framer-chq722 :: Get this template
+  T [903,890 63x22] Inter 600 13px/22.1px ls-0.065px rgb(255, 255, 255) framer-1njzeg6 :: from $129
+div "White" [0,0 20x20] fixed op0 tf matrix(1, 0, 0, 1, 0, 0) z13 framer-PpAIo.framer-8vabD 
+  div "bg" [-10,-10 20x20] absolute bg rgb(255, 255, 255) r999px framer-1hvdtew 
+  div "Read Article" [0,-40 154x39] absolute flex-row gap0px j:center a:center pad(6px 12px 4px) op0 framer-npjp0v 
+    T [12,-34 130x29] Albert Sans 700 18px/28.8px lsnormal rgb(255, 255, 255) uppercase framer-1m3ag7o :: READ ARTICLE
+    div "Corners" [0,-40 154x39] absolute z1 framer-7op5jx 
+  div "View project" [0,-40 159x39] absolute flex-row gap0px j:center a:center pad(6px 12px 4px) op0 framer-1ewfr8d 
+    T [12,-34 135x29] Albert Sans 700 18px/28.8px lsnormal rgb(255, 255, 255) uppercase framer-1ungidy :: VIEW PROJECT
+    div "Corners" [0,-40 159x39] absolute z1 framer-178i21o 
+  section "1" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-189gkhk 
+    IMG [0,-148 224x297] meNrcFhnSDlQiFc8Ft9PUdlwmRM.jpg?scale-down-to=1024 nat249x317 fit:cover pos:50% 50% alt=""
+  section "2" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-z1w8bv 
+    IMG [0,-148 224x297] 8ZVwMrMAvQKrz1sGjChciwyO8g.jpg?scale-down-to=512 nat248x165 fit:cover pos:50% 50% alt=""
+  section "3" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-11on1i3 
+    IMG [0,-148 224x297] i9IkeVe3nTtWGduRlvEm0pCeHk.jpg?scale-down-to=1024 nat249x373 fit:cover pos:50% 50% alt=""
+  section "4" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-17u8eae 
+    IMG [0,-148 224x297] QINY3akxDmnbMqmeOJusZy24ksw.jpg?scale-down-to=1024 nat248x327 fit:cover pos:50% 50% alt=""
+  section "5" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-xyfiuz 
+    IMG [0,-148 224x297] hHSXUDSgKFb8JHVZK46IxY4qOQ.jpg?scale-down-to=1024 nat248x331 fit:cover pos:50% 50% alt=""
+  section "6" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-1msjvh3 
+    IMG [0,-148 224x297] RU7tapUCQWOZhaPZpSK5fHV7QU.jpg?scale-down-to=1024 nat249x373 fit:cover pos:50% 50% alt=""
+  section "7" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-eust9d 
+    IMG [0,-148 224x297] csnszvg1pOTB5qMDCqIGxJ363g.jpg?scale-down-to=512 nat248x165 fit:cover pos:50% 50% alt=""
+  section "8" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-nap2ud 
+    IMG [0,-148 224x297] U556Zr9ySyBIwrKhO304cic8OI.jpg?scale-down-to=1024 nat249x305 fit:cover pos:50% 50% alt=""

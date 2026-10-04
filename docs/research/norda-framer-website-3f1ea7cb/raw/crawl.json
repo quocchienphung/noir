@@ -1,0 +1,281 @@
+[
+ {
+  "path": "/",
+  "key": "root-8a5edab2",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 14804,
+  "status390": 200,
+  "height390": 12777
+ },
+ {
+  "path": "/about",
+  "key": "about-979bddc4",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 11163,
+  "status390": 200,
+  "height390": 12535
+ },
+ {
+  "path": "/privacy-policy",
+  "key": "privacy-policy-81e51d8c",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 6540,
+  "status390": 200,
+  "height390": 6560
+ },
+ {
+  "path": "/projects",
+  "key": "projects-902ceeb2",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 8918,
+  "status390": 200,
+  "height390": 9307
+ },
+ {
+  "path": "/news",
+  "key": "news-f46b16ed",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 9637,
+  "status390": 200,
+  "height390": 9106
+ },
+ {
+  "path": "/contact",
+  "key": "contact-4eb95063",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 5321,
+  "status390": 200,
+  "height390": 5223
+ },
+ {
+  "path": "/projects/verve-tower",
+  "key": "projects--verve-tower-f6679463",
+  "status1440": 200,
+  "title": "Verve Tower - My Framer Site",
+  "height1440": 7277,
+  "status390": 200,
+  "height390": 6707
+ },
+ {
+  "path": "/projects/harbor-12",
+  "key": "projects--harbor-12-f38abefa",
+  "status1440": 200,
+  "title": "Harbor 12 - My Framer Site",
+  "height1440": 7330,
+  "status390": 200,
+  "height390": 6788
+ },
+ {
+  "path": "/projects/nordic-one",
+  "key": "projects--nordic-one-0bf27836",
+  "status1440": 200,
+  "title": "Nordic One - My Framer Site",
+  "height1440": 6482,
+  "status390": 200,
+  "height390": 6013
+ },
+ {
+  "path": "/projects/summit-24",
+  "key": "projects--summit-24-07bd12d9",
+  "status1440": 200,
+  "title": "Summit 24 - My Framer Site",
+  "height1440": 7277,
+  "status390": 200,
+  "height390": 6764
+ },
+ {
+  "path": "/projects/str%C3%B6m-haus",
+  "key": "projects--strom-haus-5778b8be",
+  "status1440": 200,
+  "title": "Ström Haus - My Framer Site",
+  "height1440": 6429,
+  "status390": 200,
+  "height390": 5996
+ },
+ {
+  "path": "/jobs/interior-designer",
+  "key": "jobs--interior-designer-5f4757ee",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 6805,
+  "status390": 200,
+  "height390": 6387
+ },
+ {
+  "path": "/jobs/landscape-architect",
+  "key": "jobs--landscape-architect-42362954",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 6741,
+  "status390": 200,
+  "height390": 6241
+ },
+ {
+  "path": "/jobs/3d-artist",
+  "key": "jobs--3d-artist-725b7f6e",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 6759,
+  "status390": 200,
+  "height390": 6228
+ },
+ {
+  "path": "/jobs/project-architect",
+  "key": "jobs--project-architect-3871577f",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 6665,
+  "status390": 200,
+  "height390": 6234
+ },
+ {
+  "path": "/team/erik-lindholm",
+  "key": "team--erik-lindholm-73da45d4",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 4088,
+  "status390": 200,
+  "height390": 3814
+ },
+ {
+  "path": "/team/linnea-s%C3%B6rensen",
+  "key": "team--linnea-sorensen-9edac140",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 4024,
+  "status390": 200,
+  "height390": 3741
+ },
+ {
+  "path": "/team/mikael-andersson",
+  "key": "team--mikael-andersson-ef3a5f42",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 4042,
+  "status390": 200,
+  "height390": 3777
+ },
+ {
+  "path": "/team/freja-karlsson",
+  "key": "team--freja-karlsson-ded121f8",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 4042,
+  "status390": 200,
+  "height390": 3748
+ },
+ {
+  "path": "/team/oskar-bj%C3%B8rnsen",
+  "key": "team--oskar-bjornsen-6701ec72",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 4042,
+  "status390": 200,
+  "height390": 3712
+ },
+ {
+  "path": "/team/elin-j%C3%B8rgensen",
+  "key": "team--elin-jorgensen-6226b4d8",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 3995,
+  "status390": 200,
+  "height390": 3676
+ },
+ {
+  "path": "/team/astrid-nilsen",
+  "key": "team--astrid-nilsen-6de92536",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 4024,
+  "status390": 200,
+  "height390": 3676
+ },
+ {
+  "path": "/team/jonas-eklund",
+  "key": "team--jonas-eklund-2e9711c7",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 4042,
+  "status390": 200,
+  "height390": 3712
+ },
+ {
+  "path": "/team/sofia-bergstr%C3%B6m",
+  "key": "team--sofia-bergstrom-5078fb3c",
+  "status1440": 200,
+  "title": "Nordå Architects",
+  "height1440": 4042,
+  "status390": 200,
+  "height390": 3777
+ },
+ {
+  "path": "/news/how-architecture-shapes-productivity",
+  "key": "news--how-architecture-shapes-productivity-213a278c",
+  "status1440": 200,
+  "title": "Exploring the Future of Urban Living - Nordå Architects",
+  "height1440": 4451,
+  "status390": 200,
+  "height390": 4607
+ },
+ {
+  "path": "/news/net-zero-buildings-the-next-step-in-architecture",
+  "key": "news--net-zero-buildings-the-next-step-in-architecture-0b39f912",
+  "status1440": 200,
+  "title": "The Balance of Form and Function - Nordå Architects",
+  "height1440": 4498,
+  "status390": 200,
+  "height390": 4599
+ },
+ {
+  "path": "/news/the-role-of-public-spaces-in-cities",
+  "key": "news--the-role-of-public-spaces-in-cities-83fd034c",
+  "status1440": 200,
+  "title": "Reinventing Office Spaces for Tomorrow - Nordå Architects",
+  "height1440": 4451,
+  "status390": 200,
+  "height390": 4643
+ },
+ {
+  "path": "/news/building-with-purpose",
+  "key": "news--building-with-purpose-1e9f4258",
+  "status1440": 200,
+  "title": "The Role of Light in Architectural Design - Nordå Architects",
+  "height1440": 4451,
+  "status390": 200,
+  "height390": 4643
+ },
+ {
+  "path": "/news/the-future-of-office-spaces",
+  "key": "news--the-future-of-office-spaces-490ef5c7",
+  "status1440": 200,
+  "title": "Building with a Sustainable Mindset - Nordå Architects",
+  "height1440": 4451,
+  "status390": 200,
+  "height390": 4672
+ },
+ {
+  "path": "/news/designing-cities-for-tomorrow",
+  "key": "news--designing-cities-for-tomorrow-9920339a",
+  "status1440": 200,
+  "title": "Designing for Density: Smart Urban Solutions - Nordå Architects",
+  "height1440": 4498,
+  "status390": 200,
+  "height390": 4672
+ },
+ {
+  "path": "/404",
+  "key": "404-316556f0",
+  "status1440": 404,
+  "title": "Nordå Architects",
+  "height1440": 2656,
+  "status390": 404,
+  "height390": 2735
+ }
+]

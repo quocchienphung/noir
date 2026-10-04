@@ -1,0 +1,177 @@
+div "Logo" [48,48 84x36] fixed flex-row gap0px j:center a:center blend difference z4 framer-1ym616k 
+  a "Static" [48,48 84x36] flex-row gap0px j:center a:flex-start framer-awNXy.framer-1buuesb href=../
+    SVG [48,48 84x36]   fill=rgb(0, 0, 0) color=rgb(0, 0, 238)
+header "Menu" [923,48 53x22] fixed flex-row gapnormal j:space-between a:flex-end blend difference z4 framer-1t7b7if 
+  div "Default" [923,48 53x22] flex-row gap0px j:center a:center framer-ErA2A.framer-110ygri 
+    a "Touch" [923,48 53x22] flex-row gap50px j:center a:center framer-7eC7r.framer-1hx8ep0 href=null
+      T [923,48 53x22] Albert Sans 700 18px/21.6px lsnormal rgb(255, 255, 255) uppercase framer-vup7kw :: MENU
+main "Container" [0,0 1024x4276] flex-col gap0px j:flex-start a:flex-start bg rgb(0, 0, 0) z1 framer-1n640ri 
+  div "Main Container" [0,0 1024x4276] flex-col gap0px j:flex-start a:center pad(0px 0px 144px) bg rgb(255, 255, 255) z1 framer-hgcew9 
+    section "Placeholder" [0,0 1024x200]  framer-1vc3etk 
+    div "Title" [0,200 1024x182] flex-row gap0px j:center a:flex-start pad(48px) framer-1v9wxjv 
+      T [48,248 928x86] Albert Sans 500 96px/86.4px ls-4.8px rgb(0, 0, 0) ta-left framer-73fdh1 :: Ström Haus
+    div "Image" [0,382 1024x720] flex-row gap0px j:center a:flex-start pad(0px 48px) framer-ait4e6 
+      div "Image Container" [48,382 928x720]  framer-a5gr1t 
+        div "Primary" [48,382 928x720]  framer-n5Iqg.framer-6tylni 
+          IMG [48,178 928x1020] pPpkWDlQJHNavXlg5W7E6yoeCU.jpg nat3872x2592 fit:cover pos:50% 50% alt="Parallax Image"
+        div "Corners" [48,382 928x720] absolute z0 framer-ngb6iw 
+          div "+" [96,430 12x12] absolute z1 framer-8y0fiy 
+            div "+" [96,430 12x12] absolute framer-16jnswo 
+              SVG [96,430 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+          div "+" [916,430 12x12] absolute z1 framer-1ddbk09 
+            div "+" [916,430 12x12] absolute framer-tilkv3 
+              SVG [916,430 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+          div "+" [916,1042 12x12] absolute z1 framer-154evxk 
+            div "+" [916,1042 12x12] absolute framer-6n7kyl 
+              SVG [916,1042 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+          div "+" [96,1042 12x12] absolute z1 framer-12a97ap 
+            div "+" [96,1042 12x12] absolute framer-q8mtnu 
+              SVG [96,1042 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+    div "Project Description" [0,1102 1024x538] flex-row gap0px j:center a:flex-start pad(96px 0px) framer-91p33x 
+      section "Placeholder" [0,1198 349x346] flex-col gap0px j:flex-start a:center pad(0px 24px) framer-19guy8z 
+        div "+" [48,1198 12x12] absolute z1 framer-s48mh3 
+          div "+" [48,1198 12x12] absolute framer-18t2ikq 
+            SVG [48,1198 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+      div "Text" [349,1198 675x346] flex-col gap48px j:flex-start a:flex-start pad(0px 48px 0px 24px) framer-1gor8zi 
+        div "Parameters" [373,1198 603x51] flex-row gap64px j:flex-start a:flex-start framer-13la2t8 
+          div "Location" [373,1198 160x51] flex-col gap0px j:center a:flex-start framer-lfoqvn 
+            T [373,1198 55x22] Albert Sans 400 14px/22.4px lsnormal rgb(119, 119, 119) framer-1129ms1 :: Location
+            T [373,1221 147x29] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-11taovq :: Reykjavik, Iceland
+          div "Year" [597,1198 160x51] flex-col gap0px j:center a:flex-start framer-1doweok 
+            T [597,1198 28x22] Albert Sans 400 14px/22.4px lsnormal rgb(119, 119, 119) framer-pf7q4x :: Year
+            T [597,1221 39x29] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-1o0v0w2 :: 2018
+        T [373,1298 603x83] Albert Sans Variable 400 32px/41.6px ls-0.96px rgb(0, 0, 0) framer-iyvjxd :: A dynamic residential complex designed for urban efficiency and social connection.
+        T [373,1429 603x115] Albert Sans Variable 400 18px/28.8px lsnormal rgb(0, 0, 0) framer-1sod1oy :: Ström Haus introduces a new standard for apartment living in Stockholm. Compact yet spacious units maximize function without compromising comfort. Communal gardens, rooftop terraces, and smart energy systems encourage a sustainable and connected urban lifestyle.
+    div "Project Images" [0,1640 1024x1532] flex-col gap92px j:center a:center framer-170vjg6 
+      div "Image 1" [0,1640 1024x720] flex-row gap0px j:center a:flex-start framer-12jg5sj 
+        section "Placeholder" [0,1640 349x720] flex-col gap0px j:flex-start a:center pad(0px 24px) framer-1xzjlw0 
+          div "+" [48,1640 12x12] absolute z1 framer-pzcefu 
+            div "+" [48,1640 12x12] absolute framer-rva1fl 
+              SVG [48,1640 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+        div "Image" [349,1640 675x720] flex-col gap96px j:flex-start a:flex-start pad(0px 48px 0px 24px) framer-r3sxsx 
+          div "Image" [373,1640 603x720] z1 framer-14lhszk 
+            div "Primary" [373,1640 603x720]  framer-n5Iqg.framer-6tylni 
+              IMG [373,1340 603x1020] DK9javDVvaM4Gel5FODoca6oh0.jpg nat4000x6000 fit:cover pos:50% 50% alt="Parallax Image"
+      div "Image 3" [0,2452 1024x720] flex-row gap0px j:center a:flex-start framer-g8l837 
+        section "Placeholder" [0,2452 349x720] flex-col gap0px j:flex-start a:center pad(0px 24px) framer-h9cbrp 
+          div "+" [48,2452 12x12] absolute z1 framer-12xghed 
+            div "+" [48,2452 12x12] absolute framer-1khonpu 
+              SVG [48,2452 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+        div "Image" [349,2452 675x720] flex-col gap96px j:flex-start a:flex-start pad(0px 48px 0px 24px) framer-foxvrh 
+          div "Image" [373,2452 603x720] z1 framer-n3vszj 
+            div "Primary" [373,2452 603x720]  framer-n5Iqg.framer-6tylni 
+              IMG [373,2152 603x1020] wIjCfNZKQJgk15JSyFQ4VDMlE1g.jpg nat3024x4032 fit:cover pos:50% 50% alt="Parallax Image"
+    div "Text Block" [0,3172 1024x510] flex-row gap0px j:center a:flex-start pad(144px 0px) framer-195w4k2 
+      section "Placeholder" [0,3316 349x222] flex-col gap0px j:flex-start a:center pad(0px 24px) framer-rwzsn0 
+        div "+" [48,3316 12x12] absolute z1 framer-2zz1ya 
+          div "+" [48,3316 12x12] absolute framer-29hxb6 
+            SVG [48,3316 12x12]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+      div "Text" [349,3316 675x222] flex-col gap64px j:flex-start a:flex-start pad(0px 48px 0px 24px) framer-m16anm 
+        T [373,3316 603x222] Albert Sans Variable 400 32px/41.6px ls-0.96px rgb(0, 0, 0) framer-tihtq8 :: Rethinking city living with intelligent design and shared spaces. ⏎ In a city where space is a premium, Ström Haus offers a new approach to modern housing—efficient, flexible, and beautifully integrated into Stockholm’s evolving skyline. It’s a place where people thrive, not just reside.
+    div "First Project" [0,3682 1024x450] flex-row gap0px j:center a:flex-start pad(0px 48px) framer-hbdva2 
+      a [48,3682 928x450] flex-row gap0px j:center a:flex-start framer-6yw1w3.framer-kmygwp href=./verve-tower
+        div "Image Container" [48,3682 928x450]  framer-1bxi0f4 
+          div "Primary" [48,3682 928x450]  framer-n5Iqg.framer-6tylni 
+            IMG [48,3382 928x750] zSsaQ6aEIDDticuNpIL0PHy0OKE.jpg nat3872x2592 fit:cover pos:50% 50% alt="Parallax Image"
+          div "Corners" [48,3682 928x450] absolute z0 framer-1q8p43q 
+            T [96,3730 11x29] Albert Sans 700 18px/28.8px lsnormal rgb(255, 255, 255) uppercase ta-right framer-1n39b3n :: +
+            T [96,4056 11x29] Albert Sans 700 18px/28.8px lsnormal rgb(255, 255, 255) uppercase ta-right framer-1i81i2f :: +
+            T [917,3730 11x29] Albert Sans 700 18px/28.8px lsnormal rgb(255, 255, 255) uppercase ta-right framer-194mreu :: +
+            T [917,4056 11x29] Albert Sans 700 18px/28.8px lsnormal rgb(255, 255, 255) uppercase ta-right framer-titrmb :: +
+        T [96,3840 832x29] Albert Sans 700 18px/28.8px lsnormal rgb(255, 255, 255) uppercase ta-center framer-y626ep :: NEXT PROJECT
+        T [96,3885 832x86] Albert Sans 500 96px/86.4px ls-4.8px rgb(255, 255, 255) ta-center framer-1me2tv5 :: Verve Tower
+div "Footer" [0,4276 1024x1681] flex-col gap0px j:center a:center framer-18s0u54 
+  footer "Tablet" [0,4276 1024x1681] flex-col gap144px j:flex-start a:center pad(96px 48px 48px) bg rgb(0, 0, 0) framer-nxF8P.framer-x5Lgg 
+    div "Logo" [48,4372 928x276] flex-row gap0px j:center a:flex-start z0 framer-5frpzb 
+      div "Container" [48,4372 928x276] flex-col gap0px j:center a:center framer-vokia0 
+        figure "Big Logo" [48,4372 928x276]  framer-pdbq4w 
+          IMG [48,4372 928x276] FHIcLfBCbUtxnbce6yhoriDk.svg?width=662&height=197 nat928x276 fit:cover pos:50% 50% alt="Nordå"
+    div "Subscribe" [48,4793 928x268] flex-row gap0px j:center a:flex-start framer-songxk 
+      div "Container" [48,4793 928x268] flex-col gap64px j:flex-start a:flex-start framer-nj7ryh 
+        div "Form" [48,4793 928x268] flex-col gap24px j:flex-start a:flex-start framer-5tfzwe 
+          T [48,4793 640x83] Albert Sans Variable 400 32px/41.6px ls-0.96px rgb(255, 255, 255) ta-left framer-1ejwyw2 :: Sign up for our newsletter to receive updates and content
+          form [48,4900 720x92] flex-row gap0px j:flex-start a:center framer-1bw4lo6 
+            INPUT [48,4916 672x60] type=email name=Email ph="Your email here" Albert Sans 500 50px/60px ls-1px rgb(255, 255, 255) ta-left  :: 
+            BUTTON [718,4921 50x50] type=submit name= ph="" sans-serif 400 12px/normal lsnormal rgb(0, 0, 0) ta-center flex-row gap0px j:center a:center :: 
+            button "Default" [718,4921 50x50] flex-row gap0px j:center a:center framer-ab8zE.framer-1scqx6g 
+              section "Background" [718,4921 50x50] absolute bg rgb(255, 255, 255) op0 r999px z1 framer-rk4oti 
+              SVG [726,4928 35x35]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+              SVG [726,4928 35x35]   fill=rgb(0, 0, 0) color=rgb(0, 0, 0)
+          T [48,5016 500x45] Albert Sans 400 14px/22.4px lsnormal rgb(119, 119, 119) framer-5rbcto :: By signing up to receive emails from Nordå, you agree to our Privacy Policy. We treat your info responsibly. Unsubscribe anytime.
+    div "Menu" [48,5205 928x411] flex-row gap0px j:center a:flex-start framer-1cu669 
+      div "Container" [48,5205 928x411] flex-col gap64px j:flex-start a:flex-start framer-w4iaji 
+        div "Menu" [48,5205 928x411] flex-col gap32px j:flex-start a:flex-start framer-3rlzkd 
+          T [48,5205 96x29] Albert Sans 700 18px/28.8px lsnormal rgb(119, 119, 119) uppercase ta-left framer-lvv2xq :: /  SITEMAP
+          a "Link" [48,5265 164x38] flex-row gap0px j:center a:center framer-n3jcjy.framer-1wbuzja href=../
+            div "Tablet" [48,5265 164x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,5265 164x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Home Page
+          a "Link" [48,5328 115x38] flex-row gap0px j:center a:center framer-4fo6kd.framer-1wbuzja href=../projects
+            div "Tablet" [48,5328 115x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,5328 115x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Projects
+          a "Link" [48,5390 178x38] flex-row gap0px j:center a:center framer-ed24st.framer-1wbuzja href=./verve-tower
+            div "Tablet" [48,5390 178x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,5390 178x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Project Page
+          a "Link" [48,5453 86x38] flex-row gap0px j:center a:center framer-180boqm.framer-1wbuzja href=../about
+            div "Tablet" [48,5453 86x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,5453 86x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: About
+          a "Link" [48,5515 205x38] flex-row gap0px j:center a:center framer-dk1sce.framer-1wbuzja href=../team/erik-lindholm
+            div "Tablet" [48,5515 205x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,5515 205x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Team Member
+          a "Link" [48,5577 119x38] flex-row gap0px j:center a:center framer-1fysoco.framer-1wbuzja href=../jobs/interior-designer
+            div "Tablet" [48,5577 119x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [48,5577 119x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Vacancy
+          a "Link" [536,5265 77x38] flex-row gap0px j:center a:center framer-t1ehma.framer-1wbuzja href=../news
+            div "Tablet" [536,5265 77x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [536,5265 77x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: News
+          a "Link" [536,5328 93x38] flex-row gap0px j:center a:center framer-11m1v81.framer-1wbuzja href=../news/how-architecture-shapes-productivity
+            div "Tablet" [536,5328 93x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [536,5328 93x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Article
+          a "Link" [536,5390 114x38] flex-row gap0px j:center a:center framer-1deusdw.framer-1wbuzja href=null
+            div "Tablet" [536,5390 114x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [536,5390 114x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Contact
+          a "Link" [536,5453 196x38] flex-row gap0px j:center a:center framer-7ciy4n.framer-1wbuzja href=../privacy-policy
+            div "Tablet" [536,5453 196x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [536,5453 196x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: Privacy Policy
+          a "Link" [536,5515 60x38] flex-row gap0px j:center a:center framer-3sc92g.framer-1wbuzja href=../404
+            div "Tablet" [536,5515 60x38] flex-row gap50px j:center a:center framer-NcEBb.framer-13wthzj 
+              T [536,5515 60x38] Albert Sans Variable 400 32px/38.4px ls-0.64px rgb(255, 255, 255) framer-12lne6s :: 404
+    div "Social Media" [48,5760 150x28] flex-row gap33px j:center a:flex-start framer-1g3wtke 
+      a "Facebook" [48,5760 28x28]  framer-mo4ifn.framer-1wbuzja href=https://facebook.com
+        SVG [48,5760 28x28]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+      a "X-Twitter" [109,5760 28x28]  framer-2ur9x6.framer-1wbuzja href=https://x.com
+        SVG [109,5760 28x28]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+      a "Instagram" [170,5760 28x28]  framer-1wbuzja href=https://instagram.com
+        SVG [170,5760 28x28]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+    div "Back To Top" [821,5762 155x23] flex-row gap12px j:center a:flex-start z1 framer-ofc4fq 
+      SVG [821,5762 20x20]   fill=rgb(255, 255, 255) color=rgb(255, 255, 255)
+      a "Touch" [853,5762 123x22] flex-row gap50px j:center a:center framer-7eC7r.framer-1hx8ep0 href=null
+        T [853,5762 123x22] Albert Sans 700 18px/21.6px lsnormal rgb(255, 255, 255) uppercase framer-vup7kw :: BACK TO TOP
+    T [48,5852 464x29] Albert Sans 700 18px/28.8px lsnormal rgb(119, 119, 119) uppercase ta-left framer-q2d5g4 :: COPYRIGHT 2026 NORDÅ. ALL RIGHTS RESERVED.
+    T [512,5852 464x58] Albert Sans 700 18px/28.8px lsnormal rgb(119, 119, 119) uppercase ta-right framer-1ap7txz :: FRAMER TEMPLATE HANDCRAFTED BY ANTON DRUKAROV
+a "Touch" [864,842 140x38] bg rgba(0, 0, 0, 0.04) r10px framer-F6oEL.framer-10c0k9q href=https://buy.polar.sh/polar_cl_l08ft5XMVXNF4DeqO5mPI8Chc8hHGTn7AWIXl4M77VM?utm_source=norda&utm_medium=get_button
+  T [881,850 106x22] Inter 600 13px/22.1px ls-0.065px rgb(255, 255, 255) framer-chq722 :: Get this template
+  T [903,890 63x22] Inter 600 13px/22.1px ls-0.065px rgb(255, 255, 255) framer-1njzeg6 :: from $129
+div "Black" [0,0 20x20] fixed op0 tf matrix(1, 0, 0, 1, 0, 0) z13 framer-PpAIo.framer-8vabD 
+  div "bg" [-10,-10 20x20] absolute bg rgb(0, 0, 0) r999px framer-1hvdtew 
+  div "Read Article" [0,-40 154x39] absolute flex-row gap0px j:center a:center pad(6px 12px 4px) op0 framer-npjp0v 
+    T [12,-34 130x29] Albert Sans 700 18px/28.8px lsnormal rgb(255, 255, 255) uppercase framer-1m3ag7o :: READ ARTICLE
+    div "Corners" [0,-40 154x39] absolute z1 framer-7op5jx 
+  div "View project" [0,-40 159x39] absolute flex-row gap0px j:center a:center pad(6px 12px 4px) op0 framer-1ewfr8d 
+    T [12,-34 135x29] Albert Sans 700 18px/28.8px lsnormal rgb(255, 255, 255) uppercase framer-1ungidy :: VIEW PROJECT
+    div "Corners" [0,-40 159x39] absolute z1 framer-178i21o 
+  section "1" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-189gkhk 
+    IMG [0,-148 224x297] meNrcFhnSDlQiFc8Ft9PUdlwmRM.jpg?scale-down-to=1024 nat249x317 fit:cover pos:50% 50% alt=""
+  section "2" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-z1w8bv 
+    IMG [0,-148 224x297] 8ZVwMrMAvQKrz1sGjChciwyO8g.jpg?scale-down-to=512 nat248x165 fit:cover pos:50% 50% alt=""
+  section "3" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-11on1i3 
+    IMG [0,-148 224x297] i9IkeVe3nTtWGduRlvEm0pCeHk.jpg?scale-down-to=1024 nat249x373 fit:cover pos:50% 50% alt=""
+  section "4" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-17u8eae 
+    IMG [0,-148 224x297] QINY3akxDmnbMqmeOJusZy24ksw.jpg?scale-down-to=1024 nat248x327 fit:cover pos:50% 50% alt=""
+  section "5" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-xyfiuz 
+    IMG [0,-148 224x297] hHSXUDSgKFb8JHVZK46IxY4qOQ.jpg?scale-down-to=1024 nat248x331 fit:cover pos:50% 50% alt=""
+  section "6" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-1msjvh3 
+    IMG [0,-148 224x297] RU7tapUCQWOZhaPZpSK5fHV7QU.jpg?scale-down-to=1024 nat249x373 fit:cover pos:50% 50% alt=""
+  section "7" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-eust9d 
+    IMG [0,-148 224x297] csnszvg1pOTB5qMDCqIGxJ363g.jpg?scale-down-to=512 nat248x165 fit:cover pos:50% 50% alt=""
+  section "8" [0,-148 224x297] absolute op0 tf matrix(1, 0, 0, 1, 0, -148.5) framer-nap2ud 
+    IMG [0,-148 224x297] U556Zr9ySyBIwrKhO304cic8OI.jpg?scale-down-to=1024 nat249x305 fit:cover pos:50% 50% alt=""

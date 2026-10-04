@@ -1,0 +1,187 @@
+/* Team member — MEASURED at 1440 / 1024 / 390 (dark #111 page). */
+
+.main {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--nd-ink);
+  color: var(--nd-white);
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+}
+
+.imageRow {
+  padding-top: 96px;
+}
+
+.portrait {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.photo {
+  object-fit: cover;
+}
+
+.nameRole {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 24px 0;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.name,
+.role {
+  margin: 0;
+}
+
+/* Phone shows the role as body copy (MEASURED 18/28.8). */
+.role {
+  font-size: 18px;
+  line-height: 28.8px;
+  letter-spacing: normal;
+  font-variation-settings: var(--nd-body-wght);
+  font-feature-settings: normal;
+}
+
+.scroll {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.scrollIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.info {
+  padding: 96px 0;
+}
+
+.infoMain {
+  position: relative;
+  gap: 64px;
+}
+
+.bio {
+  max-width: 640px;
+  margin: 0;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.groupTitle {
+  margin: 0;
+}
+
+.groupBody {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.groupBody p,
+.groupBody p + p {
+  margin: 0;
+}
+
+@media (min-width: 810px) {
+  .imageRow {
+    padding-top: 96px;
+  }
+
+  .portrait {
+    height: 640px;
+  }
+
+  .nameRole {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 640px;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 48px 48px;
+    pointer-events: none;
+  }
+
+  .text {
+    gap: 32px;
+  }
+
+  .role {
+    font-size: 32px;
+    line-height: 41.6px;
+    letter-spacing: -0.96px;
+    font-variation-settings: var(--nd-title-wght);
+    font-feature-settings: var(--nd-heading-features);
+  }
+
+  .info {
+    padding: 144px 0;
+  }
+
+  .infoMain {
+    gap: 96px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .imageRow {
+    padding-top: 64px;
+  }
+
+  .portrait {
+    height: 900px;
+  }
+
+  .nameRole {
+    height: 900px;
+    padding: 0 64px 64px;
+  }
+
+  .text {
+    width: calc((100% - 64px) / 2);
+    gap: 40px;
+  }
+
+  .role {
+    font-size: 36px;
+    line-height: 46.8px;
+    letter-spacing: -1.44px;
+  }
+
+  .scroll {
+    display: flex;
+    pointer-events: auto;
+  }
+
+  .info {
+    padding: 192px 0;
+  }
+
+  .infoMain {
+    gap: 128px;
+  }
+}

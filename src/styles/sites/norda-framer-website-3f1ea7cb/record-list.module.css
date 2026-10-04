@@ -1,0 +1,153 @@
+/* Hairline record list — MEASURED (Awards / Archive Projects / Publications share one component).
+ * rows: phone stacked (pad 32, gap 24, meta gap 8); tablet title over meta row (pad 40, gap 16);
+ * desktop single row with two 1fr halves and 64px gap (pad 40). */
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  color: var(--nd-black);
+}
+
+.light {
+  color: var(--nd-white);
+}
+
+.titleRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+}
+
+.heading,
+.count {
+  margin: 0;
+}
+
+.list,
+.listStatic {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.thick .row::after {
+  height: 2px;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px 0;
+}
+
+.row::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.1;
+  transition: opacity 0.2s ease;
+}
+
+@media (hover: hover) {
+  .row:hover::after {
+    opacity: 1;
+  }
+}
+
+.rowTitle,
+.rowOrg,
+.rowYear {
+  margin: 0;
+}
+
+.rowMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rowYear {
+  white-space: pre;
+}
+
+@media (min-width: 810px) {
+  .block {
+    gap: 48px;
+  }
+
+  .titleRow {
+    gap: 24px;
+  }
+
+  .row {
+    gap: 16px;
+    padding: 40px 0;
+  }
+
+  .rowMeta {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .block {
+    gap: 64px;
+  }
+
+  .titleRow {
+    gap: 32px;
+  }
+
+  .row {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .rowTitle,
+  .rowMeta {
+    flex: 1 0 0;
+  }
+}
+
+@media (min-width: 1200px) and (prefers-reduced-motion: no-preference) {
+  .titleAppear {
+    transform: translateY(30px);
+    transition: transform 1s var(--nd-ease-slide);
+  }
+
+  .list {
+    opacity: 0;
+    transform: translateY(100px);
+    transition:
+      transform 1s var(--nd-ease-slide),
+      opacity 1s var(--nd-ease-slide);
+  }
+
+  .rowAppear {
+    opacity: 0;
+    transform: translateY(100px);
+    transition:
+      transform 1s var(--nd-ease-slide),
+      opacity 1s var(--nd-ease-slide);
+  }
+
+  .titleAppear[data-inview],
+  .list[data-inview],
+  .rowAppear[data-inview] {
+    opacity: 1;
+    transform: none;
+  }
+}
