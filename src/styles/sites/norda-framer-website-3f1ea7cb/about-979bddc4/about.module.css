@@ -55,7 +55,7 @@
 
 .publications {
   width: 100%;
-  padding: var(--nd-section-y) var(--nd-gutter);
+  padding: 0 var(--nd-gutter) var(--nd-section-y);
 }
 
 .closing {
@@ -104,9 +104,6 @@
     height: 223px;
   }
 
-  .publications {
-    padding: 0 64px 192px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

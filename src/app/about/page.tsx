@@ -60,6 +60,7 @@ export default function AboutPage() {
             appear="rows"
             thickLines
             titleAppear={false}
+            variant="publications"
           />
         </section>
 

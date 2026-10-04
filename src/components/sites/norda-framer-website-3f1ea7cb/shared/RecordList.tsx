@@ -26,6 +26,7 @@ export function RecordList({
   appear = "list",
   thickLines = false,
   titleAppear = true,
+  variant = "default",
 }: {
   title: string;
   rows: RecordRow[];
@@ -39,9 +40,11 @@ export function RecordList({
   thickLines?: boolean;
   /** Awards/Archive titles rise 30px into place; the Publications title is static (MEASURED). */
   titleAppear?: boolean;
+  /** "publications": tighter phone/tablet rhythm with organisation + year on one line (MEASURED on /about). */
+  variant?: "default" | "publications";
 }) {
   return (
-    <div className={cn(s.block, tone === "light" && s.light, thickLines && s.thick, className)}>
+    <div className={cn(s.block, tone === "light" && s.light, thickLines && s.thick, variant === "publications" && s.publications, className)}>
       <InView className={cn(s.titleRow, titleAppear && s.titleAppear)}>
         <h2 id={id} className={cn(site.heading, s.heading)}>
           {title}

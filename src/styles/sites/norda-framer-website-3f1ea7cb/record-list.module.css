@@ -151,3 +151,49 @@
     transform: none;
   }
 }
+
+/* Publications variant (MEASURED /about): phone title→list 8px, rows pad 40 0 24 with a 16px gap and the
+ * organisation/year on one line; tablet rows are horizontal halves (gap 48, pad 32 0 40). */
+.publications {
+  gap: 8px;
+}
+
+.publications .row {
+  gap: 16px;
+  padding: 40px 0 24px;
+}
+
+.publications .rowMeta {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0;
+}
+
+@media (min-width: 810px) {
+  .publications {
+    gap: 48px;
+  }
+
+  .publications .row {
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+    padding: 32px 0 40px;
+  }
+
+  .publications .rowTitle,
+  .publications .rowMeta {
+    flex: 1 0 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .publications {
+    gap: 64px;
+  }
+
+  .publications .row {
+    gap: 64px;
+    padding: 40px 0;
+  }
+}
