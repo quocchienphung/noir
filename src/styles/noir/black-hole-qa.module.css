@@ -1,0 +1,7 @@
+/* Development-only QA harness: the scene fills the viewport above the site chrome. */
+.stage {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #000;
+}

@@ -2,22 +2,73 @@
 
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { BlackHoleRenderer } from "@/lib/noir/blackhole/renderer";
-import { cinematicFrame, diveFrame, type Pointer, type SceneInput } from "@/lib/noir/blackhole/scenes";
+import { BlackHoleRenderer, type FrameParams } from "@/lib/noir/blackhole/renderer";
+import { cinematicFrame, diveFrame, referenceFrame, type Pointer, type SceneInput } from "@/lib/noir/blackhole/scenes";
 import s from "@/styles/noir/black-hole.module.css";
 
-export type BlackHoleScene = "dive" | "cinematic";
+/** "reference" is the development-only QA camera matched to the reference video. */
+export type BlackHoleScene = "dive" | "cinematic" | "reference";
 
 /** Called once per animation frame; returns the (smoothed) timeline progress to render, 0…1. */
 export type BlackHoleDriver = (dt: number) => number;
 
 const MIN_SCALE = 0.32;
-/** Ray-traced pixels per frame we aim for before adaptive quality kicks in (~0.65 Mpx). */
-const PIXEL_BUDGET = 650_000;
 
-/** Render scale from a pixel budget: small phone canvases render near-native, large desktops ~0.65. */
-function initialScale(cssW: number, cssH: number, dpr: number) {
-  return Math.min(1, Math.max(MIN_SCALE, Math.sqrt(PIXEL_BUDGET / Math.max(1, cssW * cssH * dpr * dpr))));
+/**
+ * Quality tiers. Integration and slab sampling are fixed per tier — never tied to the buffer size — so
+ * dynamic resolution changes sharpness only, not the shape of the shadow or arcs. `budget` is the
+ * ray-traced pixels per frame we aim for before adaptive resolution kicks in.
+ */
+const TIERS = {
+  high: { steps: 280, slab: 28, budget: 1_000_000 },
+  medium: { steps: 240, slab: 16, budget: 620_000 },
+  low: { steps: 200, slab: 10, budget: 380_000 },
+  ultra: { steps: 520, slab: 64, budget: 8_000_000 },
+} as const;
+type TierName = keyof typeof TIERS;
+
+/**
+ * Development-only QA overrides read from the URL, e.g. `/?bhT=12&bhScale=1&bhQ=ultra`:
+ *   bhT      freeze the simulation clock at this time (s)   bhScale  fixed render scale (no adaptation)
+ *   bhPtr=0  ignore the pointer                              bhQ      quality tier (low|medium|high|ultra)
+ *   bhDebug  1 unlit density, 2 capture/escape/unresolved, 3 flow markers
+ *   bhView   1 no bloom, 2 false-colour radiance              bhGrain=0 no grain
+ * `process.env.NODE_ENV` is inlined at build time, so production bundles drop this entirely.
+ */
+interface QaOverrides {
+  time?: number;
+  scale?: number;
+  noPointer?: boolean;
+  tier?: TierName;
+  debug?: number;
+  view?: number;
+  noGrain?: boolean;
+}
+function readQa(): QaOverrides | null {
+  if (process.env.NODE_ENV === "production") return null;
+  const q = new URLSearchParams(window.location.search);
+  const num = (k: string) => (q.has(k) && Number.isFinite(Number(q.get(k))) ? Number(q.get(k)) : undefined);
+  const tier = q.get("bhQ");
+  return {
+    time: num("bhT"),
+    scale: num("bhScale"),
+    noPointer: q.get("bhPtr") === "0",
+    tier: tier && tier in TIERS ? (tier as TierName) : undefined,
+    debug: num("bhDebug"),
+    view: num("bhView"),
+    noGrain: q.get("bhGrain") === "0",
+  };
+}
+
+/** Starting tier: phones and small/coarse-pointer devices start at medium, everything else high. */
+function initialTier(): TierName {
+  const coarse = window.matchMedia("(pointer: coarse)").matches;
+  return coarse || Math.min(window.screen.width, window.screen.height) < 700 ? "medium" : "high";
+}
+
+/** Render scale from the tier's pixel budget (small canvases render near-native). */
+function initialScale(cssW: number, cssH: number, dpr: number, tier: TierName) {
+  return Math.min(1, Math.max(MIN_SCALE, Math.sqrt(TIERS[tier].budget / Math.max(1, cssW * cssH * dpr * dpr))));
 }
 
 /**
@@ -60,7 +111,9 @@ export function BlackHoleCanvas({
     let last = performance.now();
     const dprNow = () => Math.min(window.devicePixelRatio || 1, 1.5);
     const rect0 = wrap.getBoundingClientRect();
-    let scale = initialScale(rect0.width, rect0.height, dprNow());
+    const qa = readQa();
+    let tier: TierName = qa?.tier ?? initialTier();
+    let scale = qa?.scale ?? initialScale(rect0.width, rect0.height, dprNow(), tier);
     let maxScale = scale;
     let ema = 16;
     let slow = 0;
@@ -70,15 +123,19 @@ export function BlackHoleCanvas({
     let lastKey = "";
     const pointer: Pointer = { x: 0, y: 0 };
     const target: Pointer = { x: 0, y: 0 };
-    const startTime = performance.now();
+    // Simulation clock for the gas: advances only while frames render (clamped dt), so a pause offscreen or
+    // in a hidden tab resumes where it left off instead of jumping phase; scroll never drives it.
+    let simTime = 0;
 
     const resize = () => {
       const rect = wrap.getBoundingClientRect();
       aspect = rect.width / Math.max(1, rect.height);
       const dpr = dprNow();
-      maxScale = initialScale(rect.width, rect.height, dpr);
+      maxScale = qa?.scale ?? initialScale(rect.width, rect.height, dpr, tier);
       scale = Math.min(scale, maxScale);
       renderer?.resize(rect.width * dpr * scale, rect.height * dpr * scale);
+      if (renderer) canvas.dataset.buffer = `${renderer.width}x${renderer.height}`;
+      canvas.dataset.tier = tier;
       lastKey = "";
     };
 
@@ -102,20 +159,25 @@ export function BlackHoleCanvas({
 
       if (renderer) {
         const reduced = reducedMq.matches;
-        const time = reduced ? 0 : (now - startTime) / 1000;
+        if (!reduced) simTime += dt;
+        const time = qa?.time ?? (reduced ? 0 : simTime);
         // with reduced motion only re-render when the timeline actually moves
         const key = reduced ? `${progress.toFixed(4)}|${renderer.width}` : "";
         if (!reduced || key !== lastKey) {
           lastKey = key;
-          const wide = renderer.width * renderer.height;
+          const { steps, slab } = TIERS[tier];
           const input: SceneInput = {
             progress,
-            pointer: reduced ? { x: 0, y: 0 } : pointer,
+            pointer: reduced || qa?.noPointer ? { x: 0, y: 0 } : pointer,
             time,
             aspect,
-            steps: wide > 900_000 ? 220 : wide > 400_000 ? 200 : 170,
+            quality: { steps, slab },
           };
-          renderer.render(scene === "dive" ? diveFrame(input) : cinematicFrame(input));
+          const frameParams: FrameParams = scene === "dive" ? diveFrame(input) : scene === "cinematic" ? cinematicFrame(input) : referenceFrame(input);
+          if (qa?.debug !== undefined) frameParams.debug = qa.debug;
+          if (qa?.view !== undefined) frameParams.view = qa.view;
+          if (qa?.noGrain) frameParams.grain = 0;
+          renderer.render(frameParams);
           if (!shown) {
             shown = true;
             canvas.dataset.ready = "";
@@ -133,8 +195,15 @@ export function BlackHoleCanvas({
         } else {
           slow = fast = 0;
         }
-        if (slow > 30 && scale > MIN_SCALE) {
+        if (qa?.scale !== undefined || qa?.tier) {
+          // fixed QA scale/tier: no adaptation
+        } else if (slow > 30 && scale > MIN_SCALE) {
           scale = Math.max(MIN_SCALE, scale * 0.85);
+          slow = 0;
+          resize();
+        } else if (slow > 30 && tier !== "low") {
+          // already at the minimum resolution: drop a tier (fewer steps/samples, same model and motion)
+          tier = tier === "high" ? "medium" : "low";
           slow = 0;
           resize();
         } else if (fast > 180 && scale < maxScale) {

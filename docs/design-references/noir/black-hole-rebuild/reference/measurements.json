@@ -1,0 +1,158 @@
+{
+ "ref-0000.png": {
+  "size": [
+   1920,
+   1080
+  ],
+  "shadow": {
+   "cx": 1695.9,
+   "cy": 375,
+   "r": 337,
+   "cxF": 0.8833,
+   "cyF": 0.3472,
+   "rH": 0.3121,
+   "rays": 137,
+   "inliers": 63,
+   "interiorMedianLuma": 39
+  },
+  "bandAngleDeg": 19.73,
+  "bandEdgePts": 241,
+  "highlight": {
+   "x": 0.667,
+   "y": 0.396,
+   "threshold": 253
+  },
+  "meanLuma": 63.6,
+  "nearBlackFraction": 0.364
+ },
+ "ref-0015.png": {
+  "size": [
+   1920,
+   1080
+  ],
+  "shadow": {
+   "cx": 1692.3,
+   "cy": 364.9,
+   "r": 326.8,
+   "cxF": 0.8814,
+   "cyF": 0.3379,
+   "rH": 0.3026,
+   "rays": 137,
+   "inliers": 73,
+   "interiorMedianLuma": 39
+  },
+  "bandAngleDeg": 26.34,
+  "bandEdgePts": 233,
+  "highlight": {
+   "x": 0.669,
+   "y": 0.391,
+   "threshold": 254
+  },
+  "meanLuma": 63.5,
+  "nearBlackFraction": 0.359
+ },
+ "ref-0045.png": {
+  "size": [
+   1920,
+   1080
+  ],
+  "shadow": {
+   "cx": 1693.7,
+   "cy": 370.4,
+   "r": 332,
+   "cxF": 0.8822,
+   "cyF": 0.3429,
+   "rH": 0.3074,
+   "rays": 136,
+   "inliers": 76,
+   "interiorMedianLuma": 37
+  },
+  "bandAngleDeg": 15.14,
+  "bandEdgePts": 244,
+  "highlight": {
+   "x": 0.662,
+   "y": 0.401,
+   "threshold": 253
+  },
+  "meanLuma": 63.6,
+  "nearBlackFraction": 0.362
+ },
+ "seq/seq-00.jpg": {
+  "size": [
+   2428,
+   1366
+  ],
+  "shadow": {
+   "cx": 2144.4,
+   "cy": 472,
+   "r": 423.4,
+   "cxF": 0.8832,
+   "cyF": 0.3455,
+   "rH": 0.3099,
+   "rays": 136,
+   "inliers": 65,
+   "interiorMedianLuma": 39
+  },
+  "bandAngleDeg": 21.06,
+  "bandEdgePts": 301,
+  "highlight": {
+   "x": 0.645,
+   "y": 0.414,
+   "threshold": 253
+  },
+  "meanLuma": 63.6,
+  "nearBlackFraction": 0.364
+ },
+ "seq/seq-12.jpg": {
+  "size": [
+   2428,
+   1366
+  ],
+  "shadow": {
+   "cx": 2145.5,
+   "cy": 479.8,
+   "r": 430.2,
+   "cxF": 0.8836,
+   "cyF": 0.3513,
+   "rH": 0.315,
+   "rays": 136,
+   "inliers": 79,
+   "interiorMedianLuma": 37
+  },
+  "bandAngleDeg": 15.55,
+  "bandEdgePts": 300,
+  "highlight": {
+   "x": 0.646,
+   "y": 0.415,
+   "threshold": 253
+  },
+  "meanLuma": 63.7,
+  "nearBlackFraction": 0.367
+ },
+ "seq/seq-25.jpg": {
+  "size": [
+   2428,
+   1366
+  ],
+  "shadow": {
+   "cx": 2136.2,
+   "cy": 459.8,
+   "r": 412.3,
+   "cxF": 0.8798,
+   "cyF": 0.3366,
+   "rH": 0.3018,
+   "rays": 137,
+   "inliers": 72,
+   "interiorMedianLuma": 39
+  },
+  "bandAngleDeg": 24.01,
+  "bandEdgePts": 285,
+  "highlight": {
+   "x": 0.65,
+   "y": 0.425,
+   "threshold": 253
+  },
+  "meanLuma": 63,
+  "nearBlackFraction": 0.366
+ }
+}

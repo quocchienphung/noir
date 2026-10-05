@@ -1,12 +1,21 @@
 /**
- * GLSL ES 3.0 sources for the NOIR black-hole renderer.
+ * GLSL ES 3.0 sources for the NOIR black-hole renderer (see docs/research/noir/BLACK_HOLE_REBUILD.md).
  *
- * Physics model (units of the Schwarzschild radius, rs = 1):
- * photon paths are integrated with the exact Schwarzschild null-geodesic form written as a Newtonian-like
- * force, a = −1.5 · h² · x / |x|⁵ (h = |x × v|, conserved), which reproduces gravitational lensing, the
- * photon ring at r ≈ 1.5 and the shadow of radius ≈ 2.6 rs. The thin accretion disk lies in the y = 0 plane;
- * each crossing of that plane is shaded and composited front-to-back, so the far side of the disk appears
- * lensed above and below the hole exactly as in a ray-traced render.
+ * Units: Schwarzschild radius rs = 1. Light rays are integrated as null geodesics written as a central
+ * force, x'' = −1.5 h² x / |x|⁵ with h = |x × x'| conserved, which reproduces the Schwarzschild orbit
+ * equation u'' + u = 1.5 u². The scheme is velocity Verlet with a step that shrinks near the photon
+ * sphere; tests/qa-geodesic.mjs checks it against a converged RK4 reference (capture boundary within
+ * 0.2 % of 3√3/2, deflection within 0.2° for the step policy below).
+ *
+ * Each ray also carries two ray differentials (the change of position/velocity per screen pixel in x and
+ * y), integrated with the linearised equation. Where the ray meets gas, those differentials give the true
+ * footprint of the pixel — including lensing magnification near the shadow and the extreme
+ * demagnification of the higher-order images — and the gas texture is filtered with textureGrad, so
+ * sub-pixel structure averages out instead of glittering.
+ *
+ * The accretion disk is a slab of finite thickness (Gaussian vertical profile, H = thickness · r) with a
+ * continuous density field; each segment of the ray that passes through the slab is sub-sampled and
+ * integrated front-to-back with emission and absorption (radiance is integrated, not alpha-blended).
  */
 
 export const FULLSCREEN_VERT = /* glsl */ `#version 300 es
@@ -18,6 +27,86 @@ void main() {
 }
 `;
 
+/**
+ * One-off bake of the tileable gas field (512², RGBA8, then mipmapped). Periodic gradient noise with an
+ * integer hash, so the result is identical on every load for a given seed:
+ *   R  large-scale fBm (masses and voids)        G  medium fBm (turbulence, local temperature)
+ *   B  ridged multi-octave noise (filaments)     A  low-frequency fBm (domain warp)
+ */
+export const BAKE_FRAG = /* glsl */ `#version 300 es
+precision highp float;
+precision highp int;
+in vec2 vUv;
+out vec4 fragColor;
+uniform uint uSeed;
+
+uint hash(uvec3 v) {
+  v = v * 1664525u + 1013904223u;
+  v.x += v.y * v.z; v.y += v.z * v.x; v.z += v.x * v.y;
+  v ^= v >> 16u;
+  v.x += v.y * v.z; v.y += v.z * v.x; v.z += v.x * v.y;
+  return v.x ^ v.y ^ v.z;
+}
+vec2 grad(ivec2 c, int period, uint layer) {
+  ivec2 w = ((c % period) + period) % period;
+  uint h = hash(uvec3(uint(w.x), uint(w.y), uSeed * 131u + layer));
+  float a = float(h & 65535u) / 65535.0 * 6.2831853;
+  return vec2(cos(a), sin(a));
+}
+// periodic gradient (Perlin-style) noise in [-1, 1], period cells across the unit square
+float pnoise(vec2 uv, int period, uint layer) {
+  vec2 p = uv * float(period);
+  ivec2 i = ivec2(floor(p));
+  vec2 f = fract(p);
+  vec2 u = f * f * f * (f * (f * 6.0 - 15.0) + 10.0);
+  float n00 = dot(grad(i, period, layer), f);
+  float n10 = dot(grad(i + ivec2(1, 0), period, layer), f - vec2(1.0, 0.0));
+  float n01 = dot(grad(i + ivec2(0, 1), period, layer), f - vec2(0.0, 1.0));
+  float n11 = dot(grad(i + ivec2(1, 1), period, layer), f - vec2(1.0, 1.0));
+  return mix(mix(n00, n10, u.x), mix(n01, n11, u.x), u.y) * 1.414;
+}
+float fbm(vec2 uv, int base, int octaves, uint layer) {
+  float s = 0.0, a = 0.5, n = 0.0;
+  int period = base;
+  for (int o = 0; o < 8; o++) {
+    if (o >= octaves) break;
+    s += a * pnoise(uv, period, layer + uint(o) * 7u);
+    n += a;
+    a *= 0.5;
+    period *= 2;
+  }
+  return s / n;
+}
+float ridged(vec2 uv, int base, int octaves, uint layer) {
+  float s = 0.0, a = 0.6, n = 0.0, prev = 1.0;
+  int period = base;
+  for (int o = 0; o < 6; o++) {
+    if (o >= octaves) break;
+    float r = 1.0 - abs(pnoise(uv, period, layer + uint(o) * 11u));
+    r = r * r * r;
+    s += a * r * prev;
+    n += a;
+    prev = clamp(r * 1.6, 0.0, 1.0);
+    a *= 0.55;
+    period *= 2;
+  }
+  return s / n;
+}
+void main() {
+  vec2 uv = vUv;
+  float big = fbm(uv, 4, 6, 1u);
+  float med = fbm(uv, 8, 5, 101u);
+  float fil = ridged(uv, 8, 4, 201u);
+  float warp = fbm(uv, 2, 4, 301u);
+  fragColor = vec4(
+    clamp(big * 0.9 + 0.5, 0.0, 1.0),
+    clamp(med * 0.9 + 0.5, 0.0, 1.0),
+    clamp(fil * 1.35, 0.0, 1.0),
+    clamp(warp * 0.9 + 0.5, 0.0, 1.0)
+  );
+}
+`;
+
 export const TRACE_FRAG = /* glsl */ `#version 300 es
 precision highp float;
 precision highp sampler2D;
@@ -26,193 +115,312 @@ in vec2 vUv;
 out vec4 fragColor;
 
 uniform vec2 uRes;
-uniform float uTime;
+uniform float uTime;       // simulation time (s); drives the gas only, never the camera
 uniform vec3 uCamPos;
-uniform mat3 uCamBasis;   // columns: right, up, forward
+uniform mat3 uCamBasis;    // columns: right, up, forward
 uniform float uTanHalfFov;
-uniform sampler2D uNoise; // 256×256 RGBA random, LINEAR + REPEAT
-uniform int uSteps;
+uniform sampler2D uGas;    // baked tileable gas field, mipmapped + anisotropic
+uniform int uSteps;        // integration step budget (quality tier, independent of resolution)
+uniform int uSlab;         // max samples per ray segment inside the slab (quality tier)
+uniform int uDebug;        // 0 beauty, 1 unlit density, 2 capture/escape/unresolved, 3 flow markers
+
+// material (GasLook in scenes.ts documents units and ranges)
 uniform float uDiskIn;
 uniform float uDiskOut;
-uniform float uDiskGain;
+uniform float uThick;
+uniform float uGain;
+uniform float uFalloff;
+uniform float uOpacity;
 uniform float uDoppler;
-uniform float uFlow;      // disk flow speed
-uniform vec3 uHot;        // inner (hottest) emission tint
-uniform vec3 uWarm;       // mid-disk tint
-uniform vec3 uCool;       // outer-disk tint
+uniform float uOrbit;
+uniform float uDrift;
+uniform float uWarp;
+uniform float uFil;
+uniform float uClump;
+uniform float uPlunge;
+uniform float uPeriod;
+uniform float uHeat;
+uniform vec3 uC0;          // white-hot   (linear RGB)
+uniform vec3 uC1;          // champagne
+uniform vec3 uC2;          // copper
+uniform vec3 uC3;          // umber
 uniform float uStarGain;
 
-const float PI = 3.14159265;
 const float TAU = 6.28318531;
+const float PI = 3.14159265;
 
-float n2(vec2 p) { return texture(uNoise, p / 256.0).r; }
+// ---- geodesic -----------------------------------------------------------------------------------------
 
-// Mip-sampled value noise; uv.x = 1 per revolution so the pattern wraps seamlessly around the disk.
-// Coarser mips average the white noise, so the contrast of the design level (lod) is restored by 2^lod.
-// aa is the level the pixel footprint needs: sampling there (without extra boost) lets detail that is
-// smaller than a pixel average out instead of aliasing into moiré on the grazing, edge-on disk.
-float tn(vec2 uv, float lod, float aa) {
-  float v = textureLod(uNoise, uv, max(lod, aa)).r;
-  return clamp((v - 0.5) * exp2(lod) * 1.15 + 0.5, 0.0, 1.0);
+float stepSize(float r) {
+  return clamp(0.07 * r * (0.35 + 0.65 * smoothstep(1.5, 4.0, r)), 0.008, 1.6);
+}
+vec3 accel(vec3 p, float h2) {
+  float r2 = dot(p, p);
+  return -1.5 * h2 * p / (r2 * r2 * sqrt(r2));
+}
+// linearised acceleration for a ray differential (dp; dh2 = change of h² for the neighbouring ray)
+vec3 daccel(vec3 p, vec3 dp, float h2, float dh2) {
+  float r2 = dot(p, p);
+  float ir5 = 1.0 / (r2 * r2 * sqrt(r2));
+  return -1.5 * (dh2 * p * ir5 + h2 * dp * ir5 - 5.0 * h2 * p * dot(p, dp) * ir5 / r2);
 }
 
-// Cartesian fbm for the background dust (no wrap needed).
-float fbm(vec2 p) {
-  float s = 0.0, a = 0.5;
-  for (int i = 0; i < 4; i++) {
-    s += a * n2(p);
-    p = p * 2.03 + vec2(17.0, 31.0);
-    a *= 0.5;
-  }
-  return s;
-}
+// ---- background ---------------------------------------------------------------------------------------
 
 float hash13(vec3 p) {
   p = fract(p * 0.1031);
   p += dot(p, p.zyx + 31.32);
   return fract((p.x + p.y) * p.z);
 }
-
 vec3 starfield(vec3 d) {
   vec3 col = vec3(0.0);
   for (int layer = 0; layer < 2; layer++) {
-    float scale = layer == 0 ? 90.0 : 210.0;
+    float scale = layer == 0 ? 110.0 : 260.0;
     vec3 p = d * scale;
     vec3 id = floor(p);
     vec3 f = fract(p) - 0.5;
     float h = hash13(id + float(layer) * 19.7);
-    if (h > (layer == 0 ? 0.992 : 0.996)) {
+    if (h > (layer == 0 ? 0.9935 : 0.997)) {
       vec3 o = vec3(hash13(id + 3.1), hash13(id + 7.7), hash13(id + 11.3)) - 0.5;
-      float dist = length(f - o * 0.6);
-      float s = smoothstep(0.12, 0.0, dist);
+      float s = smoothstep(0.1, 0.0, length(f - o * 0.6));
       float tint = hash13(id + 5.5);
-      col += s * mix(vec3(1.0, 0.86, 0.7), vec3(0.75, 0.85, 1.0), tint) * (0.4 + 2.0 * pow(h, 40.0));
+      col += s * mix(vec3(1.0, 0.88, 0.74), vec3(0.78, 0.86, 1.0), tint) * (0.25 + 1.6 * pow(h, 60.0));
     }
   }
-  // very faint warm dust so the void is not a flat colour
-  float dust = fbm(d.xz * 38.0 + d.y * 21.0);
-  col += vec3(0.014, 0.008, 0.005) * smoothstep(0.5, 0.95, dust) + vec3(0.009, 0.0055, 0.0038);
   return col * uStarGain;
 }
 
-// Disk emission and opacity at a plane crossing.
-vec4 shadeDisk(vec3 hit, vec3 dir, float travel) {
-  float r = length(hit.xz);
-  float phi = atan(hit.z, hit.x);
-  // world-space size of this pixel where the ray meets the disk (stretched at grazing incidence)
-  float pixAngle = 2.0 * uTanHalfFov / uRes.y;
-  float foot = travel * pixAngle / max(abs(dir.y), 0.04);
-  // texels per pixel across the radius for a radial frequency k (v = k·ln r → dv = k·dr/r)
-  // (biased ~0.8 level sharp: a touch of sub-pixel sparkle reads as fine filaments rather than moiré)
-  float aaBase = log2(max(256.0 * foot / r, 1e-4)) - 0.8;
+// ---- gas ----------------------------------------------------------------------------------------------
 
-  // Keplerian differential rotation with two cross-faded phases so the pattern never winds up.
-  float omega = uFlow * pow(r, -1.5);  // sign of uFlow = sense of rotation
-  float period = 24.0;
-  float f1 = fract(uTime / period);
-  float f2 = fract(uTime / period + 0.5);
-  float w1 = 1.0 - abs(2.0 * f1 - 1.0);
-  float w2 = 1.0 - abs(2.0 * f2 - 1.0);
+vec3 palette(float t) {
+  // t ≈ 1 at the hot inner edge; > 1 for beamed-up gas. White-hot → champagne → copper → umber → dark.
+  vec3 c = mix(vec3(0.0), uC3, smoothstep(0.02, 0.22, t));
+  c = mix(c, uC2, smoothstep(0.2, 0.45, t));
+  c = mix(c, uC1, smoothstep(0.42, 0.72, t));
+  c = mix(c, uC0, smoothstep(0.7, 1.05, t));
+  return c;
+}
 
+// Density and local heat at q. fx/fy are the pixel footprint vectors at q (world space, from the ray
+// differentials); along is the march step along the ray.
+// The texture lives in co-moving coordinates of the flow: u = (φ − Ω·age)/2π, s = ln r + v_s·age.
+// Increasing age moves a fixed texture feature to larger φ (orbit) and to smaller r (inflow). Three
+// overlapping phases of age, weighted sin² (their weights sum to a constant), are blended with variance
+// normalisation so contrast never pulses; the shear accumulated within one phase is what stretches clumps
+// into streaks along the orbit.
+vec2 gasAt(vec3 q, vec3 fx, vec3 fy, vec3 along, out float heatOut) {
+  heatOut = 0.0;
+  float r = length(q.xz);
+  float edge = smoothstep(uDiskIn - 0.15, uDiskIn + 0.55, r);
+  float outer = 1.0 - smoothstep(uDiskOut * 0.45, uDiskOut, r);
+  // infalling streams inside the stable disk's edge, fading out towards the horizon
+  float plunge = (1.0 - edge) * smoothstep(1.2, uDiskIn, r) * uPlunge;
+  float env = edge * outer + plunge;
+  if (env <= 1e-4) return vec2(0.0);
+
+  float phi = atan(q.z, q.x);
   float lnr = log(r);
-  float pattern = 0.0;
-  float fine = 0.0;
-  for (int k = 0; k < 2; k++) {
-    float fk = k == 0 ? f1 : f2;
-    float wk = k == 0 ? w1 : w2;
-    float u = (phi - omega * fk * period) / TAU;
-    float ko = float(k);
-    // orbit-aligned lanes: few features around, many across the radius
-    float lanes = 0.5 * tn(vec2(u, lnr * 2.2 + ko * 0.37), 2.0, aaBase + 1.14)
-                + 0.32 * tn(vec2(u * 2.0, lnr * 4.6 + ko * 0.61), 1.5, aaBase + 2.2)
-                + 0.18 * tn(vec2(u, lnr * 1.1 + ko * 0.21), 3.0, aaBase + 0.14);
-    float threads = tn(vec2(u * 2.0, lnr * 6.0 + ko * 0.13), 1.2, aaBase + 2.58);
-    pattern += wk * lanes;
-    fine += wk * threads;
+  float ir2 = 1.0 / (r * r);
+  vec2 gu = vec2(-q.z, q.x) * ir2 / TAU;   // ∂u/∂(x, z)
+  vec2 gs = q.xz * ir2;                      // ∂s/∂(x, z)
+  vec2 dX = vec2(dot(gu, fx.xz), dot(gs, fx.xz));
+  vec2 dY = vec2(dot(gu, fy.xz), dot(gs, fy.xz));
+  // the step along the ray is part of what one sample stands for: fold it into the footprint (replacing
+  // the shorter axis when it is longer) so detail finer than the march spacing is filtered, not skipped
+  vec2 dZ = 0.5 * vec2(dot(gu, along.xz), dot(gs, along.xz));
+  if (dot(dZ, dZ) > min(dot(dX, dX), dot(dY, dY))) {
+    if (dot(dX, dX) < dot(dY, dY)) dX = dZ;
+    else dY = dZ;
   }
 
-  float density = smoothstep(0.28, 0.82, pattern) * (0.5 + 0.7 * fine);
-  density = clamp(density, 0.0, 1.0);
+  float omega = uOrbit * pow(r, -1.5);
+  // inflow in e-folds of radius per second: slow in the disk, much faster once gas plunges
+  float vs = uDrift * pow(uDiskIn / r, 1.5) * (1.0 + 5.0 * (1.0 - edge));
 
-  // radial profile: sharp inner edge near the ISCO, soft outer fade
-  float inner = smoothstep(uDiskIn, uDiskIn + 0.35, r);
-  float outer = 1.0 - smoothstep(uDiskOut * 0.45, uDiskOut, r);
-  float profile = inner * outer * pow(uDiskIn / r, 1.25);
+  const vec2 SA = vec2(3.0, 4.0);    // masses and voids: 3 tiles per revolution, 4 per e-fold of radius
+  const vec2 SB = vec2(6.0, 14.0);   // filaments: strongly elongated along the orbit
+  float fadeA = smoothstep(0.45, 0.12, max(length(dX * SA), length(dY * SA)));
+  float fadeB = smoothstep(0.45, 0.12, max(length(dX * SB), length(dY * SB)));
+  // vertical layering: the field is sheared slightly with height, so the slab has 3D structure (cloud
+  // tops, overhangs) rather than one extruded 2D pattern; this is what reads as mottling at grazing view
+  float zeta = q.y / (uThick * r);
+  vec3 acc = vec3(0.0);
+  float wsum2 = 0.0;
+  for (int k = 0; k < 3; k++) {
+    float ph = fract(uTime / uPeriod + float(k) / 3.0);
+    float age = ph * uPeriod;
+    float w = sin(PI * ph);
+    w *= w;
+    vec2 c = vec2((phi - omega * age) / TAU + float(k) * 0.371, lnr + vs * age + float(k) * 0.237);
+    // only the coarse layer varies with height (the fine one would alias along the line of sight)
+    vec2 cA = c + vec2(zeta * 0.01, zeta * 0.045);
+    vec4 A = textureGrad(uGas, cA * SA, dX * SA, dY * SA);
+    // once a pixel covers a sizeable part of a texture period (strongly lensed rays), the correctly
+    // filtered value is the field's mean; fade to it instead of reading blocky coarse mips
+    A = mix(vec4(0.5), A, fadeA);
+    // domain warp, mostly across the orbit, so streaks meander instead of running as perfect circles
+    vec2 wv = (vec2(A.a, A.g) - 0.5) * uWarp * vec2(0.035, 0.32);
+    float B = mix(0.5, textureGrad(uGas, (c + wv) * SB, dX * SB, dY * SB).b, fadeB);
+    acc += w * vec3(A.r - 0.5, A.g - 0.5, B - 0.5);
+    wsum2 += w * w;
+  }
+  vec3 n = clamp(acc * inversesqrt(wsum2) + 0.5, 0.0, 1.0);
+  float big = n.x, med = n.y, fil = n.z;
 
-  // temperature → colour (white-gold inside, amber, then brown-red outside)
-  float t = clamp((r - uDiskIn) / (uDiskOut - uDiskIn), 0.0, 1.0);
-  vec3 col = mix(uHot, uWarm, smoothstep(0.0, 0.14, t));
-  col = mix(col, uCool, smoothstep(0.12, 0.75, t));
-  // the brightest threads run hotter than the gas between them
-  col = mix(col, uHot, 0.2 * density * (1.0 - t));
+  // local thickness follows the masses and the turbulence (a bumpy, puffy surface); Gaussian profile
+  float H = uThick * r * clamp(0.35 + 1.0 * big + 0.7 * (med - 0.5) + 0.35 * (fil - 0.5), 0.15, 1.6);
+  float vert = exp(-2.0 * (q.y * q.y) / (H * H));
+  float clump = smoothstep(0.34, 0.76, big * 0.8 + med * 0.32 - 0.08);
+  clump *= clump;
+  float body = mix(0.5, clump, uClump) + 0.025;
+  float threads = mix(1.0, 0.35 + 1.3 * fil * fil, uFil);
+  // dense masses run hotter than the gas between them, so they glow while the gaps fall to umber
+  heatOut = 0.62 + 0.62 * clump + 0.18 * fil;
+  // a small threshold carves the tenuous fringe into separate wisps
+  return vec2(env * max(vert * body * threads - 0.035, 0.0), edge);
+}
 
-  // relativistic beaming (orbital velocity of a static-frame Keplerian orbit, M = 0.5)
-  vec3 vdir = normalize(vec3(-hit.z, 0.0, hit.x)) * sign(uFlow);
-  float beta = clamp(sqrt(0.5 / max(r - 1.0, 0.05)), 0.0, 0.7);
-  float gamma = inversesqrt(1.0 - beta * beta);
-  float dop = 1.0 / (gamma * (1.0 + beta * dot(vdir, dir)));
-  float beaming = mix(1.0, pow(dop, 3.0), uDoppler);
-  float gravRed = sqrt(max(1.0 - 1.0 / r, 0.0));
-  col *= mix(vec3(1.0), vec3(1.0, 0.92 + 0.08 * dop, 0.8 + 0.2 * dop), uDoppler);
+// Integrates the slab along the segment p0 → p1 (dir = backward ray direction), accumulating radiance into
+// col and transmittance into tr. Emission j and absorption k per unit length; exact for piecewise-constant
+// samples: Δcol = tr · j · (1 − e^{−kΔs}) / k. The march is adaptive: about a third of an optical depth per
+// step in dense gas (so the visible surface is resolved), up to half the envelope height in the tenuous
+// fringe, and it stops once the gas is opaque. Each sample is filtered with its true pixel footprint (the
+// ray differentials at that point) extended by the step along the ray.
+void slab(vec3 p0, vec3 p1, vec3 dir, vec3 fx0, vec3 fx1, vec3 fy0, vec3 fy1, inout vec3 col, inout float tr) {
+  float r0 = length(p0.xz), r1 = length(p1.xz);
+  float rmax = max(r0, r1);
+  float hm = uThick * rmax * 3.2 + 0.03;   // envelope that contains the thickest local slab
+  if ((p0.y > hm && p1.y > hm) || (p0.y < -hm && p1.y < -hm)) return;
+  if (min(r0, r1) > uDiskOut * 1.05 || rmax < 1.2) return;
+  float dy = p1.y - p0.y;
+  float t0 = 0.0, t1 = 1.0;
+  if (abs(dy) > 1e-7) {
+    float ta = (hm - p0.y) / dy, tb = (-hm - p0.y) / dy;
+    t0 = max(0.0, min(ta, tb));
+    t1 = min(1.0, max(ta, tb));
+  }
+  if (t1 <= t0) return;
+  float L = length(p1 - p0);
+  float dsMax = hm * 0.5;
+  float dsMin = max(0.0035 * rmax, 0.008);
+  float ds = dsMax;
+  float tc = t0;
+  vec3 vdirSign = vec3(sign(uOrbit));
+  for (int j = 0; j < 64; j++) {
+    if (j >= uSlab || tc >= t1) break;
+    float tn = min(tc + ds / L, t1);
+    float dsw = (tn - tc) * L;
+    float t = 0.5 * (tc + tn);
+    tc = tn;
+    vec3 q = mix(p0, p1, t);
+    vec3 fx = mix(fx0, fx1, t), fy = mix(fy0, fy1, t);
+    float heat;
+    vec2 g = gasAt(q, fx, fy, dir * dsw, heat);
+    float rho = g.x;
+    float k = uOpacity * rho;
+    ds = clamp(0.33 / (k + 0.33 / dsMax), dsMin, dsMax);
+    if (rho < 1e-4) continue;
+    float r = length(q.xz);
 
-  float emission = uDiskGain * profile * beaming * gravRed * (0.14 + 2.0 * pow(density, 1.5));
-  float alpha = clamp(inner * outer * (0.25 + 0.85 * density), 0.0, 0.96);
-  return vec4(col * emission, alpha);
+    vec3 j3;
+    if (uDebug == 1) {
+      j3 = vec3(rho * 0.9);
+    } else {
+      // relativistic beaming of a Keplerian flow (static-frame speed β = √(M/(r−2M)), M = ½)
+      vec3 vdir = normalize(vec3(-q.z, 0.0, q.x)) * vdirSign;
+      float beta = clamp(sqrt(0.5 / max(r - 1.0, 0.08)), 0.0, 0.62);
+      float gamma = inversesqrt(1.0 - beta * beta);
+      float D = 1.0 / (gamma * (1.0 + beta * dot(vdir, dir)));
+      float gr = sqrt(max(1.0 - 1.0 / r, 0.0));
+      float gfac = D * gr;
+      float temp = uHeat * pow(uDiskIn / max(r, 1.25), 0.85) * heat * mix(1.0, pow(gfac, 0.7), uDoppler);
+      float emiss = uGain * pow(uDiskIn / max(r, 1.2), uFalloff) * mix(1.0, pow(gfac, 4.0), uDoppler);
+      // plunging gas is dimmer: below the edge, emission falls with the redshift squared
+      emiss *= mix(gr * gr, 1.0, g.y);
+      // Emissivity per unit density rises steeply with local heat. In optically thick gas the visible
+      // brightness is emission ÷ absorption, so density alone cancels out: hot masses must out-shine the
+      // cooler, absorbing lanes between them for the band to read as lumpy gas rather than a smooth sheet.
+      j3 = palette(temp) * emiss * rho * heat * heat * heat;
+      if (uDebug == 3) {
+        // flow markers: knots fixed in the flow's co-moving frame (continuous advection, no phases)
+        float om = uOrbit * pow(r, -1.5);
+        float vs = uDrift * pow(uDiskIn / r, 1.5);
+        float u0 = (atan(q.z, q.x) - om * uTime) / TAU;
+        float s0 = log(r) + vs * uTime;
+        vec2 cell = fract(vec2(u0 * 12.0, s0 * 3.0)) - 0.5;
+        j3 += vec3(0.0, 4.0, 1.0) * smoothstep(0.12, 0.05, length(cell * vec2(1.0, 2.0))) * rho;
+      }
+    }
+    float tau = k * dsw;
+    float att = exp(-tau);
+    col += tr * j3 * (tau > 1e-4 ? (1.0 - att) / k : dsw);
+    tr *= att;
+    if (tr < 0.003) return;
+  }
 }
 
 void main() {
-  vec2 uv = (gl_FragCoord.xy / uRes) * 2.0 - 1.0;
-  uv.x *= uRes.x / uRes.y;
+  vec2 ndc = (gl_FragCoord.xy / uRes) * 2.0 - 1.0;
+  float aspect = uRes.x / uRes.y;
+  vec2 uv = vec2(ndc.x * aspect, ndc.y);
+  float pix = 2.0 / uRes.y;
   vec3 rd = normalize(uCamBasis * vec3(uv * uTanHalfFov, 1.0));
+  vec3 rdx = normalize(uCamBasis * vec3((uv + vec2(pix, 0.0)) * uTanHalfFov, 1.0)) - rd;
+  vec3 rdy = normalize(uCamBasis * vec3((uv + vec2(0.0, pix)) * uTanHalfFov, 1.0)) - rd;
 
   vec3 p = uCamPos;
   vec3 v = rd;
   vec3 hv = cross(p, v);
   float h2 = dot(hv, hv);
+  // differentials: the camera is a point, so only the direction differs between neighbouring pixels
+  vec3 dpx = vec3(0.0), dvx = rdx, dpy = vec3(0.0), dvy = rdy;
+  float dh2x = 2.0 * dot(hv, cross(p, dvx));
+  float dh2y = 2.0 * dot(hv, cross(p, dvy));
+  vec3 a = accel(p, h2);
+  vec3 dax = vec3(0.0), day = vec3(0.0);
 
   vec3 col = vec3(0.0);
-  float alpha = 0.0;
-  float travel = 0.0;
-  bool captured = false;
-  bool escaped = false;
+  float tr = 1.0;
+  int state = 0;   // 0 unresolved, 1 captured, 2 escaped, 3 opaque
 
-  for (int i = 0; i < 400; i++) {
+  for (int i = 0; i < 600; i++) {
     if (i >= uSteps) break;
-    float r2 = dot(p, p);
-    float r = sqrt(r2);
-    float dt = clamp(0.065 * r, 0.012, 1.4);
-    vec3 acc = -1.5 * h2 * p / (r2 * r2 * r);
-    vec3 nv = v + acc * dt;
-    vec3 np = p + nv * dt;
+    float r = length(p);
+    float dt = stepSize(r);
+    float hdt2 = 0.5 * dt * dt;
+    vec3 p1 = p + v * dt + a * hdt2;
+    vec3 dpx1 = dpx + dvx * dt + dax * hdt2;
+    vec3 dpy1 = dpy + dvy * dt + day * hdt2;
+    vec3 a1 = accel(p1, h2);
+    vec3 dax1 = daccel(p1, dpx1, h2, dh2x);
+    vec3 day1 = daccel(p1, dpy1, h2, dh2y);
+    vec3 v1 = v + 0.5 * (a + a1) * dt;
+    dvx += 0.5 * (dax + dax1) * dt;
+    dvy += 0.5 * (day + day1) * dt;
 
-    if (p.y * np.y < 0.0) {
-      float s = p.y / (p.y - np.y);
-      vec3 hit = mix(p, np, s);
-      float hr = length(hit.xz);
-      if (hr > uDiskIn * 0.98 && hr < uDiskOut) {
-        vec4 d = shadeDisk(hit, normalize(nv), travel + s * dt);
-        col += (1.0 - alpha) * d.rgb;
-        alpha += (1.0 - alpha) * d.a;
-        if (alpha > 0.985) break;
-      }
-    }
+    slab(p, p1, normalize(v1), dpx, dpx1, dpy, dpy1, col, tr);
 
-    travel += dt;
-    p = np;
-    v = nv;
-    if (dot(p, p) < 1.0) { captured = true; break; }
-    if (r > 70.0 && dot(p, v) > 0.0) { escaped = true; break; }
+    p = p1; v = v1; a = a1;
+    dpx = dpx1; dpy = dpy1; dax = dax1; day = day1;
+    if (tr < 0.003) { state = 3; break; }
+    if (dot(p, p) < 1.0) { state = 1; break; }
+    if (r > 60.0 && dot(p, v) > 0.0) { state = 2; break; }
   }
 
-  if (!captured) {
-    vec3 bg = starfield(normalize(v));
-    col += (1.0 - alpha) * bg * (escaped ? 1.0 : 0.6);
+  // Rays still bound after the budget have wound around the photon sphere: they sit within a hair of the
+  // critical curve and are treated as captured (their higher-order images are sub-pixel thin).
+  if (state == 0 && length(p) < 8.0) state = 1;
+  if (state == 2 || state == 0) col += tr * starfield(normalize(v));
+
+  if (uDebug == 2) {
+    vec3 s = state == 1 ? vec3(0.6, 0.05, 0.05) : state == 2 ? vec3(0.05, 0.35, 0.08) : state == 3 ? vec3(0.4, 0.4, 0.4) : vec3(0.1, 0.2, 1.0);
+    col = s + col * 0.15;
   }
   fragColor = vec4(col, 1.0);
 }
 `;
 
-/** Bright-pass + 4-tap downsample (first bloom level). */
+/** Bright-pass + 4-tap downsample (first bloom level), soft knee. */
 export const PREFILTER_FRAG = /* glsl */ `#version 300 es
 precision highp float;
 in vec2 vUv;
@@ -224,7 +432,7 @@ vec3 tap(vec2 o) { return texture(uSrc, vUv + o * uTexel).rgb; }
 void main() {
   vec3 c = (tap(vec2(-1.0, -1.0)) + tap(vec2(1.0, -1.0)) + tap(vec2(-1.0, 1.0)) + tap(vec2(1.0, 1.0))) * 0.25;
   float br = max(c.r, max(c.g, c.b));
-  float knee = uThreshold * 0.6;
+  float knee = uThreshold * 0.7;
   float soft = clamp(br - uThreshold + knee, 0.0, 2.0 * knee);
   soft = soft * soft / (4.0 * knee + 1e-4);
   float contrib = max(soft, br - uThreshold) / max(br, 1e-4);
@@ -267,7 +475,11 @@ void main() {
 }
 `;
 
-/** Final composite: bloom, ACES filmic tonemap, vignette, film grain and dither. */
+/**
+ * Final composite, linear HDR in → display out: bloom, exposure, ACES (Narkowicz fit) with a small
+ * hue-preserving share, exact sRGB encoding, vignette, luminance-proportional grain (keeps blacks black)
+ * and 8-bit dither. uView: 0 beauty, 1 no bloom, 2 false-colour log2 radiance (pre-tonemap).
+ */
 export const COMPOSITE_FRAG = /* glsl */ `#version 300 es
 precision highp float;
 in vec2 vUv;
@@ -279,31 +491,42 @@ uniform float uBloomGain;
 uniform float uFade;       // 0 → scene, 1 → black (crossing the horizon)
 uniform float uTime;
 uniform float uGrain;
+uniform float uHueKeep;
+uniform int uView;
 uniform vec2 uRes;
 
 vec3 aces(vec3 x) {
   const float a = 2.51, b = 0.03, c = 2.43, d = 0.59, e = 0.14;
   return clamp((x * (a * x + b)) / (x * (c * x + d) + e), 0.0, 1.0);
 }
+vec3 srgb(vec3 c) {
+  return mix(c * 12.92, 1.055 * pow(c, vec3(1.0 / 2.4)) - 0.055, step(0.0031308, c));
+}
 float hash12(vec2 p) {
   vec3 p3 = fract(vec3(p.xyx) * 0.1031);
   p3 += dot(p3, p3.yzx + 33.33);
   return fract((p3.x + p3.y) * p3.z);
 }
+vec3 heat(float t) {
+  return clamp(vec3(1.5 - abs(4.0 * t - 3.0), 1.5 - abs(4.0 * t - 2.0), 1.5 - abs(4.0 * t - 1.0)), 0.0, 1.0);
+}
 void main() {
   vec3 scene = texture(uScene, vUv).rgb;
   vec3 bloom = texture(uBloom, vUv).rgb;
-  vec3 c = (scene + bloom * uBloomGain) * uExposure;
-  // blend ACES with a hue-preserving variant (tonemap the peak channel, keep the ratios) so very hot gas
-  // stays gold instead of collapsing to grey-white, while true highlights still roll off to white
+  if (uView == 2) {
+    float l = dot(scene, vec3(0.2126, 0.7152, 0.0722));
+    fragColor = vec4(heat(clamp((log2(max(l, 1e-5)) + 10.0) / 14.0, 0.0, 1.0)), 1.0);
+    return;
+  }
+  vec3 c = (scene + (uView == 1 ? vec3(0.0) : bloom * uBloomGain)) * uExposure;
   float peak = max(c.r, max(c.g, c.b));
-  vec3 hueKeep = c * (aces(vec3(peak)).r / max(peak, 1e-4));
-  c = mix(aces(c), hueKeep, 0.6);
-  c = pow(c, vec3(1.0 / 2.2));
+  vec3 hueKeep = c * (aces(vec3(peak)).r / max(peak, 1e-5));
+  c = mix(aces(c), hueKeep, uHueKeep);
+  c = srgb(c);
   vec2 q = vUv - 0.5;
-  c *= 1.0 - smoothstep(0.35, 0.95, length(q * vec2(1.05, 1.2))) * 0.55;
+  c *= 1.0 - smoothstep(0.4, 1.0, length(q * vec2(1.0, 1.15))) * 0.45;
   float g = hash12(gl_FragCoord.xy + fract(uTime * 13.7) * 431.0) - 0.5;
-  c += g * uGrain * (0.35 + 0.65 * (1.0 - dot(c, vec3(0.333))));
+  c *= 1.0 + g * uGrain;
   c += (hash12(gl_FragCoord.xy * 1.7) - 0.5) / 255.0;
   c *= 1.0 - uFade;
   fragColor = vec4(max(c, 0.0), 1.0);

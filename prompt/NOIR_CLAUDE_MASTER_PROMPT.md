@@ -1,5 +1,7 @@
 # NOIR — master prompt cho Claude Code
 
+> **Tác vụ tiếp nối ngày 05/10/2026 — nâng cấp black hole 3D:** dùng [NOIR_BLACK_HOLE_REBUILD_PROMPT.md](./NOIR_BLACK_HOLE_REBUILD_PROMPT.md). Prompt đó bám theo renderer hiện tại, giữ animation scroll đã được chấp nhận và yêu cầu dựng realtime, không dùng video/image sequence. Với tác vụ này, các lựa chọn media cũ bên dưới và phạm vi rebrand toàn site không áp dụng; không thực thi lại toàn bộ master prompt cũ.
+
 ## Cách dùng
 
 Mở Claude Code tại thư mục gốc repo `noir`, đính kèm lại **ba ảnh trong yêu cầu này** (đặc biệt là ảnh 3 làm nguồn logo), rồi dán toàn bộ phần từ `MASTER PROMPT — BEGIN` đến `MASTER PROMPT — END`. Nếu Claude Code đọc được file này trực tiếp, có thể dùng lệnh ngắn:
