@@ -137,7 +137,8 @@
   left: 24px;
   z-index: 3;
   color: var(--nd-white);
-  pointer-events: none;
+  /* Receives the pointer so the logo area is a no-follower zone, as on the source. */
+  pointer-events: auto;
 }
 
 .staticLogoMark {

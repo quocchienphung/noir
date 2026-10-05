@@ -1,0 +1,184 @@
+{
+  "base": "http://127.0.0.1:3200",
+  "generatedAt": "2026-10-04T21:28:15.132Z",
+  "passed": 29,
+  "failed": 0,
+  "externalRequestsBlocked": [],
+  "postRequests": [],
+  "results": [
+    {
+      "name": "menu: open, focus trap, Escape closes and returns focus",
+      "width": 1440,
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "menu: link navigates and drawer closes",
+      "width": 1440,
+      "ok": true,
+      "detail": "/news"
+    },
+    {
+      "name": "menu: open, focus trap, Escape closes and returns focus",
+      "width": 390,
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "menu: link navigates and drawer closes",
+      "width": 390,
+      "ok": true,
+      "detail": "/news"
+    },
+    {
+      "name": "hero: next / previous / wrap-around",
+      "width": 1440,
+      "ok": true,
+      "detail": "3 slides"
+    },
+    {
+      "name": "hero: dots + swipe on phone",
+      "width": 390,
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "name": "services accordion: toggle items independently",
+      "width": 1440,
+      "ok": true,
+      "detail": "first false→true"
+    },
+    {
+      "name": "testimonials: next / previous",
+      "width": 1440,
+      "ok": true,
+      "detail": "Testimonial 2 of 4"
+    },
+    {
+      "name": "newsletter: validation + local demo confirmation",
+      "width": 1440,
+      "ok": true,
+      "detail": "Demo only — this local reconstruction does not send or store your email."
+    },
+    {
+      "name": "contact form: required fields + local demo confirmation",
+      "width": 1440,
+      "ok": true,
+      "detail": "Demo only — this local reconstruction did not send your message."
+    },
+    {
+      "name": "footer: back to top",
+      "width": 1440,
+      "ok": true,
+      "detail": "scrollY 0"
+    },
+    {
+      "name": "links: internal navigation + back / forward",
+      "width": 1440,
+      "ok": true,
+      "detail": "/ → /about → / → /about"
+    },
+    {
+      "name": "deep link /about#job-openings",
+      "width": 1440,
+      "ok": true,
+      "detail": "#job-openings top 0px"
+    },
+    {
+      "name": "deep link /about#meet-the-team",
+      "width": 1440,
+      "ok": true,
+      "detail": "#meet-the-team top 0px"
+    },
+    {
+      "name": "deep link /news#main-container",
+      "width": 1440,
+      "ok": true,
+      "detail": "#main-container top 0px"
+    },
+    {
+      "name": "deep link /team/erik-lindholm#main-container",
+      "width": 1440,
+      "ok": true,
+      "detail": "#main-container top 0px"
+    },
+    {
+      "name": "project detail: next-project link",
+      "width": 1440,
+      "ok": true,
+      "detail": "/projects/harbor-12"
+    },
+    {
+      "name": "404 for /projects/unknown-slug",
+      "width": 1440,
+      "ok": true,
+      "detail": "404"
+    },
+    {
+      "name": "404 for /team/unknown",
+      "width": 1440,
+      "ok": true,
+      "detail": "404"
+    },
+    {
+      "name": "404 for /jobs/unknown",
+      "width": 1440,
+      "ok": true,
+      "detail": "404"
+    },
+    {
+      "name": "404 for /news/unknown",
+      "width": 1440,
+      "ok": true,
+      "detail": "404"
+    },
+    {
+      "name": "404 for /not-a-page",
+      "width": 1440,
+      "ok": true,
+      "detail": "404"
+    },
+    {
+      "name": "404 for /404",
+      "width": 1440,
+      "ok": true,
+      "detail": "404"
+    },
+    {
+      "name": "cursor follower zones",
+      "width": 1440,
+      "ok": true,
+      "detail": "view-project, none, dot, dot-white, none"
+    },
+    {
+      "name": "services accordion: keyboard Enter / Space",
+      "width": 1440,
+      "ok": true,
+      "detail": "false → true → false"
+    },
+    {
+      "name": "char reveal: job title rises after load (desktop)",
+      "width": 1440,
+      "ok": true,
+      "detail": "opacity 0.00 → 1.00"
+    },
+    {
+      "name": "char reveal: plain title on tablet",
+      "width": 1024,
+      "ok": true,
+      "detail": "static"
+    },
+    {
+      "name": "char reveal: home intro plays on entering the viewport",
+      "width": 1440,
+      "ok": true,
+      "detail": "hidden → visible"
+    },
+    {
+      "name": "reduced motion: counters final, reveals static",
+      "width": 1440,
+      "ok": true,
+      "detail": "counters 1.0000,1.0000, reveals static"
+    }
+  ]
+}

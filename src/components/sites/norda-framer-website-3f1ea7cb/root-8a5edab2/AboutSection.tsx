@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { counters, intro, leadership, studioImage } from "@/data/sites/norda-framer-website-3f1ea7cb/home";
 import { routes } from "@/lib/sites/norda-framer-website-3f1ea7cb/routes";
 import { ArrowLink } from "../shared/ArrowLink";
+import { CharReveal } from "../shared/CharReveal";
 import { Columns } from "../shared/Columns";
 import { ParallaxImage } from "../shared/ParallaxImage";
 import { Counters } from "./Counters";
@@ -19,11 +20,8 @@ export function AboutSection() {
   return (
     <div className={s.about}>
       <Columns plus className={s.intro} mainClassName={s.introMain}>
-        <h2 className={cn(site.heading, s.introHeading)}>
-          {intro.heading[0]}
-          <br />
-          {intro.heading[1]}
-        </h2>
+        {/* MEASURED: desktop-only character reveal, 100ms per line, on entering the viewport. */}
+        <CharReveal as="h2" text={intro.heading.join("\n")} className={cn(site.heading, s.introHeading)} />
         <p className={cn(site.body, s.introBody)}>{intro.body}</p>
       </Columns>
 

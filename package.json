@@ -32,7 +32,11 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "check": "npm run lint && npm run typecheck && npm run build"
+    "check": "npm run lint && npm run typecheck && npm run build",
+    "qa:routes": "node tests/qa-routes.mjs",
+    "qa:behaviors": "node tests/qa-behaviors.mjs",
+    "qa:independence": "node tests/qa-independence.mjs",
+    "qa:visual": "node tests/qa-visual.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
@@ -54,6 +58,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.0",
     "playwright": "^1.58.2",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -1,4 +1,4 @@
-// Privacy policy, verbatim from https://norda.framer.website/privacy-policy (captured 2026-10-04).
+// Privacy policy, verbatim from the source route /privacy-policy (captured 2026-10-04).
 // "{…}" marks runs set in bold on the source; "\n\n" reproduces an authored trailing blank line.
 import type { RichBlock } from "@/types/sites/norda-framer-website-3f1ea7cb";
 

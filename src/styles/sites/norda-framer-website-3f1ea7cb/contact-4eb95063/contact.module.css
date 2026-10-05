@@ -183,8 +183,13 @@ input.input {
   padding: 0;
 }
 
+/* MEASURED: on phones the image spans the row's 24px gutters only (no extra column padding); no corner markers. */
+.imageCols .imageMain {
+  padding: 0;
+}
+
 .imageFrame {
-  height: 675px;
+  height: 400px;
 }
 
 .closing {
@@ -220,6 +225,10 @@ input.input {
     height: 100%;
   }
 
+  .imageCols .imageMain {
+    padding: 0 48px 0 24px;
+  }
+
   .imageFrame {
     height: 80vh;
   }
@@ -230,6 +239,10 @@ input.input {
 }
 
 @media (min-width: 1200px) {
+  .imageCols .imageMain {
+    padding: 0 32px;
+  }
+
   .formRow {
     padding-bottom: 272px;
   }

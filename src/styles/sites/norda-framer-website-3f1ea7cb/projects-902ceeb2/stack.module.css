@@ -1,5 +1,6 @@
-/* Projects stack — MEASURED: cards 720 / 720 / 675 tall; names 184/147.2 (-12.88) · 152/121.6 (-9.12) · 80/64 (-4);
- * flow gap 96 (tablet) / 64 (phone); desktop sticky at (100vh - 720) / 2 with the covered frame shrinking to 0.6. */
+/* Projects stack — MEASURED: cards 80vh tall at every breakpoint; names 184/147.2 (-12.88) · 152/121.6 (-9.12) · 80/64 (-4);
+ * flow gap 96 (tablet) / 64 (phone); desktop cards stick at top 160px (any viewport height) and the covered
+ * frame shrinks to 0.6 while the next card — or, for the last card, the archive — rises over it. */
 
 .stack {
   display: flex;
@@ -13,7 +14,7 @@
   --nd-shrink: 0;
   position: relative;
   z-index: 1;
-  height: 675px;
+  height: 80vh;
   container-type: size;
 }
 
@@ -104,11 +105,21 @@
   display: inline-flex;
   align-items: center;
   gap: 16px;
-  border-bottom: 1px solid currentColor;
   font-family: var(--nd-font-body);
+  font-weight: 400;
   font-size: 32px;
   line-height: 38.4px;
   letter-spacing: -0.64px;
+  /* MEASURED: variable face "wght" 500; underline drawn inside the 38.4px box. */
+  font-variation-settings: "wght" 500;
+}
+
+.view::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-bottom: 1px solid currentColor;
+  pointer-events: none;
 }
 
 .viewArrow {
@@ -124,10 +135,6 @@
 @media (min-width: 810px) {
   .stack {
     gap: 96px;
-  }
-
-  .card {
-    height: 720px;
   }
 
   .content {
@@ -169,7 +176,7 @@
 
   .card {
     position: sticky;
-    top: calc(50vh - 360px);
+    top: 160px;
   }
 
   .tl,

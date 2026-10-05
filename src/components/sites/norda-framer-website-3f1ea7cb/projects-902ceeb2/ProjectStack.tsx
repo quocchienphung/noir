@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef, type ReactNode } from "react";
 import type { ImageRef } from "@/types/sites/norda-framer-website-3f1ea7cb";
-import { imageAsset } from "@/lib/sites/norda-framer-website-3f1ea7cb/media";
+import { CONTENT_WIDTH, coverSizes, imageAsset } from "@/lib/sites/norda-framer-website-3f1ea7cb/media";
 import { routes } from "@/lib/sites/norda-framer-website-3f1ea7cb/routes";
 import { clamp01, prefersReducedMotion } from "@/lib/sites/norda-framer-website-3f1ea7cb/scroll";
 import { useScrollFrame } from "@/hooks/sites/norda-framer-website-3f1ea7cb/useScrollFrame";
@@ -19,10 +19,11 @@ export interface StackProject {
 }
 
 /**
- * Sticky project stack. MEASURED (desktop): each 720px card sticks vertically centred; while the next card
- * rises over it the covered card's frame shrinks to 60% about its centre (content stays unscaled and clipped).
- * Tablet/phone: ordinary flow with a "View Project" link. `children` (the archive) share the sticky
- * containing block so it scrolls over the last stuck card, as on the source.
+ * Sticky project stack. MEASURED (desktop): each 80vh card sticks at top 160px; while the element after it
+ * (the next card, or the archive for the last card) rises over it, the covered card's frame shrinks to 60%
+ * about its centre (content stays unscaled and clipped). Tablet/phone: ordinary flow with a "View Project"
+ * link. `children` (the archive) share the sticky containing block so it scrolls over the last stuck card.
+ * The source eases the shrink slightly behind the scroll (spring-smoothed, I); here it tracks scroll directly.
  */
 export function ProjectStack({ projects, children }: { projects: StackProject[]; children?: ReactNode }) {
   const cardRefs = useRef<(HTMLElement | null)[]>([]);
@@ -30,9 +31,9 @@ export function ProjectStack({ projects, children }: { projects: StackProject[];
   useScrollFrame(({ vw }) => {
     const cards = cardRefs.current;
     const off = vw < 1200 || prefersReducedMotion();
-    cards.forEach((card, i) => {
+    cards.forEach((card) => {
       if (!card) return;
-      const next = cards[i + 1];
+      const next = card.nextElementSibling;
       if (off || !next) {
         card.style.setProperty("--nd-shrink", "0");
         return;
@@ -57,9 +58,10 @@ export function ProjectStack({ projects, children }: { projects: StackProject[];
             }}
             className={s.card}
           >
-            <Link href={routes.project(p.slug)} className={s.link} data-cursor="view-project">
-              <span className={s.frame}>
-                <Image src={img.src} alt={p.cover.alt} fill sizes="(min-width: 810px) calc(100vw - 96px), calc(100vw - 48px)" className={s.img} />
+            <Link href={routes.project(p.slug)} className={s.link}>
+              {/* MEASURED: VIEW PROJECT applies to the (shrinking) frame on desktop; margins and tablet keep the dot. */}
+              <span className={s.frame} data-cursor="view-project" data-cursor-min={1200}>
+                <Image src={img.src} alt={p.cover.alt} fill sizes={coverSizes(p.cover.asset, CONTENT_WIDTH, "80vh")} className={s.img} />
                 <span className={s.corners} aria-hidden="true">
                   <PlusMarker className={s.tl} />
                   <PlusMarker className={s.tr} />

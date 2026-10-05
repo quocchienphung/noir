@@ -6,7 +6,7 @@ import { ProjectStack } from "@/components/sites/norda-framer-website-3f1ea7cb/p
 import { archiveProjects, projectCards, projectsHeader, projectsIntro, projectsOutro } from "@/data/sites/norda-framer-website-3f1ea7cb/projects";
 import s from "@/styles/sites/norda-framer-website-3f1ea7cb/projects-902ceeb2/projects.module.css";
 
-// Source: https://norda.framer.website/projects (page key projects-902ceeb2)
+// Source route: /projects (page key projects-902ceeb2)
 export const metadata: Metadata = { title: "Nordå Architects" };
 
 export default function ProjectsPage() {
@@ -17,7 +17,7 @@ export default function ProjectsPage() {
         <LeadText lead={projectsIntro.lead} body={projectsIntro.body} className={s.intro} />
         <ProjectStack projects={projectCards}>
           <section className={s.archive} aria-labelledby="nd-archive-title">
-            <RecordList id="nd-archive-title" title="Archive Projects" rows={archiveProjects} />
+            <RecordList id="nd-archive-title" title="Archive Projects" rows={archiveProjects.map((r) => ({ ...r, cursor: "none" }))} />
           </section>
         </ProjectStack>
         <LeadText lead={projectsOutro.lead} body={projectsOutro.body} />

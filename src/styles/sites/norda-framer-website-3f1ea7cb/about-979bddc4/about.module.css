@@ -19,16 +19,19 @@
 }
 
 .imageFrame {
-  height: 675px;
+  /* MEASURED: 80vh at every breakpoint (560 @700, 675 @844, 720 @900, 880 @1100 viewport heights). */
+  height: 80vh;
 }
 
+/* MEASURED: the badge scales with the image frame — 40% / 24% / 12% of its width (phone / tablet /
+ * desktop), inset by the gutter from the bottom-right corner. */
 .badge {
   position: absolute;
-  right: 24px;
-  bottom: 24px;
+  right: var(--nd-gutter);
+  bottom: var(--nd-gutter);
   z-index: 2;
-  width: 120px;
-  height: 120px;
+  width: 40%;
+  aspect-ratio: 1;
   animation: nd-badge-spin 8s linear infinite;
 }
 
@@ -67,7 +70,8 @@
 }
 
 .jobsMain {
-  gap: 32px;
+  /* MEASURED: phone title → list gap 8px (48 / 64 on tablet / desktop). */
+  gap: 8px;
 }
 
 .jobsTitle {
@@ -81,15 +85,9 @@
     gap: 48px;
   }
 
-  .imageFrame {
-    height: 720px;
-  }
 
   .badge {
-    right: 32px;
-    bottom: 32px;
-    width: 180px;
-    height: 180px;
+    width: 24%;
   }
 }
 
@@ -100,10 +98,8 @@
   }
 
   .badge {
-    width: 223px;
-    height: 223px;
+    width: 12%;
   }
-
 }
 
 @media (prefers-reduced-motion: reduce) {

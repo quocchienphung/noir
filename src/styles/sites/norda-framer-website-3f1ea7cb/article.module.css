@@ -11,7 +11,7 @@
 }
 
 .intro {
-  padding: 192px 0 64px;
+  padding: 96px 0 64px;
 }
 
 .introMain {
@@ -51,7 +51,8 @@
 }
 
 .imageFrame {
-  height: 675px;
+  /* MEASURED: 80vh at every breakpoint (560 @700, 675 @844, 720 @900, 880 @1100 viewport heights). */
+  height: 80vh;
 }
 
 .text {
@@ -91,7 +92,7 @@
 
 @media (min-width: 810px) {
   .intro {
-    padding: 192px 0 96px;
+    padding: 144px 0 96px;
   }
 
   .introMain {
@@ -103,9 +104,6 @@
     gap: 48px;
   }
 
-  .imageFrame {
-    height: 720px;
-  }
 
   .text {
     padding: 96px 0 144px;

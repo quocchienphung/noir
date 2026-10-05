@@ -22,7 +22,7 @@ import { jobs } from "@/data/sites/norda-framer-website-3f1ea7cb/jobs";
 import site from "@/styles/sites/norda-framer-website-3f1ea7cb/site.module.css";
 import s from "@/styles/sites/norda-framer-website-3f1ea7cb/about-979bddc4/about.module.css";
 
-// Source: https://norda.framer.website/about (page key about-979bddc4)
+// Source route: /about (page key about-979bddc4)
 export const metadata: Metadata = { title: "Nordå Architects" };
 
 export default function AboutPage() {

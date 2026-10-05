@@ -231,11 +231,13 @@
   display: inline-flex;
   color: var(--nd-white);
   text-decoration: none;
-  font-family: var(--nd-font-display);
-  font-weight: 500;
+  /* MEASURED: variable face "wght" 500 on phone/tablet, static 500 face on desktop. */
+  font-family: var(--nd-font-body);
+  font-weight: 400;
   font-size: 28px;
   line-height: 33.6px;
-  letter-spacing: -0.84px;
+  letter-spacing: -0.28px;
+  font-variation-settings: "wght" 500;
 }
 
 .sitemapLink:focus-visible,
@@ -343,7 +345,7 @@
   .sitemapLink {
     font-size: 32px;
     line-height: 38.4px;
-    letter-spacing: -0.96px;
+    letter-spacing: -0.64px;
   }
 
   .utility {
@@ -427,9 +429,12 @@
   }
 
   .sitemapLink {
+    font-family: var(--nd-font-display);
+    font-weight: 500;
     font-size: 36px;
     line-height: 43.2px;
     letter-spacing: -1.08px;
+    font-variation-settings: normal;
   }
 
   .sitemapCols {

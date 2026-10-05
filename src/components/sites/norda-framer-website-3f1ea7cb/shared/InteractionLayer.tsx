@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { assets } from "@/data/sites/norda-framer-website-3f1ea7cb/assets";
+import { coverSizes } from "@/lib/sites/norda-framer-website-3f1ea7cb/media";
 import { awards } from "@/data/sites/norda-framer-website-3f1ea7cb/home";
 import s from "@/styles/sites/norda-framer-website-3f1ea7cb/cursor.module.css";
 
@@ -14,9 +15,12 @@ const FOLLOW = 0.18;
 
 /**
  * Site-wide pointer effects, mounted once:
- *  - the cursor follower (20px dot over links/controls, "VIEW PROJECT" / "READ ARTICLE" labels and
- *    award previews), shown only
- *    for fine pointers over elements carrying `data-cursor`;
+ *  - the cursor follower for fine pointers. MEASURED from the source's Framer cursor zones: the nearest
+ *    `data-cursor` ancestor decides the variant — "dot" (20px black, the page default set on SiteShell),
+ *    "dot-white" (footer, video + awards, menu overlay), "none" (chrome controls, footer controls, form
+ *    fields, scroll links and other listed controls), "view-project", "read-article", "award-n".
+ *    `data-cursor-min="1200"` limits a zone to desktop widths (the source's tablet variants omit the award
+ *    previews, project labels and the testimonial dot), falling through to the parent zone;
  *  - the delegated controller that starts RollText animations on pointer enter.
  */
 export function InteractionLayer() {
@@ -34,6 +38,14 @@ export function InteractionLayer() {
     let y = ty;
     let raf = 0;
     let active = "";
+    const isHidden = (v: string) => !v || v === "none";
+    const resolveZone = (el: Element | null) => {
+      for (let n = el?.closest<HTMLElement>("[data-cursor]"); n; n = n.parentElement?.closest<HTMLElement>("[data-cursor]")) {
+        const min = Number(n.dataset.cursorMin ?? 0);
+        if (window.innerWidth >= min) return n.dataset.cursor ?? "";
+      }
+      return "";
+    };
 
     const setVariant = (v: string) => {
       if (v === active) return;
@@ -54,18 +66,14 @@ export function InteractionLayer() {
       if (!fine.matches || e.pointerType !== "mouse") return;
       tx = e.clientX;
       ty = e.clientY;
-      if (!active) {
-        // Start from the pointer when becoming visible so the label never flies in from 0,0.
-        if (root.dataset.variant === "none") {
-          x = tx;
-          y = ty;
-        }
-      }
       const el = e.target as Element | null;
-      const target = el?.closest<HTMLElement>("[data-cursor]");
-      // MEASURED: links, buttons and form fields carry the source's "dot" cursor zone.
-      const interactive = el?.closest("a, button, form, label, [role='note']");
-      setVariant(target?.dataset.cursor ?? (interactive ? "dot" : ""));
+      const next = resolveZone(el);
+      // Start from the pointer when becoming visible so the follower never flies in from its last spot.
+      if (isHidden(active) && !isHidden(next)) {
+        x = tx;
+        y = ty;
+      }
+      setVariant(next);
       if (!raf) raf = requestAnimationFrame(tick);
     };
 
@@ -112,7 +120,7 @@ export function InteractionLayer() {
         const a = assets[award.preview.asset as keyof typeof assets];
         return (
           <div key={award.title} className={s.preview} data-preview={`award-${i + 1}`}>
-            <Image src={a.src} alt="" fill sizes="33vh" className={s.previewImg} />
+            <Image src={a.src} alt="" fill sizes={coverSizes(award.preview.asset, "24.9vh", "33vh")} className={s.previewImg} />
           </div>
         );
       })}

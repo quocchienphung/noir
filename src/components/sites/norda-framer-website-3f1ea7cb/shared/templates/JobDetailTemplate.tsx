@@ -2,8 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { jobHowToApply, jobOffer, type JobRecord } from "@/data/sites/norda-framer-website-3f1ea7cb/jobs";
-import { imageAsset } from "@/lib/sites/norda-framer-website-3f1ea7cb/media";
+import { coverSizes, imageAsset, MAIN_WIDTH } from "@/lib/sites/norda-framer-website-3f1ea7cb/media";
 import { routes } from "@/lib/sites/norda-framer-website-3f1ea7cb/routes";
+import { CharReveal } from "../CharReveal";
 import { Columns } from "../Columns";
 import { JobList } from "../JobList";
 import { ParallaxImage } from "../ParallaxImage";
@@ -21,6 +22,7 @@ function ApplyNow({ className }: { className?: string }) {
   return (
     <span
       className={cn(arrow.link, arrow.md, arrow.dark, s.apply, className)}
+      data-cursor="none"
       role="note"
       title="Applications are not handled by this local reconstruction (the source links to an email address)."
     >
@@ -45,7 +47,7 @@ export function JobDetailTemplate({ job, others }: { job: JobRecord; others: Job
     <main className={s.main}>
       <div className={s.hero}>
         <Columns className={s.imageRow}>
-          <ParallaxImage asset={job.hero.asset} alt={job.hero.alt} className={s.heroFrame} corners={false} preload sizes="(min-width: 1200px) 624px, (min-width: 810px) 60vw, calc(100vw - 48px)" />
+          <ParallaxImage asset={job.hero.asset} alt={job.hero.alt} className={s.heroFrame} corners={false} preload width={MAIN_WIDTH} height={{ desktop: "100vh", tablet: "640px", phone: "400px" }} />
         </Columns>
         <div className={s.info}>
           <dl className={s.params}>
@@ -59,7 +61,8 @@ export function JobDetailTemplate({ job, others }: { job: JobRecord; others: Job
             </div>
           </dl>
           <div className={s.titleRow}>
-            <h1 className={cn(site.display, s.title)}>{job.title}</h1>
+            {/* MEASURED: per-character rise after load on desktop and phone (plain text on tablet). */}
+            <CharReveal as="h1" mode="char" text={job.title} className={cn(site.display, s.title)} on={["desktop", "phone"]} />
             <ApplyNow className={s.heroApply} />
           </div>
         </div>
@@ -97,13 +100,22 @@ export function JobDetailTemplate({ job, others }: { job: JobRecord; others: Job
         <Ticker text="Nordå Architects ~" className={s.ticker} />
         <figure className={s.figure}>
           <blockquote className={s.blockquote}>
-            <p className={cn(site.title, s.quoteText)}>{job.quote.text}</p>
+            {/* MEASURED: line reveal 0.2s after entering the viewport on desktop and tablet (plain on phone). */}
+            <CharReveal text={job.quote.text} className={cn(site.title, s.quoteText)} delay={0.2} on={["desktop", "tablet"]} />
           </blockquote>
-          <figcaption className={site.body}>{job.quote.author}</figcaption>
+          <figcaption className={site.body} data-cursor="none">
+            {job.quote.author}
+          </figcaption>
         </figure>
         <div className={s.portraitCol}>
-          <Link href={routes.team(job.quote.teamSlug)} className={s.portrait} aria-label={job.quote.author.replace(/^–\s*/, "")}>
-            <Image src={portrait.src} alt={job.quote.portrait.alt} fill sizes="(min-width: 810px) 280px, 100vw" className={s.portraitImg} />
+          <Link href={routes.team(job.quote.teamSlug)} className={s.portrait} data-cursor="none" aria-label={job.quote.author.replace(/^–\s*/, "")}>
+            <Image
+              src={portrait.src}
+              alt={job.quote.portrait.alt}
+              fill
+              sizes={coverSizes(job.quote.portrait.asset, { desktop: "280px", tablet: "280px", phone: "calc(100vw - 48px)" }, { desktop: "80vh", tablet: "640px", phone: "400px" })}
+              className={s.portraitImg}
+            />
           </Link>
         </div>
       </section>

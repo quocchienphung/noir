@@ -29,11 +29,19 @@
   border-radius: 999px;
   background: var(--nd-black);
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .follower[data-variant="dot"] .dot {
   opacity: 1;
+}
+
+/* MEASURED: white dot over dark zones (footer, video + awards, menu overlay). */
+.follower[data-variant="dot-white"] .dot {
+  opacity: 1;
+  background: var(--nd-white);
 }
 
 .label {

@@ -8,12 +8,12 @@ import { FeaturedArticle } from "@/components/sites/norda-framer-website-3f1ea7c
 import { Testimonials } from "@/components/sites/norda-framer-website-3f1ea7cb/root-8a5edab2/Testimonials";
 import s from "@/styles/sites/norda-framer-website-3f1ea7cb/root-8a5edab2/home.module.css";
 
-// Source: https://norda.framer.website/ (page key root-8a5edab2)
+// Source route: / (page key root-8a5edab2)
 export default function HomePage() {
   return (
     <>
       <HomeHero />
-      <main className={s.main} {...{ [CHROME_REVEAL_ATTR]: "" }} data-nd-menu-delay="3">
+      <main id="main-container" className={s.main} {...{ [CHROME_REVEAL_ATTR]: "" }} data-nd-menu-delay="3">
         <AboutSection />
         <VideoAwards />
         <ServicesSection />

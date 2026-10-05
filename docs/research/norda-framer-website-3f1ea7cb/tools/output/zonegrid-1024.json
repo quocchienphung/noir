@@ -1,0 +1,77 @@
+[
+ {
+  "route": "/",
+  "width": 1024,
+  "points": 756,
+  "mismatches": 21,
+  "examples": [
+   "y860 x40: ref view-project div[A Tablet] \"View Project0103Ve\" | loc none nextjs-portal. \"\"",
+   "y1560 x40: ref dot section[Placeholder] \"\" | loc none nextjs-portal. \"\"",
+   "y760 x120: ref none path[Hidden] \"\" | loc view-project img.cOMmNG \"\"",
+   "y2260 x40: ref dot div[Image] \"\" | loc none nextjs-portal. \"\"",
+   "y2960 x40: ref dot section[Placeholder] \"\" | loc none nextjs-portal. \"\"",
+   "y3660 x40: ref dot-white div[White Text] \"Crafting spaceswhe\" | loc none nextjs-portal. \"\"",
+   "y4360 x40: ref dot-white div[Awards] \"Awards/  8Best Res\" | loc none nextjs-portal. \"\"",
+   "y5060 x40: ref dot-white div[Awards] \"Awards/  8Best Res\" | loc none nextjs-portal. \"\"",
+   "y5760 x40: ref dot div[Title] \"ServicesAt Nordå, \" | loc none nextjs-portal. \"\"",
+   "y6460 x40: ref dot div[Image] \"\" | loc none nextjs-portal. \"\"",
+   "y7160 x40: ref dot div[Tablet Closed] \"/  02Design Develo\" | loc none nextjs-portal. \"\"",
+   "y7860 x40: ref dot section[Placeholder] \"\" | loc none nextjs-portal. \"\"",
+   "y8560 x40: ref dot div[Text] \"We stand by princi\" | loc none nextjs-portal. \"\"",
+   "y9260 x40: ref dot a[Image Container] \"\" | loc none nextjs-portal. \"\"",
+   "y10660 x40: ref dot main[Main Container] \"Nordå — an archite\" | loc none nextjs-portal. \"\"",
+   "y11360 x40: ref dot-white footer[Tablet] \"Sign up for our ne\" | loc none nextjs-portal. \"\"",
+   "y12060 x40: ref dot-white footer[Tablet] \"Sign up for our ne\" | loc none nextjs-portal. \"\"",
+   "y11500 x120: ref none p[Form] \"By signing up to r\" | loc dot-white p.tP4oSa \"By signing up to r\"",
+   "y11500 x300: ref none p[Form] \"By signing up to r\" | loc dot-white p.tP4oSa \"By signing up to r\"",
+   "y11500 x480: ref none span[Form] \"Privacy Policy\" | loc dot-white a.Yu22fq \"Privacy Policy\"",
+   "y12760 x40: ref dot-white footer[Tablet] \"Sign up for our ne\" | loc none nextjs-portal. \"\""
+  ]
+ },
+ {
+  "route": "/projects",
+  "width": 1024,
+  "points": 546,
+  "mismatches": 17,
+  "examples": [
+   "y860 x40: ref dot img[Header] \"\" | loc none nextjs-portal. \"\"",
+   "y1560 x40: ref dot div[Projects] \"Verve TowerView Pr\" | loc none nextjs-portal. \"\"",
+   "y2260 x40: ref dot div[Projects] \"Verve TowerView Pr\" | loc none nextjs-portal. \"\"",
+   "y2960 x40: ref dot div[Projects] \"Verve TowerView Pr\" | loc none nextjs-portal. \"\"",
+   "y3660 x40: ref dot div[Projects] \"Verve TowerView Pr\" | loc none nextjs-portal. \"\"",
+   "y4360 x40: ref dot div[Projects] \"Verve TowerView Pr\" | loc none nextjs-portal. \"\"",
+   "y5060 x40: ref dot div[Projects] \"Verve TowerView Pr\" | loc none nextjs-portal. \"\"",
+   "y5760 x40: ref dot div[Projects] \"Verve TowerView Pr\" | loc none nextjs-portal. \"\"",
+   "y6460 x40: ref dot div[Projects] \"Verve TowerView Pr\" | loc none nextjs-portal. \"\"",
+   "y7160 x40: ref dot section[Placeholder] \"\" | loc none nextjs-portal. \"\"",
+   "y7860 x40: ref dot-white footer[Tablet] \"Sign up for our ne\" | loc none nextjs-portal. \"\"",
+   "y8560 x40: ref dot-white footer[Tablet] \"Sign up for our ne\" | loc none nextjs-portal. \"\"",
+   "y8150 x120: ref none div[Form] \"\" | loc dot-white input.Yu22fq \"\"",
+   "y8150 x300: ref none div[Form] \"\" | loc dot-white input.Yu22fq \"\"",
+   "y8150 x480: ref none div[Form] \"\" | loc dot-white input.Yu22fq \"\"",
+   "y8150 x720: ref none div[Form] \"\" | loc dot-white input.Yu22fq \"\"",
+   "y9260 x40: ref dot-white footer[Tablet] \"Sign up for our ne\" | loc none nextjs-portal. \"\""
+  ]
+ },
+ {
+  "route": "/news",
+  "width": 1024,
+  "points": 546,
+  "mismatches": 13,
+  "examples": [
+   "y860 x40: ref dot img[Header] \"\" | loc none nextjs-portal. \"\"",
+   "y1560 x40: ref dot section[Placeholder] \"\" | loc none nextjs-portal. \"\"",
+   "y2260 x40: ref dot a[Image Container] \"\" | loc none nextjs-portal. \"\"",
+   "y2960 x40: ref dot section[Placeholder] \"\" | loc none nextjs-portal. \"\"",
+   "y3660 x40: ref dot section[Placeholder] \"\" | loc none nextjs-portal. \"\"",
+   "y4360 x40: ref dot a[Image Container] \"\" | loc none nextjs-portal. \"\"",
+   "y5060 x40: ref dot div[Main Container] \"June 20, 2025Explo\" | loc none nextjs-portal. \"\"",
+   "y5760 x40: ref dot section[Placeholder] \"\" | loc none nextjs-portal. \"\"",
+   "y6460 x40: ref dot a[Image Container] \"\" | loc none nextjs-portal. \"\"",
+   "y7160 x40: ref dot div[Main Container] \"June 20, 2025Explo\" | loc none nextjs-portal. \"\"",
+   "y7860 x40: ref dot-white footer[Tablet] \"Sign up for our ne\" | loc none nextjs-portal. \"\"",
+   "y8560 x40: ref dot-white footer[Tablet] \"Sign up for our ne\" | loc none nextjs-portal. \"\"",
+   "y9260 x40: ref dot-white footer[Tablet] \"Sign up for our ne\" | loc none nextjs-portal. \"\""
+  ]
+ }
+]

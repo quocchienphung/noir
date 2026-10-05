@@ -1,4 +1,4 @@
-// Projects listing content, verbatim from https://norda.framer.website/projects (captured 2026-10-04).
+// Projects listing content, verbatim from the source route /projects (captured 2026-10-04).
 import type { ImageRef } from "@/types/sites/norda-framer-website-3f1ea7cb";
 import type { RecordRow } from "@/components/sites/norda-framer-website-3f1ea7cb/shared/RecordList";
 import type { PageTitleSpec } from "@/components/sites/norda-framer-website-3f1ea7cb/shared/templates/PageHeader";
@@ -9,7 +9,8 @@ export const projectsHeader = {
     "Our work redefines modern cities, creating spaces that enhance daily life. From residential buildings to office towers, each project reflects our commitment to thoughtful, functional, and lasting design.",
   title: {
     text: "Projects",
-    viewBoxWidth: { wide: 744.0240891387166, phone: 776.4457779562262 },
+    viewBoxWidth: { desktop: 744.0240891387166, tablet: 759.7349335474713, phone: 776.4457779562262 },
+    offsetX: -2,
     viewBoxHeight: 252,
     fontSize: 228.9155591245221,
     boxRatio: 4.68,
@@ -43,7 +44,7 @@ export const archiveProjects: RecordRow[] = [
 
 export const projectsOutro = {
   lead: "At Nordå, we believe architecture shapes the way people experience their cities.",
-  body: "From concept to completion, we focus on thoughtful design that responds to its surroundings. By prioritizing sustainability, quality, and innovation, we craft buildings that don’t just stand in the city — they become a meaningful part of it.",
+  body: "From concept to completion, we focus on thoughtful design that responds to its surroundings. By prioritizing sustainability, quality, and innovation, we craft buildings that don’t just stand in the city — they become a meaningful part of it.",
 };
 
 export interface ProjectDetail {

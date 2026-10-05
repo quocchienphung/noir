@@ -1,4 +1,4 @@
-// Homepage content, verbatim from https://norda.framer.website/ (captured 2026-10-04).
+// Homepage content, verbatim from the source route / (captured 2026-10-04).
 import type { Award, Counter, ImageRef, ServiceStep, Testimonial } from "@/types/sites/norda-framer-website-3f1ea7cb";
 
 export const heroSlides: { slug: string; name: string; image: ImageRef }[] = [
@@ -103,7 +103,7 @@ export const partners = {
     ["AeAYDNgSY0yy8HPMgkW5i8np38k", "1KDn9KvHtrhEOvNTFqCxDy9eqI", "k8K8ipaWgt7WvGuCtsw9JHkXug", "Lpk3IGwndBCNFqAI24JFdGvSk"],
     ["j5w72I6Rr4X59FioSIPbH9TS6I", "LJeazEwHtS34YQs6Coh9HWuaE", "AeAYDNgSY0yy8HPMgkW5i8np38k", "1KDn9KvHtrhEOvNTFqCxDy9eqI"],
   ],
-  outro: "We stand by principles of timeless design, sustainable practices, and a commitment to quality at every stage. With decades of experience and a reputation for excellence, NORDÅ is a trusted partner for those seeking meaningful, lasting architectural solutions.",
+  outro: "We stand by principles of timeless design, sustainable practices, and a commitment to quality at every stage. With decades of experience and a reputation for excellence, NORDÅ is a trusted partner for those seeking meaningful, lasting architectural solutions.",
 };
 
 export const featuredArticle = {

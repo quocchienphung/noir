@@ -6,7 +6,7 @@ import { articles, newsHeader } from "@/data/sites/norda-framer-website-3f1ea7cb
 import { routes } from "@/lib/sites/norda-framer-website-3f1ea7cb/routes";
 import s from "@/styles/sites/norda-framer-website-3f1ea7cb/news.module.css";
 
-// Source: https://norda.framer.website/news (page key news-f46b16ed)
+// Source route: /news (page key news-f46b16ed)
 export const metadata: Metadata = { title: "Nordå Architects" };
 
 export default function NewsPage() {

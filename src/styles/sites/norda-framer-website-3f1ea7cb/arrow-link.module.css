@@ -4,11 +4,19 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  border-bottom: 1px solid currentColor;
   text-decoration: none;
   font-family: var(--nd-font-display);
   font-weight: 500;
   white-space: nowrap;
+}
+
+/* MEASURED: the underline is a 1px bottom border on an inset ::after, so the link box is exactly one line tall. */
+.link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-bottom: 1px solid currentColor;
+  pointer-events: none;
 }
 
 .dark {
@@ -25,14 +33,39 @@
   letter-spacing: -1.2px;
 }
 
+/* MEASURED: phone/tablet "md" links use the variable face at "wght" 500 (28/33.6 · 32/38.4); desktop the
+ * static 500 face at 36/43.2. Arrow 24 · 28 · 32. */
 .md {
+  font-family: var(--nd-font-body);
+  font-weight: 400;
   font-size: 28px;
   line-height: 33.6px;
-  letter-spacing: -0.84px;
+  letter-spacing: -0.28px;
+  font-variation-settings: "wght" 500;
 }
 
 .arrow {
   flex: none;
+  width: 32px;
+  height: 32px;
+}
+
+.md .arrow {
+  width: 24px;
+  height: 24px;
+}
+
+/* MEASURED: "Meet the Team" on /team/<slug> keeps the desktop face on phones. */
+.mdPhoneLarge {
+  font-family: var(--nd-font-display);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 43.2px;
+  letter-spacing: -1.08px;
+  font-variation-settings: normal;
+}
+
+.mdPhoneLarge .arrow {
   width: 32px;
   height: 32px;
 }
@@ -59,9 +92,17 @@
   }
 
   .md {
+    font-family: var(--nd-font-body);
+    font-weight: 400;
     font-size: 32px;
     line-height: 38.4px;
-    letter-spacing: -0.96px;
+    letter-spacing: -0.64px;
+    font-variation-settings: "wght" 500;
+  }
+
+  .md .arrow {
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -82,8 +123,16 @@
   }
 
   .md {
+    font-family: var(--nd-font-display);
+    font-weight: 500;
     font-size: 36px;
     line-height: 43.2px;
     letter-spacing: -1.08px;
+    font-variation-settings: normal;
+  }
+
+  .md .arrow {
+    width: 32px;
+    height: 32px;
   }
 }

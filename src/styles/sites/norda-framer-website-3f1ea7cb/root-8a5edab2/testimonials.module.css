@@ -1,4 +1,4 @@
-/* Testimonials — MEASURED: section 100vh / 80vh / 720px; ticker band 200px tall 144px from the top
+/* Testimonials — MEASURED: section 100vh / 80vh / 720px; ticker band 200px tall centred at 27.14% of the section
  * (hidden on phone); desktop slide padding 64 with quote bottom-left and a 280×772 portrait in the
  * second quarter; 64px arrows bottom-right; tablet/phone use dots. */
 
@@ -63,6 +63,11 @@
   font-size: 18px;
   line-height: 28.8px;
   font-variation-settings: var(--nd-body-wght);
+}
+
+/* MEASURED: testimonials 2–4 wrap in 90% of the column (562 / 542 / 308px at 1440 / 1024 / 390). */
+.quoteNarrow {
+  width: 90%;
 }
 
 .author {

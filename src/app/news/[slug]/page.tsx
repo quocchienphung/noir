@@ -4,7 +4,7 @@ import { ArticleTemplate } from "@/components/sites/norda-framer-website-3f1ea7c
 import { articles, getArticle } from "@/data/sites/norda-framer-website-3f1ea7cb/news";
 import { decodeSlug } from "@/lib/sites/norda-framer-website-3f1ea7cb/routes";
 
-// Source: https://norda.framer.website/news/<slug> — six CMS entries, unknown slugs 404.
+// Source route: /news/<slug> — six CMS entries, unknown slugs 404.
 export const dynamicParams = false;
 
 export function generateStaticParams() {

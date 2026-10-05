@@ -57,14 +57,14 @@ export function VideoAwards() {
   }, []);
 
   return (
-    <div ref={sectionRef} className={s.section}>
+    <div ref={sectionRef} className={s.section} data-cursor="dot-white">
       <div className={s.flow}>
         <div className={s.spacer} aria-hidden="true" />
         <section className={s.awardsPanel} aria-labelledby="nd-awards-title">
           <RecordList
             id="nd-awards-title"
             title="Awards"
-            rows={awards.map((a, i) => ({ title: a.title, meta: a.organisation, year: a.year, cursor: `award-${i + 1}` }))}
+            rows={awards.map((a, i) => ({ title: a.title, meta: a.organisation, year: a.year, cursor: `award-${i + 1}`, cursorMin: 1200 }))}
           />
         </section>
       </div>
@@ -98,8 +98,8 @@ export function VideoAwards() {
         <div className={s.textSticky}>
           <h2 className={s.statement}>
             <span className={site.visuallyHidden}>{DESKTOP_LINES.join(" ")}</span>
-            <FitText lines={DESKTOP_LINES} viewBox="0 0 1200 490" fontSize={108.79419764279238} letterSpacing="-0.04em" lineHeight="90%" className={cn(s.fitWide, s.statementText)} />
-            <FitText lines={PHONE_LINES} viewBox="0 0 342 348" fontSize={51.19492466650879} letterSpacing="-0.04em" lineHeight="90%" className={cn(s.fitNarrow, s.statementText)} />
+            <FitText lines={DESKTOP_LINES} viewBox="0 0 1200 490" fontSize={108.79419764279238} letterSpacing="-0.04em" lineHeight="90%" className={cn(s.fitWide, s.statementText)} clip />
+            <FitText lines={PHONE_LINES} viewBox="0 0 342 348" fontSize={51.19492466650879} letterSpacing="-0.04em" lineHeight="90%" className={cn(s.fitNarrow, s.statementText)} clip />
           </h2>
         </div>
       </div>

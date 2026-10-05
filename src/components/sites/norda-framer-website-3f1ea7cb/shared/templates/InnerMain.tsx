@@ -7,7 +7,7 @@ import s from "@/styles/sites/norda-framer-website-3f1ea7cb/inner-main.module.cs
 /** Content panel that scrolls over a page header (MEASURED: id "main-container", padding 96/144/192). */
 export function InnerMain({ children, tone = "light", className }: { children: ReactNode; tone?: "light" | "dark"; className?: string }) {
   return (
-    <main id="main-container" className={cn(s.main, tone === "dark" && s.dark, className)}>
+    <main id="main-container" className={cn(s.main, tone === "dark" && s.dark, className)} data-cursor={tone === "dark" ? "dot-white" : undefined}>
       {children}
     </main>
   );

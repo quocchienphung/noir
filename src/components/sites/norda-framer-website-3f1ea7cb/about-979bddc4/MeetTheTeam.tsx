@@ -13,7 +13,7 @@ import site from "@/styles/sites/norda-framer-website-3f1ea7cb/site.module.css";
 import s from "@/styles/sites/norda-framer-website-3f1ea7cb/about-979bddc4/team.module.css";
 
 /**
- * "Meet the Team". MEASURED (desktop): the heading is sticky for 100vh while a 2340px layer of nine
+ * "Meet the Team". MEASURED (desktop): the heading is sticky for 100vh while a 260vh layer of nine
  * portraits scrolls over it; each portrait sits at an authored left% / top px and drifts at its own
  * scroll-speed factor once the section reaches the viewport top. Hover enlarges the card (189→197px)
  * and fades the name up. Tablet: 3-column grid; phone: single column; names always visible.
@@ -40,6 +40,7 @@ export function MeetTheTeam() {
             fontSize={215.54759965235962}
             letterSpacing="-0.04em"
             lineHeight="90%"
+            align="center"
             className={s.headingSvg}
           />
         </h2>
@@ -60,7 +61,7 @@ export function MeetTheTeam() {
                 } as CSSProperties
               }
             >
-              <Link href={routes.team(m.slug)} className={s.card}>
+              <Link href={routes.team(m.slug)} className={s.card} data-cursor="none">
                 <Image
                   src={img.src}
                   alt={m.portrait.alt}

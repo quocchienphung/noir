@@ -33,7 +33,8 @@
 .nameRole {
   display: flex;
   flex-direction: column;
-  padding: 48px 24px 0;
+  /* MEASURED phone block: 280px = 48 top + text + 64 below */
+  padding: 48px 24px 64px;
 }
 
 .text {
@@ -102,6 +103,15 @@
 .groupBody p,
 .groupBody p + p {
   margin: 0;
+  /* Framer text preserves spaces (pre-wrap); the bold "YYYY: " keeps its trailing bold space. */
+  white-space: pre-wrap;
+}
+
+.groupBody strong {
+  /* MEASURED: Inter 700 (Framer default bold for this preset), not Albert. */
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 700;
+  font-variation-settings: normal;
 }
 
 @media (min-width: 810px) {
@@ -122,7 +132,7 @@
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
-    padding: 0 48px 48px;
+    padding: 0 48px 112px;
     pointer-events: none;
   }
 
@@ -152,12 +162,13 @@
     padding-top: 64px;
   }
 
+  /* MEASURED: portrait and name/role block are 100vh on desktop (764 / 964 / 1164 rows at 700 / 900 / 1100). */
   .portrait {
-    height: 900px;
+    height: 100vh;
   }
 
   .nameRole {
-    height: 900px;
+    height: 100vh;
     padding: 0 64px 64px;
   }
 

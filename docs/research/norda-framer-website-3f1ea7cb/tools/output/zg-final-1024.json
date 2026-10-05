@@ -1,0 +1,88 @@
+[
+ {
+  "route": "/",
+  "width": 1024,
+  "points": 756,
+  "mismatches": 1,
+  "examples": [
+   "y760 x120: ref none path[Hidden] \"\" | loc view-project img.cOMmNG \"\""
+  ]
+ },
+ {
+  "route": "/projects",
+  "width": 1024,
+  "points": 546,
+  "mismatches": 0,
+  "examples": []
+ },
+ {
+  "route": "/news",
+  "width": 1024,
+  "points": 546,
+  "mismatches": 4,
+  "examples": [
+   "y8000 x120: ref dot-white div[Form] \"Sign up for our ne\" | loc none input.Yu22fq \"\"",
+   "y8000 x300: ref dot-white div[Form] \"Sign up for our ne\" | loc none input.Yu22fq \"\"",
+   "y8000 x480: ref dot-white div[Form] \"Sign up for our ne\" | loc none input.Yu22fq \"\"",
+   "y8000 x720: ref dot-white div[Form] \"Sign up for our ne\" | loc none input.Yu22fq \"\""
+  ]
+ },
+ {
+  "route": "/about",
+  "width": 1024,
+  "points": 546,
+  "mismatches": 0,
+  "examples": []
+ },
+ {
+  "route": "/contact",
+  "width": 1024,
+  "points": 294,
+  "mismatches": 0,
+  "examples": []
+ },
+ {
+  "route": "/team/erik-lindholm",
+  "width": 1024,
+  "points": 210,
+  "mismatches": 0,
+  "examples": []
+ },
+ {
+  "route": "/jobs/3d-artist",
+  "width": 1024,
+  "points": 378,
+  "mismatches": 0,
+  "examples": []
+ },
+ {
+  "route": "/projects/verve-tower",
+  "width": 1024,
+  "points": 420,
+  "mismatches": 0,
+  "examples": []
+ },
+ {
+  "route": "/news/building-with-purpose",
+  "width": 1024,
+  "points": 252,
+  "mismatches": 0,
+  "examples": []
+ },
+ {
+  "route": "/privacy-policy",
+  "width": 1024,
+  "points": 378,
+  "mismatches": 1,
+  "examples": [
+   "y5760 x960: ref none p[Link Title] \"BACK TO TOP\" | loc dot-white div.Yu22fq \"FacebookX (Twitter\""
+  ]
+ },
+ {
+  "route": "/404",
+  "width": 1024,
+  "points": 168,
+  "mismatches": 0,
+  "examples": []
+ }
+]

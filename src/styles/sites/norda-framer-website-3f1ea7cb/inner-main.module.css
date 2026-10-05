@@ -8,7 +8,6 @@
   padding: var(--nd-section-y) 0;
   background: var(--nd-white);
   color: var(--nd-black);
-  scroll-margin-top: 90px;
 }
 
 .dark {

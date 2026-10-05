@@ -30,8 +30,8 @@ export function ArticleCard({
 }) {
   return (
     <article className={cn(s.card, className)} aria-labelledby={id}>
-      <Link href={href} className={s.imageLink} data-cursor="read-article" aria-label={title} tabIndex={-1}>
-        <ParallaxImage asset={image.asset} alt={image.alt} className={s.imageFrame} />
+      <Link href={href} className={s.imageLink} aria-label={title} tabIndex={-1}>
+        <ParallaxImage asset={image.asset} alt={image.alt} className={s.imageFrame} height="50vh" cursor="read-article" />
       </Link>
       <Columns plus className={s.info} mainClassName={s.infoMain}>
         {date && <p className={cn(site.small, s.date)}>{date}</p>}

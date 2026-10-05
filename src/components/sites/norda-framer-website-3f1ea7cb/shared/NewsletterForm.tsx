@@ -32,9 +32,9 @@ export function NewsletterForm() {
   return (
     <div className={s.form}>
       <h2 className={cn(site.title, s.formTitle)} id={`${id}-title`}>
-        Sign up for our newsletter to receive updates and content
+        Sign up for our newsletter to&nbsp;receive updates and&nbsp;content
       </h2>
-      <form className={s.formRow} onSubmit={onSubmit} noValidate aria-labelledby={`${id}-title`}>
+      <form className={s.formRow} onSubmit={onSubmit} noValidate aria-labelledby={`${id}-title`} data-cursor="none">
         <label htmlFor={`${id}-email`} className={site.visuallyHidden}>
           Email
         </label>
@@ -58,7 +58,7 @@ export function NewsletterForm() {
         {status.kind === "error" && status.message}
         {status.kind === "demo" && "Demo only — this local reconstruction does not send or store your email."}
       </p>
-      <p className={cn(site.small, s.disclaimer)}>
+      <p className={cn(site.small, s.disclaimer)} data-cursor="none">
         By signing up to receive emails from Nordå, you agree to our{" "}
         <Link href="/privacy-policy" className={s.disclaimerLink}>
           Privacy&nbsp;Policy

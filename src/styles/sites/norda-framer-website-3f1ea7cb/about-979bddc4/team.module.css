@@ -86,13 +86,14 @@
     padding: 144px 48px;
   }
 
+  /* MEASURED (1024): columns 16px apart, rows on a 412px pitch with 3:4 cards (298.7×398.2). */
   .layer {
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 13.8px 16px;
   }
 
   .card {
-    aspect-ratio: 299 / 398;
+    aspect-ratio: 3 / 4;
   }
 }
 
@@ -117,10 +118,11 @@
     transform: translate(-50%, -50%);
   }
 
+  /* MEASURED: the section is 360vh (100vh sticky title + 260vh scatter layer); member offsets are px. */
   .layer {
     position: relative;
     display: block;
-    height: 2340px;
+    height: 260vh;
   }
 
   .member {
@@ -141,8 +143,9 @@
     transition: transform 0.5s var(--nd-ease-slide);
   }
 
+  /* MEASURED: hidden at rest; on hover the name settles 30px above the card bottom (top 202 of 262). */
   .name {
-    bottom: 16px;
+    bottom: 30px;
     opacity: 0;
     transform: translateY(14px);
     transition:

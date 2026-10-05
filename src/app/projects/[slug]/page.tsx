@@ -4,7 +4,7 @@ import { ProjectDetailTemplate } from "@/components/sites/norda-framer-website-3
 import { getProject, projectDetails } from "@/data/sites/norda-framer-website-3f1ea7cb/projects";
 import { decodeSlug } from "@/lib/sites/norda-framer-website-3f1ea7cb/routes";
 
-// Source: https://norda.framer.website/projects/<slug> — five CMS entries, unknown slugs 404.
+// Source route: /projects/<slug> — five CMS entries, unknown slugs 404.
 export const dynamicParams = false;
 
 export function generateStaticParams() {

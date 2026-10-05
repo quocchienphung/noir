@@ -16,7 +16,7 @@ export function JobList({ jobs, tone = "dark" }: { jobs: JobRecord[]; tone?: "da
     <ul className={cn(s.list, tone === "light" && s.light)}>
       {jobs.map((job) => (
         <li key={job.slug}>
-          <Link href={routes.job(job.slug)} className={s.item}>
+          <Link href={routes.job(job.slug)} className={s.item} data-cursor="none">
             <span className={s.container}>
               <span className={s.titleRow}>
                 <span className={site.title}>{job.title}</span>

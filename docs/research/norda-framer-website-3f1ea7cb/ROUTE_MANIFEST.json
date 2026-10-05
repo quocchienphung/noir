@@ -11,13 +11,15 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "home",
+    "componentTemplate": "home sections (root-8a5edab2/*)",
     "contentIds": [],
     "implementationStatus": "done",
-    "qaStatus": "visual-compare 1440 done",
-    "gaps": []
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/root-8a5edab2/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/about",
@@ -31,13 +33,15 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "about",
+    "componentTemplate": "PageHeader + MeetTheTeam + RotatingBadge + RecordList + JobList",
     "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/about-979bddc4/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/about/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/privacy-policy",
@@ -51,13 +55,15 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "policy",
+    "componentTemplate": "privacy layout + RichText",
     "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/privacy-policy-81e51d8c/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/privacy-policy/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/projects",
@@ -71,13 +77,15 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "projects-listing",
+    "componentTemplate": "PageHeader + ProjectStack + RecordList",
     "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/projects-902ceeb2/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/projects/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/news",
@@ -91,13 +99,15 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "news-listing",
+    "componentTemplate": "PageHeader + ArticleCard",
     "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/news-f46b16ed/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/news/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/contact",
@@ -111,13 +121,15 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "contact",
+    "componentTemplate": "PageHeader + ContactForm + FitText",
     "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/contact-4eb95063/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/contact/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/projects/verve-tower",
@@ -131,13 +143,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "project-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "ProjectDetailTemplate",
+    "contentIds": [
+      "projects.ts (projectDetails)#verve-tower"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/projects--verve-tower-f6679463/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/projects/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/projects/harbor-12",
@@ -151,13 +167,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "project-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "ProjectDetailTemplate",
+    "contentIds": [
+      "projects.ts (projectDetails)#harbor-12"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/projects--harbor-12-f38abefa/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/projects/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/projects/nordic-one",
@@ -171,13 +191,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "project-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "ProjectDetailTemplate",
+    "contentIds": [
+      "projects.ts (projectDetails)#nordic-one"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/projects--nordic-one-0bf27836/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/projects/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/projects/summit-24",
@@ -191,13 +215,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "project-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "ProjectDetailTemplate",
+    "contentIds": [
+      "projects.ts (projectDetails)#summit-24"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/projects--summit-24-07bd12d9/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/projects/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/projects/str%C3%B6m-haus",
@@ -211,13 +239,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "project-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "ProjectDetailTemplate",
+    "contentIds": [
+      "projects.ts (projectDetails)#ström-haus"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/projects--strom-haus-5778b8be/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/projects/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/jobs/interior-designer",
@@ -231,13 +263,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "job-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "JobDetailTemplate",
+    "contentIds": [
+      "jobs.ts#interior-designer"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/jobs--interior-designer-5f4757ee/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/jobs/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/jobs/landscape-architect",
@@ -251,13 +287,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "job-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "JobDetailTemplate",
+    "contentIds": [
+      "jobs.ts#landscape-architect"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/jobs--landscape-architect-42362954/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/jobs/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/jobs/3d-artist",
@@ -271,13 +311,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "job-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "JobDetailTemplate",
+    "contentIds": [
+      "jobs.ts#3d-artist"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/jobs--3d-artist-725b7f6e/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/jobs/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/jobs/project-architect",
@@ -291,13 +335,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "job-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "JobDetailTemplate",
+    "contentIds": [
+      "jobs.ts#project-architect"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/jobs--project-architect-3871577f/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/jobs/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/team/erik-lindholm",
@@ -311,13 +359,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "team-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "TeamMemberTemplate",
+    "contentIds": [
+      "team.ts#erik-lindholm"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/team--erik-lindholm-73da45d4/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/team/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/team/linnea-s%C3%B6rensen",
@@ -331,13 +383,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "team-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "TeamMemberTemplate",
+    "contentIds": [
+      "team.ts#linnea-sörensen"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/team--linnea-sorensen-9edac140/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/team/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/team/mikael-andersson",
@@ -351,13 +407,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "team-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "TeamMemberTemplate",
+    "contentIds": [
+      "team.ts#mikael-andersson"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/team--mikael-andersson-ef3a5f42/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/team/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/team/freja-karlsson",
@@ -371,13 +431,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "team-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "TeamMemberTemplate",
+    "contentIds": [
+      "team.ts#freja-karlsson"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/team--freja-karlsson-ded121f8/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/team/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/team/oskar-bj%C3%B8rnsen",
@@ -391,13 +455,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "team-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "TeamMemberTemplate",
+    "contentIds": [
+      "team.ts#oskar-bjørnsen"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/team--oskar-bjornsen-6701ec72/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/team/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/team/elin-j%C3%B8rgensen",
@@ -411,13 +479,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "team-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "TeamMemberTemplate",
+    "contentIds": [
+      "team.ts#elin-jørgensen"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/team--elin-jorgensen-6226b4d8/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/team/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/team/astrid-nilsen",
@@ -431,13 +503,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "team-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "TeamMemberTemplate",
+    "contentIds": [
+      "team.ts#astrid-nilsen"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/team--astrid-nilsen-6de92536/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/team/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/team/jonas-eklund",
@@ -451,13 +527,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "team-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "TeamMemberTemplate",
+    "contentIds": [
+      "team.ts#jonas-eklund"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/team--jonas-eklund-2e9711c7/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/team/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/team/sofia-bergstr%C3%B6m",
@@ -471,13 +551,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "team-detail",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "TeamMemberTemplate",
+    "contentIds": [
+      "team.ts#sofia-bergström"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/team--sofia-bergstrom-5078fb3c/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/team/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/news/how-architecture-shapes-productivity",
@@ -491,13 +575,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "article",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "ArticleTemplate",
+    "contentIds": [
+      "news.ts (articles)#how-architecture-shapes-productivity"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/news--how-architecture-shapes-productivity-213a278c/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/news/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/news/net-zero-buildings-the-next-step-in-architecture",
@@ -511,13 +599,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "article",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "ArticleTemplate",
+    "contentIds": [
+      "news.ts (articles)#net-zero-buildings-the-next-step-in-architecture"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/news--net-zero-buildings-the-next-step-in-architecture-0b39f912/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/news/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/news/the-role-of-public-spaces-in-cities",
@@ -531,13 +623,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "article",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "ArticleTemplate",
+    "contentIds": [
+      "news.ts (articles)#the-role-of-public-spaces-in-cities"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/news--the-role-of-public-spaces-in-cities-83fd034c/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/news/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/news/building-with-purpose",
@@ -551,13 +647,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "article",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "ArticleTemplate",
+    "contentIds": [
+      "news.ts (articles)#building-with-purpose"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/news--building-with-purpose-1e9f4258/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/news/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/news/the-future-of-office-spaces",
@@ -571,13 +671,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "article",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "ArticleTemplate",
+    "contentIds": [
+      "news.ts (articles)#the-future-of-office-spaces"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/news--the-future-of-office-spaces-490ef5c7/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/news/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/news/designing-cities-for-tomorrow",
@@ -591,13 +695,17 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "article",
-    "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "componentTemplate": "ArticleTemplate",
+    "contentIds": [
+      "news.ts (articles)#designing-cities-for-tomorrow"
+    ],
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/news--designing-cities-for-tomorrow-9920339a/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/news/[slug]/page.tsx"
   },
   {
     "sourceUrl": "https://norda.framer.website/404",
@@ -611,12 +719,14 @@
       "1440x900 scroll frames",
       "1024x900 scroll frames",
       "390x844 scroll frames",
-      "compact DOM/style capture per width"
+      "compact DOM/style capture per width",
+      "viewport-height variance 1440×700 / 1024×700 / 390×700 / 1440×1100"
     ],
-    "componentTemplate": "not-found",
+    "componentTemplate": "NotFoundView",
     "contentIds": [],
-    "implementationStatus": "pending",
-    "qaStatus": "pending",
-    "gaps": []
+    "implementationStatus": "done",
+    "qaStatus": "qa-routes pass at 1440/1024/390 · visual frames design-references/norda-framer-website-3f1ea7cb/404-316556f0/compare/ · see QA_REPORT.md",
+    "gaps": [],
+    "routeFile": "src/app/404/page.tsx + src/app/not-found.tsx"
   }
 ]

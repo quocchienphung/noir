@@ -1,4 +1,4 @@
-// About page content, verbatim from https://norda.framer.website/about (captured 2026-10-04).
+// About page content, verbatim from the source route /about (captured 2026-10-04).
 import type { ImageRef } from "@/types/sites/norda-framer-website-3f1ea7cb";
 import type { RecordRow } from "@/components/sites/norda-framer-website-3f1ea7cb/shared/RecordList";
 import type { PageTitleSpec } from "@/components/sites/norda-framer-website-3f1ea7cb/shared/templates/PageHeader";
@@ -10,7 +10,7 @@ export const aboutHeader = {
     "Guided by founders Erik Lindholm and Linnea Sörensen, our team merges innovation with timeless design to craft spaces that seamlessly connect people, nature, and architecture.",
   title: {
     text: "About",
-    viewBoxWidth: { wide: 756.010720823699, phone: 780.0076577312135 },
+    viewBoxWidth: { desktop: 756.010720823699, tablet: 768.0091892774562, phone: 780.0076577312135 },
     viewBoxHeight: 330,
     fontSize: 300.15315462427105,
     boxRatio: 3.55,

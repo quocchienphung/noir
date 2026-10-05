@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Research probes and evidence (provenance only, not app code).
+    "docs/**",
   ]),
 ]);
 

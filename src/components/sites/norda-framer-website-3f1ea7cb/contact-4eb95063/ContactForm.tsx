@@ -55,7 +55,7 @@ export function ContactForm() {
   return (
     <form className={s.form} onSubmit={onSubmit} noValidate aria-describedby="nd-contact-status">
       {FIELDS.map((f) => (
-        <label key={f.name} className={s.field}>
+        <label key={f.name} className={s.field} data-cursor="none">
           <span className={site.visuallyHidden}>{f.label}</span>
           <input
             name={f.name}
@@ -70,7 +70,7 @@ export function ContactForm() {
           {errors[f.name] && <span className={s.error}>{errors[f.name]}</span>}
         </label>
       ))}
-      <label className={s.field}>
+      <label className={s.field} data-cursor="none">
         <span className={site.visuallyHidden}>Message</span>
         <textarea
           name="message"
@@ -86,7 +86,7 @@ export function ContactForm() {
         <p id="nd-contact-status" className={cn(site.small, s.hint)} role="status" aria-live="polite">
           {sent ? "Demo only — this local reconstruction did not send your message." : "Please fill all the fields"}
         </p>
-        <button type="submit" className={s.send}>
+        <button type="submit" className={s.send} data-cursor="none">
           <span className={site.title}>Send</span>
           <span className={s.sendArrow} aria-hidden="true">
             <span className={s.sendDisc} />

@@ -9,6 +9,8 @@
   width: 100%;
   padding: var(--nd-section-y) 0;
   background: var(--nd-white);
+  /* MEASURED: only the home page's #main-container carries a 90px scroll margin. */
+  scroll-margin-top: 90px;
 }
 
 .featured {

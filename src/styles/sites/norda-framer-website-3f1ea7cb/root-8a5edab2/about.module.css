@@ -110,7 +110,8 @@
 }
 
 .imageFrame {
-  height: 675px;
+  /* MEASURED: 80vh at every breakpoint (560 @700, 675 @844, 720 @900, 880 @1100 viewport heights). */
+  height: 80vh;
 }
 
 .leadership {
@@ -149,9 +150,6 @@
     height: 180px;
   }
 
-  .imageFrame {
-    height: 720px;
-  }
 
   .leadership {
     padding: 144px 0;

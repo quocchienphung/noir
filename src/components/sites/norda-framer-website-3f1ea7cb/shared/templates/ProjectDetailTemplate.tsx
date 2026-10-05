@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import type { ProjectDetail } from "@/data/sites/norda-framer-website-3f1ea7cb/projects";
+import { projectDetails, type ProjectDetail } from "@/data/sites/norda-framer-website-3f1ea7cb/projects";
+import { MAIN_WIDTH } from "@/lib/sites/norda-framer-website-3f1ea7cb/media";
 import { routes } from "@/lib/sites/norda-framer-website-3f1ea7cb/routes";
 import { Columns } from "../Columns";
 import { ParallaxImage } from "../ParallaxImage";
@@ -49,7 +50,7 @@ export function ProjectDetailTemplate({ project, next }: { project: ProjectDetai
               asset={img.asset}
               alt={img.alt}
               className={s.galleryFrame}
-              sizes="(min-width: 1200px) 624px, (min-width: 810px) 60vw, calc(100vw - 48px)"
+              width={MAIN_WIDTH}
             />
           </Columns>
         ))}
@@ -60,8 +61,10 @@ export function ProjectDetailTemplate({ project, next }: { project: ProjectDetai
         <p className={cn(site.body, s.body)}>{project.closing.body}</p>
       </Columns>
 
-      <Link href={routes.project(next.slug)} className={s.next} data-cursor="view-project">
-        <ParallaxImage asset={next.hero.asset} alt="" className={s.nextFrame} />
+      {/* MEASURED: the wrap-around banner on the last entry (→ the first project) is a separate element on the
+          source without the VIEW PROJECT cursor, so it keeps the page dot. */}
+      <Link href={routes.project(next.slug)} className={s.next} data-cursor={next.slug === projectDetails[0].slug ? undefined : "view-project"}>
+        <ParallaxImage asset={next.hero.asset} alt="" className={s.nextFrame} height="50vh" />
         <span className={s.nextText}>
           <span className={site.label}>Next Project</span>
           <span className={cn(site.display, s.nextName)}>{next.name}</span>

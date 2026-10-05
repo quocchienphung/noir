@@ -44,7 +44,7 @@ export function SiteFooter() {
 
   return (
     <div ref={wrapRef} className={s.wrap}>
-      <footer ref={footerRef} className={s.footer}>
+      <footer ref={footerRef} className={s.footer} data-cursor="dot-white">
         <div className={s.wordmark} aria-hidden="true">
           <Image src={wordmark.src} alt="" width={wordmark.width} height={wordmark.height} className={s.wordmarkImg} />
         </div>
@@ -68,7 +68,7 @@ export function SiteFooter() {
                   <ul key={i} className={s.sitemapCol}>
                     {col.map((link) => (
                       <li key={link.href}>
-                        <Link href={link.href} className={s.sitemapLink}>
+                        <Link href={link.href} className={s.sitemapLink} data-cursor="none">
                           <RollText text={link.label} />
                         </Link>
                       </li>
@@ -85,27 +85,27 @@ export function SiteFooter() {
           <div className={s.utility}>
             {/* External-only platform links on the source; kept as labelled, inert icons. */}
             <ul className={s.social} aria-label="Social media (external links not included in this reconstruction)">
-              <li title="Facebook — external link not included">
+              <li title="Facebook — external link not included" data-cursor="none">
                 <FacebookIcon className={s.socialIcon} />
                 <span className={site.visuallyHidden}>Facebook</span>
               </li>
-              <li title="X (Twitter) — external link not included">
+              <li title="X (Twitter) — external link not included" data-cursor="none">
                 <XLogoIcon className={s.socialIcon} />
                 <span className={site.visuallyHidden}>X (Twitter)</span>
               </li>
-              <li title="Instagram — external link not included">
+              <li title="Instagram — external link not included" data-cursor="none">
                 <InstagramIcon className={s.socialIcon} />
                 <span className={site.visuallyHidden}>Instagram</span>
               </li>
             </ul>
-            <button type="button" className={s.backToTop} onClick={scrollTop}>
+            <button type="button" className={s.backToTop} onClick={scrollTop} data-cursor="none">
               <ArrowUpIcon className={s.backToTopIcon} />
               <RollText text="BACK TO TOP" className={s.backToTopLabel} />
             </button>
           </div>
           <div className={s.legal}>
-            <p className={cn(site.label, s.copyright)}>Copyright 2026 Nordå. All rights reserved.</p>
-            <p className={cn(site.label, s.attribution)}>Framer template handcrafted by Anton Drukarov</p>
+            <p className={cn(site.label, s.copyright)}>Copyright 2026 Nordå. All&nbsp;rights reserved.</p>
+            <p className={cn(site.label, s.attribution)} data-cursor="none">Framer template handcrafted by Anton Drukarov</p>
           </div>
         </div>
       </footer>

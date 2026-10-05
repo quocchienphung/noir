@@ -27,10 +27,13 @@
   gap: 8px;
 }
 
+/* MEASURED hover (spring, settles in ~0.6s): the arrow slides from 8px to 32px after the title, the
+ * hairline goes from 10% to full opacity and the disc fills. */
 .titleRow {
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: gap 0.6s var(--nd-spring);
 }
 
 .arrow {
@@ -49,14 +52,14 @@
   border-radius: 999px;
   background: currentColor;
   opacity: 0;
-  transition: opacity 0.3s var(--nd-ease-inout);
+  transition: opacity 0.6s var(--nd-spring);
 }
 
 .arrowIcon {
   position: relative;
   width: 28px;
   height: 28px;
-  transition: color 0.3s var(--nd-ease-inout);
+  transition: color 0.6s var(--nd-spring);
 }
 
 .summary {
@@ -70,9 +73,18 @@
   height: 1px;
   background: currentColor;
   opacity: 0.1;
+  transition: opacity 0.6s var(--nd-spring);
 }
 
 @media (hover: hover) {
+  .item:hover .titleRow {
+    gap: 32px;
+  }
+
+  .item:hover .line {
+    opacity: 1;
+  }
+
   .item:hover .disc {
     opacity: 1;
   }

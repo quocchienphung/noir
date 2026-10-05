@@ -1,6 +1,6 @@
 {
-  "base": "http://localhost:3200",
-  "date": "2026-10-04T15:48:03.071Z",
+  "base": "http://127.0.0.1:3200",
+  "date": "2026-10-04T21:27:15.661Z",
   "results": [
     {
       "path": "/",
@@ -9,24 +9,21 @@
       "expect": 200,
       "refHeight": 14804,
       "title": "Nordå Architects",
-      "height": 14807,
+      "height": 14805,
       "overflowX": 0,
       "images": 36,
-      "broken": [
-        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2F5wwhsRM2FMYljXoLda5xGvVyk.jpg&w=3840&q=75",
-        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FTVwqQqsrEv3JD9tCWSZxi5bw0.jpg&w=3840&q=75",
-        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FFjHAEx0OKICPXVQdU2AohS9CZXA.jpg&w=390&q=75",
-        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FO8OUO2E58WZgY1Jn9HEjri4V2G4.jpg&w=390&q=75"
-      ],
+      "broken": [],
+      "pending": 4,
       "videos": [
         {
-          "src": "http://localhost:3200/sites/norda-framer-website-3f1ea7cb/root-8a5edab2/videos/RPCvbH4eTYU7lPNivoY0mYV63qw.mp4",
+          "src": "http://127.0.0.1:3200/sites/norda-framer-website-3f1ea7cb/root-8a5edab2/videos/RPCvbH4eTYU7lPNivoY0mYV63qw.mp4",
           "ready": 4,
           "err": null
         }
       ],
       "fonts": [
         "albertVariable 400 normal",
+        "albert 400 normal",
         "albert 500 normal",
         "albert 700 normal"
       ],
@@ -34,10 +31,41 @@
         "Nordå"
       ],
       "blocked": [],
-      "failed": [
-        "http://localhost:3200/sites/norda-framer-website-3f1ea7cb/root-8a5edab2/videos/RPCvbH4eTYU7lPNivoY0mYV63qw.mp4 net::ERR_ABORTED",
-        "http://localhost:3200/sites/norda-framer-website-3f1ea7cb/root-8a5edab2/videos/RPCvbH4eTYU7lPNivoY0mYV63qw.mp4 net::ERR_ABORTED"
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 12432,
+      "overflowX": 0,
+      "images": 36,
+      "broken": [],
+      "pending": 8,
+      "videos": [
+        {
+          "src": "http://127.0.0.1:3200/sites/norda-framer-website-3f1ea7cb/root-8a5edab2/videos/RPCvbH4eTYU7lPNivoY0mYV63qw.mp4",
+          "ready": 4,
+          "err": null
+        }
       ],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Nordå"
+      ],
+      "blocked": [],
+      "failed": [],
       "consoleErrors": []
     },
     {
@@ -47,20 +75,14 @@
       "expect": 200,
       "refHeight": 12777,
       "title": "Nordå Architects",
-      "height": 12615,
+      "height": 12777,
       "overflowX": 0,
       "images": 36,
-      "broken": [
-        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FnwlVbPDjPm71hPIQuKuGlvFT9s.png&w=128&q=75",
-        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FCHv3JR1Cg48f4jEscJb6w3YkE.png&w=128&q=75",
-        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FFjHAEx0OKICPXVQdU2AohS9CZXA.jpg&w=390&q=75",
-        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FO8OUO2E58WZgY1Jn9HEjri4V2G4.jpg&w=390&q=75",
-        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FIh46Mq8uiQ56rQhTIyUJTvfIXE.png&w=128&q=75",
-        "http://localhost:3200/_next/image?url=%2Fsites%2Fnorda-framer-website-3f1ea7cb%2Froot-8a5edab2%2Fimages%2FH3BmhpWcSqVQg81DVbYo0lExgDU.png&w=128&q=75"
-      ],
+      "broken": [],
+      "pending": 6,
       "videos": [
         {
-          "src": "http://localhost:3200/sites/norda-framer-website-3f1ea7cb/root-8a5edab2/videos/RPCvbH4eTYU7lPNivoY0mYV63qw.mp4",
+          "src": "http://127.0.0.1:3200/sites/norda-framer-website-3f1ea7cb/root-8a5edab2/videos/RPCvbH4eTYU7lPNivoY0mYV63qw.mp4",
           "ready": 4,
           "err": null
         }
@@ -68,16 +90,16 @@
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Nordå"
       ],
       "blocked": [],
-      "failed": [
-        "http://localhost:3200/sites/norda-framer-website-3f1ea7cb/root-8a5edab2/videos/RPCvbH4eTYU7lPNivoY0mYV63qw.mp4 net::ERR_ABORTED"
-      ],
+      "failed": [],
       "consoleErrors": []
     },
     {
@@ -87,19 +109,54 @@
       "expect": 200,
       "refHeight": 11163,
       "title": "Nordå Architects",
-      "height": 11165,
+      "height": 11164,
       "overflowX": 0,
       "images": 21,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 600 normal",
+        "albert 700 normal",
+        "albert 900 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
-        "AboutAboutAbout"
+        "AboutAboutAboutAbout"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/about",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 9071,
+      "overflowX": 0,
+      "images": 21,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 600 normal",
+        "albert 700 normal",
+        "albert 900 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "AboutAboutAboutAbout"
       ],
       "blocked": [],
       "failed": [],
@@ -112,19 +169,24 @@
       "expect": 200,
       "refHeight": 12535,
       "title": "Nordå Architects",
-      "height": 12948,
+      "height": 12535,
       "overflowX": 0,
       "images": 21,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 600 normal",
+        "albert 700 normal",
+        "albert 900 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
-        "AboutAboutAbout"
+        "AboutAboutAboutAbout"
       ],
       "blocked": [],
       "failed": [],
@@ -141,12 +203,43 @@
       "overflowX": 0,
       "images": 9,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Privacy Policy"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 5936,
+      "overflowX": 0,
+      "images": 9,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Privacy Policy"
@@ -166,12 +259,15 @@
       "overflowX": 0,
       "images": 9,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Privacy Policy"
@@ -191,15 +287,46 @@
       "overflowX": 0,
       "images": 15,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
-        "ProjectsProjectsProjects"
+        "ProjectsProjectsProjectsProjects"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 9194,
+      "overflowX": 0,
+      "images": 15,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "ProjectsProjectsProjectsProjects"
       ],
       "blocked": [],
       "failed": [],
@@ -212,19 +339,22 @@
       "expect": 200,
       "refHeight": 9307,
       "title": "Nordå Architects",
-      "height": 9377,
+      "height": 9306,
       "overflowX": 0,
       "images": 15,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
-        "ProjectsProjectsProjects"
+        "ProjectsProjectsProjectsProjects"
       ],
       "blocked": [],
       "failed": [],
@@ -237,19 +367,50 @@
       "expect": 200,
       "refHeight": 9637,
       "title": "Nordå Architects",
-      "height": 9644,
+      "height": 9638,
       "overflowX": 0,
       "images": 16,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
-        "NewsNewsNews"
+        "NewsNewsNewsNews"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 8966,
+      "overflowX": 0,
+      "images": 16,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "NewsNewsNewsNews"
       ],
       "blocked": [],
       "failed": [],
@@ -262,19 +423,22 @@
       "expect": 200,
       "refHeight": 9106,
       "title": "Nordå Architects",
-      "height": 9111,
+      "height": 9105,
       "overflowX": 0,
       "images": 16,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
-        "NewsNewsNews"
+        "NewsNewsNewsNews"
       ],
       "blocked": [],
       "failed": [],
@@ -291,15 +455,46 @@
       "overflowX": 0,
       "images": 11,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
-        "ContactContactContact"
+        "ContactContactContactContact"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/contact",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 4832,
+      "overflowX": 0,
+      "images": 11,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "ContactContactContactContact"
       ],
       "blocked": [],
       "failed": [],
@@ -312,19 +507,22 @@
       "expect": 200,
       "refHeight": 5223,
       "title": "Nordå Architects",
-      "height": 5499,
+      "height": 5223,
       "overflowX": 0,
       "images": 11,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
-        "ContactContactContact"
+        "ContactContactContactContact"
       ],
       "blocked": [],
       "failed": [],
@@ -341,12 +539,43 @@
       "overflowX": 0,
       "images": 14,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Verve Tower"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects/verve-tower",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Verve Tower - My Framer Site",
+      "height": 6770,
+      "overflowX": 0,
+      "images": 14,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Verve Tower"
@@ -366,10 +595,12 @@
       "overflowX": 0,
       "images": 14,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
         "albert 700 normal",
         "albert Fallback normal normal"
@@ -392,12 +623,43 @@
       "overflowX": 0,
       "images": 14,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Harbor 12"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects/harbor-12",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Harbor 12 - My Framer Site",
+      "height": 6894,
+      "overflowX": 0,
+      "images": 14,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Harbor 12"
@@ -413,16 +675,19 @@
       "expect": 200,
       "refHeight": 6788,
       "title": "Harbor 12 - My Framer Site",
-      "height": 6787,
+      "height": 6788,
       "overflowX": 0,
       "images": 14,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Harbor 12"
@@ -442,12 +707,43 @@
       "overflowX": 0,
       "images": 13,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Nordic One"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects/nordic-one",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordic One - My Framer Site",
+      "height": 6053,
+      "overflowX": 0,
+      "images": 13,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Nordic One"
@@ -467,12 +763,15 @@
       "overflowX": 0,
       "images": 13,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Nordic One"
@@ -492,12 +791,43 @@
       "overflowX": 0,
       "images": 14,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Summit 24"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects/summit-24",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Summit 24 - My Framer Site",
+      "height": 6812,
+      "overflowX": 0,
+      "images": 14,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Summit 24"
@@ -513,16 +843,19 @@
       "expect": 200,
       "refHeight": 6764,
       "title": "Summit 24 - My Framer Site",
-      "height": 6763,
+      "height": 6764,
       "overflowX": 0,
       "images": 14,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Summit 24"
@@ -542,12 +875,43 @@
       "overflowX": 0,
       "images": 13,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Ström Haus"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects/str%C3%B6m-haus",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Ström Haus - My Framer Site",
+      "height": 5958,
+      "overflowX": 0,
+      "images": 13,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Ström Haus"
@@ -563,16 +927,19 @@
       "expect": 200,
       "refHeight": 5996,
       "title": "Ström Haus - My Framer Site",
-      "height": 5995,
+      "height": 5996,
       "overflowX": 0,
       "images": 13,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Ström Haus"
@@ -588,19 +955,50 @@
       "expect": 200,
       "refHeight": 6805,
       "title": "Nordå Architects",
-      "height": 6808,
+      "height": 6807,
       "overflowX": 0,
       "images": 11,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
-        "Interior Designer"
+        "Interior DesignerInterior Designer"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/jobs/interior-designer",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 5954,
+      "overflowX": 0,
+      "images": 11,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Interior DesignerInterior Designer"
       ],
       "blocked": [],
       "failed": [],
@@ -613,19 +1011,22 @@
       "expect": 200,
       "refHeight": 6387,
       "title": "Nordå Architects",
-      "height": 6436,
+      "height": 6387,
       "overflowX": 0,
       "images": 11,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
-        "Interior Designer"
+        "Interior DesignerInterior Designer"
       ],
       "blocked": [],
       "failed": [],
@@ -638,19 +1039,50 @@
       "expect": 200,
       "refHeight": 6741,
       "title": "Nordå Architects",
-      "height": 6743,
+      "height": 6742,
       "overflowX": 0,
       "images": 11,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
-        "Landscape Architect"
+        "Landscape ArchitectLandscape Architect"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/jobs/landscape-architect",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 5858,
+      "overflowX": 0,
+      "images": 11,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Landscape ArchitectLandscape Architect"
       ],
       "blocked": [],
       "failed": [],
@@ -663,19 +1095,22 @@
       "expect": 200,
       "refHeight": 6241,
       "title": "Nordå Architects",
-      "height": 6290,
+      "height": 6241,
       "overflowX": 0,
       "images": 11,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
-        "Landscape Architect"
+        "Landscape ArchitectLandscape Architect"
       ],
       "blocked": [],
       "failed": [],
@@ -688,19 +1123,50 @@
       "expect": 200,
       "refHeight": 6759,
       "title": "Nordå Architects",
-      "height": 6761,
+      "height": 6760,
       "overflowX": 0,
       "images": 11,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
-        "3D Artist"
+        "3D Artist3D Artist"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/jobs/3d-artist",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 5870,
+      "overflowX": 0,
+      "images": 11,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "3D Artist3D Artist"
       ],
       "blocked": [],
       "failed": [],
@@ -713,19 +1179,22 @@
       "expect": 200,
       "refHeight": 6228,
       "title": "Nordå Architects",
-      "height": 6276,
+      "height": 6227,
       "overflowX": 0,
       "images": 11,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
-        "3D Artist"
+        "3D Artist3D Artist"
       ],
       "blocked": [],
       "failed": [],
@@ -738,19 +1207,50 @@
       "expect": 200,
       "refHeight": 6665,
       "title": "Nordå Architects",
-      "height": 6667,
+      "height": 6666,
       "overflowX": 0,
       "images": 11,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
-        "Project Architect"
+        "Project ArchitectProject Architect"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/jobs/project-architect",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 5787,
+      "overflowX": 0,
+      "images": 11,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Project ArchitectProject Architect"
       ],
       "blocked": [],
       "failed": [],
@@ -763,20 +1263,22 @@
       "expect": 200,
       "refHeight": 6234,
       "title": "Nordå Architects",
-      "height": 6282,
+      "height": 6233,
       "overflowX": 0,
       "images": 11,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
         "albert 700 normal",
         "albert Fallback normal normal"
       ],
       "h1": [
-        "Project Architect"
+        "Project ArchitectProject Architect"
       ],
       "blocked": [],
       "failed": [],
@@ -789,16 +1291,51 @@
       "expect": 200,
       "refHeight": 4088,
       "title": "Nordå Architects",
-      "height": 4091,
+      "height": 4090,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
+      ],
+      "h1": [
+        "Erik Lindholm"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/erik-lindholm",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 3517,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Erik Lindholm"
@@ -814,16 +1351,21 @@
       "expect": 200,
       "refHeight": 3814,
       "title": "Nordå Architects",
-      "height": 3741,
+      "height": 3813,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Erik Lindholm"
@@ -839,16 +1381,51 @@
       "expect": 200,
       "refHeight": 4024,
       "title": "Nordå Architects",
-      "height": 4026,
+      "height": 4025,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
+      ],
+      "h1": [
+        "Linnea Sörensen"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/linnea-s%C3%B6rensen",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 3533,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Linnea Sörensen"
@@ -864,16 +1441,21 @@
       "expect": 200,
       "refHeight": 3741,
       "title": "Nordå Architects",
-      "height": 3668,
+      "height": 3740,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Linnea Sörensen"
@@ -889,15 +1471,51 @@
       "expect": 200,
       "refHeight": 4042,
       "title": "Nordå Architects",
-      "height": 4044,
+      "height": 4043,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
+      ],
+      "h1": [
+        "Mikael Andersson"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/mikael-andersson",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 3517,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Mikael Andersson"
@@ -913,16 +1531,21 @@
       "expect": 200,
       "refHeight": 3777,
       "title": "Nordå Architects",
-      "height": 3704,
+      "height": 3777,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Mikael Andersson"
@@ -938,16 +1561,51 @@
       "expect": 200,
       "refHeight": 4042,
       "title": "Nordå Architects",
-      "height": 4044,
+      "height": 4043,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
+      ],
+      "h1": [
+        "Freja Karlsson"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/freja-karlsson",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 3517,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Freja Karlsson"
@@ -963,16 +1621,21 @@
       "expect": 200,
       "refHeight": 3748,
       "title": "Nordå Architects",
-      "height": 3675,
+      "height": 3748,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Freja Karlsson"
@@ -988,16 +1651,51 @@
       "expect": 200,
       "refHeight": 4042,
       "title": "Nordå Architects",
-      "height": 4044,
+      "height": 4043,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
+      ],
+      "h1": [
+        "Oskar Bjørnsen"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/oskar-bj%C3%B8rnsen",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 3517,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Oskar Bjørnsen"
@@ -1013,17 +1711,21 @@
       "expect": 200,
       "refHeight": 3712,
       "title": "Nordå Architects",
-      "height": 3639,
+      "height": 3712,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
         "albert 700 normal",
-        "albert Fallback normal normal"
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Oskar Bjørnsen"
@@ -1039,16 +1741,51 @@
       "expect": 200,
       "refHeight": 3995,
       "title": "Nordå Architects",
-      "height": 3997,
+      "height": 3996,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
+      ],
+      "h1": [
+        "Elin Jørgensen"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/elin-j%C3%B8rgensen",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 3476,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Elin Jørgensen"
@@ -1064,16 +1801,20 @@
       "expect": 200,
       "refHeight": 3676,
       "title": "Nordå Architects",
-      "height": 3603,
+      "height": 3675,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal"
       ],
       "h1": [
         "Elin Jørgensen"
@@ -1089,16 +1830,51 @@
       "expect": 200,
       "refHeight": 4024,
       "title": "Nordå Architects",
-      "height": 4026,
+      "height": 4025,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
+      ],
+      "h1": [
+        "Astrid Nilsen"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/astrid-nilsen",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 3504,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Astrid Nilsen"
@@ -1114,16 +1890,21 @@
       "expect": 200,
       "refHeight": 3676,
       "title": "Nordå Architects",
-      "height": 3574,
+      "height": 3675,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Astrid Nilsen"
@@ -1139,16 +1920,51 @@
       "expect": 200,
       "refHeight": 4042,
       "title": "Nordå Architects",
-      "height": 4044,
+      "height": 4043,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
+      ],
+      "h1": [
+        "Jonas Eklund"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/jonas-eklund",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 3517,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Jonas Eklund"
@@ -1164,16 +1980,21 @@
       "expect": 200,
       "refHeight": 3712,
       "title": "Nordå Architects",
-      "height": 3639,
+      "height": 3712,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Jonas Eklund"
@@ -1189,16 +2010,51 @@
       "expect": 200,
       "refHeight": 4042,
       "title": "Nordå Architects",
-      "height": 4044,
+      "height": 4043,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
+      ],
+      "h1": [
+        "Sofia Bergström"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/team/sofia-bergstr%C3%B6m",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 3517,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Sofia Bergström"
@@ -1214,16 +2070,21 @@
       "expect": 200,
       "refHeight": 3777,
       "title": "Nordå Architects",
-      "height": 3704,
+      "height": 3777,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal",
+        "inter 700 normal",
+        "inter Fallback normal normal"
       ],
       "h1": [
         "Sofia Bergström"
@@ -1239,16 +2100,47 @@
       "expect": 200,
       "refHeight": 4451,
       "title": "Exploring the Future of Urban Living - Nordå Architects",
-      "height": 4453,
+      "height": 4452,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Exploring the Future of Urban Living"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/how-architecture-shapes-productivity",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Exploring the Future of Urban Living - Nordå Architects",
+      "height": 4095,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Exploring the Future of Urban Living"
@@ -1264,16 +2156,19 @@
       "expect": 200,
       "refHeight": 4607,
       "title": "Exploring the Future of Urban Living - Nordå Architects",
-      "height": 4703,
+      "height": 4607,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Exploring the Future of Urban Living"
@@ -1289,16 +2184,47 @@
       "expect": 200,
       "refHeight": 4498,
       "title": "The Balance of Form and Function - Nordå Architects",
-      "height": 4500,
+      "height": 4499,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "The Balance of Form and Function"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/net-zero-buildings-the-next-step-in-architecture",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "The Balance of Form and Function - Nordå Architects",
+      "height": 4137,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "The Balance of Form and Function"
@@ -1314,16 +2240,19 @@
       "expect": 200,
       "refHeight": 4599,
       "title": "The Balance of Form and Function - Nordå Architects",
-      "height": 4696,
+      "height": 4599,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "The Balance of Form and Function"
@@ -1339,16 +2268,47 @@
       "expect": 200,
       "refHeight": 4451,
       "title": "Reinventing Office Spaces for Tomorrow - Nordå Architects",
-      "height": 4453,
+      "height": 4452,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Reinventing Office Spaces for Tomorrow"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/the-role-of-public-spaces-in-cities",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Reinventing Office Spaces for Tomorrow - Nordå Architects",
+      "height": 4095,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Reinventing Office Spaces for Tomorrow"
@@ -1364,16 +2324,19 @@
       "expect": 200,
       "refHeight": 4643,
       "title": "Reinventing Office Spaces for Tomorrow - Nordå Architects",
-      "height": 4740,
+      "height": 4643,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Reinventing Office Spaces for Tomorrow"
@@ -1389,16 +2352,47 @@
       "expect": 200,
       "refHeight": 4451,
       "title": "The Role of Light in Architectural Design - Nordå Architects",
-      "height": 4453,
+      "height": 4452,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "The Role of Light in Architectural Design"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/building-with-purpose",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "The Role of Light in Architectural Design - Nordå Architects",
+      "height": 4095,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "The Role of Light in Architectural Design"
@@ -1414,14 +2408,16 @@
       "expect": 200,
       "refHeight": 4643,
       "title": "The Role of Light in Architectural Design - Nordå Architects",
-      "height": 4740,
+      "height": 4643,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
         "albert 700 normal",
         "albert Fallback normal normal"
@@ -1440,16 +2436,47 @@
       "expect": 200,
       "refHeight": 4451,
       "title": "Building with a Sustainable Mindset - Nordå Architects",
-      "height": 4453,
+      "height": 4452,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Building with a Sustainable Mindset"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/the-future-of-office-spaces",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Building with a Sustainable Mindset - Nordå Architects",
+      "height": 4095,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Building with a Sustainable Mindset"
@@ -1465,16 +2492,19 @@
       "expect": 200,
       "refHeight": 4672,
       "title": "Building with a Sustainable Mindset - Nordå Architects",
-      "height": 4769,
+      "height": 4672,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Building with a Sustainable Mindset"
@@ -1490,16 +2520,47 @@
       "expect": 200,
       "refHeight": 4498,
       "title": "Designing for Density: Smart Urban Solutions - Nordå Architects",
-      "height": 4500,
+      "height": 4499,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
+      ],
+      "h1": [
+        "Designing for Density: Smart Urban Solutions"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/news/designing-cities-for-tomorrow",
+      "width": 1024,
+      "status": 200,
+      "expect": 200,
+      "refHeight": null,
+      "title": "Designing for Density: Smart Urban Solutions - Nordå Architects",
+      "height": 4095,
+      "overflowX": 0,
+      "images": 10,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Designing for Density: Smart Urban Solutions"
@@ -1515,16 +2576,19 @@
       "expect": 200,
       "refHeight": 4672,
       "title": "Designing for Density: Smart Urban Solutions - Nordå Architects",
-      "height": 4769,
+      "height": 4672,
       "overflowX": 0,
       "images": 10,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert Fallback normal normal"
       ],
       "h1": [
         "Designing for Density: Smart Urban Solutions"
@@ -1544,22 +2608,50 @@
       "overflowX": 0,
       "images": 9,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert 900 normal"
       ],
       "h1": [
         "404 — Page not found"
       ],
       "blocked": [],
-      "failed": [
-        "404 http://localhost:3200/404"
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/404",
+      "width": 1024,
+      "status": 404,
+      "expect": 404,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 2582,
+      "overflowX": 0,
+      "images": 9,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert 900 normal",
+        "albert Fallback normal normal"
       ],
-      "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 404 (Not Found)"
-      ]
+      "h1": [
+        "404 — Page not found"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
     },
     {
       "path": "/404",
@@ -1572,23 +2664,22 @@
       "overflowX": 0,
       "images": 9,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
-        "albert 700 normal"
+        "albert 700 normal",
+        "albert 900 normal"
       ],
       "h1": [
         "404 — Page not found"
       ],
       "blocked": [],
-      "failed": [
-        "404 http://localhost:3200/404"
-      ],
-      "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 404 (Not Found)"
-      ]
+      "failed": [],
+      "consoleErrors": []
     },
     {
       "path": "/this-route-does-not-exist",
@@ -1601,24 +2692,52 @@
       "overflowX": 0,
       "images": 9,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
         "albert 700 normal",
+        "albert 900 normal",
         "albert Fallback normal normal"
       ],
       "h1": [
         "404 — Page not found"
       ],
       "blocked": [],
-      "failed": [
-        "404 http://localhost:3200/this-route-does-not-exist"
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/this-route-does-not-exist",
+      "width": 1024,
+      "status": 404,
+      "expect": 404,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 2582,
+      "overflowX": 0,
+      "images": 9,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert 900 normal",
+        "albert Fallback normal normal"
       ],
-      "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 404 (Not Found)"
-      ]
+      "h1": [
+        "404 — Page not found"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
     },
     {
       "path": "/this-route-does-not-exist",
@@ -1631,24 +2750,23 @@
       "overflowX": 0,
       "images": 9,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
         "albert 700 normal",
+        "albert 900 normal",
         "albert Fallback normal normal"
       ],
       "h1": [
         "404 — Page not found"
       ],
       "blocked": [],
-      "failed": [
-        "404 http://localhost:3200/this-route-does-not-exist"
-      ],
-      "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 404 (Not Found)"
-      ]
+      "failed": [],
+      "consoleErrors": []
     },
     {
       "path": "/projects/unknown-slug",
@@ -1661,24 +2779,52 @@
       "overflowX": 0,
       "images": 9,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
         "albert 700 normal",
+        "albert 900 normal",
         "albert Fallback normal normal"
       ],
       "h1": [
         "404 — Page not found"
       ],
       "blocked": [],
-      "failed": [
-        "404 http://localhost:3200/projects/unknown-slug"
+      "failed": [],
+      "consoleErrors": []
+    },
+    {
+      "path": "/projects/unknown-slug",
+      "width": 1024,
+      "status": 404,
+      "expect": 404,
+      "refHeight": null,
+      "title": "Nordå Architects",
+      "height": 2582,
+      "overflowX": 0,
+      "images": 9,
+      "broken": [],
+      "pending": 0,
+      "videos": [],
+      "fonts": [
+        "albertVariable 400 normal",
+        "albertVariable Fallback normal normal",
+        "albert 400 normal",
+        "albert 500 normal",
+        "albert 700 normal",
+        "albert 900 normal",
+        "albert Fallback normal normal"
       ],
-      "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 404 (Not Found)"
-      ]
+      "h1": [
+        "404 — Page not found"
+      ],
+      "blocked": [],
+      "failed": [],
+      "consoleErrors": []
     },
     {
       "path": "/projects/unknown-slug",
@@ -1691,24 +2837,23 @@
       "overflowX": 0,
       "images": 9,
       "broken": [],
+      "pending": 0,
       "videos": [],
       "fonts": [
         "albertVariable 400 normal",
         "albertVariable Fallback normal normal",
+        "albert 400 normal",
         "albert 500 normal",
         "albert 700 normal",
+        "albert 900 normal",
         "albert Fallback normal normal"
       ],
       "h1": [
         "404 — Page not found"
       ],
       "blocked": [],
-      "failed": [
-        "404 http://localhost:3200/projects/unknown-slug"
-      ],
-      "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 404 (Not Found)"
-      ]
+      "failed": [],
+      "consoleErrors": []
     }
   ]
 }

@@ -10,7 +10,8 @@ export const newsHeader = {
     "Discover the latest projects, industry insights, and studio updates from Nordå. Stay informed about our work, design philosophy, and the ideas shaping modern urban architecture.",
   title: {
     text: "News",
-    viewBoxWidth: { wide: 575.6242069005958, phone: 591.5887192147113 },
+    viewBoxWidth: { desktop: 575.6242069005958, tablet: 584.1064630576536, phone: 591.5887192147113 },
+    offsetX: -3,
     viewBoxHeight: 277,
     fontSize: 251.7743842942262,
     boxRatio: 3.22,

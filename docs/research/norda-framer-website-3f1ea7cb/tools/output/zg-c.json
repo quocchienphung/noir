@@ -1,0 +1,97 @@
+[
+ {
+  "route": "/projects/summit-24",
+  "width": 1440,
+  "points": 693,
+  "mismatches": 0,
+  "examples": []
+ },
+ {
+  "route": "/projects/str%C3%B6m-haus",
+  "width": 1440,
+  "points": 567,
+  "mismatches": 45,
+  "examples": [
+   "y4100 x40: ref dot div[First Project] \"++++Next ProjectVe\" | loc view-project a.SIc_iq \"Next ProjectVerve \"",
+   "y4250 x40: ref dot div[First Project] \"++++Next ProjectVe\" | loc view-project a.SIc_iq \"Next ProjectVerve \"",
+   "y4360 x40: ref dot div[First Project] \"++++Next ProjectVe\" | loc view-project a.SIc_iq \"Next ProjectVerve \"",
+   "y4100 x120: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4250 x120: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4360 x120: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4100 x300: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4250 x300: ref dot h2[Title *] \"Verve Tower\" | loc view-project img.SjBKGa \"\"",
+   "y4360 x300: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4100 x480: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4250 x480: ref dot h2[Title *] \"Verve Tower\" | loc view-project img.SjBKGa \"\"",
+   "y4360 x480: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4100 x720: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4250 x720: ref dot h2[Title *] \"Verve Tower\" | loc view-project img.SjBKGa \"\"",
+   "y4360 x720: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4100 x960: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4250 x960: ref dot h2[Title *] \"Verve Tower\" | loc view-project img.SjBKGa \"\"",
+   "y4360 x960: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4100 x1140: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4250 x1140: ref dot h2[Title *] \"Verve Tower\" | loc view-project img.SjBKGa \"\"",
+   "y4360 x1140: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4100 x1300: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4250 x1300: ref dot h2[Title *] \"Verve Tower\" | loc view-project img.SjBKGa \"\"",
+   "y4360 x1300: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4100 x1400: ref dot div[First Project] \"++++Next ProjectVe\" | loc view-project a.SIc_iq \"Next ProjectVerve \"",
+   "y4250 x1400: ref dot div[First Project] \"++++Next ProjectVe\" | loc view-project a.SIc_iq \"Next ProjectVerve \"",
+   "y4360 x1400: ref dot div[First Project] \"++++Next ProjectVe\" | loc view-project a.SIc_iq \"Next ProjectVerve \"",
+   "y4260 x40: ref dot div[First Project] \"++++Next ProjectVe\" | loc view-project a.SIc_iq \"Next ProjectVerve \"",
+   "y4360 x40: ref dot div[First Project] \"++++Next ProjectVe\" | loc view-project a.SIc_iq \"Next ProjectVerve \"",
+   "y4260 x120: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4360 x120: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4260 x300: ref dot h2[Title *] \"Verve Tower\" | loc view-project img.SjBKGa \"\"",
+   "y4360 x300: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4260 x480: ref dot h2[Title *] \"Verve Tower\" | loc view-project img.SjBKGa \"\"",
+   "y4360 x480: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4260 x720: ref dot h2[Title *] \"Verve Tower\" | loc view-project img.SjBKGa \"\"",
+   "y4360 x720: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4260 x960: ref dot h2[Title *] \"Verve Tower\" | loc view-project img.SjBKGa \"\"",
+   "y4360 x960: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4260 x1140: ref dot h2[Title *] \"Verve Tower\" | loc view-project img.SjBKGa \"\"",
+   "y4360 x1140: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4260 x1300: ref dot h2[Title *] \"Verve Tower\" | loc view-project img.SjBKGa \"\"",
+   "y4360 x1300: ref dot div[First Project] \"Next ProjectVerve \" | loc view-project img.SjBKGa \"\"",
+   "y4260 x1400: ref dot div[First Project] \"++++Next ProjectVe\" | loc view-project a.SIc_iq \"Next ProjectVerve \"",
+   "y4360 x1400: ref dot div[First Project] \"++++Next ProjectVe\" | loc view-project a.SIc_iq \"Next ProjectVerve \""
+  ]
+ },
+ {
+  "route": "/news/how-architecture-shapes-productivity",
+  "width": 1440,
+  "points": 441,
+  "mismatches": 0,
+  "examples": []
+ },
+ {
+  "route": "/news/net-zero-buildings-the-next-step-in-architecture",
+  "width": 1440,
+  "points": 441,
+  "mismatches": 0,
+  "examples": []
+ },
+ {
+  "route": "/news/the-role-of-public-spaces-in-cities",
+  "width": 1440,
+  "points": 441,
+  "mismatches": 0,
+  "examples": []
+ },
+ {
+  "route": "/news/the-future-of-office-spaces",
+  "width": 1440,
+  "points": 441,
+  "mismatches": 0,
+  "examples": []
+ },
+ {
+  "route": "/news/designing-cities-for-tomorrow",
+  "width": 1440,
+  "points": 441,
+  "mismatches": 0,
+  "examples": []
+ }
+]

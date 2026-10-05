@@ -4,7 +4,7 @@ import { TeamMemberTemplate } from "@/components/sites/norda-framer-website-3f1e
 import { getTeamMember, team } from "@/data/sites/norda-framer-website-3f1ea7cb/team";
 import { decodeSlug } from "@/lib/sites/norda-framer-website-3f1ea7cb/routes";
 
-// Source: https://norda.framer.website/team/<slug> — nine CMS entries (Unicode slugs preserved), unknown slugs 404.
+// Source route: /team/<slug> — nine CMS entries (Unicode slugs preserved), unknown slugs 404.
 export const dynamicParams = false;
 
 export function generateStaticParams() {

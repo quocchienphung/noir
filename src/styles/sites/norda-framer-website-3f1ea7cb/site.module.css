@@ -29,6 +29,9 @@
   --nd-ease-slide: cubic-bezier(0.22, 1, 0.36, 1);
   /* Framer "ease-in-out" tween used by appear effects (MEASURED in appear JSON: [0.44, 0, 0.56, 1]). */
   --nd-ease-inout: cubic-bezier(0.44, 0, 0.56, 1);
+  /* Critically damped spring 1 − (1 + ωt)e^(−ωt) sampled to ωt = 9.3 (INFERRED fit of 16ms samples of the
+   * character reveals and job-row hover); pair with the measured duration of each effect. */
+  --nd-spring: linear(0, 0.0232, 0.0798, 0.1549, 0.2385, 0.3238, 0.4064, 0.4839, 0.5548, 0.6185, 0.6749, 0.7243, 0.7672, 0.8042, 0.8358, 0.8628, 0.8856, 0.9049, 0.9211, 0.9346, 0.946, 0.9554, 0.9633, 0.9698, 0.9752, 0.9796, 0.9833, 0.9863, 0.9888, 0.9909, 0.9925, 0.9939, 0.995, 0.996, 0.9967, 0.9973, 0.9978, 0.9982, 0.9986, 0.9988, 1);
 
   position: relative;
   display: flex;
@@ -101,7 +104,7 @@
 
 .small {
   font-family: var(--nd-font-display);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
   line-height: 22.4px;
 }

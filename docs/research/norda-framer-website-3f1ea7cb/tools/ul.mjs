@@ -1,0 +1,5 @@
+import { chromium, openPage } from './lib.mjs';
+const browser = await chromium.launch({ channel: 'chrome' });
+const page = await openPage(browser, '/jobs/interior-designer', 1440);
+console.log(await page.evaluate(() => { const ul = document.querySelector('ul.framer-text'); const cs = getComputedStyle(ul); const li = ul.querySelector('li'); const lcs = getComputedStyle(li); const p = li.querySelector('p'); const r = document.createRange(); r.selectNodeContents(p); const rr = r.getClientRects()[0]; const pcs = getComputedStyle(p); const m = getComputedStyle(li, '::marker'); return `ul pad ${cs.padding} margin ${cs.margin} list ${cs.listStyle} | li ${lcs.display} pad ${lcs.padding} margin ${lcs.margin} ul.x ${Math.round(ul.getBoundingClientRect().x)} text.x ${Math.round(rr.x)} | p ${pcs.fontFamily.slice(0,30)} ${pcs.fontSize} ${pcs.fontVariationSettings} | marker ${m.content} ${m.fontSize} ${m.fontFamily.slice(0,30)} | li2.top-li1.bottom ${Math.round(ul.querySelectorAll('li')[1].getBoundingClientRect().top - li.getBoundingClientRect().bottom)}`; }));
+await browser.close();

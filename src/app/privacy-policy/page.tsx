@@ -5,7 +5,7 @@ import { policySections } from "@/data/sites/norda-framer-website-3f1ea7cb/priva
 import site from "@/styles/sites/norda-framer-website-3f1ea7cb/site.module.css";
 import s from "@/styles/sites/norda-framer-website-3f1ea7cb/privacy.module.css";
 
-// Source: https://norda.framer.website/privacy-policy (page key privacy-policy-81e51d8c)
+// Source route: /privacy-policy (page key privacy-policy-81e51d8c)
 export const metadata: Metadata = { title: "Nordå Architects" };
 
 export default function PrivacyPolicyPage() {

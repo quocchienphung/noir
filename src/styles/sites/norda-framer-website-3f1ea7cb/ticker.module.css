@@ -1,9 +1,10 @@
 /* Loop distance = two copies (track holds four, animates −50%): 18.4s desktop (933px copies),
  * 15.1s tablet (765px), phone hidden where the source hides it (set by the caller). */
 
+/* Callers set --nd-ticker-center: MEASURED band-relative centre (testimonials 27.14%, job quote 33.93%). */
 .ticker {
   position: absolute;
-  top: 144px;
+  top: calc(var(--nd-ticker-center, 27.14%) - 100px);
   left: 0;
   right: 0;
   display: flex;

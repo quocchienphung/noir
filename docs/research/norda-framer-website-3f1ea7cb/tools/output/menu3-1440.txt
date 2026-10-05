@@ -1,0 +1,262 @@
+--- t=0ms
+
+--- t=100ms
+    div Menu Container [965,0 475x900] op1 tfnone bgrgb(0, 0, 0) posrelative  
+      div Close [1317,64 59x22] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  
+          a 0 [1128,452 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./ 
+          a 1 [1128,529 217x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./projects 
+          a 2 [1128,606 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./about 
+          a 3 [1128,682 148x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./news 
+          a 4 [1128,759 215x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./contact 
+            use  [1029,64 12x12] op1 tfnone bgrgba(0, 0, 0, 0) posstatic href=#svg11105175324 
+--- t=200ms
+    div Menu Container [965,0 475x900] op1 tfnone bgrgb(0, 0, 0) posrelative  
+      div Close [1317,64 59x22] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  
+          a 0 [1124,452 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./ 
+          a 1 [1124,529 217x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./projects 
+          a 2 [1124,606 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./about 
+          a 3 [1124,682 148x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./news 
+          a 4 [1124,759 215x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./contact 
+            use  [1029,64 12x12] op1 tfnone bgrgba(0, 0, 0, 0) posstatic href=#svg11105175324 
+--- t=300ms
+    div Menu Container [965,0 475x900] op1 tfnone bgrgb(0, 0, 0) posrelative  
+      div Close [1317,64 59x22] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  
+          a 0 [1112,452 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./ 
+          a 1 [1112,529 217x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./projects 
+          a 2 [1112,606 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./about 
+          a 3 [1112,682 148x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./news 
+          a 4 [1112,759 215x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./contact 
+            use  [1029,64 12x12] op1 tfnone bgrgba(0, 0, 0, 0) posstatic href=#svg11105175324 
+--- t=400ms
+    div Menu Container [965,0 475x900] op1 tfnone bgrgb(0, 0, 0) posrelative  
+      div Close [1317,64 59x22] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  
+          a 0 [1069,452 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./ 
+          a 1 [1069,529 217x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./projects 
+          a 2 [1069,606 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./about 
+          a 3 [1069,682 148x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./news 
+          a 4 [1069,759 215x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./contact 
+            use  [1029,64 12x12] op1 tfnone bgrgba(0, 0, 0, 0) posstatic href=#svg11105175324 
+--- t=500ms
+    div Menu Container [965,0 475x900] op1 tfnone bgrgb(0, 0, 0) posrelative  
+      div Close [1317,64 59x22] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  
+          a 0 [1040,452 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./ 
+          a 1 [1040,529 217x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./projects 
+          a 2 [1040,606 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./about 
+          a 3 [1040,682 148x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./news 
+          a 4 [1040,759 215x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./contact 
+            use  [1029,64 12x12] op1 tfnone bgrgba(0, 0, 0, 0) posstatic href=#svg11105175324 
+--- t=600ms
+    div Menu Container [965,0 475x900] op1 tfnone bgrgb(0, 0, 0) posrelative  
+      div Close [1317,64 59x22] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  
+          a 0 [1032,452 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./ 
+          a 1 [1032,529 217x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./projects 
+          a 2 [1032,606 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./about 
+          a 3 [1032,682 148x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./news 
+          a 4 [1032,759 215x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./contact 
+            use  [1029,64 12x12] op1 tfnone bgrgba(0, 0, 0, 0) posstatic href=#svg11105175324 
+--- t=700ms
+    div Menu Container [965,0 475x900] op1 tfnone bgrgb(0, 0, 0) posrelative  
+      div Close [1317,64 59x22] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  
+          a 0 [1029,452 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./ 
+          a 1 [1029,529 217x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./projects 
+          a 2 [1029,606 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./about 
+          a 3 [1029,682 148x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./news 
+          a 4 [1029,759 215x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./contact 
+            use  [1029,64 12x12] op1 tfnone bgrgba(0, 0, 0, 0) posstatic href=#svg11105175324 
+--- t=800ms
+    div Menu Container [965,0 475x900] op1 tfnone bgrgb(0, 0, 0) posrelative  
+      div Close [1317,64 59x22] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  
+          a 0 [1029,452 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./ 
+          a 1 [1029,529 217x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./projects 
+          a 2 [1029,606 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./about 
+          a 3 [1029,682 148x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./news 
+          a 4 [1029,759 215x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./contact 
+            use  [1029,64 12x12] op1 tfnone bgrgba(0, 0, 0, 0) posstatic href=#svg11105175324 
+--- t=900ms
+    div Menu Container [965,0 475x900] op1 tfnone bgrgb(0, 0, 0) posrelative  
+      div Close [1317,64 59x22] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  
+          a 0 [1029,452 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./ 
+          a 1 [1029,529 217x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./projects 
+          a 2 [1029,606 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./about 
+          a 3 [1029,682 148x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./news 
+          a 4 [1029,759 215x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./contact 
+            use  [1029,64 12x12] op1 tfnone bgrgba(0, 0, 0, 0) posstatic href=#svg11105175324 
+=== SETTLED
+div  [0,0 1440x900] op1 tfnone bgrgba(0, 0, 0, 0) posfixed  
+div  [0,0 1440x900] op1 tfnone bgrgba(0, 0, 0, 0) posfixed  
+  nav Open [0,0 1440x900] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+    section BG [0,0 1440x900] op0.66 tfnone bgrgb(34, 34, 34) posabsolute  
+    div Menu Container [965,0 475x900] op1 tfnone bgrgb(0, 0, 0) posrelative  
+      div Close [1317,64 59x22] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  
+        a A [1317,64 59x22] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+          div  [1317,64 59x22] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+            div  [1317,64 59x22] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+              div  [1317,64 59x22] op1 tfnone bgrgba(0, 0, 0, 0) posstatic  
+                div  [1317,64 14x22] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                  div  [1317,64 14x22] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                    div  [1317,42 14x22] op1 tfmatrix(1, 0, 0, 1, 0, -21.5938) bgrgba(0, 0, 0, 0) posrelative  "C" "Albert Sans" 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+                    div  [1317,64 14x22] op1 tfmatrix(1, 0, 0, 1, 0, -21.5938) bgrgba(0, 0, 0, 0) posabsolute  "C" "Albert Sans" 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+                div  [1331,64 10x22] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                  div  [1331,64 10x22] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                    div  [1331,42 10x22] op1 tfmatrix(1, 0, 0, 1, 0, -21.5938) bgrgba(0, 0, 0, 0) posrelative  "L" "Albert Sans" 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+                    div  [1331,64 10x22] op1 tfmatrix(1, 0, 0, 1, 0, -21.5938) bgrgba(0, 0, 0, 0) posabsolute  "L" "Albert Sans" 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+                div  [1340,64 14x22] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                  div  [1340,64 14x22] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                    div  [1340,42 14x22] op1 tfmatrix(1, 0, 0, 1, 0, -21.5938) bgrgba(0, 0, 0, 0) posrelative  "O" "Albert Sans" 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+                    div  [1340,64 14x22] op1 tfmatrix(1, 0, 0, 1, 0, -21.5938) bgrgba(0, 0, 0, 0) posabsolute  "O" "Albert Sans" 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+                div  [1354,64 11x22] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                  div  [1354,64 11x22] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                    div  [1354,42 11x22] op1 tfmatrix(1, 0, 0, 1, 0, -21.5938) bgrgba(0, 0, 0, 0) posrelative  "S" "Albert Sans" 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+                    div  [1354,64 11x22] op1 tfmatrix(1, 0, 0, 1, 0, -21.5938) bgrgba(0, 0, 0, 0) posabsolute  "S" "Albert Sans" 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+                div  [1365,64 11x22] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                  div  [1365,64 11x22] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                    div  [1365,42 11x22] op1 tfmatrix(1, 0, 0, 1, 0, -21.5938) bgrgba(0, 0, 0, 0) posrelative  "E" "Albert Sans" 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+                    div  [1365,64 11x22] op1 tfmatrix(1, 0, 0, 1, 0, -21.5938) bgrgba(0, 0, 0, 0) posabsolute  "E" "Albert Sans" 700 18px/21.6px ls-0.02px rgb(255, 255, 255)
+      div  [1029,452 217x384] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  
+        div Variant 1 [1029,452 217x384] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+          a 0 [1029,452 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./ 
+            div  [1029,452 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+              div Desktop [1029,452 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                div  [1029,452 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                  div  [1029,452 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                    div  [1029,452 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posstatic  
+                      div  [1029,452 42x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1029,452 42x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1029,452 42x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "H" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1029,529 42x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "H" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1071,452 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1071,452 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1071,452 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "o" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1071,529 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "o" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1106,452 54x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1106,452 54x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1106,452 54x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "m" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1106,529 54x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "m" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1159,452 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1159,452 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1159,452 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "e" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1159,529 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "e" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+          a 1 [1029,529 217x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./projects 
+            div  [1029,529 217x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+              div Desktop [1029,529 217x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                div  [1029,529 217x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                  div  [1029,529 217x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                    div  [1029,529 217x77] op1 tfnone bgrgba(0, 0, 0, 0) posstatic  
+                      div  [1029,529 37x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1029,529 37x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1029,529 37x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "P" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1029,606 37x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "P" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1065,529 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1065,529 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1065,529 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "r" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1065,606 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "r" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1085,529 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1085,529 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1085,529 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "o" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1085,606 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "o" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1120,529 14x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1120,529 14x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1120,529 14x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "j" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1120,606 14x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "j" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1134,529 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1134,529 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1134,529 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "e" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1134,606 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "e" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1166,529 32x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1166,529 32x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1166,529 32x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "c" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1166,606 32x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "c" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1199,529 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1199,529 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1199,529 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "t" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1199,606 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "t" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1218,529 28x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1218,529 28x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1218,529 28x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "s" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1218,606 28x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "s" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+          a 2 [1029,606 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./about 
+            div  [1029,606 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+              div Desktop [1029,606 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                div  [1029,606 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                  div  [1029,606 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                    div  [1029,606 163x77] op1 tfnone bgrgba(0, 0, 0, 0) posstatic  
+                      div  [1029,606 41x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1029,606 41x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1029,606 41x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "A" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1029,682 41x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "A" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1070,606 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1070,606 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1070,606 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "b" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1070,682 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "b" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1105,606 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1105,606 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1105,606 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "o" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1105,682 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "o" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1140,606 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1140,606 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1140,606 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "u" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1140,682 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "u" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1172,606 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1172,606 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1172,606 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "t" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1172,682 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "t" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+          a 3 [1029,682 148x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./news 
+            div  [1029,682 148x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+              div Desktop [1029,682 148x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                div  [1029,682 148x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                  div  [1029,682 148x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                    div  [1029,682 148x77] op1 tfnone bgrgba(0, 0, 0, 0) posstatic  
+                      div  [1029,682 42x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1029,682 42x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1029,682 42x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "N" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1029,759 42x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "N" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1071,682 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1071,682 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1071,682 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "e" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1071,759 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "e" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1104,682 45x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1104,682 45x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1104,682 45x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "w" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1104,759 45x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "w" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1149,682 28x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1149,682 28x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1149,682 28x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "s" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1149,759 28x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "s" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+          a 4 [1029,759 215x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative href=./contact 
+            div  [1029,759 215x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+              div Desktop [1029,759 215x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                div  [1029,759 215x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                  div  [1029,759 215x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                    div  [1029,759 215x77] op1 tfnone bgrgba(0, 0, 0, 0) posstatic  
+                      div  [1029,759 46x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1029,759 46x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1029,759 46x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "C" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1029,836 46x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "C" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1075,759 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1075,759 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1075,759 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "o" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1075,836 35x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "o" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1109,759 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1109,759 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1109,759 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "n" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1109,836 33x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "n" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1142,759 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1142,759 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1142,759 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "t" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1142,836 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "t" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1161,759 31x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1161,759 31x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1161,759 31x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "a" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1161,836 31x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "a" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1192,759 32x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1192,759 32x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1192,759 32x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "c" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1192,836 32x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "c" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                      div  [1224,759 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                        div  [1224,759 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  
+                          div  [1224,759 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posrelative  "t" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+                          div  [1224,836 20x77] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  "t" "Albert Sans" 500 64px/76.8px ls-3.2px rgb(255, 255, 255)
+      div + [1029,64 12x12] op1 tfnone bgrgba(0, 0, 0, 0) posabsolute  
+        div  [1029,64 12x12] op1 tfnone bgrgba(0, 0, 0, 0) posstatic  
+          svg  [1029,64 12x12] op1 tfnone bgrgba(0, 0, 0, 0) posstatic  
+            use  [1029,64 12x12] op1 tfnone bgrgba(0, 0, 0, 0) posstatic href=#svg11105175324 

@@ -87,13 +87,14 @@ export function SiteChrome() {
   return (
     <>
       <div className={cn(s.logo, revealed && s.logoVisible)}>
-        <Link href="/" aria-label="Nordå — home" tabIndex={revealed ? 0 : -1} className={s.logoLink}>
+        <Link href="/" aria-label="Nordå — home" tabIndex={revealed ? 0 : -1} className={s.logoLink} data-cursor="none">
           <LogoMark className={s.logoMark} />
         </Link>
       </div>
 
       <button
         ref={menuButtonRef}
+        data-cursor="none"
         type="button"
         className={cn(s.menuButton, revealed && s.menuButtonBlend)}
         aria-expanded={open}
@@ -105,11 +106,11 @@ export function SiteChrome() {
         </span>
       </button>
 
-      <div id="nd-menu" className={s.overlay} data-open={open ? "" : undefined} inert={!open} aria-hidden={!open}>
+      <div id="nd-menu" className={s.overlay} data-open={open ? "" : undefined} inert={!open} aria-hidden={!open} data-cursor="dot-white">
         <div className={s.backdrop} onClick={close} aria-hidden="true" />
         <div ref={panelRef} className={s.panel} role="dialog" aria-modal="true" aria-label="Site menu">
           <PlusMarker className={s.panelPlus} />
-          <button type="button" className={s.close} onClick={close}>
+          <button type="button" className={s.close} onClick={close} data-cursor="none">
             <RollText text="CLOSE" className={s.menuLabel} />
           </button>
           <nav aria-label="Primary">
@@ -119,6 +120,7 @@ export function SiteChrome() {
                   <Link
                     href={link.href}
                     className={s.link}
+                    data-cursor="none"
                     aria-current={pathname === link.href ? "page" : undefined}
                     onClick={close}
                   >

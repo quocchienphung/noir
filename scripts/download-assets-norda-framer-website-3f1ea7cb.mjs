@@ -21,6 +21,13 @@ const FONTS = [
   { url: "https://fonts.gstatic.com/s/albertsans/v3/i7dZIFdwYjGaAMFtZd_QA3xXSKZqhr-TenSHTJT_qY32TxAj1g.woff2", name: "albert-sans-700.woff2", family: "Albert Sans", weight: "700", style: "normal" },
   { url: "https://fonts.gstatic.com/s/albertsans/v3/i7dfIFdwYjGaAMFtZd_QA1Zeelmy79QJ1HOSY9Al74f3bRUz1r5t.woff2", name: "albert-sans-500-italic.woff2", family: "Albert Sans", weight: "500", style: "italic" },
   { url: "https://fonts.gstatic.com/s/albertsans/v3/i7dfIFdwYjGaAMFtZd_QA1Zeelmy79QJ1HOSY9Dw6If3bRUz1r5t.woff2", name: "albert-sans-700-italic.woff2", family: "Albert Sans", weight: "700", style: "italic" },
+  // Injected at runtime on every page by a Google Fonts stylesheet (latin subset, variable axis file):
+  // "Albert Sans" 400 and 600 both resolve to this file (MEASURED via document.fonts / resource timing).
+  { url: "https://fonts.gstatic.com/s/albertsans/v4/i7dOIFdwYjGaAMFtZd_QA1ZbYFc.woff2", name: "albert-sans-v4-latin-400-600.woff2", family: "Albert Sans", weight: "400 + 600", style: "normal" },
+  // "Albert Sans" 900 (latin) — loaded on /about ("MEET THE TEAM") and /404.
+  { url: "https://fonts.gstatic.com/s/albertsans/v4/i7dZIFdwYjGaAMFtZd_QA3xXSKZqhr-TenSHApTPq4f3.woff2", name: "albert-sans-900.woff2", family: "Albert Sans", weight: "900", style: "normal" },
+  // Inter 700 (latin) — Framer's default bold, used by the year prefixes on /team/<slug>.
+  { url: "https://framerusercontent.com/assets/DXD0Q7LSl7HEvDzucnyLnGBHM.woff2", name: "inter-700-latin.woff2", family: "Inter", weight: "700", style: "normal" },
 ];
 
 // Favicon, touch icon and social preview image declared in the reference <head>.

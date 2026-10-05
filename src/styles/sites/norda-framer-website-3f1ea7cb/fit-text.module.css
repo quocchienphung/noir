@@ -10,3 +10,17 @@
   font-weight: 500;
   white-space: nowrap;
 }
+
+.clipBox {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.clipped {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}

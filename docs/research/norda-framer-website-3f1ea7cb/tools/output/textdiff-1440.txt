@@ -1,0 +1,716 @@
+== /  ref-only 45  local-only 35
+   - 03
+   - / 8
+   - / 2024
+   - / 2023
+   - / 2022
+   - / 2020
+   - / 2019
+   - Crafting spaces
+   - where natural beauty
+   - meets timeless, functional
+   - design for inspired living.
+   - / 01
+   - Discovery & Visioning
+   - — Collaborative workshops to understand your needs
+   - — Detailed site analysis and feasibility studies
+   - — Development of vision boards and initial sketches
+   - / 02
+   - Design Development
+   - — Detailed architectural drawings and 3D renderings
+   - — Selection of materials and finishes
+   - / 03
+   - Planning & Coordination
+   - — Preparation of technical documentation and permits
+   - — Collaboration with engineers and consultants
+   - — Project scheduling and budget alignment
+   - / 04
+   - Build & Execute
+   - — Coordination with contractors and suppliers
+   - — Regular site visits and quality control
+   - / 05
+   - Final Touches & Handover
+   - — Final inspections and adjustments
+   - — Styling and furnishing recommendations
+   - — Comprehensive handover for a seamless transition
+   - We stand by principles of timeless design, sustainable practices, and a commitment to quality at every stage. With decades of experience and a⍽reputation for ex
+   - Nordå Architects ~
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Nordic One
+   + 01
+   + Nordå —
+   + an architecture and design studio based in Stockholm.
+   + 2024
+   + 2023
+   + 2022
+   + 2020
+   + 2019
+   + Collaborative workshops to understand your needs
+   + Detailed site analysis and feasibility studies
+   + Development of vision boards and initial sketches
+   + Detailed architectural drawings and 3D renderings
+   + Selection of materials and finishes
+   + Preparation of technical documentation and permits
+   + Collaboration with engineers and consultants
+   + Project scheduling and budget alignment
+   + 04
+   + Coordination with contractors and suppliers
+   + Regular site visits and quality control
+   + 05
+   + Final inspections and adjustments
+   + Styling and furnishing recommendations
+   + Comprehensive handover for a seamless transition
+   + We stand by principles of timeless design, sustainable practices, and a commitment to quality at every stage. With decades of experience and a reputation for ex
+   + “Nordå brought fresh ideas to the table while staying true to our initial goals. The result is a home that feels both innovative and deeply personal.”
+   + — Lars Nyberg, Vacation Property Owner
+   + “The entire process with Nordå was smooth and inspiring. Their team took the time to understand our lifestyle and delivered a home that feels unique."
+   + — Anna Lindström, Property Owner
+   + “We couldn’t be happier with the outcome. Nordå created a beautiful home that feels like a true retreat, blending seamlessly with the natural surroundings.”
+   + — Ingrid Dahl, Family Home Owner
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /about  ref-only 16  local-only 10
+   - scroll
+   - / 2024
+   - / 2023
+   - / 2021
+   - / 2020
+   - / 2018
+   - / 2016
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + 2024
+   + 2023
+   + 2021
+   + 2020
+   + 2018
+   + 2016
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /privacy-policy  ref-only 20  local-only 15
+   - / 00
+   - / 01
+   - / 02
+   - / 03
+   - / 04
+   - / 05
+   - hello@norda.com
+   - / 06
+   - / 07
+   - / 08
+   - / 09
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + 00
+   + 01
+   + 02
+   + 03
+   + 04
+   + 05
+   + hello@norda.com.
+   + 06
+   + 07
+   + 08
+   + 09
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /projects  ref-only 22  local-only 11
+   - scroll
+   - Verve Tower
+   - Harbor 12
+   - Nordic One
+   - Summit 24
+   - / 8
+   - / 2018
+   - / 2017
+   - / 2016
+   - / 2015
+   - / 2013
+   - / 2012
+   - From concept to completion, we focus on thoughtful design that responds to its surroundings. By prioritizing sustainability, quality, and innovation, we craft b
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + 2018
+   + 2017
+   + 2016
+   + 2015
+   + 2013
+   + 2012
+   + From concept to completion, we focus on thoughtful design that responds to its surroundings. By prioritizing sustainability, quality, and innovation, we craft b
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /news  ref-only 10  local-only 4
+   - scroll
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /contact  ref-only 10  local-only 5
+   - scroll
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Google Maps
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /projects/verve-tower  ref-only 9  local-only 4
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /projects/harbor-12  ref-only 9  local-only 4
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /projects/nordic-one  ref-only 9  local-only 4
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /projects/summit-24  ref-only 9  local-only 4
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /projects/str%C3%B6m-haus  ref-only 9  local-only 4
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /jobs/interior-designer  ref-only 13  local-only 10
+   - / Candidates must
+   - / We offer
+   - / How to apply:
+   - Nordå Architects ~
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Interior Designer
+   + Apply Now
+   + /⍽ Candidates must
+   + /⍽ We offer
+   + /⍽ How to apply:
+   + "We’re looking for a designer who understands that interiors tell stories — stories of culture, comfort, and identity."
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /jobs/landscape-architect  ref-only 13  local-only 10
+   - / Candidates must
+   - / We offer
+   - / How to apply:
+   - Nordå Architects ~
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Landscape Architect
+   + Apply Now
+   + /⍽ Candidates must
+   + /⍽ We offer
+   + /⍽ How to apply:
+   + "Our landscapes are extensions of our buildings. We need someone who understands the language of both."
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /jobs/3d-artist  ref-only 13  local-only 10
+   - / Candidates must
+   - / We offer
+   - / How to apply:
+   - Nordå Architects ~
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + 3D Artist
+   + Apply Now
+   + /⍽ Candidates must
+   + /⍽ We offer
+   + /⍽ How to apply:
+   + "Great design deserves equally great visuals. We're looking for someone passionate about making ideas tangible and unforgettable."
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /jobs/project-architect  ref-only 13  local-only 10
+   - / Candidates must
+   - / We offer
+   - / How to apply:
+   - Nordå Architects ~
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Project Architect
+   + Apply Now
+   + /⍽ Candidates must
+   + /⍽ We offer
+   + /⍽ How to apply:
+   + "We’re searching for architects who see challenges as opportunities to create meaningful, impactful spaces."
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /team/erik-lindholm  ref-only 16  local-only 10
+   - scroll
+   - / Education
+   - 2012:
+   - 2010:
+   - / Recognition
+   - 2018:
+   - 2015:
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Education
+   + 2012
+   + 2010
+   + Recognition
+   + 2018
+   + 2015
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /team/linnea-s%C3%B6rensen  ref-only 16  local-only 10
+   - scroll
+   - / Education
+   - 2013:
+   - 2011:
+   - / Recognition
+   - 2019:
+   - 2016:
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Education
+   + 2013
+   + 2011
+   + Recognition
+   + 2019
+   + 2016
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /team/mikael-andersson  ref-only 16  local-only 10
+   - scroll
+   - / Education
+   - 2014:
+   - 2012:
+   - / Recognition
+   - 2020:
+   - 2017:
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Education
+   + 2014
+   + 2012
+   + Recognition
+   + 2020
+   + 2017
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /team/freja-karlsson  ref-only 16  local-only 10
+   - scroll
+   - / Education
+   - 2015:
+   - 2013:
+   - / Recognition
+   - 2021:
+   - 2018:
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Education
+   + 2015
+   + 2013
+   + Recognition
+   + 2021
+   + 2018
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /team/oskar-bj%C3%B8rnsen  ref-only 16  local-only 10
+   - scroll
+   - / Education
+   - 2016:
+   - 2014:
+   - / Recognition
+   - 2020:
+   - 2018:
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Education
+   + 2016
+   + 2014
+   + Recognition
+   + 2020
+   + 2018
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /team/elin-j%C3%B8rgensen  ref-only 16  local-only 10
+   - scroll
+   - / Education
+   - 2014:
+   - 2012:
+   - / Recognition
+   - 2021:
+   - 2017:
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Education
+   + 2014
+   + 2012
+   + Recognition
+   + 2021
+   + 2017
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /team/astrid-nilsen  ref-only 16  local-only 10
+   - scroll
+   - / Education
+   - 2021:
+   - 2019:
+   - / Recognition
+   - 2023:
+   - 2020:
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Education
+   + 2021
+   + 2019
+   + Recognition
+   + 2023
+   + 2020
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /team/jonas-eklund  ref-only 16  local-only 10
+   - scroll
+   - / Education
+   - 2015:
+   - 2013:
+   - / Recognition
+   - 2019:
+   - 2017:
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Education
+   + 2015
+   + 2013
+   + Recognition
+   + 2019
+   + 2017
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /team/sofia-bergstr%C3%B6m  ref-only 16  local-only 10
+   - scroll
+   - / Education
+   - 2016:
+   - 2014:
+   - / Recognition
+   - 2022:
+   - 2019:
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Education
+   + 2016
+   + 2014
+   + Recognition
+   + 2022
+   + 2019
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /news/how-architecture-shapes-productivity  ref-only 9  local-only 4
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /news/net-zero-buildings-the-next-step-in-architecture  ref-only 9  local-only 4
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /news/the-role-of-public-spaces-in-cities  ref-only 9  local-only 4
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /news/building-with-purpose  ref-only 9  local-only 4
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /news/the-future-of-office-spaces  ref-only 9  local-only 4
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /news/designing-cities-for-tomorrow  ref-only 9  local-only 4
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov
+== /404  ref-only 9  local-only 4
+   - Sign up for our newsletter to⍽receive updates and⍽content
+   - / Sitemap
+   - Copyright 2026 Nordå. All⍽rights reserved.
+   - Framer
+   - Template handcrafted by
+   - Anton Drukarov
+   - New Release
+   - Get this template
+   - from $129
+   + Sign up for our newsletter to receive updates and content
+   + /⍽ Sitemap
+   + Copyright 2026 Nordå. All rights reserved.
+   + Framer template handcrafted by Anton Drukarov

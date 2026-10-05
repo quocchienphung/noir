@@ -9,6 +9,8 @@ export interface RecordRow {
   year: string;
   /** Optional cursor-follower variant (e.g. "award-3"). */
   cursor?: string;
+  /** Minimum viewport width for that variant (below it the parent zone applies). */
+  cursorMin?: number;
 }
 
 /**
@@ -54,7 +56,7 @@ export function RecordList({
       {appear === "list" ? (
         <InView as="ul" className={s.list}>
           {rows.map((r) => (
-            <li key={r.title} className={s.row} data-cursor={r.cursor}>
+            <li key={r.title} className={s.row} data-cursor={r.cursor} data-cursor-min={r.cursorMin}>
               <RowContent row={r} />
             </li>
           ))}

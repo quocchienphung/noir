@@ -54,6 +54,8 @@
 .intro {
   max-width: 640px;
   margin: 0;
+  /* MEASURED on all four page headers at every breakpoint. */
+  text-indent: calc(20% + 16px);
 }
 
 .titleRow {
@@ -77,14 +79,15 @@
 
 .titleSvg {
   position: absolute;
-  left: 50%;
+  left: calc(50% + var(--nd-title-dx, 0%));
   top: 50%;
   width: 100%;
   height: auto;
   transform: translate(-50%, -50%);
 }
 
-.titleWide {
+.titleDesktop,
+.titleTablet {
   display: none;
 }
 
@@ -122,7 +125,7 @@
     width: 66%;
   }
 
-  .titleWide {
+  .titleTablet {
     display: block;
   }
 
@@ -138,6 +141,14 @@
 @media (min-width: 1200px) {
   .content {
     justify-content: flex-end;
+  }
+
+  .titleDesktop {
+    display: block;
+  }
+
+  .titleTablet {
+    display: none;
   }
 
   .titleRow {

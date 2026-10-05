@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRef, type CSSProperties } from "react";
 import { cn } from "@/lib/utils";
 import { assets, type AssetId } from "@/data/sites/norda-framer-website-3f1ea7cb/assets";
+import { coverSizes } from "@/lib/sites/norda-framer-website-3f1ea7cb/media";
 import { heroSlides } from "@/data/sites/norda-framer-website-3f1ea7cb/home";
 import { routes } from "@/lib/sites/norda-framer-website-3f1ea7cb/routes";
 import { prefersReducedMotion } from "@/lib/sites/norda-framer-website-3f1ea7cb/scroll";
@@ -40,7 +41,7 @@ export function HomeHero() {
   const track = loopTrack(heroSlides);
 
   return (
-    <section className={s.hero} aria-roledescription="carousel" aria-label="Featured projects">
+    <section className={s.hero} aria-roledescription="carousel" aria-label="Featured projects" data-cursor="none">
       <div ref={heroRef} className={s.inner}>
         <div className={s.viewport} {...dragHandlers}>
           <ul
@@ -68,7 +69,7 @@ export function HomeHero() {
                       src={img.src}
                       alt={slide.image.alt}
                       fill
-                      sizes="100vw"
+                      sizes={coverSizes(slide.image.asset, "100vw", "100vh")}
                       className={s.slideImg}
                       preload={i === 1}
                       loading={i === 1 ? undefined : "eager"}
@@ -92,7 +93,7 @@ export function HomeHero() {
           </ul>
         </div>
 
-        <div className={s.staticLogo} aria-hidden="true">
+        <div className={s.staticLogo} aria-hidden="true" data-cursor="none">
           <LogoMark className={s.staticLogoMark} />
         </div>
 

@@ -114,7 +114,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 64px;
+  /* MEASURED: 32 / 48 / 64 */
+  gap: 32px;
 }
 
 /* ----- Quote band ----- */
@@ -128,6 +129,7 @@
 }
 
 .ticker {
+  --nd-ticker-center: 33.93%;
   display: none;
 }
 
@@ -173,7 +175,8 @@
 }
 
 .jobsMain {
-  gap: 32px;
+  /* MEASURED: title → list gap 16 (phone) / 24 (tablet) / 64 (desktop). */
+  gap: 16px;
 }
 
 .jobsTitle {
@@ -215,17 +218,16 @@
     width: 75%;
   }
 
-  .heroApply {
-    display: inline-flex;
-    pointer-events: auto;
-  }
-
   .text {
     padding: 144px 0;
   }
 
   .textMain {
     gap: 96px;
+  }
+
+  .applyGroup {
+    gap: 48px;
   }
 
   .quote {
@@ -256,8 +258,10 @@
     padding: 0 24px;
   }
 
+  /* MEASURED: frame 699–977 at 1024 — the portrait stops 48px from the edge while the column split is unchanged. */
   .portrait {
     height: 100%;
+    margin-right: 24px;
   }
 
   .jobs {
@@ -265,7 +269,7 @@
   }
 
   .jobsMain {
-    gap: 48px;
+    gap: 24px;
   }
 }
 
@@ -274,12 +278,13 @@
     padding-top: 64px;
   }
 
+  /* MEASURED: desktop hero image and info overlay are 100vh; the quote band is 80vh (tablet/phone fixed). */
   .heroFrame {
-    height: 900px;
+    height: 100vh;
   }
 
   .info {
-    height: 900px;
+    height: 100vh;
   }
 
   .params {
@@ -289,6 +294,12 @@
 
   .titleRow {
     padding: 64px;
+  }
+
+  /* MEASURED: the hero "Apply Now" exists on desktop only (tablet/phone keep the one in the text column). */
+  .heroApply {
+    display: inline-flex;
+    pointer-events: auto;
   }
 
   .title {
@@ -303,8 +314,12 @@
     gap: 128px;
   }
 
+  .applyGroup {
+    gap: 64px;
+  }
+
   .quote {
-    height: 720px;
+    height: 80vh;
     padding: 0 64px;
   }
 
@@ -322,6 +337,7 @@
   .portrait {
     flex: 1 0 0;
     width: 1px;
+    margin-right: 0;
   }
 
   .portraitCol::after {

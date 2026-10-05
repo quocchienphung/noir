@@ -2011,5 +2011,65 @@
     "fontFamilyAndWeightIfApplicable": "Albert Sans 700 italic",
     "status": "ok",
     "notes": ""
+  },
+  {
+    "id": "albert-sans-v4-latin-400-600",
+    "kind": "font",
+    "sourceUrl": "https://fonts.gstatic.com/s/albertsans/v4/i7dOIFdwYjGaAMFtZd_QA1ZbYFc.woff2",
+    "localPath": "/sites/norda-framer-website-3f1ea7cb/shared/fonts/albert-sans-v4-latin-400-600.woff2",
+    "sha256": "c2fb6fda415c7bf5926c15aa98f759da45cdc5ac4ac6925a72a84db4eb3862a3",
+    "mimeType": "font/woff2",
+    "bytes": 32020,
+    "intrinsicWidth": null,
+    "intrinsicHeight": null,
+    "durationIfMedia": null,
+    "usageRoutes": [
+      "*"
+    ],
+    "usageComponents": [],
+    "cropOrFocalPoint": "object-fit: cover, object-position: 50% 50% (MEASURED on reference <img> elements)",
+    "fontFamilyAndWeightIfApplicable": "Albert Sans 400 + 600 normal",
+    "status": "ok",
+    "notes": ""
+  },
+  {
+    "id": "albert-sans-900",
+    "kind": "font",
+    "sourceUrl": "https://fonts.gstatic.com/s/albertsans/v4/i7dZIFdwYjGaAMFtZd_QA3xXSKZqhr-TenSHApTPq4f3.woff2",
+    "localPath": "/sites/norda-framer-website-3f1ea7cb/shared/fonts/albert-sans-900.woff2",
+    "sha256": "fc00d21228407d41522694b65ad5c04eeee4659e6df3b3552c0f45fd302cea6f",
+    "mimeType": "font/woff2",
+    "bytes": 10148,
+    "intrinsicWidth": null,
+    "intrinsicHeight": null,
+    "durationIfMedia": null,
+    "usageRoutes": [
+      "*"
+    ],
+    "usageComponents": [],
+    "cropOrFocalPoint": "object-fit: cover, object-position: 50% 50% (MEASURED on reference <img> elements)",
+    "fontFamilyAndWeightIfApplicable": "Albert Sans 900 normal",
+    "status": "ok",
+    "notes": ""
+  },
+  {
+    "id": "inter-700-latin",
+    "kind": "font",
+    "sourceUrl": "https://framerusercontent.com/assets/DXD0Q7LSl7HEvDzucnyLnGBHM.woff2",
+    "localPath": "/sites/norda-framer-website-3f1ea7cb/shared/fonts/inter-700-latin.woff2",
+    "sha256": "2dc968863319a6f57e6428a7b4c292ae254d3e462b5f23f71bab492317067d5f",
+    "mimeType": "font/woff2",
+    "bytes": 27992,
+    "intrinsicWidth": null,
+    "intrinsicHeight": null,
+    "durationIfMedia": null,
+    "usageRoutes": [
+      "*"
+    ],
+    "usageComponents": [],
+    "cropOrFocalPoint": "object-fit: cover, object-position: 50% 50% (MEASURED on reference <img> elements)",
+    "fontFamilyAndWeightIfApplicable": "Inter 700 normal",
+    "status": "ok",
+    "notes": ""
   }
 ]
