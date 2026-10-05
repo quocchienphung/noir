@@ -1,0 +1,57 @@
+{
+ "viewport": "2035x1032",
+ "camera": "hero p=0",
+ "time": 12,
+ "A": {
+  "note": "production page, default quality after warm-up",
+  "url": "/?bhT=12&bhPtr=0",
+  "samples": [
+   {
+    "t": 1,
+    "buffer": "1776x901",
+    "tier": "high",
+    "gpuMs": "10.64",
+    "cssW": 2035,
+    "dpr": 1.25
+   },
+   {
+    "t": 5,
+    "buffer": "1889x958",
+    "tier": "high",
+    "gpuMs": "11.76",
+    "cssW": 2035,
+    "dpr": 1.25
+   },
+   {
+    "t": 20,
+    "buffer": "1889x958",
+    "tier": "high",
+    "gpuMs": "11.75",
+    "cssW": 2035,
+    "dpr": 1.25
+   }
+  ],
+  "crops": {
+   "upper-arc": {
+    "mean": 86.8,
+    "fine": 0.3163
+   },
+   "junction": {
+    "mean": 119.7,
+    "fine": 0.1328
+   },
+   "front-band": {
+    "mean": 66.3,
+    "fine": 0.1428
+   },
+   "lower-arc": {
+    "mean": 84.3,
+    "fine": 0.1891
+   },
+   "shadow-edge": {
+    "mean": 112.9,
+    "fine": 0.1753
+   }
+  }
+ }
+}

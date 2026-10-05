@@ -1,8 +1,0 @@
-{
- "vLogoSvg": ".framer-1dxbykp svg",
- "vLogoP": ".framer-psxxba > div",
- "ticker": "[data-framer-name=\"Ticker Content\"]",
- "footer": "footer.framer-nxF8P",
- "footLogo": ".framer-5frpzb",
- "testiPhoto": "[data-framer-name=\"Testimonials\"] img@2"
-}

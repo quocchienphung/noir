@@ -15,12 +15,15 @@ const extra = process.argv[4] ?? "bhT=12&bhPtr=0";
 const OUT = path.join(ROOT, "docs/design-references/noir/black-hole-rebuild", label);
 fs.mkdirSync(OUT, { recursive: true });
 
-const viewports = [
+const ALL = [
   [1440, 900],
   [2560, 1440],
   [1280, 800],
   [390, 844],
 ];
+// optional 5th arg: comma list of widths to capture (default all)
+const only = process.argv[5] ? process.argv[5].split(",").map(Number) : null;
+const viewports = only ? ALL.filter(([w]) => only.includes(w)) : ALL;
 // progress marks taken from the live timelines (SCROLL_TIMELINE.md / cinematic-timeline.ts)
 const shots = [
   ["intro", 0, 0, "hero p=0"],

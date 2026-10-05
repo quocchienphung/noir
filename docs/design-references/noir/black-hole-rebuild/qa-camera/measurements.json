@@ -1,0 +1,20 @@
+{
+ "camera": "REFERENCE_CAMERA in scenes.ts",
+ "time": 12,
+ "captureMask": {
+  "cx": 1698.9,
+  "cy": 346.9,
+  "r": 316.4,
+  "cxF": 0.8848,
+  "cyF": 0.3212,
+  "rH": 0.293,
+  "boundaryPts": 1759,
+  "bandAngleDeg": 19.81,
+  "bandEdgePts": 236
+ },
+ "highlight": {
+  "x": 0.671,
+  "y": 0.385,
+  "threshold": 226
+ }
+}

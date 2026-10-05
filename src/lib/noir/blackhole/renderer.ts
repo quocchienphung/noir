@@ -62,11 +62,15 @@ export interface FrameParams {
   fade: number;
   grain: number;
   hueKeep: number;
+  /** Wide optical veil (coarsest bloom level) gain: the soft haze that lifts space around bright gas. */
+  veil: number;
   starGain: number;
   /** 0 beauty, 1 unlit density, 2 capture/escape/unresolved, 3 flow markers. */
   debug?: number;
-  /** 0 beauty, 1 no bloom, 2 false-colour radiance. */
+  /** 0 beauty, 1 no bloom + veil, 2 false-colour radiance, 3 no veil, 4 no bloom. */
   view?: number;
+  /** Development ablation bitmask (see TRACE_FRAG uAbl). */
+  ablate?: number;
 }
 
 interface Target {
@@ -83,20 +87,20 @@ interface Program {
   u: Uniforms;
 }
 
-const BLOOM_LEVELS = 5;
+const BLOOM_LEVELS = 7;
 const GAS_SIZE = 512;
 /** Fixed seed: the gas field (and so the disk) is identical on every load. */
 export const GAS_SEED = 0x6e6f6972; // "noir"
 
 const TRACE_UNIFORMS = [
-  "uRes", "uTime", "uCamPos", "uCamBasis", "uTanHalfFov", "uGas", "uSteps", "uSlab", "uDebug",
+  "uRes", "uTime", "uCamPos", "uCamBasis", "uTanHalfFov", "uGas", "uSteps", "uSlab", "uDebug", "uAbl",
   "uDiskIn", "uDiskOut", "uThick", "uGain", "uFalloff", "uOpacity", "uDoppler", "uOrbit", "uDrift",
-  "uWarp", "uFil", "uClump", "uPlunge", "uPeriod", "uHeat", "uC0", "uC1", "uC2", "uC3", "uStarGain",
+  "uWarp", "uFil", "uClump", "uPlunge", "uPeriod", "uHeat", "uC0", "uC1", "uC2", "uC3", "uStarGain", "uGasMean", "uGasStd",
 ];
 
 /**
  * WebGL2 renderer: ray-traced Schwarzschild black hole with a volumetric gas slab into an HDR target,
- * five-level bloom, ACES composite. The caller owns the animation loop and passes a complete camera /
+ * seven-level bloom + veil, ACES composite. The caller owns the animation loop and passes a complete camera /
  * look description per frame. All GPU resources are created once (and again after a context restore).
  */
 export class BlackHoleRenderer {
@@ -104,6 +108,9 @@ export class BlackHoleRenderer {
   private vao: WebGLVertexArrayObject;
   private vbo: WebGLBuffer;
   private gasTex: WebGLTexture;
+  /** Per-channel mean and standard deviation of the baked gas field (read back once after the bake). */
+  private gasMean: [number, number, number, number] = [0.5, 0.5, 0.5, 0.5];
+  private gasStd: [number, number, number, number] = [0.15, 0.15, 0.15, 0.15];
   private trace: Program;
   private prefilter: Program;
   private down: Program;
@@ -112,8 +119,14 @@ export class BlackHoleRenderer {
   private scene: Target | null = null;
   private bloom: Target[] = [];
   private hdr: boolean;
+  /** GPU frame timing (EXT_disjoint_timer_query_webgl2), when the browser exposes it. */
+  private timer: { ext: { TIME_ELAPSED_EXT: number; GPU_DISJOINT_EXT: number }; pending: WebGLQuery[]; samples: number[] } | null = null;
+  /** Ray-traced (scene) buffer size. */
   width = 0;
   height = 0;
+  /** Output (canvas drawing buffer) size; the composite upsamples the scene to it with Catmull-Rom. */
+  outWidth = 0;
+  outHeight = 0;
 
   static create(canvas: HTMLCanvasElement): BlackHoleRenderer | null {
     const gl = canvas.getContext("webgl2", {
@@ -143,7 +156,7 @@ export class BlackHoleRenderer {
     this.down = this.program(DOWN_FRAG, ["uSrc", "uTexel"]);
     this.up = this.program(UP_FRAG, ["uSrc", "uTexel", "uRadius"]);
     this.composite = this.program(COMPOSITE_FRAG, [
-      "uScene", "uBloom", "uExposure", "uBloomGain", "uFade", "uTime", "uGrain", "uHueKeep", "uView", "uRes",
+      "uScene", "uBloom", "uVeilTex", "uExposure", "uBloomGain", "uVeil", "uFade", "uTime", "uGrain", "uHueKeep", "uView", "uRes", "uSrcRes",
     ]);
 
     // one oversized triangle covering the viewport
@@ -160,6 +173,40 @@ export class BlackHoleRenderer {
     gl.bindVertexArray(null);
 
     this.gasTex = this.bakeGas();
+    // GPU timing drives adaptive resolution when the browser exposes it (falls back to frame cadence)
+    const ext = gl.getExtension("EXT_disjoint_timer_query_webgl2") as { TIME_ELAPSED_EXT: number; GPU_DISJOINT_EXT: number } | null;
+    if (ext) this.timer = { ext, pending: [], samples: [] };
+  }
+
+  /** Median GPU time of the last frames in ms (needs the timer extension), else null. */
+  gpuMs(): number | null {
+    const t = this.timer;
+    if (!t || t.samples.length < 5) return null;
+    const s = [...t.samples].sort((a, b) => a - b);
+    return s[s.length >> 1];
+  }
+
+  /** Forget timing history (after a resolution change the old samples no longer apply). */
+  resetTiming() {
+    if (this.timer) this.timer.samples.length = 0;
+  }
+
+  private collectTimers() {
+    const t = this.timer;
+    if (!t) return;
+    const gl = this.gl;
+    while (t.pending.length) {
+      const q = t.pending[0];
+      if (!gl.getQueryParameter(q, gl.QUERY_RESULT_AVAILABLE)) break;
+      const disjoint = gl.getParameter(t.ext.GPU_DISJOINT_EXT) as boolean;
+      const ns = gl.getQueryParameter(q, gl.QUERY_RESULT) as number;
+      gl.deleteQuery(q);
+      t.pending.shift();
+      if (!disjoint) {
+        t.samples.push(ns / 1e6);
+        if (t.samples.length > 60) t.samples.shift();
+      }
+    }
   }
 
   private compile(type: number, src: string) {
@@ -210,6 +257,23 @@ export class BlackHoleRenderer {
     gl.uniform1ui(bake.u.uSeed, GAS_SEED);
     gl.bindVertexArray(this.vao);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
+    // Exact channel statistics: the shader works in z-scores and fades filtered detail to each layer's
+    // true expectation, so brightness does not shift as features drop below the pixel footprint.
+    const px = new Uint8Array(GAS_SIZE * GAS_SIZE * 4);
+    gl.readPixels(0, 0, GAS_SIZE, GAS_SIZE, gl.RGBA, gl.UNSIGNED_BYTE, px);
+    const sum = [0, 0, 0, 0];
+    const sq = [0, 0, 0, 0];
+    for (let i = 0; i < px.length; i += 4)
+      for (let c = 0; c < 4; c++) {
+        const v = px[i + c] / 255;
+        sum[c] += v;
+        sq[c] += v * v;
+      }
+    const n = GAS_SIZE * GAS_SIZE;
+    for (let c = 0; c < 4; c++) {
+      this.gasMean[c] = sum[c] / n;
+      this.gasStd[c] = Math.max(1e-3, Math.sqrt(Math.max(0, sq[c] / n - this.gasMean[c] ** 2)));
+    }
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
     gl.deleteFramebuffer(fb);
     gl.deleteProgram(bake.prog);
@@ -222,7 +286,7 @@ export class BlackHoleRenderer {
     const aniso = gl.getExtension("EXT_texture_filter_anisotropic");
     if (aniso) {
       const max = gl.getParameter(aniso.MAX_TEXTURE_MAX_ANISOTROPY_EXT) as number;
-      gl.texParameterf(gl.TEXTURE_2D, aniso.TEXTURE_MAX_ANISOTROPY_EXT, Math.min(16, max));
+      gl.texParameterf(gl.TEXTURE_2D, aniso.TEXTURE_MAX_ANISOTROPY_EXT, Math.min(4, max));
     }
     return tex;
   }
@@ -264,14 +328,24 @@ export class BlackHoleRenderer {
     this.bloom = [];
   }
 
-  /** Sets the drawing-buffer size (device pixels after the caller's render scale). */
-  resize(w: number, h: number) {
-    w = Math.max(16, Math.round(w));
-    h = Math.max(16, Math.round(h));
-    if (w === this.width && h === this.height && this.scene) return;
+  /**
+   * Output size (device pixels of the canvas) and render scale of the ray-traced buffer. The canvas
+   * always runs at output resolution, so the browser never bilinear-stretches a small canvas; the
+   * composite upsamples the traced image with a Catmull-Rom filter instead (much crisper).
+   */
+  resize(outW: number, outH: number, scale = 1) {
+    outW = Math.max(16, Math.round(outW));
+    outH = Math.max(16, Math.round(outH));
+    const w = Math.max(16, Math.round(outW * Math.min(1, scale)));
+    const h = Math.max(16, Math.round(outH * Math.min(1, scale)));
     const canvas = this.gl.canvas as HTMLCanvasElement;
-    canvas.width = w;
-    canvas.height = h;
+    if (outW !== this.outWidth || outH !== this.outHeight) {
+      canvas.width = outW;
+      canvas.height = outH;
+      this.outWidth = outW;
+      this.outHeight = outH;
+    }
+    if (w === this.width && h === this.height && this.scene) return;
     this.width = w;
     this.height = h;
     this.freeTargets();
@@ -306,6 +380,12 @@ export class BlackHoleRenderer {
     const scene = this.scene;
     if (!scene || gl.isContextLost()) return;
     gl.disable(gl.BLEND);
+    let query: WebGLQuery | null = null;
+    if (this.timer && this.timer.pending.length < 4) {
+      this.collectTimers();
+      query = gl.createQuery();
+      if (query) gl.beginQuery(this.timer.ext.TIME_ELAPSED_EXT, query);
+    } else this.collectTimers();
 
     // 1. ray trace
     const t = this.trace;
@@ -319,6 +399,7 @@ export class BlackHoleRenderer {
     gl.uniform1i(t.u.uSteps, f.quality.steps);
     gl.uniform1i(t.u.uSlab, f.quality.slab);
     gl.uniform1i(t.u.uDebug, f.debug ?? 0);
+    gl.uniform1i(t.u.uAbl, f.ablate ?? 0);
     gl.uniform1f(t.u.uDiskIn, g.inner);
     gl.uniform1f(t.u.uDiskOut, g.outer);
     gl.uniform1f(t.u.uThick, g.thickness);
@@ -339,6 +420,8 @@ export class BlackHoleRenderer {
     gl.uniform3fv(t.u.uC2, g.palette[2]);
     gl.uniform3fv(t.u.uC3, g.palette[3]);
     gl.uniform1f(t.u.uStarGain, f.starGain);
+    gl.uniform4fv(t.u.uGasMean, this.gasMean);
+    gl.uniform4fv(t.u.uGasStd, this.gasStd);
     this.bind(0, this.gasTex, t.u.uGas);
     this.pass(t, scene, scene.w, scene.h);
 
@@ -376,11 +459,18 @@ export class BlackHoleRenderer {
     gl.uniform1f(c.u.uTime, f.time);
     gl.uniform1f(c.u.uGrain, f.grain);
     gl.uniform1f(c.u.uHueKeep, f.hueKeep);
+    gl.uniform1f(c.u.uVeil, f.veil);
     gl.uniform1i(c.u.uView, f.view ?? 0);
-    gl.uniform2f(c.u.uRes, this.width, this.height);
+    gl.uniform2f(c.u.uRes, this.outWidth, this.outHeight);
+    gl.uniform2f(c.u.uSrcRes, this.width, this.height);
     this.bind(0, scene.tex, c.u.uScene);
     this.bind(1, b[0].tex, c.u.uBloom);
-    this.pass(c, null, this.width, this.height);
+    this.bind(2, b[b.length - 1].tex, c.u.uVeilTex);
+    this.pass(c, null, this.outWidth, this.outHeight);
+    if (query && this.timer) {
+      gl.endQuery(this.timer.ext.TIME_ELAPSED_EXT);
+      this.timer.pending.push(query);
+    }
   }
 
   dispose() {

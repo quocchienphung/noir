@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { intro } from "@/data/noir/intro";
 import { horizonDistance } from "@/lib/noir/blackhole/scenes";
-import { BlackHoleCanvas } from "./BlackHoleCanvas";
+import { OrbitController, type ExploreMode } from "@/lib/noir/blackhole/orbit";
+import { BlackHoleCanvas, type CameraHook, type CanvasStatus } from "./BlackHoleCanvas";
+import { NoirExplore } from "./NoirExplore";
 import { useScrollTimeline } from "./useScrollTimeline";
 import s from "@/styles/noir/intro.module.css";
 
@@ -33,9 +35,24 @@ export function NoirIntro() {
   const statementRef = useRef<HTMLDivElement>(null);
   const scrimRef = useRef<HTMLDivElement>(null);
   const gaugeText = useRef("");
+  const sceneRef = useRef<HTMLDivElement>(null);
+
+  // 360° explore: one controller owns the camera while exploring (see orbit.ts)
+  const [ctrl] = useState(() => new OrbitController());
+  const cameraHook = useRef<CameraHook>({ active: () => ctrl.active, resolve: (b, dt) => ctrl.resolve(b, dt) });
+  const [mode, setMode] = useState<ExploreMode>("scroll");
+  const [status, setStatus] = useState<CanvasStatus>("init");
+  const [opening, setOpening] = useState(true);
+  const openingRef = useRef(true);
 
   const apply = useCallback((raw: number, reduced: boolean) => {
     const p = reduced ? 0 : raw;
+    // explore is offered only while the hero is at its opening (before the dive takes over)
+    const isOpening = p < 0.05;
+    if (isOpening !== openingRef.current) {
+      openingRef.current = isOpening;
+      setOpening(isOpening);
+    }
     const head = seg(0, 0.3, p);
     const lead = seg(0, 0.16, p);
     const cue = seg(0, 0.07, p);
@@ -87,19 +104,43 @@ export function NoirIntro() {
   // τ ≈ 0.12 s: smooth through wheel steps and long jumps, never laggy enough to feel detached.
   const { trackRef, driver } = useScrollTimeline<HTMLElement>(apply, 0.12, 0.2);
 
+  useEffect(() => {
+    ctrl.listen(setMode);
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const syncReduced = () => {
+      ctrl.setReducedMotion(mq.matches);
+    };
+    syncReduced();
+    mq.addEventListener("change", syncReduced);
+    const onEnter = () => {
+      if (!openingRef.current && !ctrl.active) return;
+      ctrl.enter();
+    };
+    window.addEventListener("noir-explore-enter", onEnter);
+    // development-only QA handle (orientation readout); dropped from production bundles
+    if (process.env.NODE_ENV !== "production") (window as unknown as { __noirExplore?: OrbitController }).__noirExplore = ctrl;
+    return () => {
+      ctrl.listen(null);
+      mq.removeEventListener("change", syncReduced);
+      window.removeEventListener("noir-explore-enter", onEnter);
+    };
+  }, [ctrl]);
+
   return (
     <section
       ref={trackRef}
       className={s.track}
       aria-labelledby="noir-intro-title"
     >
-      <div className={s.stage}>
-        <div className={s.scene}>
+      <div className={s.stage} data-explore={mode !== "scroll" ? mode : undefined}>
+        <div ref={sceneRef} className={s.scene}>
           <BlackHoleCanvas
             scene="dive"
             driver={driver}
             poster="/sites/noir/media/dive-poster.jpg"
             className={s.canvas}
+            cameraHook={cameraHook}
+            onStatus={setStatus}
           />
           <div ref={scrimRef} className={s.scrim} aria-hidden="true" />
 
@@ -164,6 +205,8 @@ export function NoirIntro() {
             {intro.cue}
             <span className={s.cueLine} />
           </p>
+
+          <NoirExplore ctrl={ctrl} mediaRef={sceneRef} mode={mode} available={status === "live" && opening} />
         </div>
 
         <div ref={statementRef} className={s.statement} data-noir-intro-statement="">

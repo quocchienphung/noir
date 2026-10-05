@@ -53,13 +53,22 @@ copy, and the 500/600/700 cuts for display type and labels.
   with reduced motion, content is simply visible.
 - Scroll scenes: see `SCROLL_TIMELINE.md`.
 
-## Black-hole looks (`src/lib/noir/blackhole/scenes.ts`)
+## Black-hole look (`src/lib/noir/blackhole/scenes.ts`)
 
-| | Dive (`DIVE_DISK`) | Cinematic (`CINEMATIC_DISK`) |
-| --- | --- | --- |
-| Disk radii | 2.75 → 17 rs | 2.9 → 15 rs |
-| Hot / warm / cool | `1,.70,.34` / `1,.38,.05` / `.60,.10,.015` | `1,.93,.84` / `1,.60,.27` / `.50,.17,.045` |
-| Doppler mix | 0.42 | 0.95 (approaching side clearly brighter) |
-| Flow | +1.25 | −0.8 (left side approaching, as in the reference) |
-| Exposure / bloom | 1.0 / 0.4 above threshold 0.8 | 1.0 / 0.3 above threshold 1.0 |
-| Tonemap | 60 % hue-preserving + 40 % ACES, gamma 2.2, vignette, 3.5 % grain | same, 3 % grain |
+There is one shared gas material, `GAS`; every field is documented with units and ranges on `GasLook`
+in `renderer.ts`. Scenes override only a few values.
+
+| | Value (shared) | Dive override | Cinematic / reference override |
+| --- | --- | --- | --- |
+| Disk radii | 2.9 → 16 rs | outer 17 | — |
+| Thickness H/r | 0.016 | — | — |
+| Emission / opacity | gain 42, opacity 30, falloff 1.65, emissivity ∝ heat^2.2, heat 1.15 | falloff 1.45 | — |
+| Flow | orbit 0.9 (Ω = 0.9·r^−1.5 rad/s), inflow 0.014 e-folds/s at the edge (×6 inside it) | — | orbit −0.9 (left side approaching) |
+| Texture | warp 1, filaments 1, clumping 0.6, plunge 0.38, phase life 28 s × (r/2.9)^1.5; streaks and clumps add (not multiply) | — | — |
+| Beaming | doppler 0.35 | — | 0.45 |
+| Palette (linear) | white-hot `1,.95,.9` · champagne `.95,.72,.5` · copper `.66,.32,.12` · umber `.22,.095,.035` | — | — |
+| Exposure / bloom / veil | — | 1.85 / 0.32 above 1.1 / 0.6 | 1.0 / 0.55 above 0.9 / 1.2 (QA reference camera: 0.55 above 0.6 / 0.4) |
+| Grain | multiplicative, so blacks stay black | 3.5 % | 3 % |
+
+Tonemap: linear HDR → exposure → 85 % ACES (Narkowicz fit) + 15 % hue-preserving → exact sRGB encoding
+→ vignette → grain → 8-bit dither.

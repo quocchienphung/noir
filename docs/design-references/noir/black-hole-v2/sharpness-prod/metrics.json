@@ -1,0 +1,502 @@
+[
+ {
+  "viewport": "1440x900@1",
+  "shot": "hero-p000",
+  "vsync": 6,
+  "buffer": "1440x900",
+  "output": "1440x900",
+  "scale": "1.000",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   1440,
+   900
+  ],
+  "frameMs": {
+   "median": 6.1,
+   "p95": 18.2,
+   "max": 24.4
+  },
+  "file": "1440x900@1-hero-p000.png"
+ },
+ {
+  "viewport": "1440x900@1",
+  "shot": "hero-p025",
+  "vsync": 6,
+  "buffer": "1276x798",
+  "output": "1440x900",
+  "scale": "0.886",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   1440,
+   900
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 24.1,
+   "max": 24.3
+  },
+  "file": "1440x900@1-hero-p025.png"
+ },
+ {
+  "viewport": "1440x900@1",
+  "shot": "hero-p050",
+  "vsync": 6,
+  "buffer": "1276x798",
+  "output": "1440x900",
+  "scale": "0.886",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   1440,
+   900
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 24.2,
+   "max": 29.9
+  },
+  "file": "1440x900@1-hero-p050.png"
+ },
+ {
+  "viewport": "1440x900@1",
+  "shot": "cinematic-framed",
+  "vsync": 6,
+  "buffer": "1600x1000",
+  "output": "1642x1026",
+  "scale": "0.975",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   1641.60009765625,
+   1026
+  ],
+  "frameMs": {
+   "median": 6.1,
+   "p95": 12.6,
+   "max": 30.1
+  },
+  "file": "1440x900@1-cinematic-framed.png"
+ },
+ {
+  "viewport": "1440x900@1",
+  "shot": "cinematic-open",
+  "vsync": 6,
+  "buffer": "1416x885",
+  "output": "1453x908",
+  "scale": "0.975",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   1440,
+   900
+  ],
+  "frameMs": {
+   "median": 6.1,
+   "p95": 18.1,
+   "max": 24.2
+  },
+  "file": "1440x900@1-cinematic-open.png"
+ },
+ {
+  "viewport": "1920x1080@1",
+  "shot": "hero-p000",
+  "vsync": 6.1,
+  "buffer": "1687x949",
+  "output": "1920x1080",
+  "scale": "0.878",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   1920,
+   1080
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 24.2,
+   "max": 24.3
+  },
+  "file": "1920x1080@1-hero-p000.png"
+ },
+ {
+  "viewport": "1920x1080@1",
+  "shot": "hero-p025",
+  "vsync": 6.1,
+  "buffer": "1393x784",
+  "output": "1920x1080",
+  "scale": "0.726",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   1920,
+   1080
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 24.2,
+   "max": 24.3
+  },
+  "file": "1920x1080@1-hero-p025.png"
+ },
+ {
+  "viewport": "1920x1080@1",
+  "shot": "hero-p050",
+  "vsync": 6.1,
+  "buffer": "1393x784",
+  "output": "1920x1080",
+  "scale": "0.726",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   1920,
+   1080
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 12.2,
+   "max": 42.4
+  },
+  "file": "1920x1080@1-hero-p050.png"
+ },
+ {
+  "viewport": "1920x1080@1",
+  "shot": "cinematic-framed",
+  "vsync": 6.1,
+  "buffer": "1933x1087",
+  "output": "2189x1231",
+  "scale": "0.883",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   2188.7998046875,
+   1231.199951171875
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 24.3,
+   "max": 24.4
+  },
+  "file": "1920x1080@1-cinematic-framed.png"
+ },
+ {
+  "viewport": "1920x1080@1",
+  "shot": "cinematic-open",
+  "vsync": 6.1,
+  "buffer": "1713x964",
+  "output": "1940x1091",
+  "scale": "0.883",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   1920,
+   1080
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 24.2,
+   "max": 24.3
+  },
+  "file": "1920x1080@1-cinematic-open.png"
+ },
+ {
+  "viewport": "2560x1440@1",
+  "shot": "hero-p000",
+  "vsync": 6,
+  "buffer": "1687x949",
+  "output": "2560x1440",
+  "scale": "0.659",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   2560,
+   1440
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 24.3,
+   "max": 24.3
+  },
+  "file": "2560x1440@1-hero-p000.png"
+ },
+ {
+  "viewport": "2560x1440@1",
+  "shot": "hero-p025",
+  "vsync": 6,
+  "buffer": "1433x806",
+  "output": "2560x1440",
+  "scale": "0.560",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   2560,
+   1440
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 24.3,
+   "max": 48.6
+  },
+  "file": "2560x1440@1-hero-p025.png"
+ },
+ {
+  "viewport": "2560x1440@1",
+  "shot": "hero-p050",
+  "vsync": 6,
+  "buffer": "1338x753",
+  "output": "2560x1440",
+  "scale": "0.523",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   2560,
+   1440
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 18.4,
+   "max": 30.5
+  },
+  "file": "2560x1440@1-hero-p050.png"
+ },
+ {
+  "viewport": "2560x1440@1",
+  "shot": "cinematic-framed",
+  "vsync": 6,
+  "buffer": "1943x1093",
+  "output": "2918x1642",
+  "scale": "0.666",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   2918.39990234375,
+   1641.60009765625
+  ],
+  "frameMs": {
+   "median": 6.3,
+   "p95": 24.3,
+   "max": 30.6
+  },
+  "file": "2560x1440@1-cinematic-framed.png"
+ },
+ {
+  "viewport": "2560x1440@1",
+  "shot": "cinematic-open",
+  "vsync": 6,
+  "buffer": "1716x965",
+  "output": "2577x1449",
+  "scale": "0.666",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   2560,
+   1440
+  ],
+  "frameMs": {
+   "median": 12,
+   "p95": 24.3,
+   "max": 36.2
+  },
+  "file": "2560x1440@1-cinematic-open.png"
+ },
+ {
+  "viewport": "390x844@3",
+  "shot": "hero-p000",
+  "vsync": 6,
+  "buffer": "725x1570",
+  "output": "780x1688",
+  "scale": "0.930",
+  "tier": "medium",
+  "gpuMs": null,
+  "css": [
+   390,
+   844
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 24.2,
+   "max": 24.4
+  },
+  "file": "390x844@3-hero-p000.png"
+ },
+ {
+  "viewport": "390x844@3",
+  "shot": "hero-p025",
+  "vsync": 6,
+  "buffer": "653x1412",
+  "output": "780x1688",
+  "scale": "0.837",
+  "tier": "medium",
+  "gpuMs": null,
+  "css": [
+   390,
+   844
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 24.2,
+   "max": 24.5
+  },
+  "file": "390x844@3-hero-p025.png"
+ },
+ {
+  "viewport": "390x844@3",
+  "shot": "hero-p050",
+  "vsync": 6,
+  "buffer": "780x1688",
+  "output": "780x1688",
+  "scale": "1.000",
+  "tier": "medium",
+  "gpuMs": null,
+  "css": [
+   390,
+   844
+  ],
+  "frameMs": {
+   "median": 6.1,
+   "p95": 12.3,
+   "max": 24.3
+  },
+  "file": "390x844@3-hero-p050.png"
+ },
+ {
+  "viewport": "390x844@3",
+  "shot": "cinematic-framed",
+  "vsync": 6,
+  "buffer": "788x1706",
+  "output": "889x1924",
+  "scale": "0.887",
+  "tier": "medium",
+  "gpuMs": null,
+  "css": [
+   444.5999755859375,
+   962.159912109375
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 24.3,
+   "max": 24.4
+  },
+  "file": "390x844@3-cinematic-framed.png"
+ },
+ {
+  "viewport": "390x844@3",
+  "shot": "cinematic-open",
+  "vsync": 6,
+  "buffer": "695x1504",
+  "output": "784x1696",
+  "scale": "0.887",
+  "tier": "medium",
+  "gpuMs": null,
+  "css": [
+   390,
+   844
+  ],
+  "frameMs": {
+   "median": 12,
+   "p95": 18.2,
+   "max": 24.2
+  },
+  "file": "390x844@3-cinematic-open.png"
+ },
+ {
+  "viewport": "2035x1032@1.25",
+  "shot": "hero-p000",
+  "vsync": 6,
+  "buffer": "1776x901",
+  "output": "2544x1290",
+  "scale": "0.698",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   2035,
+   1032
+  ],
+  "frameMs": {
+   "median": 12,
+   "p95": 24.3,
+   "max": 30.2
+  },
+  "file": "2035x1032@1.25-hero-p000.png"
+ },
+ {
+  "viewport": "2035x1032@1.25",
+  "shot": "hero-p025",
+  "vsync": 6,
+  "buffer": "1471x746",
+  "output": "2544x1290",
+  "scale": "0.578",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   2035,
+   1032
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 24.1,
+   "max": 24.4
+  },
+  "file": "2035x1032@1.25-hero-p025.png"
+ },
+ {
+  "viewport": "2035x1032@1.25",
+  "shot": "hero-p050",
+  "vsync": 6,
+  "buffer": "1471x746",
+  "output": "2544x1290",
+  "scale": "0.578",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   2035,
+   1032
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 36.3,
+   "max": 42.5
+  },
+  "file": "2035x1032@1.25-hero-p050.png"
+ },
+ {
+  "viewport": "2035x1032@1.25",
+  "shot": "cinematic-framed",
+  "vsync": 6,
+  "buffer": "2094x1062",
+  "output": "2900x1471",
+  "scale": "0.722",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   2319.89990234375,
+   1176.47998046875
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 18.3,
+   "max": 24.3
+  },
+  "file": "2035x1032@1.25-cinematic-framed.png"
+ },
+ {
+  "viewport": "2035x1032@1.25",
+  "shot": "cinematic-open",
+  "vsync": 6,
+  "buffer": "1837x932",
+  "output": "2544x1290",
+  "scale": "0.722",
+  "tier": "high",
+  "gpuMs": null,
+  "css": [
+   2035,
+   1032
+  ],
+  "frameMs": {
+   "median": 12.1,
+   "p95": 24.3,
+   "max": 30.4
+  },
+  "file": "2035x1032@1.25-cinematic-open.png"
+ }
+]

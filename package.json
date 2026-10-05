@@ -36,7 +36,14 @@
     "qa:routes": "node tests/qa-routes.mjs",
     "qa:scroll": "node tests/qa-scroll.mjs",
     "qa:independence": "node tests/qa-independence.mjs",
-    "qa:visual": "node tests/qa-visual.mjs"
+    "qa:visual": "node tests/qa-visual.mjs",
+    "qa:geodesic": "node tests/qa-geodesic.mjs",
+    "qa:blackhole": "node tests/qa-blackhole-runtime.mjs",
+    "qa:clarity": "node tests/qa-blackhole-clarity.mjs",
+    "qa:sharpness": "node tests/qa-blackhole-sharpness.mjs",
+    "qa:orbit": "node tests/qa-blackhole-orbit.mjs",
+    "qa:flow": "node tests/qa-blackhole-flow.mjs",
+    "qa:explore": "node tests/qa-explore.mjs && node tests/qa-explore-lifecycle.mjs && node tests/qa-explore-pacing.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",

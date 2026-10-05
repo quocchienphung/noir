@@ -1,8 +1,0 @@
-{
- "fixLogo": "[data-framer-name=\"Logo\"].framer-17rqe9o a > div",
- "fixMenu": "header.framer-15zz7mp [data-framer-name] > div",
- "startMenu": "header.framer-kul7o2",
- "heroImg": ".framer-6P3WA [data-framer-name=\"Variant 2\"] img",
- "heroTitle": ".framer-8rgxvv",
- "heroWrap": ".framer-6P3WA"
-}

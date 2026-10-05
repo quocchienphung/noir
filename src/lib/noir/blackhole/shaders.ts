@@ -65,12 +65,17 @@ float pnoise(vec2 uv, int period, uint layer) {
   float n11 = dot(grad(i + ivec2(1, 1), period, layer), f - vec2(1.0, 1.0));
   return mix(mix(n00, n10, u.x), mix(n01, n11, u.x), u.y) * 1.414;
 }
+// Gradient noise is exactly zero on its lattice, and octaves that double the period share the coarse
+// lattice points: without an offset every tile carries a regular grid of calm points, which read as straight
+// moiré lines across a face-on disk. Each octave is shifted by an irrational-looking fraction of a cell
+// (a translation keeps the tiling intact).
+vec2 octShift(int o) { return vec2(0.3719, 0.6143) * float(o + 1); }
 float fbm(vec2 uv, int base, int octaves, uint layer) {
   float s = 0.0, a = 0.5, n = 0.0;
   int period = base;
   for (int o = 0; o < 8; o++) {
     if (o >= octaves) break;
-    s += a * pnoise(uv, period, layer + uint(o) * 7u);
+    s += a * pnoise(uv + octShift(o) / float(period), period, layer + uint(o) * 7u);
     n += a;
     a *= 0.5;
     period *= 2;
@@ -82,7 +87,7 @@ float ridged(vec2 uv, int base, int octaves, uint layer) {
   int period = base;
   for (int o = 0; o < 6; o++) {
     if (o >= octaves) break;
-    float r = 1.0 - abs(pnoise(uv, period, layer + uint(o) * 11u));
+    float r = 1.0 - abs(pnoise(uv + octShift(o) / float(period), period, layer + uint(o) * 11u));
     r = r * r * r;
     s += a * r * prev;
     n += a;
@@ -122,7 +127,10 @@ uniform float uTanHalfFov;
 uniform sampler2D uGas;    // baked tileable gas field, mipmapped + anisotropic
 uniform int uSteps;        // integration step budget (quality tier, independent of resolution)
 uniform int uSlab;         // max samples per ray segment inside the slab (quality tier)
-uniform int uDebug;        // 0 beauty, 1 unlit density, 2 capture/escape/unresolved, 3 flow markers
+uniform int uAbl;          // development ablation bitmask (0 in production): 1 no fade-to-mean,
+                           // 2 no aniso bound, 4 no march-step fold, 8 no vertical shear of the field
+uniform int uDebug;        // 0 beauty, 1 unlit density, 2 capture/escape/unresolved, 3 flow markers,
+                           // ablation: 4 no streaks, 5 no knots, 6 single advection phase, 7 no texture
 
 // material (GasLook in scenes.ts documents units and ranges)
 uniform float uDiskIn;
@@ -145,6 +153,8 @@ uniform vec3 uC1;          // champagne
 uniform vec3 uC2;          // copper
 uniform vec3 uC3;          // umber
 uniform float uStarGain;
+uniform vec4 uGasMean;     // per-channel mean / std of the baked field (exact, read back after the bake)
+uniform vec4 uGasStd;
 
 const float TAU = 6.28318531;
 const float PI = 3.14159265;
@@ -182,7 +192,7 @@ vec3 starfield(vec3 d) {
     float h = hash13(id + float(layer) * 19.7);
     if (h > (layer == 0 ? 0.9935 : 0.997)) {
       vec3 o = vec3(hash13(id + 3.1), hash13(id + 7.7), hash13(id + 11.3)) - 0.5;
-      float s = smoothstep(0.1, 0.0, length(f - o * 0.6));
+      float s = 1.0 - smoothstep(0.0, 0.1, length(f - o * 0.6));
       float tint = hash13(id + 5.5);
       col += s * mix(vec3(1.0, 0.88, 0.74), vec3(0.78, 0.86, 1.0), tint) * (0.25 + 1.6 * pow(h, 60.0));
     }
@@ -201,6 +211,22 @@ vec3 palette(float t) {
   return c;
 }
 
+// Footprint with a bounded aspect ratio (4:1, matching the sampler's anisotropy cap). Lensed images near
+// the shadow are compressed far beyond what anisotropic filtering covers, and high anisotropy was also the
+// dominant cost (~8.5 ms per fine-layer fetch at 16:1); the minor axis is widened instead (slightly softer
+// along a streak, never aliased across it).
+void boundAniso(inout vec2 gx, inout vec2 gy) {
+  float lx = length(gx), ly = length(gy);
+  const float MAXA = 4.0;
+  if (lx > MAXA * ly) {
+    vec2 n = ly > 1e-12 ? gy / ly : vec2(-gx.y, gx.x) / max(lx, 1e-12);
+    gy = n * (lx / MAXA);
+  } else if (ly > MAXA * lx) {
+    vec2 n = lx > 1e-12 ? gx / lx : vec2(-gy.y, gy.x) / max(ly, 1e-12);
+    gx = n * (ly / MAXA);
+  }
+}
+
 // Density and local heat at q. fx/fy are the pixel footprint vectors at q (world space, from the ray
 // differentials); along is the march step along the ray.
 // The texture lives in co-moving coordinates of the flow: u = (φ − Ω·age)/2π, s = ln r + v_s·age.
@@ -217,6 +243,10 @@ vec2 gasAt(vec3 q, vec3 fx, vec3 fy, vec3 along, out float heatOut) {
   float plunge = (1.0 - edge) * smoothstep(1.2, uDiskIn, r) * uPlunge;
   float env = edge * outer + plunge;
   if (env <= 1e-4) return vec2(0.0);
+  // Cheap exit before any texture fetch: even the thickest local slab (H ≤ 1.6·thickness·r) has
+  // negligible density this far from the mid-plane. Most march samples in the tenuous envelope end here.
+  float hMax = uThick * r * 1.6;
+  if (q.y * q.y > 6.5 * hMax * hMax) return vec2(0.0);
 
   float phi = atan(q.z, q.x);
   float lnr = log(r);
@@ -228,56 +258,79 @@ vec2 gasAt(vec3 q, vec3 fx, vec3 fy, vec3 along, out float heatOut) {
   // the step along the ray is part of what one sample stands for: fold it into the footprint (replacing
   // the shorter axis when it is longer) so detail finer than the march spacing is filtered, not skipped
   vec2 dZ = 0.5 * vec2(dot(gu, along.xz), dot(gs, along.xz));
-  if (dot(dZ, dZ) > min(dot(dX, dX), dot(dY, dY))) {
+  if ((uAbl & 4) == 0 && dot(dZ, dZ) > min(dot(dX, dX), dot(dY, dY))) {
     if (dot(dX, dX) < dot(dY, dY)) dX = dZ;
     else dY = dZ;
   }
+  if ((uAbl & 2) == 0) boundAniso(dX, dY);
 
   float omega = uOrbit * pow(r, -1.5);
   // inflow in e-folds of radius per second: slow in the disk, much faster once gas plunges
   float vs = uDrift * pow(uDiskIn / r, 1.5) * (1.0 + 5.0 * (1.0 - edge));
 
-  const vec2 SA = vec2(3.0, 4.0);    // masses and voids: 3 tiles per revolution, 4 per e-fold of radius
-  const vec2 SB = vec2(6.0, 14.0);   // filaments: strongly elongated along the orbit
-  float fadeA = smoothstep(0.45, 0.12, max(length(dX * SA), length(dY * SA)));
-  float fadeB = smoothstep(0.45, 0.12, max(length(dX * SB), length(dY * SB)));
-  // vertical layering: the field is sheared slightly with height, so the slab has 3D structure (cloud
-  // tops, overhangs) rather than one extruded 2D pattern; this is what reads as mottling at grazing view
-  float zeta = q.y / (uThick * r);
+  // Visible feature counts = tile scale × the bake's own base frequency (cells per tile: R 4, G 8, B 8,
+  // A 2). Earlier scales ignored that factor and put ~300–500 features per e-fold of radius into the
+  // mottling and filament layers: sub-pixel at hero size, so they read as sand or were filtered away,
+  // while only the soft blob layers survived. Counts are now sized for what a hero pixel can carry:
+  const vec2 SA = vec2(2.0, 1.0);    // masses (R) + warp (A): ~8 per revolution, ~4 per e-fold (integer per revolution: seamless at φ = ±π)
+  const vec2 SS = vec2(1.0, 8.0);    // streaks (B, ridged): ~64 per e-fold across, ~50:1 along the orbit
+  const vec2 SK = vec2(8.0, 12.0);   // clumps (G): ~64 per revolution × ~96 per e-fold, ~9:1 along the orbit
+  float fadeA = 1.0 - smoothstep(0.12, 0.45, max(length(dX * SA), length(dY * SA)));
+  float fadeS = 1.0 - smoothstep(0.12, 0.45, max(length(dX * SS), length(dY * SS)));
+  float fadeK = 1.0 - smoothstep(0.12, 0.45, max(length(dX * SK), length(dY * SK)));
+  if ((uAbl & 1) != 0) { fadeA = 1.0; fadeS = 1.0; fadeK = 1.0; }
+  // vertical layering: the field shears slightly with height, so the slab has 3D structure (cloud tops,
+  // overhangs) rather than one extruded 2D pattern
+  float zeta = (uAbl & 8) != 0 ? 0.0 : q.y / (uThick * r);
   vec3 acc = vec3(0.0);
-  float wsum2 = 0.0;
+  float wsum = 0.0, wsum2 = 0.0;
+  // A phase lives for a fixed fraction of the local orbital period (T ∝ r^1.5), so every radius
+  // accumulates the same shear per phase and overlapping phases carry streaks at the same tilt. Wraps
+  // happen where a phase's weight is zero, so the field stays continuous across radius and time.
+  float period = uPeriod * clamp(pow(r / uDiskIn, 1.5), 0.35, 12.0);
   for (int k = 0; k < 3; k++) {
-    float ph = fract(uTime / uPeriod + float(k) / 3.0);
-    float age = ph * uPeriod;
+    float ph = fract(uTime / period + float(k) / 3.0);
+    float age = ph * period;
     float w = sin(PI * ph);
     w *= w;
+    if (uDebug == 6) { if (k > 0) break; age = 0.5 * period; w = 1.0; }
     vec2 c = vec2((phi - omega * age) / TAU + float(k) * 0.371, lnr + vs * age + float(k) * 0.237);
-    // only the coarse layer varies with height (the fine one would alias along the line of sight)
-    vec2 cA = c + vec2(zeta * 0.01, zeta * 0.045);
-    vec4 A = textureGrad(uGas, cA * SA, dX * SA, dY * SA);
-    // once a pixel covers a sizeable part of a texture period (strongly lensed rays), the correctly
-    // filtered value is the field's mean; fade to it instead of reading blocky coarse mips
-    A = mix(vec4(0.5), A, fadeA);
-    // domain warp, mostly across the orbit, so streaks meander instead of running as perfect circles
-    vec2 wv = (vec2(A.a, A.g) - 0.5) * uWarp * vec2(0.035, 0.32);
-    float B = mix(0.5, textureGrad(uGas, (c + wv) * SB, dX * SB, dY * SB).b, fadeB);
-    acc += w * vec3(A.r - 0.5, A.g - 0.5, B - 0.5);
+    vec4 A = textureGrad(uGas, (c + vec2(zeta * 0.01, zeta * 0.03)) * SA, dX * SA, dY * SA);
+    // domain warp (mostly across the orbit, several streak spacings) so streaks meander, merge and part
+    vec2 wv = (vec2(A.a, A.r) - uGasMean.ar) / uGasStd.ar * uWarp * vec2(0.006, 0.018);
+    vec2 cw = c + wv;
+    float S = uDebug == 4 ? uGasMean.b : textureGrad(uGas, cw * SS, dX * SS, dY * SS).b;
+    float K = uDebug == 5 ? uGasMean.g : textureGrad(uGas, (cw + vec2(0.0, zeta * 0.004)) * SK + vec2(0.31, 0.17), dX * SK, dY * SK).g;
+    acc += w * vec3(A.r, S, K);
+    wsum += w;
     wsum2 += w * w;
   }
-  vec3 n = clamp(acc * inversesqrt(wsum2) + 0.5, 0.0, 1.0);
-  float big = n.x, med = n.y, fil = n.z;
+  // z-scores of the phase blend (variance-normalised, so contrast does not pulse with the phase mix)
+  float wn = inversesqrt(wsum2);  // Σ w = 1.5 always (sin² over three phases a third apart)
+  vec3 z = (acc - wsum * vec3(uGasMean.r, uGasMean.b, uGasMean.g)) * wn / vec3(uGasStd.r, uGasStd.b, uGasStd.g);
+  if (uDebug == 7) z = vec3(0.0);   // ablation: no texture at all (pure geometry)
 
-  // local thickness follows the masses and the turbulence (a bumpy, puffy surface); Gaussian profile
-  float H = uThick * r * clamp(0.35 + 1.0 * big + 0.7 * (med - 0.5) + 0.35 * (fil - 0.5), 0.15, 1.6);
+  // Contrast curves, each faded to its own expectation under a unit normal (computed once:
+  // E[streak] = 0.289, E[knot] = 0.174, E[mass] = 0.5) once the pixel footprint covers its features, so
+  // filtering keeps brightness constant instead of pulling everything towards one grey.
+  float streak = mix(0.289, smoothstep(-0.3, 1.5, z.y), fadeS);
+  float knot = mix(0.258, smoothstep(-0.2, 1.6, z.z), fadeK);
+  float mass = mix(0.5, clamp(0.5 + 0.25 * z.x, 0.0, 1.0), fadeA);
+
+  // local thickness follows the masses (a gently bumpy surface); Gaussian vertical profile
+  float H = uThick * r * clamp(0.55 + 0.9 * (mass - 0.5) + 0.25 * knot, 0.25, 1.6);
   float vert = exp(-2.0 * (q.y * q.y) / (H * H));
-  float clump = smoothstep(0.34, 0.76, big * 0.8 + med * 0.32 - 0.08);
-  clump *= clump;
-  float body = mix(0.5, clump, uClump) + 0.025;
-  float threads = mix(1.0, 0.35 + 1.3 * fil * fil, uFil);
-  // dense masses run hotter than the gas between them, so they glow while the gaps fall to umber
-  heatOut = 0.62 + 0.62 * clump + 0.18 * fil;
-  // a small threshold carves the tenuous fringe into separate wisps
-  return vec2(env * max(vert * body * threads - 0.035, 0.0), edge);
+  // Dark lanes are genuinely thin gas (density ~6 % of a filament), so they read as gaps rather than
+  // being averaged into haze; filaments and knots carry the density and, hotter, the light.
+  float fil = mix(1.0, streak, uFil);
+  // Streaks and clumps add rather than multiply: a product chops every long filament into short dashes
+  // at the clump spacing, which read as hair (proved by ablating either layer). Mean body ≈ 0.34.
+  float body = (0.03 + 0.4 * fil + 0.65 * knot + 0.35 * fil * knot) * mix(1.0, 0.55 + 0.9 * mass, uClump);
+  heatOut = 0.42 + 0.4 * fil + 0.6 * knot + 0.3 * (mass - 0.5);
+  // surface density falls with radius (the outer disk is more tenuous, so lensed light behind it shows
+  // through)
+  float sigma = pow(uDiskIn / max(r, uDiskIn), 0.9);
+  return vec2(env * sigma * vert * body, edge);
 }
 
 // Integrates the slab along the segment p0 → p1 (dir = backward ray direction), accumulating radiance into
@@ -301,7 +354,11 @@ void slab(vec3 p0, vec3 p1, vec3 dir, vec3 fx0, vec3 fx1, vec3 fy0, vec3 fy1, in
   }
   if (t1 <= t0) return;
   float L = length(p1 - p0);
-  float dsMax = hm * 0.5;
+  // Steps must resolve the vertical profile where the ray crosses it steeply: at most a third of the local
+  // (thinnest) thickness per unit of vertical travel. Without this, steep lensed crossings of the thin
+  // inner slab undersample the Gaussian and alias into concentric fringes (proved with texture off).
+  float hThin = uThick * min(r0, r1) * 0.35 + 0.004;
+  float dsMax = min(hm * 0.5, 0.33 * hThin / max(abs(dir.y), 0.04));
   float dsMin = max(0.0035 * rmax, 0.008);
   float ds = dsMax;
   float tc = t0;
@@ -335,12 +392,14 @@ void slab(vec3 p0, vec3 p1, vec3 dir, vec3 fx0, vec3 fx1, vec3 fy0, vec3 fy1, in
       float gfac = D * gr;
       float temp = uHeat * pow(uDiskIn / max(r, 1.25), 0.85) * heat * mix(1.0, pow(gfac, 0.7), uDoppler);
       float emiss = uGain * pow(uDiskIn / max(r, 1.2), uFalloff) * mix(1.0, pow(gfac, 4.0), uDoppler);
-      // plunging gas is dimmer: below the edge, emission falls with the redshift squared
-      emiss *= mix(gr * gr, 1.0, g.y);
+      // plunging gas is dimmer: below the edge, emission falls with the gravitational redshift
+      emiss *= mix(gr, 1.0, g.y);
       // Emissivity per unit density rises steeply with local heat. In optically thick gas the visible
       // brightness is emission ÷ absorption, so density alone cancels out: hot masses must out-shine the
       // cooler, absorbing lanes between them for the band to read as lumpy gas rather than a smooth sheet.
-      j3 = palette(temp) * emiss * rho * heat * heat * heat;
+      // (exponent 2.2 rather than 3: with D⁴ beaming on top, a cubic made single hot clumps passing the
+      // approaching side flare the whole frame by ~20 % within half a second)
+      j3 = palette(temp) * emiss * rho * pow(heat, 2.2);
       if (uDebug == 3) {
         // flow markers: knots fixed in the flow's co-moving frame (continuous advection, no phases)
         float om = uOrbit * pow(r, -1.5);
@@ -348,7 +407,7 @@ void slab(vec3 p0, vec3 p1, vec3 dir, vec3 fx0, vec3 fx1, vec3 fy0, vec3 fy1, in
         float u0 = (atan(q.z, q.x) - om * uTime) / TAU;
         float s0 = log(r) + vs * uTime;
         vec2 cell = fract(vec2(u0 * 12.0, s0 * 3.0)) - 0.5;
-        j3 += vec3(0.0, 4.0, 1.0) * smoothstep(0.12, 0.05, length(cell * vec2(1.0, 2.0))) * rho;
+        j3 += vec3(0.0, 4.0, 1.0) * (1.0 - smoothstep(0.05, 0.12, length(cell * vec2(1.0, 2.0)))) * rho;
       }
     }
     float tau = k * dsw;
@@ -420,7 +479,12 @@ void main() {
 }
 `;
 
-/** Bright-pass + 4-tap downsample (first bloom level), soft knee. */
+/**
+ * Bright-pass + 4-tap downsample (first bloom level), soft knee. Taps are Karis-averaged (weight
+ * 1/(1+luma)) and capped, so a few extreme HDR pixels near the white-hot junction cannot make the whole
+ * bloom/veil breathe from frame to frame as the gas moves (measured: clipped-pixel count swung 23→173
+ * while mean scene brightness stayed within ±5 %).
+ */
 export const PREFILTER_FRAG = /* glsl */ `#version 300 es
 precision highp float;
 in vec2 vUv;
@@ -428,9 +492,18 @@ out vec4 fragColor;
 uniform sampler2D uSrc;
 uniform vec2 uTexel;
 uniform float uThreshold;
-vec3 tap(vec2 o) { return texture(uSrc, vUv + o * uTexel).rgb; }
+const float CAP = 12.0;
+vec3 tap(vec2 o, out float w) {
+  vec3 c = texture(uSrc, vUv + o * uTexel).rgb;
+  float l = max(c.r, max(c.g, c.b));
+  c *= min(1.0, CAP / max(l, 1e-4));
+  w = 1.0 / (1.0 + max(c.r, max(c.g, c.b)));
+  return c * w;
+}
 void main() {
-  vec3 c = (tap(vec2(-1.0, -1.0)) + tap(vec2(1.0, -1.0)) + tap(vec2(-1.0, 1.0)) + tap(vec2(1.0, 1.0))) * 0.25;
+  float w0, w1, w2, w3;
+  vec3 sum = tap(vec2(-1.0, -1.0), w0) + tap(vec2(1.0, -1.0), w1) + tap(vec2(-1.0, 1.0), w2) + tap(vec2(1.0, 1.0), w3);
+  vec3 c = sum / (w0 + w1 + w2 + w3);
   float br = max(c.r, max(c.g, c.b));
   float knee = uThreshold * 0.7;
   float soft = clamp(br - uThreshold + knee, 0.0, 2.0 * knee);
@@ -486,14 +559,43 @@ in vec2 vUv;
 out vec4 fragColor;
 uniform sampler2D uScene;
 uniform sampler2D uBloom;
+uniform sampler2D uVeilTex;  // coarsest bloom level: a very wide, smooth blur of the bright gas
 uniform float uExposure;
 uniform float uBloomGain;
+uniform float uVeil;
 uniform float uFade;       // 0 → scene, 1 → black (crossing the horizon)
 uniform float uTime;
 uniform float uGrain;
 uniform float uHueKeep;
 uniform int uView;
 uniform vec2 uRes;
+uniform vec2 uSrcRes;      // size of the traced scene buffer (upsampled here to uRes)
+
+// Catmull-Rom (bicubic) upsampling in 9 bilinear taps: far crisper than the browser stretching a small
+// canvas bilinearly, and it keeps thin filaments and the photon ring from smearing when the traced
+// buffer is below output resolution. Clamped at 0 (HDR ringing at the shadow edge).
+vec3 catmullRom(sampler2D tex, vec2 uv, vec2 size) {
+  vec2 sp = uv * size;
+  vec2 t1 = floor(sp - 0.5) + 0.5;
+  vec2 f = sp - t1;
+  vec2 w0 = f * (-0.5 + f * (1.0 - 0.5 * f));
+  vec2 w1 = 1.0 + f * f * (-2.5 + 1.5 * f);
+  vec2 w2 = f * (0.5 + f * (2.0 - 1.5 * f));
+  vec2 w3 = f * f * (-0.5 + 0.5 * f);
+  vec2 w12 = w1 + w2;
+  vec2 t0 = (t1 - 1.0) / size, t3 = (t1 + 2.0) / size, t12 = (t1 + w2 / w12) / size;
+  vec3 c = vec3(0.0);
+  c += texture(tex, vec2(t0.x, t0.y)).rgb * w0.x * w0.y;
+  c += texture(tex, vec2(t12.x, t0.y)).rgb * w12.x * w0.y;
+  c += texture(tex, vec2(t3.x, t0.y)).rgb * w3.x * w0.y;
+  c += texture(tex, vec2(t0.x, t12.y)).rgb * w0.x * w12.y;
+  c += texture(tex, vec2(t12.x, t12.y)).rgb * w12.x * w12.y;
+  c += texture(tex, vec2(t3.x, t12.y)).rgb * w3.x * w12.y;
+  c += texture(tex, vec2(t0.x, t3.y)).rgb * w0.x * w3.y;
+  c += texture(tex, vec2(t12.x, t3.y)).rgb * w12.x * w3.y;
+  c += texture(tex, vec2(t3.x, t3.y)).rgb * w3.x * w3.y;
+  return max(c, vec3(0.0));
+}
 
 vec3 aces(vec3 x) {
   const float a = 2.51, b = 0.03, c = 2.43, d = 0.59, e = 0.14;
@@ -511,14 +613,17 @@ vec3 heat(float t) {
   return clamp(vec3(1.5 - abs(4.0 * t - 3.0), 1.5 - abs(4.0 * t - 2.0), 1.5 - abs(4.0 * t - 1.0)), 0.0, 1.0);
 }
 void main() {
-  vec3 scene = texture(uScene, vUv).rgb;
+  vec3 scene = uSrcRes.x < uRes.x - 0.5 ? catmullRom(uScene, vUv, uSrcRes) : texture(uScene, vUv).rgb;
   vec3 bloom = texture(uBloom, vUv).rgb;
   if (uView == 2) {
     float l = dot(scene, vec3(0.2126, 0.7152, 0.0722));
     fragColor = vec4(heat(clamp((log2(max(l, 1e-5)) + 10.0) / 14.0, 0.0, 1.0)), 1.0);
     return;
   }
-  vec3 c = (scene + (uView == 1 ? vec3(0.0) : bloom * uBloomGain)) * uExposure;
+  vec3 veil = texture(uVeilTex, vUv).rgb;
+  // uView: 1 no bloom + no veil, 3 no veil, 4 no bloom (veil kept)
+  vec3 post = (uView == 1 ? vec3(0.0) : (uView == 4 ? vec3(0.0) : bloom * uBloomGain) + (uView == 3 ? vec3(0.0) : veil * uVeil));
+  vec3 c = (scene + post) * uExposure;
   float peak = max(c.r, max(c.g, c.b));
   vec3 hueKeep = c * (aces(vec3(peak)).r / max(peak, 1e-5));
   c = mix(aces(c), hueKeep, uHueKeep);

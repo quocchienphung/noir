@@ -31,7 +31,13 @@ Both scroll scenes use `useScrollTimeline` (`src/components/noir/useScrollTimeli
 | 0.80 → 0.99 | Statement fades in: blur 16 → 0 px, scale 0.94 → 1. It is visibility-hidden below 0.4. |
 
 Pointer: ±4° azimuth and ±1.6° elevation parallax, smoothed with τ = 0.35 s and reduced as p grows.
-Fine pointers only. Time: Keplerian disk flow, ω = 1.25·r^−1.5, plus a slow 0.6° sway.
+Fine pointers only.
+
+Time is separate from scroll. The gas runs on its own simulation clock: Keplerian orbit
+Ω = 0.9·r^−1.5 rad/s plus a slow inflow (see `BLACK_HOLE_REBUILD.md`). The clock advances only while
+frames render, so it resumes without a phase jump after a pause, and it never runs backwards when you
+scroll up. The camera adds a slow 0.6° sway. The camera paths of both scenes are unchanged by the
+black-hole rebuild.
 
 ## Cinematic frame: `NoirCinematic` (track 300svh, sticky 100svh stage)
 

@@ -380,3 +380,27 @@
     opacity: 1;
   }
 }
+
+/* 360° explore: the copy steps aside while the camera is free, and comes back when it returns. */
+.headline,
+.scrim,
+.cue,
+.gauge,
+.ruler {
+  transition: opacity 0.35s ease;
+}
+
+.stage[data-explore] .headline,
+.stage[data-explore] .scrim,
+.stage[data-explore] .cue,
+.stage[data-explore] .gauge,
+.stage[data-explore] .ruler,
+.stage[data-explore] .lead {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.stage[data-explore="entering"] .lead,
+.stage[data-explore="orbit"] .lead {
+  visibility: hidden;
+}

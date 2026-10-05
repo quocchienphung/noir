@@ -35,24 +35,24 @@ const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 export const GAS: GasLook = {
   inner: 2.9,
   outer: 16,
-  thickness: 0.024,
-  gain: 9,
+  thickness: 0.016,
+  gain: 42,
   falloff: 1.65,
-  opacity: 9,
-  doppler: 0.55,
+  opacity: 30,
+  doppler: 0.35,
   orbit: 0.9,
   drift: 0.014,
   warp: 1.0,
-  filaments: 0.5,
-  clumping: 0.85,
-  plunge: 0.22,
-  period: 22,
-  heat: 1.05,
+  filaments: 1,
+  clumping: 0.6,
+  plunge: 0.38,
+  period: 28,
+  heat: 1.15,
   palette: [
     [1.0, 0.95, 0.9],
-    [0.9, 0.72, 0.54],
-    [0.56, 0.3, 0.14],
-    [0.2, 0.1, 0.045],
+    [0.95, 0.72, 0.5],
+    [0.66, 0.32, 0.12],
+    [0.22, 0.095, 0.035],
   ],
 };
 
@@ -87,13 +87,14 @@ export function diveFrame(input: SceneInput): FrameParams {
     tanHalfFov: Math.tan(fov / 2),
     time: input.time,
     quality: input.quality,
-    gas: { ...GAS, outer: 17, orbit: GAS.orbit },
-    exposure: 1.0,
+    gas: { ...GAS, outer: 17, falloff: 1.45 },
+    exposure: 1.85,
     bloomGain: 0.32,
     bloomThreshold: 1.1,
     fade: smooth(0.84, 0.985, p),
     grain: 0.035,
     hueKeep: 0.18,
+    veil: 0.6,
     starGain: 1,
   };
 }
@@ -121,13 +122,14 @@ export function cinematicFrame(input: SceneInput): FrameParams {
     tanHalfFov: Math.tan(fov / 2),
     time: input.time,
     quality: input.quality,
-    gas: { ...GAS, orbit: -GAS.orbit, doppler: 0.7 },
+    gas: { ...GAS, orbit: -GAS.orbit, doppler: 0.45 },
     exposure: 1.0,
     bloomGain: 0.55,
     bloomThreshold: 0.9,
     fade: 0,
     grain: 0.03,
     hueKeep: 0.15,
+    veil: 1.2,
     starGain: 0.8,
   };
 }
@@ -137,7 +139,7 @@ export function cinematicFrame(input: SceneInput): FrameParams {
  * 0.34 H), radius ≈ 0.31 H on 16:9, band rising ≈ 20° to the right). Never used on the site.
  * Parameters are fitted with tests/qa-blackhole-reference.mjs.
  */
-export const REFERENCE_CAMERA = { distance: 26.24, elevation: 1.9, fov: 18, yaw: 12.14, pitch: 2.83, roll: -17 };
+export const REFERENCE_CAMERA = { distance: 28.9, elevation: 2.6, fov: 18, yaw: 12.14, pitch: 3.3, roll: -20.5 };
 
 export function referenceFrame(input: SceneInput): FrameParams {
   const c = REFERENCE_CAMERA;
@@ -158,13 +160,35 @@ export function referenceFrame(input: SceneInput): FrameParams {
     tanHalfFov: Math.tan((c.fov * DEG) / 2),
     time: input.time,
     quality: input.quality,
-    gas: { ...GAS, orbit: -GAS.orbit, doppler: 0.7 },
+    gas: { ...GAS, orbit: -GAS.orbit, doppler: 0.45 },
     exposure: 1.0,
-    bloomGain: 1.3,
-    bloomThreshold: 0.25,
+    bloomGain: 0.55,
+    bloomThreshold: 0.6,
     fade: 0,
     grain: 0.03,
     hueKeep: 0.15,
+    veil: 0.4,
     starGain: 0.8,
+  };
+}
+
+/** Development-only QA camera straight above the hole (for measuring orbital and inflow motion). */
+export function topdownFrame(input: SceneInput): FrameParams {
+  const eye: Vec3 = [0, 34, 0.0001];
+  return {
+    camPos: eye,
+    basis: lookAt(eye, [0, 0, 0], 0),
+    tanHalfFov: Math.tan((34 * DEG) / 2),
+    time: input.time,
+    quality: input.quality,
+    gas: { ...GAS },
+    exposure: 1.0,
+    bloomGain: 0.2,
+    bloomThreshold: 1.2,
+    fade: 0,
+    grain: 0,
+    hueKeep: 0.15,
+    veil: 0,
+    starGain: 0,
   };
 }

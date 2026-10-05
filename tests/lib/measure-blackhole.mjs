@@ -39,7 +39,7 @@ function fitCircle(P) {
   return { cx, cy, r: Math.sqrt(A[2][3] / A[2][2] + cx * cx + cy * cy) };
 }
 
-export async function measure(file, { seed = [0.86, 0.33], crop, fitAngles = [175, 365] } = {}) {
+export async function measure(file, { seed = [0.86, 0.33], crop, fitAngles = [175, 365], bright = 165 } = {}) {
   let img = sharp(file).removeAlpha();
   if (crop) img = img.extract(crop);
   const { data, info } = await img.greyscale().raw().toBuffer({ resolveWithObject: true });
@@ -67,7 +67,7 @@ export async function measure(file, { seed = [0.86, 0.33], crop, fitAngles = [17
         runMin = Math.min(runMin, v);
         // stop at the first genuinely bright ring/disk pixel, then backtrack to the steepest rise: the
         // interior haze ramps up gradually and must not be mistaken for the edge
-        if (r > 15 && v > Math.max(165, runMin * 3 + 60)) {
+        if (r > 15 && v > Math.max(bright, runMin * 3 + 60)) {
           let best = r;
           let bestG = -1;
           for (let q = r; q > Math.max(8, r - 40); q--) {
@@ -187,4 +187,53 @@ export async function measure(file, { seed = [0.86, 0.33], crop, fitAngles = [17
     meanLuma: +mean.toFixed(1),
     nearBlackFraction: +(hist.slice(0, 20).reduce((a, b) => a + b, 0) / data.length).toFixed(3),
   };
+}
+
+/**
+ * Exact shadow of a renderer frame from its capture-state debug view (`bhDebug=2`: captured rays red,
+ * escaped green, opaque gas grey). Only red pixels touching green are the shadow edge — red next to
+ * grey is where gas in front hides the shadow — so the circle is fitted to the red↔green boundary.
+ */
+export async function measureCaptureMask(file) {
+  const { data, info } = await sharp(file).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  const W = info.width, H = info.height;
+  const px = (x, y) => {
+    const i = (y * W + x) * 3;
+    return [data[i], data[i + 1], data[i + 2]];
+  };
+  const isRed = (x, y) => { const [r, g, b] = px(x, y); return r > 110 && g < 70 && b < 70; };
+  const isGreen = (x, y) => { const [r, g, b] = px(x, y); return g > 70 && r < 90 && g > r * 1.5 && b < g; };
+  const pts = [];
+  for (let y = 2; y < H - 2; y++)
+    for (let x = 2; x < W - 2; x++) {
+      if (!isRed(x, y)) continue;
+      let green = false;
+      for (let d = 1; d <= 2 && !green; d++) green = isGreen(x - d, y) || isGreen(x + d, y) || isGreen(x, y - d) || isGreen(x, y + d);
+      if (green) pts.push([x, y]);
+    }
+  if (pts.length < 20) return null;
+  let c = fitCircle(pts);
+  for (let k = 0; k < 3; k++) {
+    const res = pts.map(([x, y]) => Math.abs(Math.hypot(x - c.cx, y - c.cy) - c.r));
+    const keep = pts.filter((_, i) => res[i] < Math.max(3, c.r * 0.02));
+    if (keep.length < 20) break;
+    c = fitCircle(keep);
+  }
+  // band angle: upper edge of the opaque (grey) band where it crosses the shadow
+  const isGrey = (x, y) => { const [r, g, b] = px(x, y); return Math.abs(r - g) < 25 && Math.abs(g - b) < 25 && r > 80; };
+  const edge = [];
+  for (let x = Math.round(c.cx - c.r * 0.8); x < Math.min(W - 2, c.cx + c.r * 0.8); x += 2) {
+    const half = Math.sqrt(Math.max(0, c.r * c.r - (x - c.cx) ** 2));
+    for (let y = Math.max(2, Math.round(c.cy - half * 0.9)); y < Math.min(H - 2, c.cy + half * 0.9); y++) {
+      if (isGrey(x, y)) { edge.push([x, y]); break; }
+    }
+  }
+  let bandAngleDeg = null;
+  if (edge.length > 8) {
+    const n = edge.length;
+    const mx = edge.reduce((t, p) => t + p[0], 0) / n, my = edge.reduce((t, p) => t + p[1], 0) / n;
+    const k = edge.reduce((t, p) => t + (p[0] - mx) * (p[1] - my), 0) / edge.reduce((t, p) => t + (p[0] - mx) ** 2, 0);
+    bandAngleDeg = +((Math.atan(-k) * 180) / Math.PI).toFixed(2);
+  }
+  return { cx: +c.cx.toFixed(1), cy: +c.cy.toFixed(1), r: +c.r.toFixed(1), cxF: +(c.cx / W).toFixed(4), cyF: +(c.cy / H).toFixed(4), rH: +(c.r / H).toFixed(4), boundaryPts: pts.length, bandAngleDeg, bandEdgePts: edge.length };
 }

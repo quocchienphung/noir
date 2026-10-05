@@ -32,7 +32,8 @@ export function traceEuler(p0, v0, { k = 0.065, dmin = 0.012, dmax = 1.4, steps 
  * a step that shrinks near the photon sphere, where rays are most sensitive:
  *   dt = clamp(k·r·(0.35 + 0.65·smoothstep(1.5, 4, r)), dmin, dmax)
  */
-export const VERLET = { k: 0.07, dmin: 0.008, dmax: 1.6, steps: 260, rEsc: 60 };
+// steps = the lowest production tier (BlackHoleCanvas TIERS.low), so convergence holds on every tier
+export const VERLET = { k: 0.07, dmin: 0.008, dmax: 1.6, steps: 200, rEsc: 60 };
 export function stepSize(r, { k, dmin, dmax } = VERLET) {
   const t = Math.min(1, Math.max(0, (r - 1.5) / 2.5));
   const s = t * t * (3 - 2 * t);

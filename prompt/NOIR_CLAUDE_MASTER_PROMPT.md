@@ -1,6 +1,6 @@
 # NOIR — master prompt cho Claude Code
 
-> **Tác vụ tiếp nối ngày 05/10/2026 — nâng cấp black hole 3D:** dùng [NOIR_BLACK_HOLE_REBUILD_PROMPT.md](./NOIR_BLACK_HOLE_REBUILD_PROMPT.md). Prompt đó bám theo renderer hiện tại, giữ animation scroll đã được chấp nhận và yêu cầu dựng realtime, không dùng video/image sequence. Với tác vụ này, các lựa chọn media cũ bên dưới và phạm vi rebrand toàn site không áp dụng; không thực thi lại toàn bộ master prompt cũ.
+> **Tác vụ hiện hành — MASTER PROMPT V2, ngày 05/10/2026:** dùng [NOIR_BLACK_HOLE_REBUILD_PROMPT.md](./NOIR_BLACK_HOLE_REBUILD_PROMPT.md) để sửa hero bị mờ, phục hồi filament/dòng sáng và thêm click/tap → kéo xoay camera 360° thật, kể cả góc trên/dưới. V2 thay thế prompt rebuild cũ, có nguồn nghiên cứu NASA/DNGR, giữ scroll bình thường và bắt buộc kiểm chứng chất lượng production. Các lựa chọn video/media cũ và phạm vi rebrand toàn site bên dưới không áp dụng; không thực thi lại toàn bộ master prompt cũ.
 
 ## Cách dùng
 

@@ -6,6 +6,7 @@ Every file served from `public/` is listed here. `tests/qa-independence.mjs` fai
 ## Brand mark (source: `prompt/logo.png`, supplied by the user as the NOIR logo)
 
 The mark is the user's own artwork. It is not redrawn as a vector. `scripts/build-noir-brand.mjs`:
+
 1. crops a 290 px square around the burst;
 2. fades out the screenshot's rounded-corner artefacts radially;
 3. uses luminance as alpha, so grain, glow and silhouette are preserved.
@@ -26,11 +27,29 @@ Re-run with `node scripts/build-noir-brand.mjs`.
 
 | File | Notes |
 | --- | --- |
-| `/sites/noir/media/dive-poster.jpg` | intro scene at p = 0, rendered by `BlackHoleRenderer` (1600×1000 @1.5×, resized to 1920×1200). Fallback when WebGL2 is unavailable or the context is lost. |
+| `/sites/noir/media/dive-poster.jpg` | intro scene at p = 0, rendered by `BlackHoleRenderer` (re-rendered after the V2 clarity pass, 5 Oct 2026). Fallback while loading, or when WebGL2 is unavailable or the context is lost. |
 | `/sites/noir/media/cinematic-poster.jpg` | cinematic scene at q = 0.5 (frame open), same process |
 
-No third-party imagery or footage is used. The renderer is original code in
-`src/lib/noir/blackhole/`.
+Re-render the posters with `node scripts/render-noir-posters.mjs` against `next dev`. The script uses the
+development-only `/qa/black-hole` harness: frozen simulation time 12 s, no pointer, high tier, native
+render scale, 1600×1000 at DPR 1.5, resized to 1920×1200.
+
+No third-party imagery or footage is used. The renderer is original code in `src/lib/noir/blackhole/`.
+
+### Gas field (procedural, not a file)
+
+The disk's gas texture is not shipped as an image. On each page load (and after a context restore) it is
+baked on the GPU by `BAKE_FRAG`. The result is a 512×512 RGBA8 tileable field, with mipmaps and up to
+4× anisotropic filtering:
+
+- **R:** large fBm;
+- **G:** medium fBm;
+- **B:** ridged filaments;
+- **A:** domain warp.
+
+It uses periodic gradient noise with an integer hash and the fixed seed `GAS_SEED = 0x6e6f6972` in
+`renderer.ts`, so it is identical on every load. It is input data for the 3D renderer, not a picture of
+the result.
 
 ## Fonts
 
@@ -40,12 +59,27 @@ No third-party imagery or footage is used. The renderer is original code in
 
 ## References (research only, never served)
 
-- **Eventide** (https://eventide.framer.ai/): frames in `docs/design-references/noir/eventide/`, used
+- **Eventide** (<https://eventide.framer.ai/>): frames in `docs/design-references/noir/eventide/`, used
   for layout and timing analysis only (see `REFERENCE_EVENTIDE.md`).
-- **YouTube 784dsKVrdjQ**, "Interstellar Gargantua Black Hole | 1 Hour Full HD Live Wallpaper": four
-  frames at 0:00, 0:15, 0:45 and 1:30 in `docs/design-references/noir/gargantua-video/`. They were
-  captured from the public watch page to analyse composition, disk tilt, lensing and colour. The video
-  is **not** downloaded, embedded, hotlinked or re-encoded. Its rights belong to its owners (the
+- **YouTube 784dsKVrdjQ**, "Interstellar Gargantua Black Hole | 1 Hour Full HD Live Wallpaper"
+  (Kalakaar FX):
+  - Earlier frames are in `docs/design-references/noir/gargantua-video/`. `yt-90.jpg` there shows a
+    loading spinner and is **not** a valid 1:30 frame.
+  - Clean frames for the black-hole rebuild are in
+    `docs/design-references/noir/black-hole-rebuild/reference/`:
+    - stills at 0:00, 0:15 and 0:45, each captured only after the seek had decoded (`readyState` 4) and
+      with player controls hidden;
+    - a 26-frame playback sequence from 18.5 s to 31.5 s;
+    - `meta.json`, `frames-*.json` and `measurements.json`.
+  - V2 clarity pass: `docs/design-references/noir/black-hole-v2/reference/seq314/` holds 28 frames from
+    314.98 s on (≈ 0.64 s apart, 1920×1080 `hd1080` stream, element screenshots 1828×1029), listed in
+    `seq314.json`. Same method and limits as above: screenshots of the public watch page for
+    comparing material and sharpness only; nothing is downloaded, embedded or served.
+  - `docs/design-references/noir/black-hole-v2/baseline/user-screenshot-201256.png` is the user's own
+    screenshot of the previous build (the complaint), kept as the baseline.
+  - Seeks to 1:30 and 5:00 stalled (`readyState` 0) and were discarded.
+  - All frames were screenshots of the public watch page, taken to analyse composition, disk tilt,
+    lensing, colour and motion. The video is **not** downloaded, embedded, hotlinked or re-encoded. Its rights belong to its owners (the
   imagery derives from *Interstellar*, © Warner Bros./Paramount). If licensed footage becomes
   available, it could replace the renderer in the cinematic frame.
 - **Previous-site captures** (`docs/design-references/noir/bug/`): screenshots of the old build,
