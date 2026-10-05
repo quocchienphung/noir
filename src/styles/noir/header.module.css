@@ -1,0 +1,271 @@
+/* NOIR fixed header + phone drawer. Tokens come from .shell (shell.module.css). */
+
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: var(--noir-header-h);
+  padding: 0 var(--noir-gutter);
+  color: var(--noir-text);
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    backdrop-filter 0.35s ease;
+}
+
+.header[data-scrolled] {
+  background: rgb(5 5 5 / 0.62);
+  border-bottom-color: var(--noir-line);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+}
+
+.home {
+  display: inline-flex;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.nav {
+  display: none;
+}
+
+.navList {
+  display: flex;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navLink {
+  position: relative;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--noir-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover,
+.navLink[aria-current="page"] {
+  color: var(--noir-text);
+}
+
+.navLink[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.4rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.cta {
+  display: none;
+  margin-left: auto;
+  align-items: center;
+  height: 2.375rem;
+  padding: 0 1rem;
+  border-radius: 0.25rem;
+  background: var(--noir-text);
+  color: var(--noir-bg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.cta:hover {
+  background: #fff;
+}
+
+.menuButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: auto;
+  padding: 0.5rem 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.menuIcon {
+  position: relative;
+  width: 1.1rem;
+  height: 0.5rem;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+}
+
+@media (min-width: 810px) {
+  .nav {
+    display: block;
+    margin-left: auto;
+  }
+
+  .cta {
+    display: inline-flex;
+    margin-left: 0;
+  }
+
+  .menuButton {
+    display: none;
+  }
+}
+
+/* ---------- Drawer (phones) ---------- */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.overlay[data-open] {
+  pointer-events: auto;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 0.6);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.overlay[data-open] .backdrop {
+  opacity: 1;
+}
+
+.panel {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: min(100%, 26rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2rem;
+  padding: var(--noir-gutter);
+  padding-bottom: calc(var(--noir-gutter) + env(safe-area-inset-bottom));
+  background: #080808;
+  border-left: 1px solid var(--noir-line);
+  color: var(--noir-text);
+  clip-path: inset(0 0 0 100%);
+  transition: clip-path 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.overlay[data-open] .panel {
+  clip-path: inset(0);
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: var(--noir-gutter);
+  height: var(--noir-header-h);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.drawerList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.drawerList li {
+  overflow: hidden;
+}
+
+.drawerLink {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: clamp(2.5rem, 13vw, 3.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+  color: var(--noir-muted);
+  text-decoration: none;
+  transform: translateY(105%);
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.2s ease;
+}
+
+.drawerLink[aria-current="page"],
+.drawerLink:hover {
+  color: var(--noir-text);
+}
+
+.overlay[data-open] .drawerLink {
+  transform: none;
+}
+
+.overlay[data-open] li:nth-child(2) .drawerLink {
+  transition-delay: 0.05s;
+}
+
+.overlay[data-open] li:nth-child(3) .drawerLink {
+  transition-delay: 0.1s;
+}
+
+.overlay[data-open] li:nth-child(4) .drawerLink {
+  transition-delay: 0.15s;
+}
+
+.drawerCta {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  height: 2.75rem;
+  padding: 0 1.15rem;
+  border-radius: 0.25rem;
+  background: var(--noir-text);
+  color: var(--noir-bg);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.home:focus-visible,
+.navLink:focus-visible,
+.cta:focus-visible,
+.menuButton:focus-visible,
+.close:focus-visible,
+.drawerLink:focus-visible,
+.drawerCta:focus-visible {
+  outline: 2px solid var(--noir-text);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .backdrop,
+  .panel,
+  .drawerLink {
+    transition: none;
+  }
+}

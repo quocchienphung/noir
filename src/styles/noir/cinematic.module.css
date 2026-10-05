@@ -1,0 +1,167 @@
+/* Black-hole cinematic frame. Defaults below ARE the "framed" state (see cinematic-timeline.ts), so the
+ * first paint before any script is always the small framed view with no statement visible. */
+
+.track {
+  position: relative;
+  height: 300vh;
+  height: 300svh;
+  background: var(--noir-bg);
+}
+
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: #000;
+  clip-path: inset(17% 17% round 14px);
+  will-change: clip-path;
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  transform: scale(1.14);
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mark {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+.markImg {
+  width: clamp(4.5rem, 8.5vw, 8rem);
+  height: auto;
+  filter: drop-shadow(0 0 2.5rem rgb(255 255 255 / 0.18));
+}
+
+/* Legibility scrim under the statement (opacity follows the first line). */
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(120% 85% at 0% 100%, rgb(0 0 0 / 0.78) 0%, rgb(0 0 0 / 0.45) 38%, rgb(0 0 0 / 0) 70%);
+}
+
+@media (max-width: 809.98px) {
+  .scrim {
+    background: linear-gradient(0deg, rgb(0 0 0 / 0.82) 0%, rgb(0 0 0 / 0.55) 45%, rgb(0 0 0 / 0) 80%);
+  }
+}
+
+/* Statement: inside the frame's own safe area (below the fixed header, inside the gutters). */
+.text {
+  position: absolute;
+  z-index: 3;
+  left: var(--noir-gutter);
+  right: var(--noir-gutter);
+  bottom: clamp(2rem, 9vh, 6rem);
+  max-width: 54rem;
+  max-height: calc(100% - var(--noir-header-h) - clamp(2rem, 9vh, 6rem) - 1.5rem);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.text[data-hidden] {
+  visibility: hidden;
+}
+
+.eyebrow {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--noir-muted);
+  opacity: 0;
+}
+
+.statement {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: clamp(2.4rem, 7.4vw, 7rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  color: #fff;
+  text-shadow: 0 0 2rem rgb(0 0 0 / 0.5);
+}
+
+.line {
+  display: block;
+  opacity: 0;
+  transform: translate3d(0, 0.5em, 0);
+  will-change: opacity, transform;
+}
+
+.caption {
+  max-width: 26rem;
+  margin: 1.5rem 0 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--noir-muted);
+  opacity: 0;
+}
+
+@media (max-width: 809.98px) {
+  .frame {
+    clip-path: inset(17% 5% round 10px);
+  }
+
+  .statement {
+    font-size: clamp(2.25rem, 12vw, 3.5rem);
+  }
+
+  .caption {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    height: auto;
+  }
+
+  .stage {
+    position: relative;
+  }
+
+  .frame {
+    clip-path: none;
+  }
+
+  .media {
+    transform: none;
+  }
+
+  .mark {
+    display: none;
+  }
+}

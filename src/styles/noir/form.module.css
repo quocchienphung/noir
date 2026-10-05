@@ -1,0 +1,170 @@
+.form {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 810px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 1.5rem;
+  }
+
+  .full {
+    grid-column: 1 / -1;
+  }
+}
+
+.field {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.label {
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--noir-muted);
+}
+
+.optional {
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--noir-faint);
+}
+
+.input {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--noir-line-strong);
+  border-radius: 0.25rem;
+  background: var(--noir-bg-raised);
+  color: var(--noir-text);
+  font: inherit;
+  font-size: 1rem;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.input::placeholder {
+  color: var(--noir-faint);
+}
+
+.input:hover {
+  border-color: rgb(244 241 234 / 0.35);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--noir-text);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+select.input {
+  appearance: none;
+  padding-right: 2.5rem;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position:
+    calc(100% - 1.15rem) 50%,
+    calc(100% - 0.8rem) 50%;
+  background-size: 0.35rem 0.35rem;
+  background-repeat: no-repeat;
+}
+
+select.input option {
+  background: #111;
+  color: var(--noir-text);
+}
+
+.textarea {
+  min-height: 10rem;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.form[data-touched] .input:invalid {
+  border-color: var(--noir-danger);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+}
+
+.submit,
+.copy {
+  display: inline-flex;
+  align-items: center;
+  height: 3rem;
+  padding: 0 1.4rem;
+  border: 0;
+  border-radius: 0.25rem;
+  background: var(--noir-text);
+  color: var(--noir-bg);
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit:hover,
+.copy:hover {
+  background: #fff;
+}
+
+.submit:focus-visible,
+.copy:focus-visible {
+  outline: 2px solid var(--noir-text);
+  outline-offset: 3px;
+}
+
+.note {
+  margin: 0;
+  max-width: 26rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--noir-faint);
+}
+
+.status {
+  outline: none;
+}
+
+.status:empty {
+  display: none;
+}
+
+.status[data-status="invalid"] {
+  color: var(--noir-danger);
+}
+
+.status[data-status="not-sent"],
+.status[data-status="copied"] {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+  padding: 1.25rem 1.4rem;
+  border: 1px solid var(--noir-line-strong);
+  border-left: 2px solid var(--noir-accent);
+  border-radius: 0.25rem;
+  background: var(--noir-bg-raised);
+  color: var(--noir-muted);
+  line-height: 1.55;
+}
+
+.status p {
+  margin: 0;
+}
+
+.statusTitle {
+  color: var(--noir-text);
+  font-weight: 600;
+}

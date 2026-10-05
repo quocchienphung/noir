@@ -1,13 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import { SiteShell } from "@/components/sites/norda-framer-website-3f1ea7cb/shared/SiteShell";
+import { NoirShell } from "@/components/noir/shell/NoirShell";
+import { brand } from "@/data/noir/site";
 import "./globals.css";
 
-// Albert Sans files recovered from the reference @font-face rules (see ASSET_MANIFEST.json).
-// "Albert Sans Variable" is the variable-axis file the source requests at weight 400 for body copy;
-// "Albert Sans" are the 400–900 cuts used for display type, labels, links and small print.
+// Albert Sans (SIL Open Font License 1.1), self-hosted: the variable file for body copy and the static
+// 500–700 cuts for display type and labels.
 const albertVariable = localFont({
-  src: "../../public/sites/norda-framer-website-3f1ea7cb/shared/fonts/albert-sans-variable-400.woff2",
+  src: "../../public/sites/noir/fonts/albert-sans-variable-400.woff2",
   weight: "400",
   style: "normal",
   display: "swap",
@@ -16,56 +16,51 @@ const albertVariable = localFont({
 
 const albert = localFont({
   src: [
-    // 400/600 come from the variable latin file the source injects at runtime (same file for both).
-    { path: "../../public/sites/norda-framer-website-3f1ea7cb/shared/fonts/albert-sans-v4-latin-400-600.woff2", weight: "400", style: "normal" },
-    { path: "../../public/sites/norda-framer-website-3f1ea7cb/shared/fonts/albert-sans-500.woff2", weight: "500", style: "normal" },
-    { path: "../../public/sites/norda-framer-website-3f1ea7cb/shared/fonts/albert-sans-v4-latin-400-600.woff2", weight: "600", style: "normal" },
-    { path: "../../public/sites/norda-framer-website-3f1ea7cb/shared/fonts/albert-sans-700.woff2", weight: "700", style: "normal" },
-    { path: "../../public/sites/norda-framer-website-3f1ea7cb/shared/fonts/albert-sans-900.woff2", weight: "900", style: "normal" },
-    { path: "../../public/sites/norda-framer-website-3f1ea7cb/shared/fonts/albert-sans-500-italic.woff2", weight: "500", style: "italic" },
-    { path: "../../public/sites/norda-framer-website-3f1ea7cb/shared/fonts/albert-sans-700-italic.woff2", weight: "700", style: "italic" },
+    { path: "../../public/sites/noir/fonts/albert-sans-v4-latin-400-600.woff2", weight: "400", style: "normal" },
+    { path: "../../public/sites/noir/fonts/albert-sans-500.woff2", weight: "500", style: "normal" },
+    { path: "../../public/sites/noir/fonts/albert-sans-v4-latin-400-600.woff2", weight: "600", style: "normal" },
+    { path: "../../public/sites/noir/fonts/albert-sans-700.woff2", weight: "700", style: "normal" },
   ],
   display: "swap",
   variable: "--font-albert",
 });
 
-// Framer's default bold face, used only by the year prefixes in team-member Education/Recognition lists.
-const inter = localFont({
-  src: "../../public/sites/norda-framer-website-3f1ea7cb/shared/fonts/inter-700-latin.woff2",
-  weight: "700",
-  style: "normal",
-  display: "swap",
-  variable: "--font-inter",
-});
-
-const description = "Nordå — architecture & design studio template designed for those shaping the future of urban spaces.";
+const title = `${brand.name} — ${brand.tagline}`;
 
 export const metadata: Metadata = {
-  // Local origin only; set NEXT_PUBLIC_SITE_URL when hosting the reconstruction elsewhere.
+  // Local origin only; set NEXT_PUBLIC_SITE_URL when hosting elsewhere.
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
-  title: "Nordå Architects",
-  description,
+  title: { default: title, template: `%s — ${brand.name}` },
+  description: brand.description,
+  applicationName: brand.name,
   icons: {
-    icon: "/sites/norda-framer-website-3f1ea7cb/shared/seo/favicon.png",
-    apple: "/sites/norda-framer-website-3f1ea7cb/shared/seo/apple-touch-icon.png",
+    icon: [
+      { url: "/sites/noir/seo/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/sites/noir/seo/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/sites/noir/seo/apple-touch-icon.png",
   },
+  manifest: "/sites/noir/seo/site.webmanifest",
   openGraph: {
     type: "website",
-    title: "Nordå Architects",
-    description,
-    images: ["/sites/norda-framer-website-3f1ea7cb/shared/seo/og-image.png"],
+    siteName: brand.name,
+    title,
+    description: brand.description,
+    images: [{ url: "/sites/noir/seo/og-image.jpg", width: 1200, height: 630, alt: `${brand.name} — ${brand.tagline}` }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nordå Architects",
-    description,
-    images: ["/sites/norda-framer-website-3f1ea7cb/shared/seo/og-image.png"],
+    title,
+    description: brand.description,
+    images: ["/sites/noir/seo/og-image.jpg"],
   },
   robots: { "max-image-preview": "large" },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
+  themeColor: "#050505",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -74,9 +69,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${albertVariable.variable} ${albert.variable} ${inter.variable}`}>
+    <html lang="en" className={`${albertVariable.variable} ${albert.variable}`}>
       <body>
-        <SiteShell>{children}</SiteShell>
+        <NoirShell>{children}</NoirShell>
       </body>
     </html>
   );

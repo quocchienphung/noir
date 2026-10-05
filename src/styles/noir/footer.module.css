@@ -1,0 +1,149 @@
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 8vw, 6rem);
+  padding: clamp(4rem, 10vw, 8rem) var(--noir-gutter) 1.5rem;
+  border-top: 1px solid var(--noir-line);
+  background: var(--noir-bg);
+  color: var(--noir-text);
+  overflow: hidden;
+}
+
+.top {
+  display: grid;
+  gap: 3rem;
+}
+
+.pitch {
+  max-width: 40rem;
+}
+
+.title {
+  margin: 0 0 2rem;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: clamp(2rem, 4.6vw, 3.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  height: 2.75rem;
+  padding: 0 1.15rem;
+  border-radius: 0.25rem;
+  background: var(--noir-text);
+  color: var(--noir-bg);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.cta:hover {
+  background: #fff;
+}
+
+.ctaIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex: none;
+}
+
+.navList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  gap: 0.75rem 3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navLink {
+  font-size: 1rem;
+  color: var(--noir-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--noir-text);
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+  margin-inline: -0.75rem;
+}
+
+.brandMark {
+  width: clamp(4rem, 12vw, 8.25rem);
+  height: auto;
+}
+
+.brandName {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(4.5rem, 19vw, 17rem);
+  line-height: 0.8;
+  letter-spacing: -0.02em;
+  color: transparent;
+  background: linear-gradient(180deg, rgb(244 241 234 / 0.95), rgb(244 241 234 / 0.18));
+  -webkit-background-clip: text;
+  background-clip: text;
+  user-select: none;
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--noir-line);
+}
+
+.legal {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--noir-faint);
+}
+
+.toTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border: 0;
+  background: none;
+  color: var(--noir-muted);
+  font: inherit;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.toTop:hover {
+  color: var(--noir-text);
+}
+
+.cta:focus-visible,
+.navLink:focus-visible,
+.toTop:focus-visible {
+  outline: 2px solid var(--noir-text);
+  outline-offset: 4px;
+}
+
+@media (min-width: 810px) {
+  .top {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+}

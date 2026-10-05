@@ -1,124 +1,75 @@
 #!/usr/bin/env node
-// Static upstream-independence checks for the Nordå reconstruction (complements the request blocking in
-// tests/qa-routes.mjs and tests/qa-behaviors.mjs).
-// Usage: node tests/qa-independence.mjs   (run after `npm run build` so .next/ output is scanned too)
-// 1. Scans runtime source (src/), served files (public/) and build output (.next/server, .next/static)
-//    for upstream hosts, analytics and remote font CDNs. Provenance files (docs/, scripts/) are excluded.
-// 2. Checks prerendered HTML for canonical/og:url/refresh/form targets pointing off-site.
-// 3. Verifies that no reference screenshot (docs/design-references) is served from public/ or imported.
-// 4. Verifies every file under public/sites/<site>/ is an original-media entry in ASSET_MANIFEST.json
-//    (same path and sha256) and that every manifest entry exists on disk.
+// Static brand + independence checks for NOIR. Run after `npm run build` so .next/ output is scanned too.
+// Usage: node tests/qa-independence.mjs
+// 1. Runtime source (src/), served files (public/) and build output (.next/server, .next/static) contain no
+//    old-brand strings and no references to reference/upstream hosts (Eventide, YouTube, Framer, font CDNs,
+//    analytics). Provenance and research files (docs/, scripts/, prompt/) are excluded on purpose.
+// 2. No <iframe>/<video> embeds of third-party media in source.
+// 3. No reference screenshot (docs/design-references) is served from public/.
+// 4. Every file under public/sites/noir/ is listed in docs/research/noir/MEDIA_PROVENANCE.md.
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1")), "..");
-const SITE = "norda-framer-website-3f1ea7cb";
-const UPSTREAM = [
-  /framerusercontent\.com/i,
-  /norda\.framer\.website/i,
-  /framer\.website/i,
-  /framer\.com/i,
-  /framer\.app/i,
-  /framerstatic\.com/i,
-  /events\.framer/i,
-  /fonts\.gstatic\.com/i,
-  /fonts\.googleapis\.com/i,
-  /googletagmanager\.com/i,
-  /google-analytics\.com/i,
+const HOSTS = [
+  /eventide\.framer\.ai/i,
+  /youtube\.com|youtu\.be|ytimg\.com|googlevideo\.com/i,
+  /framerusercontent\.com|framer\.website|framer\.app|framerstatic\.com/i,
+  /fonts\.gstatic\.com|fonts\.googleapis\.com/i,
+  /googletagmanager\.com|google-analytics\.com/i,
 ];
-const TEXT_EXT = new Set([".ts", ".tsx", ".js", ".mjs", ".cjs", ".css", ".json", ".html", ".svg", ".txt", ".rsc", ".webmanifest", ".map", ".body", ".meta"]);
+const OLD_BRAND = [/nord[åa]/i, /NORDÅ/, /norda-framer-website/i, /crafting spaces/i, /\barchitects\b/i, /WaveMark/];
+const TEXT_EXT = new Set([".ts", ".tsx", ".js", ".mjs", ".css", ".json", ".html", ".svg", ".txt", ".rsc", ".webmanifest", ".body", ".meta"]);
+const failures = [];
 
 function walk(dir, out = []) {
   if (!fs.existsSync(dir)) return out;
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, e.name);
     if (e.isDirectory()) {
-      if (e.name === "cache" || e.name === "node_modules") continue;
+      if (["cache", "node_modules", "dev", "types"].includes(e.name)) continue;
       walk(p, out);
     } else out.push(p);
   }
   return out;
 }
-const rel = (p) => path.relative(ROOT, p).split(path.sep).join("/");
-const sha = (p) => crypto.createHash("sha256").update(fs.readFileSync(p)).digest("hex");
+const rel = (p) => path.relative(ROOT, p).replaceAll("\\", "/");
 
-// 1. Upstream references in runtime code / served files / build output.
-const scanRoots = ["src", "public", ".next/server", ".next/static"].map((d) => path.join(ROOT, d));
-const hits = [];
-let scanned = 0;
-for (const root of scanRoots) {
-  for (const file of walk(root)) {
-    if (!TEXT_EXT.has(path.extname(file).toLowerCase())) continue;
-    scanned++;
-    const text = fs.readFileSync(file, "utf8");
-    for (const re of UPSTREAM) {
-      const m = text.match(new RegExp(`.{0,60}${re.source}.{0,60}`, "i"));
-      if (m) hits.push({ file: rel(file), pattern: re.source, context: m[0].replace(/\s+/g, " ") });
-    }
+const scanned = [...walk(path.join(ROOT, "src")), ...walk(path.join(ROOT, "public")), ...walk(path.join(ROOT, ".next/server")), ...walk(path.join(ROOT, ".next/static"))].filter((f) =>
+  TEXT_EXT.has(path.extname(f)),
+);
+for (const f of scanned) {
+  const text = fs.readFileSync(f, "utf8");
+  for (const re of [...HOSTS, ...OLD_BRAND]) {
+    const m = text.match(re);
+    if (m) failures.push(`${rel(f)}: matches ${re} ("${m[0]}")`);
   }
 }
 
-// 2. Prerendered HTML metadata / form targets.
-const htmlIssues = [];
-for (const file of walk(path.join(ROOT, ".next/server/app"))) {
-  if (!file.endsWith(".html")) continue;
-  const html = fs.readFileSync(file, "utf8");
-  for (const [label, re] of [
-    ["canonical", /<link[^>]+rel="canonical"[^>]*>/gi],
-    ["og:url", /<meta[^>]+property="og:url"[^>]*>/gi],
-    ["refresh", /<meta[^>]+http-equiv="refresh"[^>]*>/gi],
-    ["form action", /<form[^>]+action="[^"]*"[^>]*>/gi],
-    ["external href", /<a[^>]+href="(https?:)?\/\/[^"]*"[^>]*>/gi],
-  ]) {
-    for (const m of html.match(re) ?? []) {
-      const offsite = /https?:\/\/(?!localhost)/i.test(m) || /href="\/\//i.test(m);
-      if (label === "form action" || offsite) htmlIssues.push({ file: rel(file), label, tag: m.slice(0, 200) });
-    }
-  }
+for (const f of walk(path.join(ROOT, "src")).filter((f) => /\.(tsx|ts)$/.test(f))) {
+  const text = fs.readFileSync(f, "utf8");
+  if (/<iframe\b/i.test(text)) failures.push(`${rel(f)}: contains an iframe`);
+  if (/<video\b/i.test(text)) failures.push(`${rel(f)}: contains a video element (no licensed footage is used)`);
 }
 
-// 3. Reference screenshots must not be served or imported.
-// Empty placeholder files (.gitkeep) are ignored — they hash identically everywhere.
-const refShots = walk(path.join(ROOT, "docs/design-references")).filter((f) => fs.statSync(f).size > 0);
-const refHashes = new Map(refShots.map((f) => [sha(f), rel(f)]));
+const hash = (f) => crypto.createHash("sha256").update(fs.readFileSync(f)).digest("hex");
+const refHashes = new Set(walk(path.join(ROOT, "docs/design-references")).map(hash));
+// empty template placeholders (.gitkeep) are neither media nor served content
 const publicFiles = walk(path.join(ROOT, "public")).filter((f) => fs.statSync(f).size > 0);
-const leakedScreens = publicFiles.filter((f) => refHashes.has(sha(f))).map((f) => ({ file: rel(f), sameAs: refHashes.get(sha(f)) }));
-const importsOfRefs = walk(path.join(ROOT, "src")).filter((f) => /design-references/.test(fs.readFileSync(f, "utf8"))).map(rel);
+for (const f of publicFiles) if (refHashes.has(hash(f))) failures.push(`${rel(f)}: identical to a reference capture in docs/design-references`);
 
-// 4. Served site media ⇔ original-media manifest.
-const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, "docs/research", SITE, "ASSET_MANIFEST.json"), "utf8"));
-const entries = Array.isArray(manifest) ? manifest : manifest.assets ?? [];
-const byPath = new Map(entries.map((e) => [e.localPath, e]));
-const siteFiles = walk(path.join(ROOT, "public/sites", SITE));
-const unlisted = [];
-const hashMismatch = [];
-for (const f of siteFiles) {
-  const local = "/" + rel(f).replace(/^public\//, "");
-  const e = byPath.get(local);
-  if (!e) unlisted.push(local);
-  else if (e.sha256 && e.sha256 !== sha(f)) hashMismatch.push(local);
+const provenance = fs.readFileSync(path.join(ROOT, "docs/research/noir/MEDIA_PROVENANCE.md"), "utf8");
+for (const f of walk(path.join(ROOT, "public/sites/noir"))) {
+  const p = rel(f).replace(/^public/, "");
+  if (!provenance.includes(p)) failures.push(`${p}: not listed in MEDIA_PROVENANCE.md`);
 }
-const missingOnDisk = entries.filter((e) => e.status === "ok" && !fs.existsSync(path.join(ROOT, "public", e.localPath))).map((e) => e.localPath);
+const strays = publicFiles.filter((f) => !rel(f).startsWith("public/sites/noir/"));
+strays.forEach((f) => failures.push(`${rel(f)}: served file outside public/sites/noir`));
 
-const report = {
-  generatedAt: new Date().toISOString(),
-  buildOutputScanned: fs.existsSync(path.join(ROOT, ".next/server")),
-  filesScanned: scanned,
-  upstreamReferences: hits,
-  prerenderedHtmlIssues: htmlIssues,
-  referenceScreenshots: { count: refShots.length, servedFromPublic: leakedScreens, referencedFromSrc: importsOfRefs },
-  assets: { manifestEntries: entries.length, servedFiles: siteFiles.length, unlisted, hashMismatch, missingOnDisk },
-};
-const out = path.join(ROOT, "docs/research", SITE, "qa/independence-report.json");
-fs.mkdirSync(path.dirname(out), { recursive: true });
-fs.writeFileSync(out, JSON.stringify(report, null, 2));
-
-console.log(`scanned ${scanned} files (build output ${report.buildOutputScanned ? "included" : "MISSING — run npm run build"})`);
-console.log(`upstream references: ${hits.length}`);
-for (const h of hits.slice(0, 40)) console.log(`  ${h.file} [${h.pattern}] … ${h.context}`);
-console.log(`prerendered HTML issues: ${htmlIssues.length}`);
-for (const h of htmlIssues.slice(0, 20)) console.log(`  ${h.file} ${h.label}: ${h.tag}`);
-console.log(`reference screenshots: ${refShots.length} · served from public/: ${leakedScreens.length} · referenced from src/: ${importsOfRefs.length}`);
-console.log(`site media: ${siteFiles.length} served files · ${entries.length} manifest entries · unlisted ${unlisted.length} · hash mismatch ${hashMismatch.length} · missing ${missingOnDisk.length}`);
-if (hits.length || htmlIssues.length || leakedScreens.length || importsOfRefs.length || unlisted.length || hashMismatch.length || missingOnDisk.length || !report.buildOutputScanned) process.exitCode = 1;
+console.log(`scanned ${scanned.length} text files, ${publicFiles.length} public files`);
+if (failures.length) {
+  console.log(`FAIL (${failures.length})\n` + failures.slice(0, 60).join("\n"));
+  process.exit(1);
+}
+console.log("PASS");

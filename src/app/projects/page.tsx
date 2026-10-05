@@ -1,27 +1,67 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/sites/norda-framer-website-3f1ea7cb/shared/templates/PageHeader";
-import { InnerMain, LeadText } from "@/components/sites/norda-framer-website-3f1ea7cb/shared/templates/InnerMain";
-import { RecordList } from "@/components/sites/norda-framer-website-3f1ea7cb/shared/RecordList";
-import { ProjectStack } from "@/components/sites/norda-framer-website-3f1ea7cb/projects-902ceeb2/ProjectStack";
-import { archiveProjects, projectCards, projectsHeader, projectsIntro, projectsOutro } from "@/data/sites/norda-framer-website-3f1ea7cb/projects";
-import s from "@/styles/sites/norda-framer-website-3f1ea7cb/projects-902ceeb2/projects.module.css";
+import Link from "next/link";
+import { ArrowIcon, PageHeader } from "@/components/noir/sections";
+import { routes, services, work } from "@/data/noir/site";
+import s from "@/styles/noir/pages.module.css";
 
-// Source route: /projects (page key projects-902ceeb2)
-export const metadata: Metadata = { title: "Nordå Architects" };
+export const metadata: Metadata = { title: work.title, description: work.intro };
 
-export default function ProjectsPage() {
+// `/projects` ("Work"): honest about what can be shown publicly — no invented case studies.
+export default function WorkPage() {
   return (
-    <>
-      <PageHeader image={projectsHeader.image} intro={projectsHeader.intro} title={projectsHeader.title} />
-      <InnerMain>
-        <LeadText lead={projectsIntro.lead} body={projectsIntro.body} className={s.intro} />
-        <ProjectStack projects={projectCards}>
-          <section className={s.archive} aria-labelledby="nd-archive-title">
-            <RecordList id="nd-archive-title" title="Archive Projects" rows={archiveProjects.map((r) => ({ ...r, cursor: "none" }))} />
-          </section>
-        </ProjectStack>
-        <LeadText lead={projectsOutro.lead} body={projectsOutro.body} />
-      </InnerMain>
-    </>
+    <main>
+      <PageHeader eyebrow="Selected experiments" title={work.title} lead={work.intro} />
+
+      <section className={s.section} aria-label="Experiments">
+        <div className={s.inner}>
+          <ul className={s.cards}>
+            {work.experiments.map((item, i) => (
+              <li key={item.id} className={s.card}>
+                <div className={s.cardMeta}>
+                  <span>{String(i + 1).padStart(2, "0")}</span>
+                  <span>{item.kind}</span>
+                  <span>{item.year}</span>
+                </div>
+                <h2 className={s.cardTitle}>{item.title}</h2>
+                <p className={s.cardBody}>{item.body}</p>
+                <ul className={s.tags} aria-label="Stack">
+                  {item.stack.map((t) => (
+                    <li key={t}>{t}</li>
+                  ))}
+                </ul>
+                <Link href={item.href} className={s.textLink}>
+                  {item.cta}
+                  <ArrowIcon direction="right" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className={s.section} aria-labelledby="work-capabilities">
+        <div className={s.inner}>
+          <div className={s.twoCol}>
+            <h2 id="work-capabilities" className={s.h2}>
+              What we can build for you
+            </h2>
+            <ul className={s.list}>
+              {services.map((service) => (
+                <li key={service.id} className={s.listItem}>
+                  <h3 className={s.h3}>{service.title}</h3>
+                  <p className={s.muted}>{service.summary}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <p className={s.note}>
+            {work.note}{" "}
+            <Link href={routes.contact} className={s.inlineLink}>
+              Contact
+            </Link>
+          </p>
+        </div>
+      </section>
+    </main>
   );
 }

@@ -2,8 +2,18 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  // Routes from the previous site that NOIR does not have. Temporary (307) so they can be reused later.
+  async redirects() {
+    return [
+      { source: "/projects/:slug", destination: "/projects", permanent: false },
+      { source: "/team/:slug*", destination: "/about", permanent: false },
+      { source: "/jobs/:slug*", destination: "/contact", permanent: false },
+      { source: "/news", destination: "/", permanent: false },
+      { source: "/news/:slug*", destination: "/", permanent: false },
+    ];
+  },
   images: {
-    // Only the locally served reconstruction media may be optimized; nothing remote.
+    // Only locally served media may be optimized; nothing remote.
     localPatterns: [{ pathname: "/sites/**", search: "" }],
     deviceSizes: [390, 640, 810, 1080, 1200, 1440, 1920, 2560, 3840],
   },

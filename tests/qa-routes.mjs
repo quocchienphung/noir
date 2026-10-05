@@ -1,115 +1,118 @@
 #!/usr/bin/env node
-// Route + runtime-independence QA for the Nordå reconstruction.
-// Usage: node tests/qa-routes.mjs [baseUrl=http://localhost:3200] [widths=1440,1024,390]
-// For every route it opens a fresh browser context (service workers blocked), aborts every request that is
-// not to the local origin (recording it), loads the page, scrolls to trigger lazy media, and checks:
-// HTTP status, console errors / page errors, failed same-origin requests, broken images / video,
-// horizontal overflow, and document height (compared with the reference crawl when available).
-import fs from "node:fs";
-import path from "node:path";
+// Route QA for NOIR.
+// Usage: node tests/qa-routes.mjs [baseUrl=http://localhost:3200] [widths=1440,1280,768,390,320]
+// Per route × width (fresh context, off-origin requests aborted and recorded): HTTP status, console/page
+// errors, failed same-origin requests (missing assets), horizontal overflow, NOIR title, no old-brand text,
+// no transparent-but-focusable controls. Then: every internal link resolves, retired routes redirect.
 import { chromium } from "playwright";
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1")), "..");
-const SITE = "norda-framer-website-3f1ea7cb";
 const base = process.argv[2] || "http://localhost:3200";
-const widths = (process.argv[3] || "1440,1024,390").split(",").map(Number);
+const widths = (process.argv[3] || "1440,1280,768,390,320").split(",").map(Number);
 const origin = new URL(base).origin;
 
-const crawl = JSON.parse(fs.readFileSync(path.join(ROOT, "docs/research", SITE, "raw/crawl.json"), "utf8"));
-const routes = [...crawl.map((c) => ({ path: c.path, expect: c.path === "/404" ? 404 : 200, ref: c })), { path: "/this-route-does-not-exist", expect: 404 }, { path: "/projects/unknown-slug", expect: 404 }];
+const routes = [
+  { path: "/", expect: 200 },
+  { path: "/projects", expect: 200 },
+  { path: "/about", expect: 200 },
+  { path: "/contact", expect: 200 },
+  { path: "/privacy-policy", expect: 200 },
+  { path: "/404", expect: 404 },
+  { path: "/this-route-does-not-exist", expect: 404 },
+];
+const redirects = [
+  ["/projects/verve-tower", "/projects"],
+  ["/team/erik-lindholm", "/about"],
+  ["/jobs/interior-designer", "/contact"],
+  ["/news", "/"],
+  ["/news/how-architecture-shapes-productivity", "/"],
+];
+// "Architect"/"architecture" are legitimate in NOIR's software sense (process step, services), so only the
+// old brand and the architecture-firm vocabulary are flagged.
+const OLD_BRAND = /nord[åa]|\barchitects\b|interior design|urban spaces|crafting spaces/i;
 
 const browser = await chromium.launch({ channel: "chrome" });
-const results = [];
+const failures = [];
+const links = new Set();
+const fail = (msg) => failures.push(msg);
 
 for (const route of routes) {
   for (const w of widths) {
     const ctx = await browser.newContext({ viewport: { width: w, height: w >= 810 ? 900 : 844 }, serviceWorkers: "block" });
-    const blocked = [];
-    const failed = [];
-    const consoleErrors = [];
+    const tag = `${route.path} @${w}`;
     await ctx.route("**/*", (r) => {
       const u = new URL(r.request().url());
       if (u.origin === origin || u.protocol === "data:" || u.protocol === "blob:") return r.continue();
-      blocked.push(r.request().url());
+      fail(`${tag}: off-origin request ${u.href}`);
       return r.abort();
     });
     const page = await ctx.newPage();
     page.on("console", (m) => {
-      const text = m.text();
-      // The expected 404 document itself is reported by Chrome as a failed resource.
-      if (m.type() === "error" && !(route.expect === 404 && text.includes("status of 404"))) consoleErrors.push(text.slice(0, 300));
+      if (m.type() === "error" && !(route.expect === 404 && m.text().includes("status of 404"))) fail(`${tag}: console ${m.text().slice(0, 200)}`);
     });
-    page.on("pageerror", (e) => consoleErrors.push("pageerror: " + String(e).slice(0, 300)));
-    page.on("requestfailed", (r) => {
-      const err = r.failure()?.errorText ?? "";
-      // Media range requests are routinely cancelled by the browser (ERR_ABORTED); not a failure.
-      if (new URL(r.url()).origin === origin && !(r.resourceType() === "media" && err.includes("ERR_ABORTED"))) failed.push(`${r.url()} ${err}`);
-    });
+    page.on("pageerror", (e) => fail(`${tag}: pageerror ${String(e).slice(0, 200)}`));
     page.on("response", (r) => {
-      const isDocument = r.request().resourceType() === "document";
-      if (new URL(r.url()).origin === origin && r.status() >= 400 && !(isDocument && route.expect === 404)) failed.push(`${r.status()} ${r.url()}`);
+      const doc = r.request().resourceType() === "document";
+      if (new URL(r.url()).origin === origin && r.status() >= 400 && !(doc && route.expect === 404)) fail(`${tag}: ${r.status()} ${r.url()}`);
     });
-    let status = 0;
-    try {
-      const resp = await page.goto(base + route.path, { waitUntil: "networkidle", timeout: 120000 });
-      status = resp?.status() ?? 0;
-      await page.evaluate(() => document.fonts.ready);
-      await page.evaluate(async () => {
-        for (let y = 0; y < document.documentElement.scrollHeight; y += 500) {
-          window.scrollTo(0, y);
-          await new Promise((r) => setTimeout(r, 60));
-        }
-        window.scrollTo(0, 0);
-        await new Promise((r) => setTimeout(r, 400));
-      });
-      await page.waitForLoadState("networkidle");
-      const info = await page.evaluate(() => {
-        const imgs = [...document.querySelectorAll("img")];
-        // Lazy images that were never requested (hidden breakpoint variants, off-screen slides) are not broken.
-        const broken = imgs.filter((i) => i.complete && i.naturalWidth === 0 && (i.currentSrc || i.src)).map((i) => i.currentSrc || i.src);
-        const pending = imgs.filter((i) => !i.complete).length;
-        const videos = [...document.querySelectorAll("video")].map((v) => ({ src: v.currentSrc, ready: v.readyState, err: v.error?.code ?? null }));
-        const fonts = [...document.fonts].filter((f) => f.status === "loaded").map((f) => `${f.family} ${f.weight} ${f.style}`);
-        return {
-          title: document.title,
-          height: document.documentElement.scrollHeight,
-          overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
-          images: imgs.length,
-          broken,
-          pending,
-          videos,
-          fonts: [...new Set(fonts)],
-          h1: [...document.querySelectorAll("h1")].map((h) => h.textContent.trim()).slice(0, 2),
-        };
-      });
-      const refHeight = route.ref ? (w === 1440 ? route.ref.height1440 : w === 390 ? route.ref.height390 : null) : null;
-      results.push({ path: route.path, width: w, status, expect: route.expect, refHeight, ...info, blocked, failed, consoleErrors });
-    } catch (e) {
-      results.push({ path: route.path, width: w, status, expect: route.expect, error: String(e).slice(0, 300), blocked, failed, consoleErrors });
+    const res = await page.goto(base + route.path, { waitUntil: "load" });
+    if (res?.status() !== route.expect) fail(`${tag}: status ${res?.status()} (expected ${route.expect})`);
+    // walk the page so lazy images and scroll-driven sections run
+    const h = await page.evaluate(() => document.documentElement.scrollHeight);
+    for (let y = 0; y < h; y += 700) {
+      await page.evaluate((y) => window.scrollTo(0, y), y);
+      await page.waitForTimeout(60);
     }
+    await page.waitForTimeout(400);
+    const info = await page.evaluate((re) => {
+      const brand = new RegExp(re, "i");
+      const text = document.body.innerText + " " + [...document.querySelectorAll("[alt],[aria-label],[title]")].map((e) => `${e.getAttribute("alt") ?? ""} ${e.getAttribute("aria-label") ?? ""} ${e.getAttribute("title") ?? ""}`).join(" ");
+      const ghostFocusable = [...document.querySelectorAll("a[href],button,input,select,textarea,[tabindex]:not([tabindex='-1'])")].filter((el) => {
+        if (el.closest("[inert]")) return false;
+        const cs = getComputedStyle(el);
+        if (cs.visibility === "hidden" || cs.display === "none") return false;
+        let n = el;
+        while (n && n !== document.body) {
+          if (parseFloat(getComputedStyle(n).opacity) < 0.05) return true;
+          n = n.parentElement;
+        }
+        return false;
+      }).map((el) => el.outerHTML.slice(0, 80));
+      const imgs = [...document.images].filter((i) => i.complete && i.naturalWidth === 0 && i.currentSrc).map((i) => i.currentSrc);
+      return {
+        title: document.title,
+        overflow: document.documentElement.scrollWidth - window.innerWidth,
+        oldBrand: (text.match(brand) || [])[0] ?? null,
+        ghostFocusable,
+        brokenImages: imgs,
+        links: [...document.querySelectorAll("a[href^='/']")].map((a) => a.getAttribute("href")),
+      };
+    }, OLD_BRAND.source);
+    if (!/NOIR/.test(info.title)) fail(`${tag}: title "${info.title}" lacks NOIR`);
+    if (info.overflow > 0) fail(`${tag}: horizontal overflow ${info.overflow}px`);
+    if (info.oldBrand) fail(`${tag}: old brand text "${info.oldBrand}"`);
+    if (info.ghostFocusable.length) fail(`${tag}: focusable but transparent: ${info.ghostFocusable.join(", ")}`);
+    if (info.brokenImages.length) fail(`${tag}: broken images ${info.brokenImages.join(", ")}`);
+    info.links.forEach((l) => links.add(l.split("#")[0]));
     await ctx.close();
   }
 }
-await browser.close();
 
-const outDir = path.join(ROOT, "docs/research", SITE, "qa");
-fs.mkdirSync(outDir, { recursive: true });
-fs.writeFileSync(path.join(outDir, "route-report.json"), JSON.stringify({ base, date: new Date().toISOString(), results }, null, 2));
-
-let problems = 0;
-for (const r of results) {
-  const issues = [];
-  if (r.error) issues.push("ERROR " + r.error);
-  if (r.status !== r.expect) issues.push(`status ${r.status} != ${r.expect}`);
-  if (r.blocked.length) issues.push(`external requests: ${r.blocked.length} (${r.blocked.slice(0, 2).join(", ")})`);
-  if (r.failed.length) issues.push(`failed: ${r.failed.slice(0, 3).join(", ")}`);
-  if (r.consoleErrors.length) issues.push(`console: ${r.consoleErrors.slice(0, 2).join(" | ")}`);
-  if (r.broken?.length) issues.push(`broken images: ${r.broken.length}`);
-  if (r.videos?.some((v) => v.err)) issues.push("video error");
-  if (r.overflowX > 0) issues.push(`horizontal overflow ${r.overflowX}px`);
-  const drift = r.refHeight ? r.height - r.refHeight : null;
-  if (issues.length) problems++;
-  console.log(`${issues.length ? "✗" : "✓"} ${r.path} @${r.width} status ${r.status} h${r.height ?? "-"}${drift !== null ? ` (ref ${r.refHeight}, Δ${drift})` : ""}${issues.length ? "\n    " + issues.join("\n    ") : ""}`);
+// internal links
+for (const href of links) {
+  const r = await fetch(base + href, { redirect: "manual" });
+  if (r.status >= 400) fail(`link ${href}: ${r.status}`);
 }
-console.log(`\n${results.length} checks, ${problems} with issues. Report: docs/research/${SITE}/qa/route-report.json`);
-process.exitCode = problems ? 1 : 0;
+// retired routes
+for (const [from, to] of redirects) {
+  const r = await fetch(base + from, { redirect: "manual" });
+  const loc = r.headers.get("location");
+  if (![307, 308].includes(r.status) || new URL(loc ?? "", base).pathname !== to) fail(`redirect ${from}: ${r.status} → ${loc} (expected ${to})`);
+}
+
+await browser.close();
+console.log(`routes: ${routes.length} × ${widths.length} widths, ${links.size} internal links, ${redirects.length} redirects`);
+if (failures.length) {
+  console.log(`FAIL (${failures.length})\n` + failures.join("\n"));
+  process.exit(1);
+}
+console.log("PASS");

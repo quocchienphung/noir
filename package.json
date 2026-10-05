@@ -34,7 +34,7 @@
     "typecheck": "tsc --noEmit",
     "check": "npm run lint && npm run typecheck && npm run build",
     "qa:routes": "node tests/qa-routes.mjs",
-    "qa:behaviors": "node tests/qa-behaviors.mjs",
+    "qa:scroll": "node tests/qa-scroll.mjs",
     "qa:independence": "node tests/qa-independence.mjs",
     "qa:visual": "node tests/qa-visual.mjs"
   },

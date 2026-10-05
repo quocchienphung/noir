@@ -7,7 +7,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* Nordå: body copy uses the Albert Sans variable file at 400, display type the static 500/700 cuts. */
+  /* NOIR: body copy uses the Albert Sans variable file, display type the static 500/600 cuts. */
   --font-sans: var(--font-albert-variable), "Albert Sans Variable Placeholder", sans-serif;
   --font-mono: ui-monospace, monospace;
   --font-heading: var(--font-albert), "Albert Sans Placeholder", sans-serif;
@@ -50,9 +50,10 @@
 }
 
 :root {
-  /* MEASURED Framer tokens: white #fff, black #000, gray #777, near-black #111. */
-  --background: #fff;
-  --foreground: #000;
+  /* NOIR is dark on every route: near-black ground, warm ivory text. */
+  color-scheme: dark;
+  --background: #050505;
+  --foreground: #f4f1ea;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);

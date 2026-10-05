@@ -1,0 +1,26 @@
+.mark {
+  display: block;
+  flex: none;
+  object-fit: contain;
+  user-select: none;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+/* The burst's petals reach the tile edge; a little negative margin keeps optical alignment with the text. */
+.wordmarkMark {
+  margin: -0.35rem -0.1rem -0.35rem -0.35rem;
+}
+
+.wordmarkText {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: 1;
+  letter-spacing: 0.26em;
+  margin-right: -0.26em;
+}

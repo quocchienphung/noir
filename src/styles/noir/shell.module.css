@@ -1,0 +1,67 @@
+/* NOIR visual tokens (documented in docs/research/noir/VISUAL_TOKENS.md). */
+
+.shell {
+  --noir-bg: #050505;
+  --noir-bg-raised: #0c0c0c;
+  --noir-surface: #121212;
+  --noir-line: rgb(244 241 234 / 0.1);
+  --noir-line-strong: rgb(244 241 234 / 0.22);
+  --noir-text: #f4f1ea;
+  --noir-muted: rgb(244 241 234 / 0.64);
+  --noir-faint: rgb(244 241 234 / 0.5);
+  --noir-accent: #f2a65a;
+  --noir-danger: #ff8a7a;
+  --noir-gutter: 1.25rem;
+  --noir-header-h: 4rem;
+  --noir-section-y: 6rem;
+  --noir-max: 90rem;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--noir-bg);
+  color: var(--noir-text);
+  font-family: var(--font-sans);
+}
+
+@media (min-width: 810px) {
+  .shell {
+    --noir-gutter: 2.5rem;
+    --noir-header-h: 4.5rem;
+    --noir-section-y: 8rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .shell {
+    --noir-gutter: 4rem;
+    --noir-section-y: 10rem;
+  }
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  outline: none;
+}
+
+.skip {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 60;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.25rem;
+  background: var(--noir-text);
+  color: var(--noir-bg);
+  font-weight: 500;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip:focus-visible {
+  transform: none;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}

@@ -1,0 +1,382 @@
+/* NOIR intro: tall scroll track with a sticky full-viewport stage (timeline in docs/research/noir/SCROLL_TIMELINE.md). */
+
+.track {
+  position: relative;
+  height: 320vh;
+  height: 320svh;
+  background: #000;
+  color: #f4f1ea;
+}
+
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+}
+
+.canvas {
+  z-index: 0;
+}
+
+/* Legibility scrim behind the opening copy; fades with the headline. */
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgb(0 0 0 / 0.55) 0%, rgb(0 0 0 / 0) 26%),
+    linear-gradient(0deg, rgb(0 0 0 / 0.6) 0%, rgb(0 0 0 / 0) 34%);
+}
+
+.headline {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  margin: 0;
+  pointer-events: none;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: clamp(2.6rem, 7.1vw, 7.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  color: #fff;
+}
+
+.line1,
+.line2 {
+  position: absolute;
+  display: block;
+  white-space: nowrap;
+  will-change: transform, opacity, filter;
+  text-shadow: 0 0 40px rgb(0 0 0 / 0.35);
+}
+
+.line1 {
+  top: clamp(6.5rem, 12.5vh, 8rem);
+  left: clamp(1rem, 7.8vw, 7rem);
+  transform-origin: 0% 50%;
+}
+
+.line2 {
+  right: clamp(1rem, 6.9vw, 7.5rem);
+  bottom: clamp(4.5rem, 10vh, 6.5rem);
+  transform-origin: 100% 50%;
+}
+
+.lead {
+  position: absolute;
+  z-index: 3;
+  left: clamp(1rem, 7.8vw, 7rem);
+  bottom: clamp(4.5rem, 9.5vh, 5.75rem);
+  width: min(23rem, calc(100vw - 2rem));
+  will-change: opacity, transform, filter;
+}
+
+.lead[data-hidden] {
+  visibility: hidden;
+}
+
+.leadText {
+  margin: 0 0 1.75rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgb(244 241 234 / 0.72);
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  height: 2.5rem;
+  padding: 0 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.ctaPrimary {
+  background: #f4f1ea;
+  color: #050505;
+}
+
+.ctaPrimary:hover {
+  background: #fff;
+}
+
+.ctaSecondary {
+  border: 1px solid rgb(255 255 255 / 0.18);
+  background: rgb(10 10 10 / 0.55);
+  color: #f4f1ea;
+  backdrop-filter: blur(6px);
+}
+
+.ctaSecondary:hover {
+  border-color: rgb(255 255 255 / 0.45);
+}
+
+.ctaPrimary:focus-visible,
+.ctaSecondary:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.ctaIcon {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex: none;
+}
+
+/* Distance readout: rides down the ruler as the camera falls in. */
+.gauge {
+  --gauge-y: 0;
+  position: absolute;
+  z-index: 3;
+  right: 1.9rem;
+  top: calc(7.25rem + var(--gauge-y) * (100% - 13rem));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  text-shadow: 0 0 6px rgb(0 0 0 / 0.9), 0 0 14px rgb(0 0 0 / 0.6);
+  pointer-events: none;
+}
+
+.gauge::after {
+  content: "";
+  position: absolute;
+  top: 0.65rem;
+  right: -1.9rem;
+  width: 1.4rem;
+  height: 1px;
+  background: rgb(255 255 255 / 0.6);
+}
+
+.gaugeLabel {
+  color: rgb(244 241 234 / 0.5);
+}
+
+.gaugeValue {
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.gaugeValue sub {
+  font-size: 0.7em;
+  vertical-align: -0.25em;
+}
+
+.ruler {
+  position: absolute;
+  z-index: 2;
+  top: 7.5rem;
+  bottom: 4.5rem;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+.tick,
+.tickMajor {
+  display: block;
+  height: 1px;
+  background: rgb(255 255 255 / 0.22);
+}
+
+.tick {
+  width: 0.4rem;
+}
+
+.tickMajor {
+  width: 0.75rem;
+  background: rgb(255 255 255 / 0.4);
+}
+
+.cue {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 1.25rem;
+  margin: 0;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgb(244 241 234 / 0.85);
+  pointer-events: none;
+}
+
+.cueLine {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 0.45rem);
+  width: 1px;
+  height: 1.25rem;
+  background: linear-gradient(180deg, #fff, rgb(255 255 255 / 0));
+  animation: cue 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  transform-origin: top;
+}
+
+@keyframes cue {
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(1) translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* Arrives out of the dark after the horizon crossing. */
+.statement {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  margin: auto;
+  width: min(44rem, calc(100% - 2.5rem));
+  height: fit-content;
+  text-align: center;
+  opacity: 0;
+  will-change: opacity, transform, filter;
+}
+
+.statement[data-hidden] {
+  visibility: hidden;
+}
+
+.statementTitle {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: clamp(1.75rem, 3.4vw, 3rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  color: #fff;
+  text-wrap: balance;
+}
+
+.statementBody {
+  margin: 1.25rem auto 0;
+  max-width: 30rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgb(244 241 234 / 0.62);
+  text-wrap: balance;
+}
+
+@media (max-width: 809.98px) {
+  .headline {
+    font-size: clamp(2.35rem, 11.6vw, 4.25rem);
+    line-height: 0.98;
+  }
+
+  .line1 {
+    top: 6.25rem;
+    left: 1.25rem;
+    white-space: normal;
+    width: 8ch;
+  }
+
+  .line2 {
+    left: 1.25rem;
+    right: auto;
+    top: calc(6.25rem + 2.1em);
+    bottom: auto;
+    white-space: normal;
+    width: 7ch;
+    transform-origin: 0% 50%;
+  }
+
+  .lead {
+    left: 1.25rem;
+    bottom: 4.25rem;
+    width: min(30rem, calc(100% - 2.5rem));
+  }
+
+  .leadText {
+    font-size: 0.9375rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* below the stacked headline on phones, so the two never collide */
+  .gauge {
+    right: 1.4rem;
+    top: calc(19.5rem + var(--gauge-y) * (100% - 25rem));
+    font-size: 0.6875rem;
+  }
+
+  .ruler {
+    top: 6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* One still scene, copy below it; nothing is scroll-scrubbed and scrolling is never captured. */
+  .track {
+    height: auto;
+  }
+
+  .stage {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+
+  .scene {
+    position: relative;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+  }
+
+  .line1,
+  .line2,
+  .lead,
+  .statement {
+    will-change: auto;
+  }
+
+  .cueLine {
+    animation: none;
+  }
+
+  .statement {
+    position: relative;
+    inset: auto;
+    margin: 0 auto;
+    padding: clamp(5rem, 14vh, 9rem) 0;
+    opacity: 1;
+  }
+}
