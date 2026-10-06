@@ -137,7 +137,9 @@ export function MotionProvider({ children }: { children: ReactNode }) {
   // ------------------------------------------------------------------------------------- target choreography
   const animateIn = useCallback((el: HTMLElement, role: MotionRole, delay: number, viewport: boolean) => {
     const r = ROLES[role] ?? ROLES.block;
-    const y = viewport ? REVEAL.y : r.y;
+    // a target that holds links or buttons only fades: something people click never slides under the pointer
+    const interactive = el.matches("a, button") || !!el.querySelector("a, button, input, select, textarea, summary");
+    const y = interactive ? 0 : viewport ? REVEAL.y : r.y;
     const blur = viewport ? 0 : r.blur;
     const from: Keyframe = { opacity: 0, transform: y ? `translate3d(0, ${y}px, 0)` : "none" };
     const to: Keyframe = { opacity: 1, transform: "none" };
