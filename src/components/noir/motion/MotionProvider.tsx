@@ -223,8 +223,13 @@ export function MotionProvider({ children }: { children: ReactNode }) {
       let raf = 0;
       const sweep = () => {
         raf = 0;
+        const vh2 = window.innerHeight;
+        const atEnd = window.scrollY + vh2 >= document.documentElement.scrollHeight - 2;
         for (const el of later) {
-          if (el.hasAttribute("data-pending") && el.getBoundingClientRect().bottom <= 0) {
+          if (!el.hasAttribute("data-pending")) continue;
+          const r = el.getBoundingClientRect();
+          // skipped past (fast scroll, End key), or the page cannot scroll any further: show without motion
+          if (r.bottom <= 0 || (atEnd && r.top < vh2)) {
             io.unobserve(el);
             show(el);
           }
