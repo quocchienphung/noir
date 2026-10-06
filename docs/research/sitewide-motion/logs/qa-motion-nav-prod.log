@@ -1,0 +1,48 @@
+ok  A / → /projects via header: exit starts 66 ms after click, lasts 492 ms; commit 641 ms; enter after 375 ms, lasts 473 ms; header opacity min 1; old page never flashes back
+ok  A / → /projects: destination revealed at scroll 0
+ok  A /projects: H1 appears from 1173 ms, settled (opacity 1, filter none) at 2653 ms
+ok  A /projects → /about via header: exit starts 41 ms after click, lasts 491 ms; commit 605 ms; enter after 364 ms, lasts 473 ms; header opacity min 1; old page never flashes back
+ok  A /projects → /about: destination revealed at scroll 0
+ok  A /about: H1 appears from 1120 ms, settled (opacity 1, filter none) at 2605 ms
+ok  A /about → /contact via header: exit starts 45 ms after click, lasts 492 ms; commit 618 ms; enter after 367 ms, lasts 473 ms; header opacity min 1; old page never flashes back
+ok  A /about → /contact: destination revealed at scroll 0
+ok  A /contact: H1 appears from 1137 ms, settled (opacity 1, filter none) at 2622 ms
+ok  A /contact → /privacy-policy via footer: exit starts 44 ms after click, lasts 492 ms; commit 610 ms; enter after 368 ms, lasts 467 ms; header opacity min 1; old page never flashes back
+ok  A /contact → /privacy-policy: destination revealed at scroll 0
+ok  A /privacy-policy: H1 appears from 1129 ms, settled (opacity 1, filter none) at 2615 ms
+ok  A /privacy-policy → / via header: exit starts 46 ms after click, lasts 491 ms; commit 622 ms; enter after 449 ms, lasts 487 ms; header opacity min 1; old page never flashes back
+ok  A /privacy-policy → /: destination revealed at scroll 0
+ok  A no page errors (none)
+ok  B from Complexity: outgoing stays at its scroll (≥ 9400 px) while fading, About revealed at top (0)
+ok  C header CTA (/ → /contact): coordinated fade (exit 61–550 ms, commit 663, enter 1046–1519)
+ok  C intro CTA (/ → /projects): coordinated fade (exit 58–550 ms, commit 667, enter 1075–1548)
+ok  C ButtonLink (/about → /contact): coordinated fade (exit 51–542 ms, commit 672, enter 1093–1566)
+ok  C card text link (/projects → /about): coordinated fade (exit 51–542 ms, commit 658, enter 1118–1591)
+ok  C inline Contact link (/projects → /contact): coordinated fade (exit 53–544 ms, commit 626, enter 999–1471)
+ok  C 404 recovery (/404 → /): coordinated fade (exit 43–534 ms, commit 656, enter 1129–1600)
+ok  C unknown-route recovery (/this-route-does-not-exist → /): coordinated fade (exit 42–533 ms, commit 693, enter 1216–1663)
+ok  C footer CTA (/about → /contact): coordinated fade (exit 55–545 ms, commit 623, enter 1006–1479)
+ok  D drawer → /projects: one fade out/in (exit 48–540, enter 1060–1534), drawer closed, scroll lock released, focus left the drawer (BUTTON)
+ok  D drawer → /contact: one fade out/in (exit 48–538, enter 1029–1503), drawer closed, scroll lock released, focus left the drawer (BUTTON)
+ok  D drawer → /: one fade out/in (exit 56–548, enter 1348–1822), drawer closed, scroll lock released, focus left the drawer (BUTTON)
+ok  D Escape closes the drawer and returns focus to Menu
+ok  E Back restores /about at scroll 1400 with everything in view visible (page never hidden: min opacity 1)
+ok  E Forward works
+ok  E rapid clicks About→Contact: path sequence / > /contact, settled visible
+ok  E same-route click does not fade or hang
+ok  E Ctrl-click opens a new tab (true) without fading this page
+ok  E keyboard Enter navigates with the transition; focus lands on #content
+ok  F direct load /about: H1 enters (min opacity 0.00) and settles at opacity 1, filter none
+ok  F direct load /projects: H1 enters (min opacity 0.00) and settles at opacity 1, filter none
+ok  F direct load /contact: H1 enters (min opacity 0.00) and settles at opacity 1, filter none
+ok  F direct load /privacy-policy: H1 enters (min opacity 0.00) and settles at opacity 1, filter none
+ok  F direct load /404: H1 enters (min opacity 0.00) and settles at opacity 1, filter none
+ok  F direct load /this-route-does-not-exist: H1 enters (min opacity 0.00) and settles at opacity 1, filter none
+ok  F no page errors on direct loads (none)
+ok  G /about: 21 of 27 targets wait below the fold, all revealed after scrolling, none left with opacity/transform/filter/animation
+ok  G focusing a link inside a not-yet-revealed footer group shows it at once (effective opacity 1.00)
+ok  H reduced motion: no hidden state (0), navigation without fade
+ok  H JavaScript off: every target visible (0 hidden)
+ok  I navigation that never commits: page restored visible after the fail-safe (path /contact, opacity 1)
+
+all 46 checks passed
