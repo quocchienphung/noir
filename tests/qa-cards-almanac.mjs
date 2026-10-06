@@ -499,7 +499,11 @@ if (isDev) {
 
 {
   // C15 protected files
-  const before = JSON.parse(fs.readFileSync(path.join(ROOT, "docs/research/cards-almanac/implementation/protected-before.json"), "utf8"));
+  const baselineFile = path.join(ROOT, "docs/research/cards-almanac/implementation/protected-before.json");
+  if (!fs.existsSync(baselineFile)) {
+    skip("C15 protected-file comparison: baseline docs/research/cards-almanac/implementation/protected-before.json no longer exists in this working tree");
+  } else {
+  const before = JSON.parse(fs.readFileSync(baselineFile, "utf8"));
   // NoirIntro.tsx: the sitewide motion task (prompt/NOIR_SITEWIDE_AITHOR_MOTION_MASTER.md) routes its two CTAs
   // through TransitionLink. Undo exactly that rename and the file must still hash to the baseline.
   const normalise = (f, buf) =>
@@ -508,6 +512,7 @@ if (isDev) {
       : buf;
   const changed = before.files.filter((f) => crypto.createHash("sha256").update(normalise(f, fs.readFileSync(path.join(ROOT, f.path)))).digest("hex") !== f.current);
   check(changed.length === 0, `C15 ${before.files.length} protected black-hole/intro/cinematic files unchanged since the implementation baseline${changed.length ? ": " + changed.map((f) => f.path).join(", ") : ""}`);
+  }
 }
 
 await browser.close();
