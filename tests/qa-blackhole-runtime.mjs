@@ -24,15 +24,18 @@ async function open(opts = {}, launchArgs = []) {
   page.on("request", (r) => requests.push(r.url()));
   return { browser, page, errors, requests };
 }
-const status = (page, i) => page.evaluate((i) => document.querySelectorAll("[data-status]")[i]?.getAttribute("data-status"), i);
-const scrollToSection = (page, i, p) =>
+// The black-hole canvases are addressed by their section (0 intro, 1 cinematic), not by document position:
+// the spacetime scene between them has its own canvas (tested by qa-spacetime.mjs).
+const BH = ['section[aria-labelledby="noir-intro-title"]', 'section[aria-labelledby="noir-cinematic-title"]'];
+const status = (page, i) => page.evaluate((sel) => document.querySelector(`${sel} [data-status]`)?.getAttribute("data-status"), BH[i]);
+const scrollToSection = (page, sel, p) =>
   page.evaluate(
-    ([i, p]) => {
-      const t = document.querySelectorAll("main > section")[i];
+    ([sel, p]) => {
+      const t = document.querySelector(sel);
       const r = t.getBoundingClientRect();
       window.scrollTo(0, r.top + scrollY + p * (r.height - innerHeight));
     },
-    [i, p],
+    [sel, p],
   );
 
 // R1 + R2
@@ -41,7 +44,7 @@ const scrollToSection = (page, i, p) =>
   await page.goto(base + "/", { waitUntil: "load" });
   await page.waitForTimeout(2000);
   if ((await status(page, 0)) !== "live") fail(`R1 intro canvas status ${await status(page, 0)}`);
-  await scrollToSection(page, 2, 0.43);
+  await scrollToSection(page, BH[1], 0.43);
   await page.waitForTimeout(1500);
   if ((await status(page, 1)) !== "live") fail(`R1 cinematic canvas status ${await status(page, 1)}`);
   const info = await page.evaluate(() => [...document.querySelectorAll("canvas")].map((c) => ({ buffer: `${c.width}x${c.height}`, tier: c.dataset.tier })));
@@ -51,23 +54,23 @@ const scrollToSection = (page, i, p) =>
   if (errors.length) fail(`R1 console: ${errors.slice(0, 3).join(" | ")}`);
 
   // R2 context loss / restore on the cinematic canvas
-  const lost = await page.evaluate(() => {
-    const c = document.querySelectorAll("canvas")[1];
+  const lost = await page.evaluate((sel) => {
+    const c = document.querySelector(`${sel} canvas`);
     const ext = c.getContext("webgl2")?.getExtension("WEBGL_lose_context");
     if (!ext) return false;
     window.__noirLose = ext;
     ext.loseContext();
     return true;
-  });
+  }, BH[1]);
   if (!lost) notes.push("R2 skipped: WEBGL_lose_context unavailable");
   else {
     await page.waitForTimeout(1000); // the poster fades back in over 0.6 s (black-hole.module.css)
     const st = await status(page, 1);
-    const poster = await page.evaluate(() => {
-      const w = document.querySelectorAll("[data-status]")[1];
+    const poster = await page.evaluate((sel) => {
+      const w = document.querySelector(`${sel} [data-status]`);
       const img = w.querySelector("img");
       return { opacity: getComputedStyle(img).opacity, loaded: img.complete && img.naturalWidth > 0 };
-    });
+    }, BH[1]);
     if (st !== "fallback" || Number(poster.opacity) < 0.99 || !poster.loaded) fail(`R2 after loss: status ${st}, poster ${JSON.stringify(poster)}`);
     await page.evaluate(() => window.__noirLose.restoreContext());
     await page.waitForTimeout(1500);

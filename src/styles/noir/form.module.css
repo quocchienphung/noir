@@ -48,8 +48,8 @@
   font: inherit;
   font-size: 1rem;
   transition:
-    border-color 0.2s ease,
-    background-color 0.2s ease;
+    border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .input::placeholder {
@@ -162,6 +162,21 @@ select.input option {
 
 .status p {
   margin: 0;
+}
+
+/* status feedback (sitewide motion): a message eases in when it is inserted (submit result / validation), never on
+   typing; the live region and its text are unchanged */
+@media (prefers-reduced-motion: no-preference) {
+  .status > * {
+    animation: noir-status-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes noir-status-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0);
+  }
 }
 
 .statusTitle {

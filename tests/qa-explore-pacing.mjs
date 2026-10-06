@@ -16,7 +16,8 @@ const base = process.argv[2] || "http://localhost:3000";
 const W = +(process.argv[3] || 1440);
 const H = +(process.argv[4] || 900);
 const DPR = +(process.argv[5] || 1);
-const OUT = path.join(ROOT, "docs/design-references/noir/black-hole-v2/motion");
+// NOIR_QA_OUT (repo-relative) redirects captures, so a regression run never overwrites accepted evidence
+const OUT = process.env.NOIR_QA_OUT ? path.join(ROOT, process.env.NOIR_QA_OUT, "motion") : path.join(ROOT, "docs/design-references/noir/black-hole-v2/motion");
 fs.mkdirSync(OUT, { recursive: true });
 const failures = [];
 

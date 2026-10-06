@@ -24,7 +24,9 @@ export function useScrollTimeline<T extends HTMLElement>(
   maxLag = 0.15,
 ) {
   const trackRef = useRef<T>(null);
-  const st = useRef({ p: 0, reduced: false, lastDrive: 0 });
+  // lastDrive starts at −∞: with 0, scrolls in the first 120 ms after navigation start (early anchor jumps,
+  // scroll restore) were ignored as "driven", and a scene without a render loop (no WebGL) never corrected it
+  const st = useRef({ p: 0, reduced: false, lastDrive: -Infinity });
 
   const measure = useCallback(() => {
     const el = trackRef.current;

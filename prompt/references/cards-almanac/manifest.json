@@ -1,0 +1,142 @@
+{
+  "purpose": "Public visual reference only; no Premium prompt/source extracted; do not import scene footage into runtime.",
+  "page": "https://www.getlayers.ai/sections?layer=cards-almanac",
+  "captured_date": "2026-10-06",
+  "media": [
+    {
+      "url": "https://storage.getlayers.ai/sections/cards-almanac.mp4",
+      "path": "prompt/references/cards-almanac/public-preview.mp4",
+      "bytes": 1885915,
+      "sha256": "a04c56c8ea866d146ea1e4536c2254b19c65eb4917c38ee2b3b35f8a9b091f5b"
+    },
+    {
+      "url": "https://storage.getlayers.ai/sections/cards-almanac.webp",
+      "path": "prompt/references/cards-almanac/public-poster.webp",
+      "bytes": 54636,
+      "sha256": "a3f1ee52926c0d5c2eeec55c8714fa41f961b6985a487227d3901575d5c4ce90"
+    }
+  ],
+  "frames": [
+    {
+      "seek_seconds": 0.0,
+      "path": "prompt/references/cards-almanac/frames/t-00.00.png",
+      "size": [
+        1920,
+        1366
+      ]
+    },
+    {
+      "seek_seconds": 0.2,
+      "path": "prompt/references/cards-almanac/frames/t-00.20.png",
+      "size": [
+        1920,
+        1366
+      ]
+    },
+    {
+      "seek_seconds": 0.4,
+      "path": "prompt/references/cards-almanac/frames/t-00.40.png",
+      "size": [
+        1920,
+        1366
+      ]
+    },
+    {
+      "seek_seconds": 0.6,
+      "path": "prompt/references/cards-almanac/frames/t-00.60.png",
+      "size": [
+        1920,
+        1366
+      ]
+    },
+    {
+      "seek_seconds": 0.8,
+      "path": "prompt/references/cards-almanac/frames/t-00.80.png",
+      "size": [
+        1920,
+        1366
+      ]
+    },
+    {
+      "seek_seconds": 1.0,
+      "path": "prompt/references/cards-almanac/frames/t-01.00.png",
+      "size": [
+        1920,
+        1366
+      ]
+    },
+    {
+      "seek_seconds": 1.2,
+      "path": "prompt/references/cards-almanac/frames/t-01.20.png",
+      "size": [
+        1920,
+        1366
+      ]
+    },
+    {
+      "seek_seconds": 1.4,
+      "path": "prompt/references/cards-almanac/frames/t-01.40.png",
+      "size": [
+        1920,
+        1366
+      ]
+    },
+    {
+      "seek_seconds": 1.6,
+      "path": "prompt/references/cards-almanac/frames/t-01.60.png",
+      "size": [
+        1920,
+        1366
+      ]
+    },
+    {
+      "seek_seconds": 1.8,
+      "path": "prompt/references/cards-almanac/frames/t-01.80.png",
+      "size": [
+        1920,
+        1366
+      ]
+    },
+    {
+      "seek_seconds": 2.0,
+      "path": "prompt/references/cards-almanac/frames/t-02.00.png",
+      "size": [
+        1920,
+        1366
+      ]
+    },
+    {
+      "seek_seconds": 2.2,
+      "path": "prompt/references/cards-almanac/frames/t-02.20.png",
+      "size": [
+        1920,
+        1366
+      ]
+    },
+    {
+      "seek_seconds": 2.4,
+      "path": "prompt/references/cards-almanac/frames/t-02.40.png",
+      "size": [
+        1920,
+        1366
+      ]
+    },
+    {
+      "seek_seconds": 2.6,
+      "path": "prompt/references/cards-almanac/frames/t-02.60.png",
+      "size": [
+        1920,
+        1366
+      ]
+    },
+    {
+      "seek_seconds": 2.8,
+      "path": "prompt/references/cards-almanac/frames/t-02.80.png",
+      "size": [
+        1920,
+        1366
+      ]
+    }
+  ],
+  "timestamp_note": "Requested ffmpeg seek time, not independently verified frame PTS or original scroll progress."
+}

@@ -1,0 +1,5 @@
+R1 canvases [{"buffer":"1440x900","tier":"high"},{"buffer":"1440x900","tier":"high"}]
+R2 loss → fallback, restore → live
+R4 no WebGL → fallback, poster loaded true
+R5 qa route 404; dev query ignored (gpuMs null)
+PASS

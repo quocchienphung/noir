@@ -63,6 +63,9 @@ for (const route of routes) {
       await page.waitForTimeout(60);
     }
     await page.waitForTimeout(400);
+    // the sitewide entrance (components/noir/motion) may still be running on short pages: the ghost-focus check is
+    // about the settled page, so wait until no motion target is mid-animation (bounded)
+    await page.waitForFunction(() => document.getAnimations().every((a) => !(a.effect?.target instanceof Element && a.effect.target.closest("[data-m], [data-route-surface]")) || a.playState !== "running"), null, { timeout: 4000 }).catch(() => {});
     const info = await page.evaluate((re) => {
       const brand = new RegExp(re, "i");
       const text = document.body.innerText + " " + [...document.querySelectorAll("[alt],[aria-label],[title]")].map((e) => `${e.getAttribute("alt") ?? ""} ${e.getAttribute("aria-label") ?? ""} ${e.getAttribute("title") ?? ""}`).join(" ");

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { TransitionLink } from "./motion/TransitionLink";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { intro } from "@/data/noir/intro";
 import { horizonDistance } from "@/lib/noir/blackhole/scenes";
@@ -156,7 +156,7 @@ export function NoirIntro() {
           <div ref={leadRef} className={s.lead}>
             <p className={s.leadText}>{intro.lead}</p>
             <div className={s.ctas}>
-              <Link href={intro.primaryCta.href} className={s.ctaPrimary}>
+              <TransitionLink href={intro.primaryCta.href} className={s.ctaPrimary}>
                 {intro.primaryCta.label}
                 <svg
                   viewBox="0 0 16 16"
@@ -170,8 +170,8 @@ export function NoirIntro() {
                     strokeWidth="1.5"
                   />
                 </svg>
-              </Link>
-              <Link href={intro.secondaryCta.href} className={s.ctaSecondary}>
+              </TransitionLink>
+              <TransitionLink href={intro.secondaryCta.href} className={s.ctaSecondary}>
                 {intro.secondaryCta.label}
                 <svg
                   viewBox="0 0 16 16"
@@ -185,7 +185,7 @@ export function NoirIntro() {
                     strokeWidth="1.5"
                   />
                 </svg>
-              </Link>
+              </TransitionLink>
             </div>
           </div>
 

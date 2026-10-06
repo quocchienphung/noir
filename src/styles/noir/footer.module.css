@@ -53,6 +53,33 @@
   flex: none;
 }
 
+/* interaction feedback (sitewide motion): icon nudge toward the action, small press; decoration only */
+@media (prefers-reduced-motion: no-preference) {
+  .ctaIcon {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .cta:hover .ctaIcon,
+  .cta:focus-visible .ctaIcon {
+    transform: translate3d(2px, -2px, 0);
+  }
+
+  .toTop:hover .ctaIcon,
+  .toTop:focus-visible .ctaIcon {
+    transform: translate3d(0, -2px, 0);
+  }
+
+  .cta {
+    transition:
+      background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .cta:active {
+    transform: scale(0.98);
+  }
+}
+
 .navList {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, max-content));

@@ -58,7 +58,7 @@ export function ContactForm() {
   };
 
   return (
-    <form ref={formRef} className={s.form} onSubmit={onSubmit} noValidate aria-describedby={`${id}-note`}>
+    <form ref={formRef} className={s.form} onSubmit={onSubmit} noValidate aria-describedby={`${id}-note`} data-m="block">
       <div className={s.grid}>
         <label className={s.field}>
           <span className={s.label}>Name</span>

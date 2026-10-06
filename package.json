@@ -43,7 +43,9 @@
     "qa:sharpness": "node tests/qa-blackhole-sharpness.mjs",
     "qa:orbit": "node tests/qa-blackhole-orbit.mjs",
     "qa:flow": "node tests/qa-blackhole-flow.mjs",
-    "qa:explore": "node tests/qa-explore.mjs && node tests/qa-explore-lifecycle.mjs && node tests/qa-explore-pacing.mjs"
+    "qa:explore": "node tests/qa-explore.mjs && node tests/qa-explore-lifecycle.mjs && node tests/qa-explore-pacing.mjs",
+    "qa:spacetime": "node tests/qa-spacetime.mjs",
+    "qa:almanac": "node tests/qa-cards-almanac.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",

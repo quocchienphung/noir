@@ -24,6 +24,12 @@
   -webkit-backdrop-filter: blur(14px) saturate(1.2);
 }
 
+/* over a light section (the Cards Almanac) the 62 % glass would leave the muted nav links ≈ 3.5 : 1; a denser glass
+   keeps them above 4.5 : 1. Only set while the header strip overlaps a [data-header-surface="light"] element. */
+.header[data-surface="light"] {
+  background: rgb(5 5 5 / 0.9);
+}
+
 .home {
   display: inline-flex;
   color: inherit;

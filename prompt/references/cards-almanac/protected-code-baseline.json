@@ -1,0 +1,66 @@
+{
+    "purpose":  "Actual working-tree files at prompt creation, not HEAD. Preserve approved black-hole, intro, orbit and cinematic behavior. Rebaseline changed user files before implementation; never restore this snapshot over newer work.",
+    "files":  [
+                  {
+                      "sha256":  "3961262f961717b45dbf4da684732b2ac30e383e7e94a8b50e369b8e8929e78d",
+                      "path":  "src/components/noir/BlackHoleCanvas.tsx"
+                  },
+                  {
+                      "sha256":  "aa7916be241940e66f4db5fca88a2c71f32d5dc34d18d5995c8be9d46cce0625",
+                      "path":  "src/components/noir/NoirCinematic.tsx"
+                  },
+                  {
+                      "sha256":  "2ee172c2a81e699310eac5c8afeaef2bf6cfa2eaebd3f08aae464e527ec14149",
+                      "path":  "src/components/noir/NoirExplore.tsx"
+                  },
+                  {
+                      "sha256":  "6659905a4b8b84c601a9599a95518310bb5c131a8c8b8af84be2ec7b89e79e12",
+                      "path":  "src/components/noir/NoirIntro.tsx"
+                  },
+                  {
+                      "sha256":  "fd25c8dcb9dfab0b3a26c95b67062a710282f33af48e54d2126ca78afd7c4ee1",
+                      "path":  "src/components/noir/useScrollTimeline.ts"
+                  },
+                  {
+                      "sha256":  "9bd33dbfb595906c1b0ad0362ed2a3498e6a70d98218193939349416266f8abe",
+                      "path":  "src/data/noir/intro.ts"
+                  },
+                  {
+                      "sha256":  "dde728389542fc04c21561315d2bcbdcd35c22570c40a260d20aa2a68211ac5c",
+                      "path":  "src/lib/noir/blackhole/environment.ts"
+                  },
+                  {
+                      "sha256":  "daa7725d0477eaf66375527fdefb027b7ba8cf6edd993f114289b641965202f2",
+                      "path":  "src/lib/noir/blackhole/orbit.ts"
+                  },
+                  {
+                      "sha256":  "8bcff51557d5095c39796f6269b15e4f9787a08b60e778f002af741faa56134b",
+                      "path":  "src/lib/noir/blackhole/renderer.ts"
+                  },
+                  {
+                      "sha256":  "adc1eb1fa4204fc3698d21a2ae04b5f0564a5ee80e594153ed37e45acdbe49e7",
+                      "path":  "src/lib/noir/blackhole/scenes.ts"
+                  },
+                  {
+                      "sha256":  "1d30fa799adf03be069bd51188a4647874215556e105118d9d322a6e3a52c115",
+                      "path":  "src/lib/noir/blackhole/shaders.ts"
+                  },
+                  {
+                      "sha256":  "734507be49330bb46e6a8580e82437b9a1ed03f14f9346240f19efca2e7a2a24",
+                      "path":  "src/styles/noir/black-hole.module.css"
+                  },
+                  {
+                      "sha256":  "31bc68ce8a68f86b2b244317ea774aa865364be32ea86c11635a03395b9bc5df",
+                      "path":  "src/styles/noir/cinematic.module.css"
+                  },
+                  {
+                      "sha256":  "6e0f18de260732cb15efea5ba0c0883e4d733fd99d33b1357b41c873c3fc9081",
+                      "path":  "src/styles/noir/explore.module.css"
+                  },
+                  {
+                      "sha256":  "c5d707ad174f46317e23217ffa95362d7b0e1358e83c9809fc8d0c3b971f9b0c",
+                      "path":  "src/styles/noir/intro.module.css"
+                  }
+              ],
+    "captured_date":  "2026-10-06"
+}

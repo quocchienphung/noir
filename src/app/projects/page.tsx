@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { TransitionLink } from "@/components/noir/motion/TransitionLink";
 import { ArrowIcon, PageHeader } from "@/components/noir/sections";
 import { routes, services, work } from "@/data/noir/site";
 import s from "@/styles/noir/pages.module.css";
@@ -14,9 +14,9 @@ export default function WorkPage() {
 
       <section className={s.section} aria-label="Experiments">
         <div className={s.inner}>
-          <ul className={s.cards}>
+          <ul className={s.cards} data-m-group="">
             {work.experiments.map((item, i) => (
-              <li key={item.id} className={s.card}>
+              <li key={item.id} className={s.card} data-m="item">
                 <div className={s.cardMeta}>
                   <span>{String(i + 1).padStart(2, "0")}</span>
                   <span>{item.kind}</span>
@@ -29,10 +29,10 @@ export default function WorkPage() {
                     <li key={t}>{t}</li>
                   ))}
                 </ul>
-                <Link href={item.href} className={s.textLink}>
+                <TransitionLink href={item.href} className={s.textLink}>
                   {item.cta}
                   <ArrowIcon direction="right" />
-                </Link>
+                </TransitionLink>
               </li>
             ))}
           </ul>
@@ -42,23 +42,23 @@ export default function WorkPage() {
       <section className={s.section} aria-labelledby="work-capabilities">
         <div className={s.inner}>
           <div className={s.twoCol}>
-            <h2 id="work-capabilities" className={s.h2}>
+            <h2 id="work-capabilities" className={s.h2} data-m="block">
               What we can build for you
             </h2>
-            <ul className={s.list}>
+            <ul className={s.list} data-m-group="">
               {services.map((service) => (
-                <li key={service.id} className={s.listItem}>
+                <li key={service.id} className={s.listItem} data-m="item">
                   <h3 className={s.h3}>{service.title}</h3>
                   <p className={s.muted}>{service.summary}</p>
                 </li>
               ))}
             </ul>
           </div>
-          <p className={s.note}>
+          <p className={s.note} data-m="block">
             {work.note}{" "}
-            <Link href={routes.contact} className={s.inlineLink}>
+            <TransitionLink href={routes.contact} className={s.inlineLink}>
               Contact
-            </Link>
+            </TransitionLink>
           </p>
         </div>
       </section>

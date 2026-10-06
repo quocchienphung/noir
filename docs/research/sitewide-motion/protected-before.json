@@ -1,0 +1,174 @@
+{
+ "date": "2026-10-06",
+ "note": "data/copy, renderer, shaders, scenes, scroll timeline, globals.css, assets — must be unchanged by the motion task",
+ "files": [
+  {
+   "path": "src/lib/noir/blackhole/environment.ts",
+   "sha256": "dde728389542fc04c21561315d2bcbdcd35c22570c40a260d20aa2a68211ac5c"
+  },
+  {
+   "path": "src/lib/noir/blackhole/orbit.ts",
+   "sha256": "daa7725d0477eaf66375527fdefb027b7ba8cf6edd993f114289b641965202f2"
+  },
+  {
+   "path": "src/lib/noir/blackhole/renderer.ts",
+   "sha256": "8bcff51557d5095c39796f6269b15e4f9787a08b60e778f002af741faa56134b"
+  },
+  {
+   "path": "src/lib/noir/blackhole/scenes.ts",
+   "sha256": "adc1eb1fa4204fc3698d21a2ae04b5f0564a5ee80e594153ed37e45acdbe49e7"
+  },
+  {
+   "path": "src/lib/noir/blackhole/shaders.ts",
+   "sha256": "1d30fa799adf03be069bd51188a4647874215556e105118d9d322a6e3a52c115"
+  },
+  {
+   "path": "src/lib/noir/cinematic-timeline.ts",
+   "sha256": "44f66d0bc3c42dae48c7a63a4523097b3e64ec5a23c92c5b18650ca9b7bfc5f4"
+  },
+  {
+   "path": "src/lib/noir/cards-almanac/stack.ts",
+   "sha256": "95dbc015c6a038a583a19487e2e2d4035d95bceb7699f4bcc14da8e24c47f52e"
+  },
+  {
+   "path": "src/data/noir/cards-almanac.ts",
+   "sha256": "450e40d65bed343d2d3ab4d238480d036c1dc0c51e982fc73963dd9333b13862"
+  },
+  {
+   "path": "src/data/noir/intro.ts",
+   "sha256": "9bd33dbfb595906c1b0ad0362ed2a3498e6a70d98218193939349416266f8abe"
+  },
+  {
+   "path": "src/data/noir/privacy.ts",
+   "sha256": "b0f56dba92ce3460f065c0e73a265f20294393122903a56939679b72af1023a4"
+  },
+  {
+   "path": "src/data/noir/site.ts",
+   "sha256": "23ffeb3f110817cecb7c9062cd025e42376b926463f42074672ef6d3ae17a02c"
+  },
+  {
+   "path": "src/app/globals.css",
+   "sha256": "86a92f6f9b22269a8ef243f3bdc8e4bd8609d7767a8800777c388b5e5033cf11"
+  },
+  {
+   "path": "src/components/noir/useScrollTimeline.ts",
+   "sha256": "fd25c8dcb9dfab0b3a26c95b67062a710282f33af48e54d2126ca78afd7c4ee1"
+  },
+  {
+   "path": "src/components/noir/BlackHoleCanvas.tsx",
+   "sha256": "3961262f961717b45dbf4da684732b2ac30e383e7e94a8b50e369b8e8929e78d"
+  },
+  {
+   "path": "src/components/noir/NoirCinematic.tsx",
+   "sha256": "aa7916be241940e66f4db5fca88a2c71f32d5dc34d18d5995c8be9d46cce0625"
+  },
+  {
+   "path": "src/components/noir/NoirExplore.tsx",
+   "sha256": "2ee172c2a81e699310eac5c8afeaef2bf6cfa2eaebd3f08aae464e527ec14149"
+  },
+  {
+   "path": "public/sites/noir/brand/noir-mark-dark-128.png",
+   "sha256": "f2528b94c3f1b71c216ba62294ad1bcb5ea954e4effadf1eafba382a4b2e61c5"
+  },
+  {
+   "path": "public/sites/noir/brand/noir-mark-dark-256.png",
+   "sha256": "9d53671b91bfa98aa4d7ea6b818ceebd2bc1d402613308db7df27eb2f2c95480"
+  },
+  {
+   "path": "public/sites/noir/brand/noir-mark-dark-512.png",
+   "sha256": "2ac17a5d5ae65e3af035e943a777045b08ce7e503780142bed91bf38268239bd"
+  },
+  {
+   "path": "public/sites/noir/brand/noir-mark-dark-64.png",
+   "sha256": "c09da1f9256320c82814f93ee11d9976c5947295750732b1f9a47dfbe67edf24"
+  },
+  {
+   "path": "public/sites/noir/brand/noir-mark-light-1024.png",
+   "sha256": "d55f6a377cdfe8419ba8512338aa4bd4ec06089d938e57abd77ca908a29790b3"
+  },
+  {
+   "path": "public/sites/noir/brand/noir-mark-light-1024.webp",
+   "sha256": "2ee73c4dcdf8e10cefbdc48942b5e428e59e07b707edcaa20b7773e8ca87dc46"
+  },
+  {
+   "path": "public/sites/noir/brand/noir-mark-light-128.png",
+   "sha256": "a036f40819171e054fa60eb66e77e133f3e40cc7b51da9de8fd5623e20ea44c2"
+  },
+  {
+   "path": "public/sites/noir/brand/noir-mark-light-256.png",
+   "sha256": "e8a527cb7d3a4926d2847ec25c8a7b25f87fc2f65526e7fd95dd3e7d09027841"
+  },
+  {
+   "path": "public/sites/noir/brand/noir-mark-light-512.png",
+   "sha256": "19c95db085f0f2ba0f599272712ae8c8d2d930a277f4a6d97c83951a57679a95"
+  },
+  {
+   "path": "public/sites/noir/brand/noir-mark-light-64.png",
+   "sha256": "dd28f184ca3b9e095c281afbed312d228e18d3e3335eb53bdd4901f2151abe52"
+  },
+  {
+   "path": "public/sites/noir/brand/noir-mark-small-16.png",
+   "sha256": "e12e590b7b552ccfe158db0f9e4a4337242b6ad707dee65401fadd6c6443d019"
+  },
+  {
+   "path": "public/sites/noir/brand/noir-mark-small-32.png",
+   "sha256": "ee252dde68c7c5d55f5930bfaa0c793243e2fc40de52b2efd70a74822569fd51"
+  },
+  {
+   "path": "public/sites/noir/brand/noir-mark-small-48.png",
+   "sha256": "d3465a6109582cb272b4350af1d92aace8fef0442b8bfa98d4612cb41ec5f738"
+  },
+  {
+   "path": "public/sites/noir/fonts/albert-sans-500.woff2",
+   "sha256": "e58a84e93ffb8d42693b093addd2e1595cf36ba1c459011dc2312abcf0c67b7f"
+  },
+  {
+   "path": "public/sites/noir/fonts/albert-sans-700.woff2",
+   "sha256": "25863e5628e4943afc5f00ee39ad65578aaf0886306b90709db4de2527978ffb"
+  },
+  {
+   "path": "public/sites/noir/fonts/albert-sans-v4-latin-400-600.woff2",
+   "sha256": "c2fb6fda415c7bf5926c15aa98f759da45cdc5ac4ac6925a72a84db4eb3862a3"
+  },
+  {
+   "path": "public/sites/noir/fonts/albert-sans-variable-400.woff2",
+   "sha256": "cb3e34c402627509a4d8c76d39fbe9baa295b5e1e31a3377688203f2c8f40f86"
+  },
+  {
+   "path": "public/sites/noir/media/cinematic-poster.jpg",
+   "sha256": "c835ec1aef04449f49cd110adbf8632a987b9eee2c91c4079ba9d4d9fabf9a57"
+  },
+  {
+   "path": "public/sites/noir/media/covers/this-site-home.jpg",
+   "sha256": "b03a422760055c5a86fd04772fe46c7c07de1477d5feb9468b791950eef11128"
+  },
+  {
+   "path": "public/sites/noir/media/dive-poster.jpg",
+   "sha256": "2f4af05c007c9bcb476aa9c17e159d3cbead6a23a8060b3a47fc37384c9eadfb"
+  },
+  {
+   "path": "public/sites/noir/seo/apple-touch-icon.png",
+   "sha256": "2f0a96009c86103a548d9bfb1b5cfa8eace8fe84c9a2c4c7ccbe85fa72c57df7"
+  },
+  {
+   "path": "public/sites/noir/seo/favicon-32.png",
+   "sha256": "ae9971704bf9e98edd4549290490434901df45ab36202199997f4bdb21e4fc3f"
+  },
+  {
+   "path": "public/sites/noir/seo/icon-192.png",
+   "sha256": "3d20a00ee4ea5ec34a4d1185e85abd610d9f3fe8a6217e0f08d15b38054786c1"
+  },
+  {
+   "path": "public/sites/noir/seo/icon-512.png",
+   "sha256": "c0f5d4605b0ef1712dfa5fea6f98996870013aaa8e7d16bfbe166434893600e6"
+  },
+  {
+   "path": "public/sites/noir/seo/og-image.jpg",
+   "sha256": "cf442265606b83e40bde762a1a118b071abd8195d1d3719f9a5972b7e0a388f8"
+  },
+  {
+   "path": "public/sites/noir/seo/site.webmanifest",
+   "sha256": "a0db72de5af22e9e7ed031f76567042171f9ad7c45c69d9169861adf2bfb4c31"
+  }
+ ]
+}

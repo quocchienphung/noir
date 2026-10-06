@@ -1,0 +1,599 @@
+{
+    "inspectedDate":  "2026-10-06",
+    "sourcePage":  "https://aithor.framer.website/about",
+    "provenance":  "Public HTML appear configuration and public JS bundles; not a frame-by-frame timing measurement",
+    "mainBundle":  "https://framerusercontent.com/sites/61lnrQyGJhTFJSboEC12aP/script_main.DFX1uv31.mjs",
+    "aboutBundle":  "https://framerusercontent.com/sites/61lnrQyGJhTFJSboEC12aP/mRUyFUEd_m0Fymz4CLT2kjEg64b9CLoyAi1L217vMiQ.CYGj5zQt.mjs",
+    "route":  {
+                  "enter":  {
+                                "scale":  1.1,
+                                "opacity":  0,
+                                "transition":  {
+                                                   "duration":  0.6,
+                                                   "delay":  0.3,
+                                                   "type":  "tween",
+                                                   "ease":  [
+                                                                0.68,
+                                                                0,
+                                                                0.33,
+                                                                1
+                                                            ]
+                                               }
+                            },
+                  "exit":  {
+                               "scale":  0.95,
+                               "opacity":  0,
+                               "transition":  {
+                                                  "duration":  0.6,
+                                                  "delay":  0,
+                                                  "type":  "tween",
+                                                  "ease":  [
+                                                               0.4,
+                                                               0,
+                                                               0.24,
+                                                               1
+                                                           ]
+                                              }
+                           }
+              },
+    "heading":  {
+                    "trigger":  "onMount",
+                    "tokenization":  "word",
+                    "startDelay":  0.5,
+                    "type":  "appear",
+                    "repeat":  false,
+                    "effect":  {
+                                   "filter":  "blur(10px)",
+                                   "scale":  1,
+                                   "opacity":  0.001,
+                                   "y":  10
+                               },
+                    "transition":  {
+                                       "duration":  1.5,
+                                       "delay":  0.05,
+                                       "type":  "spring",
+                                       "bounce":  0
+                                   }
+                },
+    "targetNames":  {
+                        "1ktk6kd":  "buttons",
+                        "duykay":  "lead",
+                        "1t1b8ok":  "pill 2",
+                        "49olj":  "eyebrow",
+                        "3c0ahg":  "pill 3",
+                        "9j63om":  "pill 1",
+                        "bsyiam":  "main visual"
+                    },
+    "appear":  {
+                   "49olj":  {
+                                 "default":  {
+                                                 "initial":  {
+                                                                 "opacity":  0.001,
+                                                                 "rotate":  0,
+                                                                 "rotateX":  0,
+                                                                 "rotateY":  0,
+                                                                 "scale":  1,
+                                                                 "skewX":  0,
+                                                                 "skewY":  0,
+                                                                 "x":  0,
+                                                                 "y":  0
+                                                             },
+                                                 "animate":  {
+                                                                 "opacity":  1,
+                                                                 "rotate":  0,
+                                                                 "rotateX":  0,
+                                                                 "rotateY":  0,
+                                                                 "scale":  1,
+                                                                 "skewX":  0,
+                                                                 "skewY":  0,
+                                                                 "transition":  {
+                                                                                    "bounce":  0,
+                                                                                    "delay":  0.3,
+                                                                                    "duration":  1.5,
+                                                                                    "type":  "spring"
+                                                                                },
+                                                                 "x":  0,
+                                                                 "y":  0
+                                                             }
+                                             },
+                                 "186zetl":  {
+                                                 "initial":  {
+                                                                 "opacity":  0.001,
+                                                                 "rotate":  0,
+                                                                 "rotateX":  0,
+                                                                 "rotateY":  0,
+                                                                 "scale":  1,
+                                                                 "skewX":  0,
+                                                                 "skewY":  0,
+                                                                 "x":  0,
+                                                                 "y":  0
+                                                             },
+                                                 "animate":  {
+                                                                 "opacity":  1,
+                                                                 "rotate":  0,
+                                                                 "rotateX":  0,
+                                                                 "rotateY":  0,
+                                                                 "scale":  1,
+                                                                 "skewX":  0,
+                                                                 "skewY":  0,
+                                                                 "transition":  {
+                                                                                    "bounce":  0,
+                                                                                    "delay":  0.3,
+                                                                                    "duration":  1.5,
+                                                                                    "type":  "spring"
+                                                                                },
+                                                                 "x":  0,
+                                                                 "y":  0
+                                                             }
+                                             },
+                                 "9387d0":  {
+                                                "initial":  {
+                                                                "opacity":  0.001,
+                                                                "rotate":  0,
+                                                                "rotateX":  0,
+                                                                "rotateY":  0,
+                                                                "scale":  1,
+                                                                "skewX":  0,
+                                                                "skewY":  0,
+                                                                "x":  0,
+                                                                "y":  0
+                                                            },
+                                                "animate":  {
+                                                                "opacity":  1,
+                                                                "rotate":  0,
+                                                                "rotateX":  0,
+                                                                "rotateY":  0,
+                                                                "scale":  1,
+                                                                "skewX":  0,
+                                                                "skewY":  0,
+                                                                "transition":  {
+                                                                                   "bounce":  0,
+                                                                                   "delay":  0.3,
+                                                                                   "duration":  1.5,
+                                                                                   "type":  "spring"
+                                                                               },
+                                                                "x":  0,
+                                                                "y":  0
+                                                            }
+                                            }
+                             },
+                   "duykay":  {
+                                  "default":  {
+                                                  "initial":  {
+                                                                  "opacity":  0.001,
+                                                                  "rotate":  0,
+                                                                  "rotateX":  0,
+                                                                  "rotateY":  0,
+                                                                  "scale":  1,
+                                                                  "skewX":  0,
+                                                                  "skewY":  0,
+                                                                  "x":  0,
+                                                                  "y":  0
+                                                              },
+                                                  "animate":  {
+                                                                  "opacity":  1,
+                                                                  "rotate":  0,
+                                                                  "rotateX":  0,
+                                                                  "rotateY":  0,
+                                                                  "scale":  1,
+                                                                  "skewX":  0,
+                                                                  "skewY":  0,
+                                                                  "transition":  {
+                                                                                     "bounce":  0,
+                                                                                     "delay":  0.9,
+                                                                                     "duration":  1.5,
+                                                                                     "type":  "spring"
+                                                                                 },
+                                                                  "x":  0,
+                                                                  "y":  0
+                                                              }
+                                              }
+                              },
+                   "1ktk6kd":  {
+                                   "default":  {
+                                                   "initial":  {
+                                                                   "opacity":  0.001,
+                                                                   "rotate":  0,
+                                                                   "rotateX":  0,
+                                                                   "rotateY":  0,
+                                                                   "scale":  1,
+                                                                   "skewX":  0,
+                                                                   "skewY":  0,
+                                                                   "x":  0,
+                                                                   "y":  0
+                                                               },
+                                                   "animate":  {
+                                                                   "opacity":  1,
+                                                                   "rotate":  0,
+                                                                   "rotateX":  0,
+                                                                   "rotateY":  0,
+                                                                   "scale":  1,
+                                                                   "skewX":  0,
+                                                                   "skewY":  0,
+                                                                   "transition":  {
+                                                                                      "bounce":  0,
+                                                                                      "delay":  1,
+                                                                                      "duration":  1.5,
+                                                                                      "type":  "spring"
+                                                                                  },
+                                                                   "x":  0,
+                                                                   "y":  0
+                                                               }
+                                               }
+                               },
+                   "bsyiam":  {
+                                  "default":  {
+                                                  "initial":  {
+                                                                  "opacity":  0.001,
+                                                                  "rotate":  0,
+                                                                  "rotateX":  0,
+                                                                  "rotateY":  0,
+                                                                  "scale":  1,
+                                                                  "skewX":  0,
+                                                                  "skewY":  0,
+                                                                  "x":  0,
+                                                                  "y":  30
+                                                              },
+                                                  "animate":  {
+                                                                  "opacity":  1,
+                                                                  "rotate":  0,
+                                                                  "rotateX":  0,
+                                                                  "rotateY":  0,
+                                                                  "scale":  1,
+                                                                  "skewX":  0,
+                                                                  "skewY":  0,
+                                                                  "transition":  {
+                                                                                     "bounce":  0,
+                                                                                     "delay":  0.4,
+                                                                                     "duration":  1.5,
+                                                                                     "type":  "spring"
+                                                                                 },
+                                                                  "x":  0,
+                                                                  "y":  0
+                                                              }
+                                              },
+                                  "186zetl":  {
+                                                  "initial":  {
+                                                                  "opacity":  0.001,
+                                                                  "rotate":  0,
+                                                                  "rotateX":  0,
+                                                                  "rotateY":  0,
+                                                                  "scale":  1,
+                                                                  "skewX":  0,
+                                                                  "skewY":  0,
+                                                                  "x":  0,
+                                                                  "y":  30
+                                                              },
+                                                  "animate":  {
+                                                                  "opacity":  1,
+                                                                  "rotate":  0,
+                                                                  "rotateX":  0,
+                                                                  "rotateY":  0,
+                                                                  "scale":  1,
+                                                                  "skewX":  0,
+                                                                  "skewY":  0,
+                                                                  "transition":  {
+                                                                                     "bounce":  0,
+                                                                                     "delay":  0.4,
+                                                                                     "duration":  1.5,
+                                                                                     "type":  "spring"
+                                                                                 },
+                                                                  "x":  0,
+                                                                  "y":  0
+                                                              }
+                                              },
+                                  "9387d0":  {
+                                                 "initial":  {
+                                                                 "opacity":  0.001,
+                                                                 "rotate":  0,
+                                                                 "rotateX":  0,
+                                                                 "rotateY":  0,
+                                                                 "scale":  1,
+                                                                 "skewX":  0,
+                                                                 "skewY":  0,
+                                                                 "x":  0,
+                                                                 "y":  30
+                                                             },
+                                                 "animate":  {
+                                                                 "opacity":  1,
+                                                                 "rotate":  0,
+                                                                 "rotateX":  0,
+                                                                 "rotateY":  0,
+                                                                 "scale":  1,
+                                                                 "skewX":  0,
+                                                                 "skewY":  0,
+                                                                 "transition":  {
+                                                                                    "bounce":  0,
+                                                                                    "delay":  0.4,
+                                                                                    "duration":  1.5,
+                                                                                    "type":  "spring"
+                                                                                },
+                                                                 "x":  0,
+                                                                 "y":  0
+                                                             }
+                                             }
+                              },
+                   "9j63om":  {
+                                  "default":  {
+                                                  "initial":  {
+                                                                  "opacity":  0.001,
+                                                                  "rotate":  0,
+                                                                  "rotateX":  0,
+                                                                  "rotateY":  0,
+                                                                  "scale":  1,
+                                                                  "skewX":  0,
+                                                                  "skewY":  0,
+                                                                  "x":  0,
+                                                                  "y":  16
+                                                              },
+                                                  "animate":  {
+                                                                  "opacity":  1,
+                                                                  "rotate":  0,
+                                                                  "rotateX":  0,
+                                                                  "rotateY":  0,
+                                                                  "scale":  1,
+                                                                  "skewX":  0,
+                                                                  "skewY":  0,
+                                                                  "transition":  {
+                                                                                     "bounce":  0,
+                                                                                     "delay":  1.3,
+                                                                                     "duration":  1.5,
+                                                                                     "type":  "spring"
+                                                                                 },
+                                                                  "x":  0,
+                                                                  "y":  0
+                                                              }
+                                              },
+                                  "186zetl":  {
+                                                  "initial":  {
+                                                                  "opacity":  0.001,
+                                                                  "rotate":  0,
+                                                                  "rotateX":  0,
+                                                                  "rotateY":  0,
+                                                                  "scale":  1,
+                                                                  "skewX":  0,
+                                                                  "skewY":  0,
+                                                                  "x":  0,
+                                                                  "y":  16
+                                                              },
+                                                  "animate":  {
+                                                                  "opacity":  1,
+                                                                  "rotate":  0,
+                                                                  "rotateX":  0,
+                                                                  "rotateY":  0,
+                                                                  "scale":  1,
+                                                                  "skewX":  0,
+                                                                  "skewY":  0,
+                                                                  "transition":  {
+                                                                                     "bounce":  0,
+                                                                                     "delay":  1.3,
+                                                                                     "duration":  1.5,
+                                                                                     "type":  "spring"
+                                                                                 },
+                                                                  "x":  0,
+                                                                  "y":  0
+                                                              }
+                                              },
+                                  "9387d0":  {
+                                                 "initial":  {
+                                                                 "opacity":  0.001,
+                                                                 "rotate":  0,
+                                                                 "rotateX":  0,
+                                                                 "rotateY":  0,
+                                                                 "scale":  1,
+                                                                 "skewX":  0,
+                                                                 "skewY":  0,
+                                                                 "x":  0,
+                                                                 "y":  16
+                                                             },
+                                                 "animate":  {
+                                                                 "opacity":  1,
+                                                                 "rotate":  0,
+                                                                 "rotateX":  0,
+                                                                 "rotateY":  0,
+                                                                 "scale":  1,
+                                                                 "skewX":  0,
+                                                                 "skewY":  0,
+                                                                 "transition":  {
+                                                                                    "bounce":  0,
+                                                                                    "delay":  1.3,
+                                                                                    "duration":  1.5,
+                                                                                    "type":  "spring"
+                                                                                },
+                                                                 "x":  0,
+                                                                 "y":  0
+                                                             }
+                                             }
+                              },
+                   "1t1b8ok":  {
+                                   "default":  {
+                                                   "initial":  {
+                                                                   "opacity":  0.001,
+                                                                   "rotate":  0,
+                                                                   "rotateX":  0,
+                                                                   "rotateY":  0,
+                                                                   "scale":  1,
+                                                                   "skewX":  0,
+                                                                   "skewY":  0,
+                                                                   "x":  0,
+                                                                   "y":  16
+                                                               },
+                                                   "animate":  {
+                                                                   "opacity":  1,
+                                                                   "rotate":  0,
+                                                                   "rotateX":  0,
+                                                                   "rotateY":  0,
+                                                                   "scale":  1,
+                                                                   "skewX":  0,
+                                                                   "skewY":  0,
+                                                                   "transition":  {
+                                                                                      "bounce":  0,
+                                                                                      "delay":  1.1,
+                                                                                      "duration":  1.5,
+                                                                                      "type":  "spring"
+                                                                                  },
+                                                                   "x":  0,
+                                                                   "y":  0
+                                                               }
+                                               },
+                                   "186zetl":  {
+                                                   "initial":  {
+                                                                   "opacity":  0.001,
+                                                                   "rotate":  0,
+                                                                   "rotateX":  0,
+                                                                   "rotateY":  0,
+                                                                   "scale":  1,
+                                                                   "skewX":  0,
+                                                                   "skewY":  0,
+                                                                   "x":  0,
+                                                                   "y":  16
+                                                               },
+                                                   "animate":  {
+                                                                   "opacity":  1,
+                                                                   "rotate":  0,
+                                                                   "rotateX":  0,
+                                                                   "rotateY":  0,
+                                                                   "scale":  1,
+                                                                   "skewX":  0,
+                                                                   "skewY":  0,
+                                                                   "transition":  {
+                                                                                      "bounce":  0,
+                                                                                      "delay":  1.1,
+                                                                                      "duration":  1.5,
+                                                                                      "type":  "spring"
+                                                                                  },
+                                                                   "x":  0,
+                                                                   "y":  0
+                                                               }
+                                               },
+                                   "9387d0":  {
+                                                  "initial":  {
+                                                                  "opacity":  0.001,
+                                                                  "rotate":  0,
+                                                                  "rotateX":  0,
+                                                                  "rotateY":  0,
+                                                                  "scale":  1,
+                                                                  "skewX":  0,
+                                                                  "skewY":  0,
+                                                                  "x":  0,
+                                                                  "y":  16
+                                                              },
+                                                  "animate":  {
+                                                                  "opacity":  1,
+                                                                  "rotate":  0,
+                                                                  "rotateX":  0,
+                                                                  "rotateY":  0,
+                                                                  "scale":  1,
+                                                                  "skewX":  0,
+                                                                  "skewY":  0,
+                                                                  "transition":  {
+                                                                                     "bounce":  0,
+                                                                                     "delay":  1.1,
+                                                                                     "duration":  1.5,
+                                                                                     "type":  "spring"
+                                                                                 },
+                                                                  "x":  0,
+                                                                  "y":  0
+                                                              }
+                                              }
+                               },
+                   "3c0ahg":  {
+                                  "default":  {
+                                                  "initial":  {
+                                                                  "opacity":  0.001,
+                                                                  "rotate":  0,
+                                                                  "rotateX":  0,
+                                                                  "rotateY":  0,
+                                                                  "scale":  1,
+                                                                  "skewX":  0,
+                                                                  "skewY":  0,
+                                                                  "x":  0,
+                                                                  "y":  16
+                                                              },
+                                                  "animate":  {
+                                                                  "opacity":  1,
+                                                                  "rotate":  0,
+                                                                  "rotateX":  0,
+                                                                  "rotateY":  0,
+                                                                  "scale":  1,
+                                                                  "skewX":  0,
+                                                                  "skewY":  0,
+                                                                  "transition":  {
+                                                                                     "bounce":  0,
+                                                                                     "delay":  1.2,
+                                                                                     "duration":  1.5,
+                                                                                     "type":  "spring"
+                                                                                 },
+                                                                  "x":  0,
+                                                                  "y":  0
+                                                              }
+                                              },
+                                  "186zetl":  {
+                                                  "initial":  {
+                                                                  "opacity":  0.001,
+                                                                  "rotate":  0,
+                                                                  "rotateX":  0,
+                                                                  "rotateY":  0,
+                                                                  "scale":  1,
+                                                                  "skewX":  0,
+                                                                  "skewY":  0,
+                                                                  "x":  0,
+                                                                  "y":  16
+                                                              },
+                                                  "animate":  {
+                                                                  "opacity":  1,
+                                                                  "rotate":  0,
+                                                                  "rotateX":  0,
+                                                                  "rotateY":  0,
+                                                                  "scale":  1,
+                                                                  "skewX":  0,
+                                                                  "skewY":  0,
+                                                                  "transition":  {
+                                                                                     "bounce":  0,
+                                                                                     "delay":  1.2,
+                                                                                     "duration":  1.5,
+                                                                                     "type":  "spring"
+                                                                                 },
+                                                                  "x":  0,
+                                                                  "y":  0
+                                                              }
+                                              },
+                                  "9387d0":  {
+                                                 "initial":  {
+                                                                 "opacity":  0.001,
+                                                                 "rotate":  0,
+                                                                 "rotateX":  0,
+                                                                 "rotateY":  0,
+                                                                 "scale":  1,
+                                                                 "skewX":  0,
+                                                                 "skewY":  0,
+                                                                 "x":  0,
+                                                                 "y":  16
+                                                             },
+                                                 "animate":  {
+                                                                 "opacity":  1,
+                                                                 "rotate":  0,
+                                                                 "rotateX":  0,
+                                                                 "rotateY":  0,
+                                                                 "scale":  1,
+                                                                 "skewX":  0,
+                                                                 "skewY":  0,
+                                                                 "transition":  {
+                                                                                    "bounce":  0,
+                                                                                    "delay":  1.2,
+                                                                                    "duration":  1.5,
+                                                                                    "type":  "spring"
+                                                                                },
+                                                                 "x":  0,
+                                                                 "y":  0
+                                                             }
+                                             }
+                              }
+               },
+    "adaptationNotes":  [
+                            "NOIR uses route opacity only; global scale is intentionally omitted.",
+                            "Below-fold NOIR timings are proposed integration values, not measured Aithor facts.",
+                            "Spring timing and text-effect transition.delay need playback verification in the implementation.",
+                            "All numeric source durations/delays in this JSON are seconds."
+                        ]
+}

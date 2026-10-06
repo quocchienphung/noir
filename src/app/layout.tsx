@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { NoirShell } from "@/components/noir/shell/NoirShell";
 import { brand } from "@/data/noir/site";
 import "./globals.css";
+import "@/styles/noir/motion.css";
 
 // Albert Sans (SIL Open Font License 1.1), self-hosted: the variable file for body copy and the static
 // 500–700 cuts for display type and labels.
@@ -63,6 +64,9 @@ export const viewport: Viewport = {
   colorScheme: "dark",
 };
 
+/** Without JavaScript the motion runtime never runs: every motion target is shown as authored. */
+const NO_SCRIPT_MOTION = "[data-m]{opacity:1!important;animation:none!important}";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -70,6 +74,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${albertVariable.variable} ${albert.variable}`}>
+      <head>
+        <noscript>
+          <style>{NO_SCRIPT_MOTION}</style>
+        </noscript>
+      </head>
       <body>
         <NoirShell>{children}</NoirShell>
       </body>

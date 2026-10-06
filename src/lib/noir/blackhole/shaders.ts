@@ -155,6 +155,18 @@ uniform vec3 uC3;          // umber
 uniform float uStarGain;
 uniform vec4 uGasMean;     // per-channel mean / std of the baked field (exact, read back after the bake)
 uniform vec4 uGasStd;
+#ifdef NOIR_ENV
+// Environment at infinity (environment.ts). Compiled only into the environment variant of this program:
+// the variant without NOIR_ENV is token-for-token the accepted shader, so environment off is bit-identical.
+uniform float uEnvGain;
+uniform vec4 uEnvSrc[3];     // xyz unit direction, w angular σ of the major axis (rad); w = 0 → unused
+uniform vec4 uEnvSrcCol[3];  // rgb peak radiance, a minor/major axis ratio
+uniform float uEnvStars;
+uniform float uEnvDiffuse;
+uniform vec3 uEnvBand;       // normal of the diffuse band's great circle
+uniform mat3 uEnvRot;
+uniform float uEnvSeed;
+#endif
 
 const float TAU = 6.28318531;
 const float PI = 3.14159265;
@@ -199,6 +211,99 @@ vec3 starfield(vec3 d) {
   }
   return col * uStarGain;
 }
+
+#ifdef NOIR_ENV
+// Environment (NOIR_ENV variant only). Every term is a function of the escaped ray's direction d, filtered
+// with the beam's angular footprint fp (radians per pixel, from the ray differentials): where lensing
+// magnifies, sources and stars stretch into arcs along the critical curve; where it compresses, each term
+// widens its profile with energy conservation and then fades to its own sky average, so nothing aliases into
+// beads or flickers by subpixel position.
+float vnoise3(vec3 x) {
+  vec3 i = floor(x);
+  vec3 f = fract(x);
+  f = f * f * (3.0 - 2.0 * f);
+  float a = mix(hash13(i), hash13(i + vec3(1.0, 0.0, 0.0)), f.x);
+  float b = mix(hash13(i + vec3(0.0, 1.0, 0.0)), hash13(i + vec3(1.0, 1.0, 0.0)), f.x);
+  float c = mix(hash13(i + vec3(0.0, 0.0, 1.0)), hash13(i + vec3(1.0, 0.0, 1.0)), f.x);
+  float e = mix(hash13(i + vec3(0.0, 1.0, 1.0)), hash13(i + vec3(1.0, 1.0, 1.0)), f.x);
+  return mix(mix(a, b, f.y), mix(c, e, f.y), f.z);
+}
+// One star layer: a fraction (1 − keep) of the cells of a 3D grid on the unit sphere holds a Gaussian star of
+// σ = sig cells. Filtered by widening σ with the footprint (peak scaled to keep the flux), then faded to the
+// layer's mean radiance once the footprint covers a large part of a cell.
+vec3 starLayer(vec3 d, float scale, float keep, float sig, float gain, float salt, float fp) {
+  vec3 p = d * scale;
+  vec3 id = floor(p);
+  vec3 f = fract(p) - 0.5;
+  float fc = fp * scale;
+  float meanB = (1.0 - keep) * 6.2831853 * sig * sig * 0.42;
+  vec3 tintMean = vec3(0.95, 0.9, 0.85);
+  float h = hash13(id + salt);
+  vec3 star = vec3(0.0);
+  if (h > keep) {
+    vec3 o = vec3(hash13(id + salt + 3.1), hash13(id + salt + 7.7), hash13(id + salt + 11.3)) - 0.5;
+    vec3 dv = f - o * 0.6;
+    // distance across the sphere only (remove the radial part of the 3D offset)
+    vec3 n = p / max(length(p), 1e-6);
+    vec3 dt = dv - n * dot(dv, n);
+    float s2 = sig * sig + fc * fc;
+    float b = 0.2 + 1.1 * pow((h - keep) / (1.0 - keep), 6.0);
+    float tint = hash13(id + salt + 5.5);
+    star = mix(vec3(1.0, 0.86, 0.7), vec3(0.8, 0.87, 1.0), tint) * b * exp(-0.5 * dot(dt, dt) / s2) * (sig * sig / s2);
+  }
+  return gain * mix(star, tintMean * meanB, smoothstep(0.22, 0.55, fc));
+}
+// Extended source: an elliptical patch with a compact core and lumpy structure, in gnomonic coordinates
+// about its direction. Gaussian terms are convolved with the footprint exactly (σ² + fp²).
+vec3 envSource(vec3 d, vec4 S, vec4 C, float fp, float salt) {
+  if (S.w <= 0.0) return vec3(0.0);
+  float c = dot(d, S.xyz);
+  if (c < 0.7) return vec3(0.0);
+  vec3 t1 = normalize(cross(S.xyz, abs(S.y) < 0.9 ? vec3(0.0, 1.0, 0.0) : vec3(1.0, 0.0, 0.0)));
+  vec3 t2 = cross(S.xyz, t1);
+  vec2 q = vec2(dot(d, t1), dot(d, t2)) / c;
+  // tilt the patch by a fixed angle per source
+  float a = salt * 2.4;
+  q = mat2(cos(a), sin(a), -sin(a), cos(a)) * q;
+  float sx = S.w, sy = S.w * C.a;
+  float f2 = fp * fp;
+  float ex2 = sx * sx + f2, ey2 = sy * sy + f2;
+  float halo = exp(-0.5 * (q.x * q.x / ex2 + q.y * q.y / ey2)) * sx * sy / sqrt(ex2 * ey2);
+  float cx2 = 0.09 * sx * sx + f2, cy2 = 0.09 * sy * sy + f2;
+  float core = exp(-0.5 * (q.x * q.x / cx2 + q.y * q.y / cy2)) * 0.09 * sx * sy / sqrt(cx2 * cy2);
+  // lumpy structure (knots and lanes) at ~sy/3, faded to its mean once the footprint covers it
+  float detail = 1.0 - smoothstep(0.12, 0.45, fp / sy);
+  vec3 nq = vec3(q / sy * 2.6, salt * 17.0 + uEnvSeed);
+  float lump = 0.6 * vnoise3(nq) + 0.4 * vnoise3(nq * 2.3 + 4.1);
+  float body = mix(1.0, 0.25 + 1.5 * lump, detail);
+  return C.rgb * (halo * body + 0.9 * core);
+}
+vec3 environment(vec3 v, vec3 dvx, vec3 dvy) {
+  float lv = length(v);
+  vec3 n = v / max(lv, 1e-6);
+  vec3 ex = (dvx - n * dot(n, dvx)) / max(lv, 1e-6);
+  vec3 ey = (dvy - n * dot(n, dvy)) / max(lv, 1e-6);
+  float fp = max(length(ex), length(ey));
+  // differentials blow up next to the critical curve (and can overflow): treat as an unresolved beam
+  if (isnan(fp) || isinf(fp)) fp = 1.0;
+  fp = clamp(fp, 1e-5, 1.0);
+  vec3 d = uEnvRot * n;
+  vec3 col = vec3(0.0);
+  // base stars: the accepted layers (same cells and colours), now footprint-filtered
+  col += starLayer(d, 110.0, 0.9935, 0.045, 1.4, 0.0, fp) * uStarGain;
+  col += starLayer(d, 260.0, 0.997, 0.045, 1.4, 19.7, fp) * uStarGain;
+  // dense faint field: what makes the curved star trails around the shadow readable
+  col += starLayer(d, 190.0, 0.965, 0.05, 0.55 * uEnvStars, 41.0 + uEnvSeed, fp);
+  col += starLayer(d, 340.0, 0.94, 0.05, 0.3 * uEnvStars, 83.0 + uEnvSeed, fp);
+  for (int k = 0; k < 3; k++) col += envSource(d, uEnvSrc[k], uEnvSrcCol[k], fp, float(k) + 1.0);
+  // faint diffuse band (low-frequency, so it needs no filtering)
+  float bd = dot(d, uEnvBand);
+  float band = exp(-bd * bd / (2.0 * 0.16 * 0.16));
+  float bn = 0.65 * vnoise3(d * 3.5 + uEnvSeed) + 0.35 * vnoise3(d * 8.0 + 2.0 * uEnvSeed);
+  col += uEnvDiffuse * (band * (0.25 + 1.5 * bn * bn) + 0.12 * bn) * vec3(1.0, 0.8, 0.6);
+  return col * uEnvGain;
+}
+#endif
 
 // ---- gas ----------------------------------------------------------------------------------------------
 
@@ -469,7 +574,11 @@ void main() {
   // Rays still bound after the budget have wound around the photon sphere: they sit within a hair of the
   // critical curve and are treated as captured (their higher-order images are sub-pixel thin).
   if (state == 0 && length(p) < 8.0) state = 1;
+#ifdef NOIR_ENV
+  if (state == 2 || state == 0) col += tr * environment(v, dvx, dvy);
+#else
   if (state == 2 || state == 0) col += tr * starfield(normalize(v));
+#endif
 
   if (uDebug == 2) {
     vec3 s = state == 1 ? vec3(0.6, 0.05, 0.05) : state == 2 ? vec3(0.05, 0.35, 0.08) : state == 3 ? vec3(0.4, 0.4, 0.4) : vec3(0.1, 0.2, 1.0);
@@ -478,6 +587,9 @@ void main() {
   fragColor = vec4(col, 1.0);
 }
 `;
+
+/** TRACE_FRAG with the environment compiled in (see NOIR_ENV). */
+export const TRACE_ENV_FRAG = TRACE_FRAG.replace("#version 300 es\n", "#version 300 es\n#define NOIR_ENV 1\n");
 
 /**
  * Bright-pass + 4-tap downsample (first bloom level), soft knee. Taps are Karis-averaged (weight

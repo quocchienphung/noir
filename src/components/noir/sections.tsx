@@ -1,16 +1,22 @@
-import Link from "next/link";
+import { TransitionLink } from "./motion/TransitionLink";
 import type { ReactNode } from "react";
 import { home, principles, process, services } from "@/data/noir/site";
+import type { MotionRole } from "@/lib/noir/motion";
 import { cn } from "@/lib/utils";
 import s from "@/styles/noir/sections.module.css";
 
-export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
-  return <p className={cn(s.eyebrow, className)}>{children}</p>;
+/** `motion` names the element's role in the sitewide choreography (components/noir/motion); layout is unchanged. */
+export function Eyebrow({ children, className, motion }: { children: ReactNode; className?: string; motion?: MotionRole }) {
+  return (
+    <p className={cn(s.eyebrow, className)} data-m={motion}>
+      {children}
+    </p>
+  );
 }
 
 export function ArrowIcon({ direction = "up-right" }: { direction?: "up-right" | "right" }) {
   return (
-    <svg viewBox="0 0 16 16" aria-hidden="true" className={s.arrow}>
+    <svg viewBox="0 0 16 16" aria-hidden="true" className={cn(s.arrow, direction === "right" ? s.arrowRight : s.arrowUpRight)}>
       <path
         d={direction === "right" ? "M3 8h10M9 4l4 4-4 4" : "M5 11 11 5M6 5h5v5"}
         fill="none"
@@ -21,38 +27,12 @@ export function ArrowIcon({ direction = "up-right" }: { direction?: "up-right" |
   );
 }
 
-export function ButtonLink({ href, children, variant = "primary" }: { href: string; children: ReactNode; variant?: "primary" | "ghost" }) {
+export function ButtonLink({ href, children, variant = "primary", motion }: { href: string; children: ReactNode; variant?: "primary" | "ghost"; motion?: MotionRole }) {
   return (
-    <Link href={href} className={variant === "primary" ? s.btnPrimary : s.btnGhost}>
+    <TransitionLink href={href} className={variant === "primary" ? s.btnPrimary : s.btnGhost} data-m={motion}>
       {children}
       <ArrowIcon direction={variant === "primary" ? "up-right" : "right"} />
-    </Link>
-  );
-}
-
-/** Opening statement after the intro: what NOIR does, as plain capability pillars (no counters). */
-export function NoirCapabilities() {
-  const c = home.capabilities;
-  return (
-    <section className={s.section} aria-labelledby="noir-capabilities-title">
-      <div className={s.inner}>
-        <Eyebrow>{c.eyebrow}</Eyebrow>
-        <h2 id="noir-capabilities-title" className={cn(s.display, s.reveal)}>
-          {c.title}
-        </h2>
-        <div className={s.capGrid}>
-          <p className={cn(s.lead, s.reveal)}>{c.body}</p>
-          <ul className={s.pillars} aria-label="Capabilities">
-            {c.pillars.map((pillar, i) => (
-              <li key={pillar} className={cn(s.pillar, s.reveal)}>
-                <span className={s.pillarIndex}>{String(i + 1).padStart(2, "0")}</span>
-                {pillar}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </section>
+    </TransitionLink>
   );
 }
 
@@ -62,15 +42,15 @@ export function NoirServices() {
     <section className={s.section} aria-labelledby="noir-services-title">
       <div className={s.inner}>
         <div className={s.split}>
-          <div>
-            <Eyebrow>{home.servicesIntro.eyebrow}</Eyebrow>
-            <h2 id="noir-services-title" className={cn(s.heading, s.reveal)}>
+          <div data-m-group="">
+            <Eyebrow motion="eyebrow">{home.servicesIntro.eyebrow}</Eyebrow>
+            <h2 id="noir-services-title" className={s.heading} data-m="block">
               {home.servicesIntro.title}
             </h2>
           </div>
-          <div className={s.accordion}>
+          <div className={s.accordion} data-m-group="">
             {services.map((service, i) => (
-              <details key={service.id} className={s.item} name="noir-services" open={i === 0}>
+              <details key={service.id} className={s.item} name="noir-services" open={i === 0} data-m="item">
                 <summary className={s.summary}>
                   <span className={s.itemIndex}>{String(i + 1).padStart(2, "0")}</span>
                   <span className={s.itemTitle}>{service.title}</span>
@@ -97,13 +77,13 @@ export function NoirProcess() {
   return (
     <section className={s.section} aria-labelledby="noir-process-title">
       <div className={s.inner}>
-        <Eyebrow>{home.processIntro.eyebrow}</Eyebrow>
-        <h2 id="noir-process-title" className={cn(s.heading, s.reveal)}>
+        <Eyebrow motion="eyebrow">{home.processIntro.eyebrow}</Eyebrow>
+        <h2 id="noir-process-title" className={s.heading} data-m="block">
           {home.processIntro.title}
         </h2>
-        <ol className={s.steps}>
+        <ol className={s.steps} data-m-group="">
           {process.map((step, i) => (
-            <li key={step.id} className={cn(s.step, s.reveal)}>
+            <li key={step.id} className={s.step} data-m="item">
               <span className={s.stepIndex}>{String(i + 1).padStart(2, "0")}</span>
               <h3 className={s.stepTitle}>{step.title}</h3>
               <p className={s.stepBody}>{step.body}</p>
@@ -119,10 +99,10 @@ export function NoirPrinciples() {
   return (
     <section className={cn(s.section, s.sectionTight)} aria-label={home.principlesIntro.eyebrow}>
       <div className={s.inner}>
-        <Eyebrow>{home.principlesIntro.eyebrow}</Eyebrow>
-        <ul className={s.principles}>
+        <Eyebrow motion="eyebrow">{home.principlesIntro.eyebrow}</Eyebrow>
+        <ul className={s.principles} data-m-group="">
           {principles.map((item) => (
-            <li key={item.title} className={cn(s.principle, s.reveal)}>
+            <li key={item.title} className={s.principle} data-m="item">
               <h3 className={s.principleTitle}>{item.title}</h3>
               <p className={s.principleBody}>{item.body}</p>
             </li>
@@ -138,9 +118,15 @@ export function PageHeader({ eyebrow, title, lead }: { eyebrow?: string; title: 
   return (
     <header className={s.pageHeader}>
       <div className={s.inner}>
-        {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-        <h1 className={s.pageTitle}>{title}</h1>
-        {lead ? <p className={s.pageLead}>{lead}</p> : null}
+        {eyebrow ? <Eyebrow motion="eyebrow">{eyebrow}</Eyebrow> : null}
+        <h1 className={s.pageTitle} data-m="heading">
+          {title}
+        </h1>
+        {lead ? (
+          <p className={s.pageLead} data-m="lead">
+            {lead}
+          </p>
+        ) : null}
       </div>
     </header>
   );

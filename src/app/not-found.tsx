@@ -9,11 +9,19 @@ export const metadata: Metadata = { title: "Page not found" };
 export default function NotFound() {
   return (
     <main className={s.notFound}>
-      <NoirMark size={160} className={s.notFoundMark} />
-      <p className={s.notFoundCode}>404</p>
-      <h1 className={s.notFoundTitle}>{notFound.title}</h1>
-      <p className={s.muted}>{notFound.body}</p>
-      <ButtonLink href={notFound.cta.href}>{notFound.cta.label}</ButtonLink>
+      <NoirMark size={160} className={s.notFoundMark} motion="visual" />
+      <p className={s.notFoundCode} data-m="eyebrow">
+        404
+      </p>
+      <h1 className={s.notFoundTitle} data-m="heading">
+        {notFound.title}
+      </h1>
+      <p className={s.muted} data-m="lead">
+        {notFound.body}
+      </p>
+      <ButtonLink href={notFound.cta.href} motion="actions">
+        {notFound.cta.label}
+      </ButtonLink>
     </main>
   );
 }

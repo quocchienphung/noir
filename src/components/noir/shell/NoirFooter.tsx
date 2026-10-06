@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { TransitionLink } from "../motion/TransitionLink";
 import { brand, footerNav, home, routes } from "@/data/noir/site";
 import { NoirMark } from "../brand";
 import s from "@/styles/noir/footer.module.css";
@@ -12,36 +12,37 @@ export function NoirFooter() {
   };
 
   return (
-    <footer className={s.footer}>
-      <div className={s.top}>
-        <div className={s.pitch}>
+    // a page surface: fades with the page content on route transitions; its groups reveal once per route visit
+    <footer className={s.footer} data-route-surface="footer">
+      <div className={s.top} data-m-group="">
+        <div className={s.pitch} data-m="block">
           <h2 className={s.title}>{home.cta.title}</h2>
-          <Link href={routes.contact} className={s.cta}>
+          <TransitionLink href={routes.contact} className={s.cta}>
             {home.cta.primary.label}
             <svg viewBox="0 0 16 16" aria-hidden="true" className={s.ctaIcon}>
               <path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" strokeWidth="1.5" />
             </svg>
-          </Link>
+          </TransitionLink>
         </div>
-        <nav aria-label="Footer" className={s.nav}>
+        <nav aria-label="Footer" className={s.nav} data-m="block">
           <ul className={s.navList}>
             {footerNav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className={s.navLink}>
+                <TransitionLink href={item.href} className={s.navLink}>
                   {item.label}
-                </Link>
+                </TransitionLink>
               </li>
             ))}
           </ul>
         </nav>
       </div>
 
-      <div className={s.brandRow} aria-hidden="true">
+      <div className={s.brandRow} aria-hidden="true" data-m="block">
         <NoirMark size={132} className={s.brandMark} />
         <span className={s.brandName}>{brand.name}</span>
       </div>
 
-      <div className={s.bottom}>
+      <div className={s.bottom} data-m="block">
         <p className={s.legal}>
           © {brand.year} {brand.name}. {brand.tagline}
         </p>

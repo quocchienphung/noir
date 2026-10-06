@@ -1,0 +1,622 @@
+{
+ "date": "2026-10-06T03:30:37.210Z",
+ "url": "http://localhost:3210",
+ "browser": "154.0.8037.93",
+ "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 SUPER (0x00002783) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+ "cpu": "Intel(R) Core(TM) i7-14700K",
+ "viewport": "1440x900",
+ "transitions": [
+  {
+   "label": "/ → /projects (round 1)",
+   "frames": 336,
+   "p50": 6.1,
+   "p95": 24.3,
+   "p99": 60.5,
+   "max": 84.9,
+   "over20": 31,
+   "over33": 12,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": [
+    {
+     "ms": 48,
+     "path": "/",
+     "y": 0,
+     "content": 0.78
+    },
+    {
+     "ms": 43,
+     "path": "/",
+     "y": 0,
+     "content": 0.2
+    },
+    {
+     "ms": 49,
+     "path": "/",
+     "y": 0,
+     "content": 0.08
+    },
+    {
+     "ms": 61,
+     "path": "/",
+     "y": 0,
+     "content": 0.02
+    },
+    {
+     "ms": 49,
+     "path": "/projects",
+     "y": 0,
+     "content": 0
+    },
+    {
+     "ms": 85,
+     "path": "/projects",
+     "y": 0,
+     "content": 0.47
+    },
+    {
+     "ms": 35,
+     "path": "/projects",
+     "y": 0,
+     "content": 1
+    },
+    {
+     "ms": 61,
+     "path": "/projects",
+     "y": 0,
+     "content": 1
+    }
+   ]
+  },
+  {
+   "label": "/projects → /about (round 1)",
+   "frames": 413,
+   "p50": 6.1,
+   "p95": 18.1,
+   "p99": 24.3,
+   "max": 36.4,
+   "over20": 11,
+   "over33": 1,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": [
+    {
+     "ms": 36,
+     "path": "/about",
+     "y": 0,
+     "content": 1
+    }
+   ]
+  },
+  {
+   "label": "/about → /contact (round 1)",
+   "frames": 392,
+   "p50": 6.1,
+   "p95": 18.2,
+   "p99": 24.3,
+   "max": 187.9,
+   "over20": 16,
+   "over33": 2,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": [
+    {
+     "ms": 55,
+     "path": "/contact",
+     "y": 0,
+     "content": 0
+    },
+    {
+     "ms": 188,
+     "path": "/contact",
+     "y": 0,
+     "content": 0
+    }
+   ]
+  },
+  {
+   "label": "/contact → /projects (round 1)",
+   "frames": 401,
+   "p50": 6.1,
+   "p95": 13,
+   "p99": 24.3,
+   "max": 24.5,
+   "over20": 11,
+   "over33": 0,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": []
+  },
+  {
+   "label": "/projects → / (round 1)",
+   "frames": 203,
+   "p50": 12.1,
+   "p95": 36.4,
+   "p99": 42.5,
+   "max": 145.5,
+   "over20": 62,
+   "over33": 15,
+   "longTasks": 1,
+   "longTaskMax": 137,
+   "slow": [
+    {
+     "ms": 43,
+     "path": "/",
+     "y": 0,
+     "content": 0
+    },
+    {
+     "ms": 146,
+     "path": "/",
+     "y": 0,
+     "content": 0
+    },
+    {
+     "ms": 36,
+     "path": "/",
+     "y": 0,
+     "content": 0
+    },
+    {
+     "ms": 36,
+     "path": "/",
+     "y": 0,
+     "content": 0
+    },
+    {
+     "ms": 42,
+     "path": "/",
+     "y": 0,
+     "content": 0.02
+    },
+    {
+     "ms": 36,
+     "path": "/",
+     "y": 0,
+     "content": 0.05
+    },
+    {
+     "ms": 42,
+     "path": "/",
+     "y": 0,
+     "content": 0.72
+    },
+    {
+     "ms": 42,
+     "path": "/",
+     "y": 0,
+     "content": 0.95
+    }
+   ]
+  },
+  {
+   "label": "/ → /about (round 1)",
+   "frames": 355,
+   "p50": 6.1,
+   "p95": 24.3,
+   "p99": 36.3,
+   "max": 42.5,
+   "over20": 28,
+   "over33": 5,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": [
+    {
+     "ms": 36,
+     "path": "/",
+     "y": 0,
+     "content": 1
+    },
+    {
+     "ms": 36,
+     "path": "/",
+     "y": 0,
+     "content": 0.94
+    },
+    {
+     "ms": 43,
+     "path": "/",
+     "y": 0,
+     "content": 0.73
+    },
+    {
+     "ms": 36,
+     "path": "/",
+     "y": 0,
+     "content": 0.55
+    },
+    {
+     "ms": 36,
+     "path": "/",
+     "y": 0,
+     "content": 0.01
+    }
+   ]
+  },
+  {
+   "label": "/about → /projects (round 2)",
+   "frames": 396,
+   "p50": 6.1,
+   "p95": 18,
+   "p99": 24.3,
+   "max": 24.5,
+   "over20": 11,
+   "over33": 0,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": []
+  },
+  {
+   "label": "/projects → /about (round 2)",
+   "frames": 408,
+   "p50": 6.1,
+   "p95": 12.4,
+   "p99": 24.2,
+   "max": 24.4,
+   "over20": 8,
+   "over33": 0,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": []
+  },
+  {
+   "label": "/about → /contact (round 2)",
+   "frames": 401,
+   "p50": 6.1,
+   "p95": 17.9,
+   "p99": 24.3,
+   "max": 24.3,
+   "over20": 10,
+   "over33": 0,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": []
+  },
+  {
+   "label": "/contact → /projects (round 2)",
+   "frames": 424,
+   "p50": 6.1,
+   "p95": 12.2,
+   "p99": 24.3,
+   "max": 24.5,
+   "over20": 9,
+   "over33": 0,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": []
+  },
+  {
+   "label": "/projects → / (round 2)",
+   "frames": 212,
+   "p50": 12.1,
+   "p95": 36.3,
+   "p99": 54.4,
+   "max": 157.6,
+   "over20": 55,
+   "over33": 12,
+   "longTasks": 2,
+   "longTaskMax": 155,
+   "slow": [
+    {
+     "ms": 61,
+     "path": "/",
+     "y": 0,
+     "content": 0
+    },
+    {
+     "ms": 158,
+     "path": "/",
+     "y": 0,
+     "content": 0
+    },
+    {
+     "ms": 43,
+     "path": "/",
+     "y": 0,
+     "content": 0
+    },
+    {
+     "ms": 36,
+     "path": "/",
+     "y": 0,
+     "content": 0
+    },
+    {
+     "ms": 43,
+     "path": "/",
+     "y": 0,
+     "content": 0
+    },
+    {
+     "ms": 37,
+     "path": "/",
+     "y": 0,
+     "content": 0.01
+    },
+    {
+     "ms": 54,
+     "path": "/",
+     "y": 0,
+     "content": 0.68
+    },
+    {
+     "ms": 42,
+     "path": "/",
+     "y": 0,
+     "content": 0.96
+    }
+   ]
+  },
+  {
+   "label": "/ → /about (round 2)",
+   "frames": 355,
+   "p50": 6.1,
+   "p95": 24.2,
+   "p99": 30.3,
+   "max": 36.4,
+   "over20": 27,
+   "over33": 1,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": [
+    {
+     "ms": 36,
+     "path": "/",
+     "y": 0,
+     "content": 1
+    }
+   ]
+  }
+ ],
+ "scroll": [
+  {
+   "label": "/ wheel down",
+   "frames": 541,
+   "p50": 12,
+   "p95": 48.6,
+   "p99": 96.9,
+   "max": 151.6,
+   "over20": 121,
+   "over33": 63,
+   "longTasks": 1,
+   "longTaskMax": 59,
+   "slow": [
+    {
+     "ms": 42,
+     "path": "/",
+     "y": 100,
+     "content": 1
+    },
+    {
+     "ms": 55,
+     "path": "/",
+     "y": 100,
+     "content": 1
+    },
+    {
+     "ms": 152,
+     "path": "/",
+     "y": 200,
+     "content": 1
+    },
+    {
+     "ms": 97,
+     "path": "/",
+     "y": 200,
+     "content": 1
+    },
+    {
+     "ms": 91,
+     "path": "/",
+     "y": 300,
+     "content": 1
+    },
+    {
+     "ms": 61,
+     "path": "/",
+     "y": 400,
+     "content": 1
+    },
+    {
+     "ms": 36,
+     "path": "/",
+     "y": 500,
+     "content": 1
+    },
+    {
+     "ms": 49,
+     "path": "/",
+     "y": 500,
+     "content": 1
+    }
+   ]
+  },
+  {
+   "label": "/ wheel up",
+   "frames": 500,
+   "p50": 12.1,
+   "p95": 47.4,
+   "p99": 66.8,
+   "max": 79,
+   "over20": 109,
+   "over33": 48,
+   "longTasks": 1,
+   "longTaskMax": 66,
+   "slow": [
+    {
+     "ms": 43,
+     "path": "/",
+     "y": 11224,
+     "content": 1
+    },
+    {
+     "ms": 73,
+     "path": "/",
+     "y": 11124,
+     "content": 1
+    },
+    {
+     "ms": 36,
+     "path": "/",
+     "y": 11024,
+     "content": 1
+    },
+    {
+     "ms": 36,
+     "path": "/",
+     "y": 10924,
+     "content": 1
+    },
+    {
+     "ms": 42,
+     "path": "/",
+     "y": 10924,
+     "content": 1
+    },
+    {
+     "ms": 67,
+     "path": "/",
+     "y": 10824,
+     "content": 1
+    },
+    {
+     "ms": 49,
+     "path": "/",
+     "y": 10224,
+     "content": 1
+    },
+    {
+     "ms": 67,
+     "path": "/",
+     "y": 10124,
+     "content": 1
+    }
+   ]
+  },
+  {
+   "label": "/projects wheel down",
+   "frames": 171,
+   "p50": 6.1,
+   "p95": 24.2,
+   "p99": 24.5,
+   "max": 42.4,
+   "over20": 10,
+   "over33": 1,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": [
+    {
+     "ms": 42,
+     "path": "/projects",
+     "y": 900,
+     "content": 1
+    }
+   ]
+  },
+  {
+   "label": "/projects wheel up",
+   "frames": 197,
+   "p50": 6.1,
+   "p95": 12.1,
+   "p99": 24.2,
+   "max": 24.3,
+   "over20": 3,
+   "over33": 0,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": []
+  },
+  {
+   "label": "/about wheel down",
+   "frames": 243,
+   "p50": 6.1,
+   "p95": 12,
+   "p99": 30.3,
+   "max": 72.8,
+   "over20": 4,
+   "over33": 2,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": [
+    {
+     "ms": 73,
+     "path": "/about",
+     "y": 200,
+     "content": 1
+    },
+    {
+     "ms": 55,
+     "path": "/about",
+     "y": 300,
+     "content": 1
+    }
+   ]
+  },
+  {
+   "label": "/about wheel up",
+   "frames": 244,
+   "p50": 6.1,
+   "p95": 6.3,
+   "p99": 12.1,
+   "max": 18.2,
+   "over20": 0,
+   "over33": 0,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": []
+  },
+  {
+   "label": "/contact wheel down",
+   "frames": 166,
+   "p50": 6.1,
+   "p95": 6.2,
+   "p99": 6.2,
+   "max": 6.2,
+   "over20": 0,
+   "over33": 0,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": []
+  },
+  {
+   "label": "/contact wheel up",
+   "frames": 164,
+   "p50": 6.1,
+   "p95": 6.2,
+   "p99": 6.3,
+   "max": 6.3,
+   "over20": 0,
+   "over33": 0,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": []
+  },
+  {
+   "label": "/privacy-policy wheel down",
+   "frames": 186,
+   "p50": 6.1,
+   "p95": 6.3,
+   "p99": 6.3,
+   "max": 6.3,
+   "over20": 0,
+   "over33": 0,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": []
+  },
+  {
+   "label": "/privacy-policy wheel up",
+   "frames": 186,
+   "p50": 6.1,
+   "p95": 6.2,
+   "p99": 6.4,
+   "max": 6.6,
+   "over20": 0,
+   "over33": 0,
+   "longTasks": 0,
+   "longTaskMax": 0,
+   "slow": []
+  }
+ ],
+ "reducedMotionControl": false
+}

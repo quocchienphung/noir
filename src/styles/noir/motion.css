@@ -1,0 +1,31 @@
+/* Sitewide motion hooks (src/components/noir/motion). Global on purpose: the hidden pre-animation state must apply
+   from the first paint, before hydration, to every [data-m] target in any page or the footer.
+
+   - Applies only when the visitor allows motion. Without JavaScript a <noscript> style in app/layout.tsx shows
+     every target as authored.
+   - Fail-safe: a target the runtime never claims fades in by itself after 3 s.
+   - [data-pending]: below the fold, waiting for its viewport reveal (claimed by the runtime, no fail-safe needed).
+   - [data-shown]: handed to the runtime (WAAPI, fill backwards) or shown; the element's own CSS is the final state. */
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-m]:not([data-shown]) {
+    /* 0, not 0.001 (unlike the page surfaces): a waiting target is not painted at all, so its reveal paints and
+       rasterises it once on its own layer — at 0.001 it was painted into the page layer first and rasterised a
+       second time on promotion (measured 36–79 ms frames while scrolling Privacy/About) */
+    opacity: 0;
+    /* an invisible target never takes a click (keyboard focus reveals it at once, see MotionProvider) */
+    pointer-events: none;
+    animation: noir-motion-failsafe 0.6s ease 3s forwards;
+  }
+
+  [data-m][data-pending]:not([data-shown]) {
+    animation: none;
+  }
+}
+
+@keyframes noir-motion-failsafe {
+  to {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

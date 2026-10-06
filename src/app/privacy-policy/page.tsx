@@ -11,9 +11,9 @@ export default function PrivacyPolicyPage() {
       <PageHeader eyebrow={`Last updated ${privacy.updated}`} title={privacy.title} />
       <section className={s.section} aria-label="Policy">
         <div className={s.inner}>
-          <div className={s.legal}>
+          <div className={s.legal} data-m-group="">
             {privacy.sections.map((section) => (
-              <section key={section.heading} className={s.legalSection}>
+              <section key={section.heading} className={s.legalSection} data-m="legal">
                 <h2 className={s.h3}>{section.heading}</h2>
                 {section.body.map((p) => (
                   <p key={p}>{p}</p>

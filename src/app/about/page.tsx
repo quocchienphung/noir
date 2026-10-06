@@ -15,14 +15,16 @@ export default function AboutPage() {
       <section className={s.section} aria-label="Studio">
         <div className={s.inner}>
           <div className={s.twoCol}>
-            <div className={s.markPanel} aria-hidden="true">
+            <div className={s.markPanel} aria-hidden="true" data-m="visual">
               <NoirMark size={320} className={s.markPanelImg} />
             </div>
-            <div className={s.prose}>
+            <div className={s.prose} data-m-group="">
               {about.body.map((p) => (
-                <p key={p}>{p}</p>
+                <p key={p} data-m="block">
+                  {p}
+                </p>
               ))}
-              <div className={s.actions}>
+              <div className={s.actions} data-m="block">
                 <ButtonLink href={routes.contact}>Start a project</ButtonLink>
                 <ButtonLink href={routes.work} variant="ghost">
                   Explore work
@@ -37,12 +39,12 @@ export default function AboutPage() {
 
       <section className={s.section} aria-labelledby="about-stack">
         <div className={s.inner}>
-          <h2 id="about-stack" className={s.h2}>
+          <h2 id="about-stack" className={s.h2} data-m="block">
             {about.stackTitle}
           </h2>
-          <div className={s.stackGrid}>
+          <div className={s.stackGrid} data-m-group="">
             {about.stack.map((group) => (
-              <div key={group.group} className={s.stackGroup}>
+              <div key={group.group} className={s.stackGroup} data-m="item">
                 <h3 className={s.h3}>{group.group}</h3>
                 <ul className={s.tags}>
                   {group.items.map((item) => (
@@ -52,7 +54,9 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-          <p className={s.note}>{about.stackNote}</p>
+          <p className={s.note} data-m="block">
+            {about.stackNote}
+          </p>
         </div>
       </section>
 

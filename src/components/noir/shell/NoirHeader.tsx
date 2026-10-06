@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { TransitionLink } from "../motion/TransitionLink";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { primaryNav, routes } from "@/data/noir/site";
@@ -17,6 +17,7 @@ export function NoirHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const wasOpen = useRef(false);
 
@@ -41,6 +42,40 @@ export function NoirHeader() {
     return () => {
       window.removeEventListener("scroll", onScroll);
       cancelAnimationFrame(raf);
+    };
+  }, [pathname]);
+
+  // denser glass while the header strip is over a light section (contrast of the nav links); dark sections unchanged
+  const [onLight, setOnLight] = useState(false);
+  useEffect(() => {
+    const targets = [...document.querySelectorAll('[data-header-surface="light"]')];
+    if (!targets.length) {
+      queueMicrotask(() => setOnLight(false));
+      return;
+    }
+    const over = new Set<Element>();
+    let io: IntersectionObserver | null = null;
+    const observe = () => {
+      io?.disconnect();
+      const h = headerRef.current?.offsetHeight || 72;
+      // only the strip under the fixed header counts
+      io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) over.add(e.target);
+            else over.delete(e.target);
+          }
+          setOnLight(over.size > 0);
+        },
+        { rootMargin: `0px 0px -${Math.max(0, window.innerHeight - h)}px 0px` },
+      );
+      targets.forEach((t) => io?.observe(t));
+    };
+    observe();
+    window.addEventListener("resize", observe);
+    return () => {
+      io?.disconnect();
+      window.removeEventListener("resize", observe);
     };
   }, [pathname]);
 
@@ -92,26 +127,26 @@ export function NoirHeader() {
 
   return (
     <>
-      <header className={s.header} data-scrolled={scrolled ? "" : undefined}>
-        <Link href={routes.home} className={s.home} aria-label="NOIR — home">
+      <header ref={headerRef} className={s.header} data-scrolled={scrolled ? "" : undefined} data-surface={onLight ? "light" : undefined}>
+        <TransitionLink href={routes.home} className={s.home} aria-label="NOIR — home">
           <NoirWordmark />
-        </Link>
+        </TransitionLink>
 
         <nav className={s.nav} aria-label="Primary">
           <ul className={s.navList}>
             {primaryNav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className={s.navLink} aria-current={isCurrent(item.href) ? "page" : undefined}>
+                <TransitionLink href={item.href} className={s.navLink} aria-current={isCurrent(item.href) ? "page" : undefined}>
                   {item.label}
-                </Link>
+                </TransitionLink>
               </li>
             ))}
           </ul>
         </nav>
 
-        <Link href={routes.contact} className={s.cta}>
+        <TransitionLink href={routes.contact} className={s.cta}>
           Start a project
-        </Link>
+        </TransitionLink>
 
         <button
           ref={buttonRef}
@@ -136,21 +171,21 @@ export function NoirHeader() {
             <ul className={s.drawerList}>
               {primaryNav.map((item) => (
                 <li key={item.href}>
-                  <Link
+                  <TransitionLink
                     href={item.href}
                     className={s.drawerLink}
                     aria-current={isCurrent(item.href) ? "page" : undefined}
                     onClick={close}
                   >
                     {item.label}
-                  </Link>
+                  </TransitionLink>
                 </li>
               ))}
             </ul>
           </nav>
-          <Link href={routes.contact} className={s.drawerCta} onClick={close}>
+          <TransitionLink href={routes.contact} className={s.drawerCta} onClick={close}>
             Start a project
-          </Link>
+          </TransitionLink>
         </div>
       </div>
     </>

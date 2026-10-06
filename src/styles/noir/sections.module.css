@@ -82,8 +82,32 @@
   font-weight: 500;
   text-decoration: none;
   transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease;
+    background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* interaction feedback (sitewide motion): the arrow leans toward its destination on hover/focus, the button
+   gives a little on press. Decoration only — size, hit area and label never change. */
+@media (prefers-reduced-motion: no-preference) {
+  .arrow {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  a:hover > .arrowUpRight,
+  a:focus-visible > .arrowUpRight {
+    transform: translate3d(2px, -2px, 0);
+  }
+
+  a:hover > .arrowRight,
+  a:focus-visible > .arrowRight {
+    transform: translate3d(3px, 0, 0);
+  }
+
+  .btnPrimary:active,
+  .btnGhost:active {
+    transform: scale(0.98);
+  }
 }
 
 .btnPrimary {
@@ -110,36 +134,7 @@
   outline-offset: 3px;
 }
 
-/* ---------- Capabilities ---------- */
 
-.capGrid {
-  display: grid;
-  gap: 3rem;
-  margin-top: clamp(2.5rem, 6vw, 5rem);
-}
-
-.pillars {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border-top: 1px solid var(--noir-line);
-}
-
-.pillar {
-  display: flex;
-  align-items: baseline;
-  gap: 0.9rem;
-  padding: 1.1rem 0;
-  border-bottom: 1px solid var(--noir-line);
-  font-family: var(--font-heading);
-  font-weight: 500;
-  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
-  letter-spacing: -0.02em;
-}
-
-.pillarIndex,
 .itemIndex,
 .stepIndex {
   font-family: var(--font-mono);
@@ -147,17 +142,6 @@
   font-weight: 400;
   letter-spacing: 0.06em;
   color: var(--noir-faint);
-}
-
-@media (min-width: 810px) {
-  .capGrid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-    align-items: start;
-  }
-
-  .pillars {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 /* ---------- Services accordion ---------- */
@@ -410,25 +394,5 @@
   color: var(--noir-muted);
 }
 
-/* ---------- Scroll reveal (progressive: CSS scroll timelines only; content is visible without them) ---------- */
-
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .reveal {
-      animation: noir-reveal linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 70%;
-    }
-  }
-}
-
-@keyframes noir-reveal {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 1.5rem, 0);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
+/* Scroll reveal: owned by the sitewide motion runtime ([data-m] targets, components/noir/motion). The former CSS
+   view-timeline .reveal was retired here so no node has two animation owners. */

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { BlackHoleRenderer, type FrameParams } from "@/lib/noir/blackhole/renderer";
 import type { Pose } from "@/lib/noir/blackhole/orbit";
+import { alignmentSweep, directionNearLineOfSight, HERO_ENVIRONMENT } from "@/lib/noir/blackhole/environment";
 import { cinematicFrame, diveFrame, referenceFrame, topdownFrame, type Pointer, type SceneInput } from "@/lib/noir/blackhole/scenes";
 import s from "@/styles/noir/black-hole.module.css";
 
@@ -35,6 +36,12 @@ type TierName = keyof typeof TIERS;
  *   bhDebug  1 unlit density, 2 capture/escape/unresolved, 3 flow markers
  *   bhView   1 no bloom+veil, 2 radiance, 3 no veil, 4 no bloom   bhGrain=0 no grain
  *   bhAbl    ablation bitmask (TRACE_FRAG uAbl)             bhGas    gas overrides, e.g. opacity:60,thickness:0.01
+ *   bhEnv    0 accepted star background (environment off), 1 force the scene's environment on
+ *   bhEnvOnly=1  environment only (no gas: shadow + lensed background)
+ *   bhEnvSrc offset,angle  main source at offset (rad) from the line of sight, screen angle (deg)
+ *   bhEnvSweep  seconds: main source sweeps through alignment (source → arc → ring → arc → source)
+ *   bhLook=prev  cinematic: the accepted (pre-closeup) look values on the current camera, for same-camera A/B
+ *   bhDump=1 write the frame's camera/look parameters to canvas.dataset.frame (uniform snapshot)
  * `process.env.NODE_ENV` is inlined at build time, so production bundles drop this entirely.
  */
 interface QaOverrides {
@@ -47,6 +54,12 @@ interface QaOverrides {
   noGrain?: boolean;
   ablate?: number;
   gas?: Record<string, number>;
+  env?: number;
+  envOnly?: boolean;
+  envSrc?: [number, number];
+  envSweep?: number;
+  dump?: boolean;
+  prevLook?: boolean;
 }
 function readQa(): QaOverrides | null {
   if (process.env.NODE_ENV === "production") return null;
@@ -54,6 +67,7 @@ function readQa(): QaOverrides | null {
   const num = (k: string) => (q.has(k) && Number.isFinite(Number(q.get(k))) ? Number(q.get(k)) : undefined);
   const tier = q.get("bhQ");
   const gas = q.get("bhGas");
+  const envSrc = q.get("bhEnvSrc")?.split(",").map(Number);
   return {
     time: num("bhT"),
     scale: num("bhScale"),
@@ -63,6 +77,12 @@ function readQa(): QaOverrides | null {
     view: num("bhView"),
     noGrain: q.get("bhGrain") === "0",
     ablate: num("bhAbl"),
+    env: num("bhEnv"),
+    envOnly: q.get("bhEnvOnly") === "1",
+    envSrc: envSrc && envSrc.length === 2 && envSrc.every(Number.isFinite) ? [envSrc[0], envSrc[1]] : undefined,
+    envSweep: num("bhEnvSweep"),
+    dump: q.get("bhDump") === "1",
+    prevLook: q.get("bhLook") === "prev",
     gas: gas
       ? Object.fromEntries(
           gas
@@ -73,6 +93,41 @@ function readQa(): QaOverrides | null {
         )
       : undefined,
   };
+}
+
+/** Development-only environment overrides (see readQa). */
+function applyEnvQa(qa: QaOverrides, f: FrameParams, canvas: HTMLCanvasElement) {
+  if (qa.env === 0) f.environment = undefined;
+  if (qa.env === 1 && !f.environment) f.environment = HERO_ENVIRONMENT;
+  if (f.environment && (qa.envSrc || qa.envSweep)) {
+    const sources = [...f.environment.sources];
+    const eye = f.camPos;
+    sources[0] = {
+      ...sources[0],
+      direction: qa.envSweep ? alignmentSweep(eye, f.time, qa.envSweep) : directionNearLineOfSight(eye, qa.envSrc![0], qa.envSrc![1]),
+    };
+    f.environment = { ...f.environment, sources };
+  }
+  if (qa.envOnly) f.gas = { ...f.gas, gain: 0, opacity: 0, plunge: 0 };
+  if (qa.dump) {
+    canvas.dataset.frame = JSON.stringify({
+        camPos: f.camPos,
+        basis: Array.from(f.basis),
+        tanHalfFov: f.tanHalfFov,
+        time: f.time,
+        quality: f.quality,
+        gas: f.gas,
+        exposure: f.exposure,
+        bloomGain: f.bloomGain,
+        bloomThreshold: f.bloomThreshold,
+        fade: f.fade,
+        grain: f.grain,
+        hueKeep: f.hueKeep,
+        veil: f.veil,
+        starGain: f.starGain,
+      environment: f.environment ?? null,
+    });
+  }
 }
 
 /** Starting tier: phones and small/coarse-pointer devices start at medium, everything else high. */
@@ -294,6 +349,8 @@ export function BlackHoleCanvas({
           if (qa?.noGrain) frameParams.grain = 0;
           if (qa?.ablate !== undefined) frameParams.ablate = qa.ablate;
           if (qa?.gas) frameParams.gas = { ...frameParams.gas, ...qa.gas };
+          if (qa?.prevLook && scene === "cinematic") Object.assign(frameParams, { exposure: 1.0, bloomGain: 0.55, bloomThreshold: 0.9, veil: 1.2 });
+          if (qa) applyEnvQa(qa, frameParams, canvas);
           renderer.render(frameParams);
           if (process.env.NODE_ENV !== "production") {
             const g = renderer.gpuMs();

@@ -8,7 +8,8 @@ import path from "node:path";
 import { chromium } from "playwright";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1")), "..");
-const OUT = path.join(ROOT, "docs/design-references/noir/qa");
+// NOIR_QA_OUT (repo-relative) redirects captures, so a regression run never overwrites accepted evidence
+const OUT = process.env.NOIR_QA_OUT ? path.join(ROOT, process.env.NOIR_QA_OUT, "visual") : path.join(ROOT, "docs/design-references/noir/qa");
 const base = process.argv[2] || "http://localhost:3200";
 const viewports = [
   [1440, 900],

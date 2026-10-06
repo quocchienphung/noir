@@ -1,4 +1,5 @@
-import { BAKE_FRAG, COMPOSITE_FRAG, DOWN_FRAG, FULLSCREEN_VERT, PREFILTER_FRAG, TRACE_FRAG, UP_FRAG } from "./shaders";
+import { envRotation, type EnvironmentLook } from "./environment";
+import { BAKE_FRAG, COMPOSITE_FRAG, DOWN_FRAG, FULLSCREEN_VERT, PREFILTER_FRAG, TRACE_ENV_FRAG, TRACE_FRAG, UP_FRAG } from "./shaders";
 
 type Vec3 = [number, number, number];
 
@@ -65,6 +66,11 @@ export interface FrameParams {
   /** Wide optical veil (coarsest bloom level) gain: the soft haze that lifts space around bright gas. */
   veil: number;
   starGain: number;
+  /**
+   * Background environment at infinity (environment.ts). Absent or `enabled: false` → the accepted star
+   * background, unchanged. Only escaped rays see it, through their remaining transmittance.
+   */
+  environment?: EnvironmentLook;
   /** 0 beauty, 1 unlit density, 2 capture/escape/unresolved, 3 flow markers. */
   debug?: number;
   /** 0 beauty, 1 no bloom + veil, 2 false-colour radiance, 3 no veil, 4 no bloom. */
@@ -96,6 +102,7 @@ const TRACE_UNIFORMS = [
   "uRes", "uTime", "uCamPos", "uCamBasis", "uTanHalfFov", "uGas", "uSteps", "uSlab", "uDebug", "uAbl",
   "uDiskIn", "uDiskOut", "uThick", "uGain", "uFalloff", "uOpacity", "uDoppler", "uOrbit", "uDrift",
   "uWarp", "uFil", "uClump", "uPlunge", "uPeriod", "uHeat", "uC0", "uC1", "uC2", "uC3", "uStarGain", "uGasMean", "uGasStd",
+  "uEnvGain", "uEnvSrc", "uEnvSrcCol", "uEnvStars", "uEnvDiffuse", "uEnvBand", "uEnvRot", "uEnvSeed",
 ];
 
 /**
@@ -111,7 +118,13 @@ export class BlackHoleRenderer {
   /** Per-channel mean and standard deviation of the baked gas field (read back once after the bake). */
   private gasMean: [number, number, number, number] = [0.5, 0.5, 0.5, 0.5];
   private gasStd: [number, number, number, number] = [0.15, 0.15, 0.15, 0.15];
+  /** Environment source uniforms, reused every frame (no per-frame allocation). */
+  private envSrc = new Float32Array(12);
+  private envCol = new Float32Array(12);
+  private envRot = new Float32Array(9);
   private trace: Program;
+  /** Trace program with the environment compiled in (NOIR_ENV), created on first use. */
+  private traceEnv: Program | null = null;
   private prefilter: Program;
   private down: Program;
   private up: Program;
@@ -380,6 +393,16 @@ export class BlackHoleRenderer {
     const scene = this.scene;
     if (!scene || gl.isContextLost()) return;
     gl.disable(gl.BLEND);
+    // Fully faded (the dive has crossed the horizon): the composite multiplies everything, dither included,
+    // by 1 − fade = 0, so the frame is exactly black. Skip the trace and post entirely; this keeps the
+    // overlap with the next scene from doubling GPU work. Pixel-identical (qa-spacetime-diff, hero p 1).
+    if (f.fade >= 1) {
+      gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+      gl.viewport(0, 0, this.outWidth, this.outHeight);
+      gl.clearColor(0, 0, 0, 1);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      return;
+    }
     let query: WebGLQuery | null = null;
     if (this.timer && this.timer.pending.length < 4) {
       this.collectTimers();
@@ -387,8 +410,10 @@ export class BlackHoleRenderer {
       if (query) gl.beginQuery(this.timer.ext.TIME_ELAPSED_EXT, query);
     } else this.collectTimers();
 
-    // 1. ray trace
-    const t = this.trace;
+    // 1. ray trace (environment off → the accepted program, unchanged)
+    const env = f.environment?.enabled ? f.environment : null;
+    if (env && !this.traceEnv) this.traceEnv = this.program(TRACE_ENV_FRAG, TRACE_UNIFORMS);
+    const t = env && this.traceEnv ? this.traceEnv : this.trace;
     const g = f.gas;
     gl.useProgram(t.prog);
     gl.uniform2f(t.u.uRes, scene.w, scene.h);
@@ -422,6 +447,24 @@ export class BlackHoleRenderer {
     gl.uniform1f(t.u.uStarGain, f.starGain);
     gl.uniform4fv(t.u.uGasMean, this.gasMean);
     gl.uniform4fv(t.u.uGasStd, this.gasStd);
+    if (env) {
+      const src = this.envSrc;
+      const col = this.envCol;
+      src.fill(0);
+      col.fill(0);
+      env.sources.slice(0, 3).forEach((e, i) => {
+        src.set([e.direction[0], e.direction[1], e.direction[2], e.angularSize], i * 4);
+        col.set([e.radiance[0], e.radiance[1], e.radiance[2], e.aspect], i * 4);
+      });
+      gl.uniform1f(t.u.uEnvGain, env.intensity);
+      gl.uniform4fv(t.u.uEnvSrc, src);
+      gl.uniform4fv(t.u.uEnvSrcCol, col);
+      gl.uniform1f(t.u.uEnvStars, env.stars);
+      gl.uniform1f(t.u.uEnvDiffuse, env.diffuse);
+      gl.uniform3fv(t.u.uEnvBand, env.bandNormal);
+      gl.uniformMatrix3fv(t.u.uEnvRot, false, envRotation(env.ambientMapRotation + env.animationRate * f.time, this.envRot));
+      gl.uniform1f(t.u.uEnvSeed, env.seed);
+    }
     this.bind(0, this.gasTex, t.u.uGas);
     this.pass(t, scene, scene.w, scene.h);
 
@@ -477,7 +520,7 @@ export class BlackHoleRenderer {
     const gl = this.gl;
     this.freeTargets();
     gl.deleteTexture(this.gasTex);
-    for (const p of [this.trace, this.prefilter, this.down, this.up, this.composite]) gl.deleteProgram(p.prog);
+    for (const p of [this.trace, this.traceEnv, this.prefilter, this.down, this.up, this.composite]) if (p) gl.deleteProgram(p.prog);
     gl.deleteBuffer(this.vbo);
     gl.deleteVertexArray(this.vao);
   }

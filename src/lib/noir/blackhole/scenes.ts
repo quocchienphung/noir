@@ -1,3 +1,4 @@
+import { HERO_ENVIRONMENT } from "./environment";
 import { lookAt, type FrameParams, type GasLook, type Quality } from "./renderer";
 
 type Vec3 = [number, number, number];
@@ -96,41 +97,128 @@ export function diveFrame(input: SceneInput): FrameParams {
     hueKeep: 0.18,
     veil: 0.6,
     starGain: 1,
+    // additive: lensed background environment (environment.ts); every value above is the accepted look
+    environment: HERO_ENVIRONMENT,
+  };
+}
+
+/** One cinematic camera key: distance (rs), elevation/azimuth/roll/fov (degrees) and aim offsets. */
+interface CineKey {
+  q: number;
+  d: number;
+  elev: number;
+  az: number;
+  roll: number;
+  fov: number;
+  /** Screen x of the hole's centre (0 left … 1 right), independent of the aspect ratio. */
+  hx: number;
+  /** Aim height above the hole (rs): the hole moves down on screen. */
+  ty: number;
+}
+
+/**
+ * Cinematic-only camera path (prompt/03_CINEMATIC_CLOSEUP.md), keyed on the cinematic timeline q
+ * (framedEnd 0.06, expandedAt 0.42, statementEnd 0.82). Keys are joined by quintic eases, so velocity is
+ * continuous (and zero) at every key, reverse scroll retraces the same path and nothing jumps at 0.42.
+ *   framed      q 0–0.06   the accepted framed pose: hole centred behind the NOIR mark
+ *   approach    → 0.27     dolly in low over the band to where it meets the lensed arc (the clip's 5–9 s
+ *                          close shot, re-composed: shadow kept on the right, near band as foreground)
+ *   settle      → 0.42     ease back out to the statement framing; speed falls to zero before the copy
+ *   statement   → 0.82     shadow right (centre ≈ 0.75 W), radius ≈ 0.3 H, band rising to the right; a slow
+ *                          push-in only
+ *   exit        → 1        the push continues into Services
+ * Initial fit by eye and measurement (tests/qa-spacetime-cinefit.mjs), not camera data from the clip.
+ */
+export const CINEMATIC_KEYS: { wide: readonly CineKey[]; narrow: readonly CineKey[] } = {
+  wide: [
+    { q: 0, d: 21, elev: 2.4, az: -8, roll: -17, fov: 42, hx: 0.5, ty: 0.8 },
+    { q: 0.06, d: 20.8, elev: 2.4, az: -8, roll: -17, fov: 42, hx: 0.5, ty: 0.8 },
+    { q: 0.27, d: 9.6, elev: 1.55, az: -15, roll: -15, fov: 34, hx: 0.76, ty: 0.15 },
+    { q: 0.42, d: 12.2, elev: 2.1, az: -9, roll: -17, fov: 36, hx: 0.75, ty: 0.55 },
+    { q: 0.82, d: 11.4, elev: 2.05, az: -9.5, roll: -17, fov: 36, hx: 0.755, ty: 0.55 },
+    { q: 1, d: 10.9, elev: 2.0, az: -10, roll: -17, fov: 36, hx: 0.76, ty: 0.55 },
+  ],
+  // phones: the copy sits in the lower part of the frame, so the hole stays centred and high
+  narrow: [
+    { q: 0, d: 21, elev: 2.4, az: -8, roll: -17, fov: 42, hx: 0.5, ty: 0.8 },
+    { q: 0.06, d: 20.8, elev: 2.4, az: -8, roll: -17, fov: 42, hx: 0.5, ty: 0.8 },
+    { q: 0.27, d: 11, elev: 1.7, az: -13, roll: -15, fov: 40, hx: 0.6, ty: -0.4 },
+    { q: 0.42, d: 14.5, elev: 2.2, az: -9, roll: -17, fov: 40, hx: 0.56, ty: -1.2 },
+    { q: 0.82, d: 13.8, elev: 2.2, az: -9.5, roll: -17, fov: 40, hx: 0.56, ty: -1.2 },
+    { q: 1, d: 13.3, elev: 2.1, az: -10, roll: -17, fov: 40, hx: 0.56, ty: -1.2 },
+  ],
+};
+
+/**
+ * Cinematic-only look: the glare reduction of prompt/03 §E lives here and nowhere else. `GAS`, the hero's
+ * look values and the shared tone map are untouched (tests/qa-spacetime-independence.mjs). Typed and frozen,
+ * so no frame can mutate a shared object. Values are the tuned result of the measured passes recorded in
+ * SPACETIME_IMPLEMENTATION.md (previous values: exposure 1.0, bloomGain 0.55, threshold 0.9, veil 1.2).
+ */
+export const CINEMATIC_LOOK = Object.freeze({
+  exposure: 0.8,
+  bloomGain: 0.22,
+  bloomThreshold: 1.5,
+  veil: 0.3,
+  grain: 0.03,
+  hueKeep: 0.15,
+  starGain: 0.8,
+  gas: Object.freeze({ orbit: -GAS.orbit, doppler: 0.45 }),
+});
+
+const ease5 = (t: number) => t * t * t * (t * (t * 6 - 15) + 10);
+function cineKey(keys: readonly CineKey[], q: number): CineKey {
+  let i = 0;
+  while (i < keys.length - 2 && q > keys[i + 1].q) i++;
+  const a = keys[i], b = keys[i + 1];
+  const t = ease5(clamp01((q - a.q) / (b.q - a.q)));
+  return {
+    q,
+    d: lerp(a.d, b.d, t),
+    elev: lerp(a.elev, b.elev, t),
+    az: lerp(a.az, b.az, t),
+    roll: lerp(a.roll, b.roll, t),
+    fov: lerp(a.fov, b.fov, t),
+    hx: lerp(a.hx, b.hx, t),
+    ty: lerp(a.ty, b.ty, t),
   };
 }
 
 /**
- * Cinematic study after the Gargantua reference (camera path unchanged from the accepted version): a
- * tilted, nearly edge-on view; framed, the hole sits centred behind the NOIR mark, and as the frame
- * opens the aim drifts so the hole settles right of centre. Left side approaching (negative orbit).
+ * Cinematic study ("Event horizon / Complexity / pulled into / a single orbit."): a tilted, nearly
+ * edge-on view with its own camera path and look (above). Left side approaching (negative orbit).
+ * Pointer parallax and a slow sway are kept from the accepted version.
  */
 export function cinematicFrame(input: SceneInput): FrameParams {
   const q = clamp01(input.progress);
-  const d = lerp(21, 15.5, smooth(0.0, 0.9, q));
-  const elev = (2.4 + input.pointer.y * 0.8) * DEG;
-  const az = (-8 + input.pointer.x * 2.0 + Math.sin(input.time * 0.03) * 1.2) * DEG;
-  const eye = orbitCam(d, elev, az);
-  const roll = -17 * DEG;
+  const k = cineKey(input.aspect > 1.2 ? CINEMATIC_KEYS.wide : CINEMATIC_KEYS.narrow, q);
+  // parallax shrinks as the camera gets close, so the close shot never swims
+  const near = clamp01((21 - k.d) / 11);
+  const elev = (k.elev + input.pointer.y * 0.8 * (1 - 0.6 * near)) * DEG;
+  const az = (k.az + input.pointer.x * 2.0 * (1 - 0.6 * near) + Math.sin(input.time * 0.03) * 1.2 * (1 - 0.5 * near)) * DEG;
+  const eye = orbitCam(k.d, elev, az);
+  const roll = k.roll * DEG;
   const basis0 = lookAt(eye, [0, 0, 0], roll);
-  const open = smooth(0.06, 0.42, q);
-  const shift = (input.aspect > 1.2 ? 0.18 : 0.04) * d * open;
-  const target: Vec3 = [-basis0[0] * shift, -basis0[1] * shift + 0.8, -basis0[2] * shift];
-  const fov = lerp(42, 38, q) * DEG;
+  // turning the aim by s/d (tan space) moves the hole by s/d ÷ (tan½fov · aspect) in NDC
+  const tanHalf = Math.tan((k.fov * DEG) / 2);
+  const shift = (2 * k.hx - 1) * tanHalf * input.aspect * k.d;
+  const target: Vec3 = [-basis0[0] * shift, -basis0[1] * shift + k.ty, -basis0[2] * shift];
+  const L = CINEMATIC_LOOK;
   return {
     camPos: eye,
     basis: lookAt(eye, target, roll),
-    tanHalfFov: Math.tan(fov / 2),
+    tanHalfFov: tanHalf,
     time: input.time,
     quality: input.quality,
-    gas: { ...GAS, orbit: -GAS.orbit, doppler: 0.45 },
-    exposure: 1.0,
-    bloomGain: 0.55,
-    bloomThreshold: 0.9,
+    gas: { ...GAS, ...L.gas },
+    exposure: L.exposure,
+    bloomGain: L.bloomGain,
+    bloomThreshold: L.bloomThreshold,
     fade: 0,
-    grain: 0.03,
-    hueKeep: 0.15,
-    veil: 1.2,
-    starGain: 0.8,
+    grain: L.grain,
+    hueKeep: L.hueKeep,
+    veil: L.veil,
+    starGain: L.starGain,
   };
 }
 

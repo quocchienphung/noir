@@ -1,6 +1,7 @@
 import { brand } from "@/data/noir/site";
 import { cn } from "@/lib/utils";
 import s from "@/styles/noir/brand.module.css";
+import type { MotionRole } from "@/lib/noir/motion";
 
 const SIZES = [64, 128, 256, 512] as const;
 
@@ -15,6 +16,7 @@ export function NoirMark({
   label,
   className,
   priority = false,
+  motion,
 }: {
   /** CSS pixel size of the square mark. */
   size: number;
@@ -23,6 +25,8 @@ export function NoirMark({
   label?: string;
   className?: string;
   priority?: boolean;
+  /** Role in the sitewide motion choreography (components/noir/motion); no effect on layout. */
+  motion?: MotionRole;
 }) {
   const base = variant === "light" ? brand.mark.light : brand.mark.dark;
   const srcSet = SIZES.map((w) => `${base}-${w}.png ${w}w`).join(", ");
@@ -42,6 +46,7 @@ export function NoirMark({
       loading={priority ? "eager" : "lazy"}
       fetchPriority={priority ? "high" : undefined}
       draggable={false}
+      data-m={motion}
     />
   );
 }

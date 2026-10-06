@@ -13,7 +13,8 @@ import { chromium } from "playwright";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1")), "..");
 const base = process.argv[2] || "http://localhost:3000";
-const OUT = path.join(ROOT, "docs/design-references/noir/black-hole-v2/orbit");
+// NOIR_QA_OUT (repo-relative) redirects captures, so a regression run never overwrites accepted evidence
+const OUT = process.env.NOIR_QA_OUT ? path.join(ROOT, process.env.NOIR_QA_OUT, "orbit") : path.join(ROOT, "docs/design-references/noir/black-hole-v2/orbit");
 fs.mkdirSync(OUT, { recursive: true });
 const W = 800, H = 450;
 const incs = [0, 30, 60, 85, 90, 95, 120, 150, 180];

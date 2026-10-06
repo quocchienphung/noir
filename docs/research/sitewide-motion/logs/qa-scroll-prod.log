@@ -1,0 +1,19 @@
+keyframes@1440: ok
+keyframes@1280: ok
+keyframes@768: ok
+keyframes@390: ok
+keyframes@320: ok
+about→logo→home: ok
+projects→menu Home (phone): ok
+contact→footer Home: ok
+back restored scrollY=9580 (left at 9580)
+reload restored scrollY=9580
+back/forward + reload mid-section: ok
+fast wheel + back to top: ok
+resize mid-statement: ok
+reduced motion: ok
+FAIL (1)
+contact→footer Home: threw TimeoutError: page.waitForURL: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for navigation to "http://localhost:3210/" until "load"
+============================================================
