@@ -1,0 +1,32 @@
+{
+ "viewport": "1440x900@1",
+ "vsync": 6,
+ "settle": {
+  "n": 798,
+  "median": 12.1,
+  "p95": 18.2,
+  "max": 24.3
+ },
+ "drag": {
+  "n": 840,
+  "median": 12.1,
+  "p95": 12.2,
+  "max": 24.4
+ },
+ "after": {
+  "n": 1200,
+  "median": 12.1,
+  "p95": 12.2,
+  "max": 24.3
+ },
+ "scale": {
+  "settled": 1,
+  "dragMin": 1,
+  "dragEnd": 1,
+  "afterEnd": 1,
+  "afterMax": 1,
+  "recoveredAfterMs": 0
+ },
+ "video": "pacing-1440x900@1.webm"
+}
+PASS

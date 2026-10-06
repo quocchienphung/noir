@@ -1,0 +1,48 @@
+ok  A1 settled stack: scales 0.928 / 0.964 / 1.000, no lean, full copy, cover ×1.06
+ok  A2 deterministic and continuous over a 6000 px sweep (largest per-px change 0.114)
+ok  A3 8 settled cards: 5 visible (front + 4 bands), 3 tucked fully under the oldest band, highest offset 0 px (≥ 0)
+ok  A4 release: back cards follow the front card (-120, -120, 0 px + front's own −120)
+ok  A6 glide offsets the drawn card by visual − layout and eases its progress; visual = layout gives the deterministic frame
+ok  A5 no live URL invented (24 slots, all liveUrl null)
+ok  A5 every empty slot carries an honest message
+ok  A5 6 unique cards, no dev fixture in the shipped config
+ok  A5 experiment cards mirror work.experiments (titles, bodies, years) — event-horizon-renderer, this-site
+ok  A5 2 covers exist under public/ with alt text and provenance
+ok  C1 server HTML: one capabilities heading, six pillars, /contact and /projects links
+ok  C1 server HTML holds every card (6) with its anchor
+ok  C1 no archive markup in the server HTML
+ok  C2 no archive runtime: __archive false, canvases in the section 0, canvas owners [noir-intro-title, noir-cinematic-title]
+ok  C2 no retired archive chunk among 32 loaded resources
+ok  C14 no console errors or hydration warnings (0)
+ok  C3 desktop 1440×900 uses the stack (6 cards)
+ok  C3 with 6 cards settled: 5 visible (front + 4 bands), 1 older tucked under the oldest band; 0 transparent cards
+ok  C3 each settled front card is readable: copy opacity 1, plus control unobstructed, inside the viewport
+ok  C3 stacked top edges 39, 40, 39, 39 px (≈ 3.52 % of the card; reference ≈ 3.5 %)
+ok  C3 back widths 0.856 / 0.892 / 0.928 / 0.964 / 1.000 of the front (reference ≈ 0.964 per layer)
+ok  C3 hold: 300 px after the last card pins every card is still pinned (offsets 0, 0, 0, 0, 0, 0 px)
+ok  C4 reverse scrolling gives identical transforms at 9 positions
+ok  C4 after End/Home and a direct jump the stack converges to the same frame
+ok  C12 at rest in the section: 0 animation frame callbacks in 1.2 s (no perpetual loop)
+ok  C5 Tab visits each card's plus in order, each brought to the front unobstructed (View details for Event-horizon renderer → View details for This website → View details for Open slot · Website → View details for Open slot · Web application → View details for Open slot · Cloud & infrastructure → View details for Open slot · Integrations & automation)
+ok  C5 plus controls ≥ 44×44 px with a visible focus ring
+ok  C6 Enter opens “Open slot · Integrations & automation” with focus inside and 4 demo sections
+ok  C6 Tab stays inside the open dialog (background inert)
+ok  C6 Escape closes, focus back on “View details for Open slot · Integrations & automation”, scroll 7275 → 7275, page scroll unlocked
+ok  C6 the Close button closes and restores focus
+ok  C7 embed only on request (0 → 1 → 0 iframes), sandbox “allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox”, new-tab link kept
+ok  C7 embeddable:false slot offers only “Open in a new tab” (/qa/embed-fixture#pricing)
+ok  C11 six-card fixture uses the stack at 1440×900
+ok  C11 1-card configuration: 1 cards, section 1660 px (1.84 viewports)
+ok  C11 0-card configuration: 0 cards, section 707 px (0.79 viewports)
+ok  C8 reduced motion: list layout, 0 transforms, 0 sticky cards
+ok  C9 no Pause control in the section (0); stale pause preference ignored (stack true)
+ok  C16 one 160 px wheel step: the incoming card trails by up to 142.0 px, eases back without overshoot, rests at 0 px (196 frames)
+ok  C10 phone 390×844: list layout true, horizontal overflow false, controls < 44 px: 0, clipped text false
+ok  C10 landscape 844×390: list layout true, horizontal overflow false, controls < 44 px: 0, clipped text false
+ok  C10 200 % zoom of 1440×900: list layout true, horizontal overflow false, controls < 44 px: 0, clipped text false
+ok  C10 320×640: list layout true, horizontal overflow false, controls < 44 px: 0, clipped text false
+ok  C13 contrast eyebrow 4.6, lede 7.96, note 4.84, meta 5.52, desc 9.08, pill 15.99 (≥ 4.5)
+ok  C13 header over the cards: denser glass, muted nav link 6.86 : 1; hero/Complexity keep the original header (null, null)
+--  C15 protected-file comparison: baseline docs/research/cards-almanac/implementation/protected-before.json no longer exists in this working tree (skipped)
+
+all 45 checks passed

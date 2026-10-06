@@ -1,6 +1,7 @@
 // NOIR sitewide motion: one typed source for every route transition, page entrance and viewport reveal.
 //
-// Provenance (prompt/references/aithor-about/reference-motion.json; Aithor public route + About appear config):
+// Provenance (Aithor's public route config and About appear config, as recorded in the motion task's research
+// notes — docs/research/sitewide-motion; reference material is never imported at runtime):
 //   CONFIGURED in Aithor (copied):  route exit 600 ms tween [0.4, 0, 0.24, 1] → opacity 0
 //                                   route enter 600 ms tween [0.68, 0, 0.33, 1], delay 300 ms, opacity 0 → 1
 //                                   About appear delays: eyebrow 300, visual 400, heading 500, lead 900,

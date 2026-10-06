@@ -1,0 +1,17 @@
+ok  L2 cinematic camera has no jump at aspect 1.78 (max step 0.01120)
+ok  L2 cinematic camera has no jump at aspect 0.46 (max step 0.00927)
+ok  L2 framed pose equals the accepted framed camera
+ok  L3 GAS equals the accepted values after 200 cinematic/dive frames
+ok  L3 dive look equals the accepted values
+ok  L3 cinematic look is frozen
+ok  L3 cinematic frame uses the cinematic look and the shared material
+ok  L4 environment only on the hero (cinematic keeps the accepted background)
+ok  L4 dive frame still computes
+ok  D8 no reference media or video responses (31 responses checked)
+ok  D9 environment-only: shadow interior max value 0 (≤ 2 of 255: dither only)
+ok  D10 no render loop left running on /about after leaving home (rAF/s per trip: 0,0,0,0,0,0,0,0,0,0)
+--  D10 WebGL contexts created over 11 home visits: 22 (canvases now 2); JS heap 24 MB
+ok  S1 no reference clip/frame/image copied into public/ (25 files checked against 18 references)
+
+1 FAILED:
+  ✗ S1 no runtime source imports reference media (src\lib\noir\motion.ts)
